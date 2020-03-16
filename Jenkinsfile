@@ -20,7 +20,7 @@ pipeline {
           agent { label 'ios' }
           steps {
             script {
-              ios.prepareEnvironment(device: 'iPhone X', xcode: XCODE_VERSION, cocoapods: true)
+              ios.prepareEnvironment(device: 'iPhone 11', xcode: XCODE_VERSION, cocoapods: true)
             }
             withSigningIdentity() {
               /* Run linting and analysis */
