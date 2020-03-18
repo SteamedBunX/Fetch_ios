@@ -1,4 +1,4 @@
-def slackChannel = "#fetch-dev"
+def slackChannel = "#fetch-pull-request"
 def BUILD_NAME = "Fetch"
 def PROJECT = "Fetch.xcodeproj"
 def WORKSPACE = "Fetch.xcworkspace"
