@@ -11,7 +11,7 @@ import Intrepid
 
 final class OnboardingSection {
 
-    private let title: String
+    let title: String
     private let questions: [OnboardingQuestion]
     private(set) var currentQuestionIndex: Int = 0
 
@@ -24,25 +24,11 @@ final class OnboardingSection {
         self.questions = questions
     }
 
-    var currentQuestion: OnboardingQuestion? {
-        return questions[ip_safely: currentQuestionIndex]
-    }
-
-    func toNextQuestion() -> OnboardingQuestion? {
-        if currentQuestionIndex >= questions.count - 1 {
+    func question(for index: Int) -> OnboardingQuestion? {
+        if index < 0 || index >= questions.count {
             return nil
         } else {
-            currentQuestionIndex -= 1
-            return questions[ip_safely: currentQuestionIndex]
-        }
-    }
-
-    func toPreviousQuestion() -> OnboardingQuestion? {
-        if currentQuestionIndex <= 0 {
-            return nil
-        } else {
-            currentQuestionIndex += 1
-            return questions[ip_safely: currentQuestionIndex]
+            return questions[index]
         }
     }
 }
