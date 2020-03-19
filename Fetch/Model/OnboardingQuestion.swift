@@ -31,20 +31,30 @@ final class OnboardingQuestion {
                 currentlySelectedIndexes.append(index)
             }
         case .singleChoice:
-            if currentlySelectedIndexes.count <= 0 {
+            if currentlySelectedIndexes.isEmpty {
                 currentlySelectedIndexes = [index]
-            } else if currentlySelectedIndexes[0] == index {
-                currentlySelectedIndexes = []
             } else {
                 currentlySelectedIndexes[0] = index
             }
         default:
             break
         }
+        validateAnswer()
     }
 
     func setInputText(_ inputText: String) {
         self.inputText = inputText
+    }
+
+    func validateAnswer() {
+        switch type {
+        case .multipleChoice,
+             .singleChoice:
+            isAnswered = !currentlySelectedIndexes.isEmpty
+        case .textInput:
+            isAnswered =
+                inputText?.count == 5
+        }
     }
 }
 
