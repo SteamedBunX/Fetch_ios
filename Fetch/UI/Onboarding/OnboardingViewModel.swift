@@ -32,6 +32,10 @@ final class OnboardingViewModel {
         return flow.currentSection?.title ?? ""
     }
 
+    var currentQuestionPositionRelativeToSection: String {
+        return "Question \(flow.currentQuestionIndex + 1) of \(flow.currentSectionSize)"
+    }
+
     // MARK: - Question Related Displayable
     var currentQuestionTitle: String {
         return flow.currentQuestion?.title ?? ""
@@ -64,11 +68,17 @@ final class OnboardingViewModel {
     func nextQuestion() {
         flow.moveToNextQuestion()
         delegate?.questionDidChange(position: .next)
+        if flow.currentQuestionIndex == 0 {
+            delegate?.sectionDidChange(position: .next)
+        }
     }
 
     func previousQuestion() {
         flow.moveToPreviousQuestion()
         delegate?.questionDidChange(position: .previous)
+        if flow.currentQuestionIndex == flow.currentSectionSize - 1 {
+            delegate?.sectionDidChange(position: .previous)
+        }
     }
 
     func flowComplete() {
@@ -80,7 +90,6 @@ protocol OnboardingViewModelDelegate: AnyObject {
 
     func questionDidChange(position: NewItemPosition)
     func sectionDidChange(position: NewItemPosition)
-    func progressDidChange()
     func choiceDidUpdate()
     func inputDidUpdate()
 }
