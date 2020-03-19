@@ -19,7 +19,7 @@
 		FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC5E1324227472006E8C23 /* OnboardingViewController.xib */; };
 		FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */; };
 		FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1524227472006E8C23 /* OnboardingViewController.swift */; };
-		FADC5E1B24227472006E8C23 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1624227472006E8C23 /* Section.swift */; };
+		FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1624227472006E8C23 /* OnboardingSection.swift */; };
 		FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */; };
 		FADC5E1F242280B3006E8C23 /* MockOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1E242280B3006E8C23 /* MockOnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		FADC5E1324227472006E8C23 /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestion.swift; sourceTree = "<group>"; };
 		FADC5E1524227472006E8C23 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		FADC5E1624227472006E8C23 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		FADC5E1624227472006E8C23 /* OnboardingSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSection.swift; sourceTree = "<group>"; };
 		FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		FADC5E1E242280B3006E8C23 /* MockOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOnboardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,7 +166,7 @@
 		FADC5E1D24227FAC006E8C23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FADC5E1624227472006E8C23 /* Section.swift */,
+				FADC5E1624227472006E8C23 /* OnboardingSection.swift */,
 				FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */,
 			);
 			path = Model;
@@ -374,7 +374,7 @@
 				FADC5E1F242280B3006E8C23 /* MockOnboardingViewModel.swift in Sources */,
 				FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */,
 				FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */,
-				FADC5E1B24227472006E8C23 /* Section.swift in Sources */,
+				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
 				CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */,
 				FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */,
 				CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */,

@@ -14,7 +14,7 @@ protocol OnboardingViewModel: AnyObject {
 
     var currentSection: Int { get }
     var totalSection: Int { get }
-    var sections: [Section] { get }
+    var sections: [OnboardingSection] { get }
     func select(index: Int)
     func updateInput(currentInput: String)
     func toNextQuestion()

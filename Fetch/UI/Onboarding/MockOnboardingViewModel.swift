@@ -13,7 +13,7 @@ class MockOnboardingViewModelForProgressBar: OnboardingViewModel {
     weak var delegate: OnboardingViewModelDelegate?
 
     var currentSection: Int = 0
-    var sections = [Section(questions: []), Section(questions: []), Section(questions: [])]
+    var sections = [OnboardingSection(title: "", questions: []), OnboardingSection(title: "", questions: []), OnboardingSection(title: "", questions: [])]
 
     var totalSection: Int {
         return sections.count

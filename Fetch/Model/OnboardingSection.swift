@@ -9,14 +9,20 @@
 import Foundation
 import Intrepid
 
-final class Section {
+final class OnboardingSection {
 
-    init(questions: [OnboardingQuestion]) {
-        self.questions = questions
-    }
-
+    private let title: String
     private let questions: [OnboardingQuestion]
     private(set) var currentQuestionIndex: Int = 0
+
+    var numberOfQuestions: Int {
+        return questions.count
+    }
+
+    init(title: String, questions: [OnboardingQuestion]) {
+        self.title = title
+        self.questions = questions
+    }
 
     var currentQuestion: OnboardingQuestion? {
         return questions[ip_safely: currentQuestionIndex]
