@@ -13,10 +13,16 @@
 		CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5A92416C61600F5ECF6 /* Main.storyboard */; };
 		CB20C5AD2416C61600F5ECF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5AC2416C61600F5ECF6 /* Assets.xcassets */; };
 		CB20C5B02416C61600F5ECF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5AE2416C61600F5ECF6 /* LaunchScreen.storyboard */; };
-		CB20C5BB2416C61700F5ECF6 /* FetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5BA2416C61700F5ECF6 /* FetchTests.swift */; };
 		CBF491972416CB4200BBE3D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF491952416CB4200BBE3D2 /* ViewController.swift */; };
 		CBF491982416CB4200BBE3D2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF491962416CB4200BBE3D2 /* ViewController.xib */; };
 		D02F2192FD103055E2F5F8B3 /* Pods_FetchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B49409A222B20645B01CD3EA /* Pods_FetchTests.framework */; };
+		FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9565192423F9CA00380003 /* OnboardingSequence.swift */; };
+		FA95651C24241E7700380003 /* OnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95651B24241E7700380003 /* OnboardingQuestionTests.swift */; };
+		FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC5E1324227472006E8C23 /* OnboardingViewController.xib */; };
+		FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */; };
+		FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1524227472006E8C23 /* OnboardingViewController.swift */; };
+		FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1624227472006E8C23 /* OnboardingSection.swift */; };
+		FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +48,18 @@
 		CB20C5AF2416C61600F5ECF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB20C5B12416C61600F5ECF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB20C5B62416C61700F5ECF6 /* FetchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB20C5BA2416C61700F5ECF6 /* FetchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTests.swift; sourceTree = "<group>"; };
 		CB20C5BC2416C61700F5ECF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBF491952416CB4200BBE3D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CBF491962416CB4200BBE3D2 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		D3E2634C5358BCECB78BE19B /* Pods-Fetch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fetch.debug.xcconfig"; path = "Target Support Files/Pods-Fetch/Pods-Fetch.debug.xcconfig"; sourceTree = "<group>"; };
 		EBF9323E7A17D9F79AAE1143 /* Pods-Fetch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fetch.release.xcconfig"; path = "Target Support Files/Pods-Fetch/Pods-Fetch.release.xcconfig"; sourceTree = "<group>"; };
+		FA9565192423F9CA00380003 /* OnboardingSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSequence.swift; sourceTree = "<group>"; };
+		FA95651B24241E7700380003 /* OnboardingQuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestionTests.swift; sourceTree = "<group>"; };
+		FADC5E1324227472006E8C23 /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestion.swift; sourceTree = "<group>"; };
+		FADC5E1524227472006E8C23 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		FADC5E1624227472006E8C23 /* OnboardingSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSection.swift; sourceTree = "<group>"; };
+		FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +116,8 @@
 		CB20C5A22416C61600F5ECF6 /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
+				FADC5E1D24227FAC006E8C23 /* Model */,
+				FADC5E1124227472006E8C23 /* UI */,
 				CB20C5B12416C61600F5ECF6 /* Info.plist */,
 				CB20C5AC2416C61600F5ECF6 /* Assets.xcassets */,
 				CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */,
@@ -118,7 +132,7 @@
 		CB20C5B92416C61700F5ECF6 /* FetchTests */ = {
 			isa = PBXGroup;
 			children = (
-				CB20C5BA2416C61700F5ECF6 /* FetchTests.swift */,
+				FA95651B24241E7700380003 /* OnboardingQuestionTests.swift */,
 				CB20C5BC2416C61700F5ECF6 /* Info.plist */,
 			);
 			path = FetchTests;
@@ -131,6 +145,34 @@
 				CB20C5AE2416C61600F5ECF6 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FADC5E1124227472006E8C23 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FADC5E1224227472006E8C23 /* Onboarding */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FADC5E1224227472006E8C23 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FADC5E1324227472006E8C23 /* OnboardingViewController.xib */,
+				FADC5E1524227472006E8C23 /* OnboardingViewController.swift */,
+				FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		FADC5E1D24227FAC006E8C23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FADC5E1624227472006E8C23 /* OnboardingSection.swift */,
+				FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */,
+				FA9565192423F9CA00380003 /* OnboardingSequence.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FE5E4E71196A5CBB3D018F7E /* Frameworks */ = {
@@ -199,6 +241,7 @@
 					};
 					CB20C5B52416C61700F5ECF6 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 						TestTargetID = CB20C59F2416C61600F5ECF6;
 					};
 				};
@@ -229,6 +272,7 @@
 			files = (
 				CB20C5B02416C61600F5ECF6 /* LaunchScreen.storyboard in Resources */,
 				CB20C5AD2416C61600F5ECF6 /* Assets.xcassets in Resources */,
+				FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */,
 				CBF491982416CB4200BBE3D2 /* ViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
 			);
@@ -331,7 +375,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBF491972416CB4200BBE3D2 /* ViewController.swift in Sources */,
+				FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */,
+				FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */,
+				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
+				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
 				CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */,
+				FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */,
 				CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,7 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB20C5BB2416C61700F5ECF6 /* FetchTests.swift in Sources */,
+				FA95651C24241E7700380003 /* OnboardingQuestionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +581,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = THP5EV5EJ9;
 				INFOPLIST_FILE = FetchTests/Info.plist;
@@ -543,6 +593,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.digital-products.FetchTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetch.app/Fetch";
@@ -555,6 +606,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = THP5EV5EJ9;
 				INFOPLIST_FILE = FetchTests/Info.plist;
