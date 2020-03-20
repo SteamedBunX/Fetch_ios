@@ -11,6 +11,7 @@ import Foundation
 final class OnboardingSequence {
 
     // MARK: - Variables
+
     let sections: [OnboardingSection]
     private(set) var currentQuestionIndex = 0
     private(set) var currentSectionIndex = 0
@@ -43,45 +44,39 @@ final class OnboardingSequence {
 
     // MARK: - UserInputs
 
-    func choose(chosenIndex: Int) {
-        currentQuestion?.choose(index: chosenIndex)
+    func selectChoice(at index: Int) {
+        currentQuestion?.selectChoice(at: index)
     }
 
-    func updateInput(newInputText: String) {
+    func setInputText(newInputText: String) {
         currentQuestion?.setInputText(newInputText)
     }
 
     // MARK: - FlowControl
 
     func moveToPreviousQuestion() {
-        if !isFirstQuestion {
-            if currentQuestionIndex <= 0 {
-                currentSectionIndex -= 1
-                currentQuestionIndex = currentSectionSize - 1
-            } else {
-                currentQuestionIndex -= 1
-            }
+        guard !isFirstQuestion else { return }
+        if currentQuestionIndex <= 0 {
+            currentSectionIndex -= 1
+            currentQuestionIndex = currentSectionSize - 1
+        } else {
+            currentQuestionIndex -= 1
         }
     }
 
     func moveToNextQuestion() {
-        if !isLastQuestion {
-            if currentQuestionIndex >= currentSectionSize - 1 {
-                currentSectionIndex += 1
-                currentQuestionIndex = 0
-            } else {
-                currentQuestionIndex += 1
-            }
+        guard !isLastQuestion else { return }
+        if currentQuestionIndex >= currentSectionSize - 1 {
+            currentSectionIndex += 1
+            currentQuestionIndex = 0
+        } else {
+            currentQuestionIndex += 1
         }
     }
 
-    // MARK: - Retriving Data
+    // MARK: - Retrieving Data
 
     private func section(for index: Int) -> OnboardingSection? {
-        if index < 0 || index >= sections.count {
-            return nil
-        } else {
-            return sections[index]
-        }
+        return sections[ip_safely: index]
     }
 }

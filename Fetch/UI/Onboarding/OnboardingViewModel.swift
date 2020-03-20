@@ -8,6 +8,15 @@
 
 import Foundation
 
+protocol OnboardingViewModelDelegate: AnyObject {
+
+    func questionDidChange(movedForward: Bool)
+    func sectionDidChange(movedForward: Bool)
+    func selectedIndexesDidChange()
+    func textInputDidChange()
+    func finishSequence()
+}
+
 final class OnboardingViewModel {
 
     weak var delegate: OnboardingViewModelDelegate?
@@ -19,6 +28,7 @@ final class OnboardingViewModel {
     }
 
     // MARK: - ProgressBar Related Displayable
+
     var numberOfSections: Int {
         return flow.sections.count
     }
@@ -28,11 +38,12 @@ final class OnboardingViewModel {
     }
 
     // MARK: - Section Related Displayable
+
     var currentSectionTitle: String {
         return flow.currentSection?.title ?? ""
     }
 
-    var currentQuestionPositionRelativeToSection: String {
+    var sectionProgressText: String {
         return "Question \(flow.currentQuestionIndex + 1) of \(flow.currentSectionSize)"
     }
 
@@ -41,7 +52,7 @@ final class OnboardingViewModel {
         return flow.currentQuestion?.title ?? ""
     }
 
-    var currentQuestionType: OnboardingQuestionType {
+    var currentQuestionType: OnboardingAnswerType {
         return flow.currentQuestion?.type ?? .singleChoice
     }
 
@@ -54,47 +65,37 @@ final class OnboardingViewModel {
     }
 
     // MARK: - UserInputs
-    func choose(chosenIndex: Int) {
-        flow.choose(chosenIndex: chosenIndex)
-        delegate?.choiceDidUpdate()
+
+    func selectChoice(at index: Int) {
+        flow.selectChoice(at: index)
+        delegate?.selectedIndexesDidChange()
     }
 
-    func updateInput(newInputText: String) {
-        flow.updateInput(newInputText: newInputText)
-        delegate?.inputDidUpdate()
+    func setInputText(newInputText: String) {
+        flow.setInputText(newInputText: newInputText)
+        delegate?.textInputDidChange()
     }
 
     // MARK: - Moving to Different question
-    func nextQuestion() {
+
+    func nextButtonTapped() {
         flow.moveToNextQuestion()
-        delegate?.questionDidChange(position: .next)
+        delegate?.questionDidChange(movedForward: true)
         if flow.currentQuestionIndex == 0 {
-            delegate?.sectionDidChange(position: .next)
+            delegate?.sectionDidChange(movedForward: true)
         }
     }
 
-    func previousQuestion() {
+    func backButtonTapped() {
         flow.moveToPreviousQuestion()
-        delegate?.questionDidChange(position: .previous)
+        delegate?.questionDidChange(movedForward: false)
         if flow.currentQuestionIndex == flow.currentSectionSize - 1 {
-            delegate?.sectionDidChange(position: .previous)
+            delegate?.sectionDidChange(movedForward: false)
         }
     }
 
-    func flowComplete() {
-        // communicate with the server to register the user
+    func doneButtonTapped() {
+        // TODO: register user with profile
+        delegate?.finishSequence()
     }
-}
-
-protocol OnboardingViewModelDelegate: AnyObject {
-
-    func questionDidChange(position: NewItemPosition)
-    func sectionDidChange(position: NewItemPosition)
-    func choiceDidUpdate()
-    func inputDidUpdate()
-}
-
-enum NewItemPosition: Int {
-    case previous = 1
-    case next = -1
 }

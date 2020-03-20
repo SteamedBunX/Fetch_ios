@@ -10,55 +10,52 @@ import Foundation
 
 final class OnboardingQuestion {
     let title: String
-    let type: OnboardingQuestionType
+    let type: OnboardingAnswerType
     let choices: [String]?
-    var currentlySelectedIndexes = [Int]()
+    private(set) var selectedIndexes = [Int]()
     private(set) var inputText: String?
-    private(set) var isAnswered: Bool = false
 
-    init(title: String, questionType: OnboardingQuestionType, choices: [String] = []) {
+    var isAnswered: Bool {
+        switch type {
+        case .multipleChoice,
+             .singleChoice:
+            return !selectedIndexes.isEmpty
+        case .textInput:
+            return inputText?.count == 5
+        }
+    }
+
+    init(title: String, questionType: OnboardingAnswerType, choices: [String] = []) {
         self.title = title
         self.choices = choices
         self.type = questionType
     }
 
-    func choose(index: Int) {
+    func selectChoice(at index: Int) {
         switch type {
         case .multipleChoice:
-            if currentlySelectedIndexes.contains(index) {
-                currentlySelectedIndexes.removeFirst(index)
+            if selectedIndexes.contains(index) {
+                selectedIndexes.removeFirst(index)
             } else {
-                currentlySelectedIndexes.append(index)
+                selectedIndexes.append(index)
             }
         case .singleChoice:
-            if currentlySelectedIndexes.isEmpty {
-                currentlySelectedIndexes = [index]
+            if selectedIndexes.isEmpty {
+                selectedIndexes = [index]
             } else {
-                currentlySelectedIndexes[0] = index
+                selectedIndexes[0] = index
             }
-        default:
+        case .textInput:
             break
         }
-        validateAnswer()
     }
 
     func setInputText(_ inputText: String) {
         self.inputText = inputText
     }
-
-    func validateAnswer() {
-        switch type {
-        case .multipleChoice,
-             .singleChoice:
-            isAnswered = !currentlySelectedIndexes.isEmpty
-        case .textInput:
-            isAnswered =
-                inputText?.count == 5
-        }
-    }
 }
 
-enum OnboardingQuestionType {
+enum OnboardingAnswerType {
     case singleChoice
     case multipleChoice
     case textInput

@@ -25,10 +25,6 @@ final class OnboardingSection {
     }
 
     func question(for index: Int) -> OnboardingQuestion? {
-        if index < 0 || index >= questions.count {
-            return nil
-        } else {
-            return questions[index]
-        }
+        return questions[ip_safely: index]
     }
 }
