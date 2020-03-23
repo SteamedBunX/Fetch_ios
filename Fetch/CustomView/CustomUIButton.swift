@@ -18,12 +18,6 @@ import UIKit
     @IBInspectable var shadowRadius: CGFloat = 0
     @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 0)
 
-//    signInButton.layer.cornerRadius = 5
-//    signInButton.layer.shadowColor = UIColor.black.cgColor
-//    signInButton.layer.shadowOpacity = 0.7
-//    signInButton.layer.shadowRadius = 1
-//    signInButton.layer.shadowOffset = CGSize(width: 0, height: 1)
-
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         self.styleView()
