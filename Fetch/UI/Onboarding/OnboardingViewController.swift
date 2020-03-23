@@ -10,6 +10,8 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 
+    weak var coordinator: MainCoordinator?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
