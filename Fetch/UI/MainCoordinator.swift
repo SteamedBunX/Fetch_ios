@@ -16,6 +16,7 @@ class MainCoordinator {
         let rootViewController = LoginViewController()
         rootViewController.coordinator = self
         self.navigationController = UINavigationController(rootViewController: rootViewController)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     func showLoginScreen(animated: Bool) {
