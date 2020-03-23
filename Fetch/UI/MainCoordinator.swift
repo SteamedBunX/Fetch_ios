@@ -10,21 +10,23 @@ import Foundation
 import UIKit
 
 class MainCoordinator {
-    var navigationController: UINavigationController
+    private(set) var navigationController: UINavigationController?
 
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    func start() {
+        let rootViewController = LoginViewController()
+        rootViewController.coordinator = self
+        self.navigationController = UINavigationController(rootViewController: rootViewController)
     }
 
-    func showLoginScreen() {
+    func showLoginScreen(animated: Bool) {
         let loginViewController = LoginViewController()
         loginViewController.coordinator = self
-        navigationController.pushViewController(loginViewController, animated: true)
+        navigationController?.pushViewController(loginViewController, animated: animated)
     }
 
-    func startOnboarding() {
+    func showOnboardingScreen(animated: Bool) {
         let onboardingViewController = OnboardingViewController()
         onboardingViewController.coordinator = self
-        navigationController.pushViewController(onboardingViewController, animated: true)
+        navigationController?.pushViewController(onboardingViewController, animated: animated)
     }
 }

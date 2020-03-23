@@ -11,8 +11,6 @@ import UIKit
 
 @IBDesignable class CustomUIButton: UIButton {
 
-    @IBInspectable var cornerRadius: CGFloat = 0
-
     @IBInspectable var shadowColor: UIColor = UIColor.black
     @IBInspectable var shadowOpacity: Float = 0
     @IBInspectable var shadowRadius: CGFloat = 0
@@ -29,7 +27,6 @@ import UIKit
     }
 
     func styleView() {
-        layer.cornerRadius = cornerRadius
         layer.shadowColor = shadowColor.cgColor
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = shadowRadius
