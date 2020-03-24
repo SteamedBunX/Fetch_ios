@@ -7,6 +7,7 @@ def SOURCE = "Fetch"
 def BUNDLE_ID = "com.digital-products.Fetch"
 def CONFIG = "Debug"
 def XCODE_VERSION = '11'
+def TEST_DEVICE = 'iPhone 11'
 
 pipeline {
   agent none
@@ -20,14 +21,14 @@ pipeline {
           agent { label 'ios' }
           steps {
             script {
-              ios.prepareEnvironment(device: 'iPhone 11', xcode: XCODE_VERSION, cocoapods: true)
+              ios.prepareEnvironment(device: TEST_DEVICE, xcode: XCODE_VERSION, cocoapods: true)
             }
             withSigningIdentity() {
               /* Run linting and analysis */
               swiftlint(source: SOURCE)
               lizard(source: SOURCE)
               /* Run Tests */
-              script { fastlane.scan(scheme: SCHEME, workspace: WORKSPACE) }
+              script { fastlane.scan(device: TEST_DEVICE, scheme: SCHEME, workspace: WORKSPACE) }
               slather(scheme: SCHEME, workspace: WORKSPACE, project: PROJECT)
             }
           }
