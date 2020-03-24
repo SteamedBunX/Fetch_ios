@@ -7,6 +7,7 @@ target 'Fetch' do
 
   # Pods for Fetch
   pod 'Intrepid'
+  pod 'GoogleSignIn'
 
   target 'FetchTests' do
     inherit! :search_paths
