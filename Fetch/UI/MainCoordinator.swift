@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 import GoogleSignIn
 
-class MainCoordinator {
+class MainCoordinator: NSObject, GIDSignInDelegate {
     private(set) var navigationController: UINavigationController?
     private(set) var currentViewController: UIViewController?
+
+    let googleSigninClientID = "615918356762-f3bkobjmofq52radc9fvvccfb7gfc6t1.apps.googleusercontent.com"
 
     func start() {
         let rootViewController = LoginViewController()
@@ -34,6 +36,13 @@ class MainCoordinator {
         currentViewController = onboardingViewController
         onboardingViewController.coordinator = self
         navigationController?.pushViewController(onboardingViewController, animated: animated)
+    }
+
+    // MARK: - Google Sign In
+
+    func setupGoogleSignIn() {
+        GIDSignIn.sharedInstance().clientID = googleSigninClientID
+        GIDSignIn.sharedInstance().delegate = self
     }
 
     func userDidSignInWithGoogle(for user: GIDGoogleUser) {
@@ -60,6 +69,12 @@ class MainCoordinator {
                 .present(alertController,
                          animated: true,
                          completion: nil)
+        }
+    }
+
+    func sign(_ signIn: GIDSignIn?, didSignInFor user: GIDGoogleUser?, withError error: Error?) {
+        if let user = user {
+            userDidSignInWithGoogle(for: user)
         }
     }
 }

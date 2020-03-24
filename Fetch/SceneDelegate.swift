@@ -9,32 +9,19 @@
 import UIKit
 import GoogleSignIn
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate, GIDSignInDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     private var coordinator: MainCoordinator?
 
-        let googleSigninClientID = "615918356762-f3bkobjmofq52radc9fvvccfb7gfc6t1.apps.googleusercontent.com"
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        setupGoogleSignIn()
-
         guard let scene = scene as? UIWindowScene else { return }
         self.window = UIWindow(windowScene: scene)
         coordinator = MainCoordinator()
+        coordinator?.setupGoogleSignIn()
         coordinator?.start()
         window?.rootViewController = coordinator?.navigationController
         window?.makeKeyAndVisible()
-    }
-
-    // MARK: - Google Sign In
-
-    func setupGoogleSignIn() {
-        GIDSignIn.sharedInstance().clientID = googleSigninClientID
-        GIDSignIn.sharedInstance().delegate = self
-    }
-
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
