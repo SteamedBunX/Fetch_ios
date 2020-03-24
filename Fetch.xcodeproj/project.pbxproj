@@ -127,7 +127,7 @@
 				FADC5E1124227472006E8C23 /* UI */,
 				CB20C5B12416C61600F5ECF6 /* Info.plist */,
 				CB20C5AC2416C61600F5ECF6 /* Assets.xcassets */,
-				FA26C3112429516100D0B5BA /* font */,
+				FA26C3112429516100D0B5BA /* Font */,
 				CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */,
 				CB20C5A52416C61600F5ECF6 /* SceneDelegate.swift */,
 				CBF491942416CB0000BBE3D2 /* Storyboards */,
@@ -153,12 +153,12 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		FA26C3112429516100D0B5BA /* font */ = {
+		FA26C3112429516100D0B5BA /* Font */ = {
 			isa = PBXGroup;
 			children = (
 				FA26C3102429515700D0B5BA /* Lato-Regular.ttf */,
 			);
-			path = font;
+			path = Font;
 			sourceTree = "<group>";
 		};
 		FA350CBE2428FE01008399AF /* Login */ = {
