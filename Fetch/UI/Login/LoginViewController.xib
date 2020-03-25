@@ -67,6 +67,9 @@
                             <integer key="value" value="2"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="googleSignInButtonTapped:" destination="-1" eventType="touchUpInside" id="RtM-ed-ACE"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmU-jr-vtA">
                     <rect key="frame" x="0.0" y="903.33333333333337" width="414" height="0.0"/>
