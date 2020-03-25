@@ -11,9 +11,15 @@ import Foundation
 final class OnboardingQuestion {
     let title: String
     let type: OnboardingAnswerType
+    let hint: String?
+    // Choice Based Field
     let choices: [String]?
     private(set) var selectedIndexes = [Int]()
+    // Text Based Fields
     private(set) var inputText: String?
+    private(set) var placeHolderText: String?
+    private let minInputLength: Int
+    let maxInputLength: Int
 
     var isAnswered: Bool {
         switch type {
@@ -25,10 +31,26 @@ final class OnboardingQuestion {
         }
     }
 
-    init(title: String, questionType: OnboardingAnswerType, choices: [String] = []) {
-        self.title = title
-        self.choices = choices
+    init(title: String,
+         questionType: OnboardingAnswerType,
+         choices: [String] = [],
+         hint: String? = nil) {
         self.type = questionType
+        self.title = title
+        self.hint = hint
+        self.choices = choices
+        self.minInputLength = 0
+        self.maxInputLength = 0
+    }
+
+    init(title: String, minInputLength: Int, maxInputLength: Int, hint: String? = nil, placeHolderText: String? = nil) {
+        self.type = .textInput
+        self.title = title
+        self.hint = hint
+        self.placeHolderText = placeHolderText
+        self.minInputLength = minInputLength
+        self.maxInputLength = maxInputLength
+        self.choices = []
     }
 
     func selectChoice(at index: Int) {
@@ -59,4 +81,9 @@ enum OnboardingAnswerType {
     case singleChoice
     case multipleChoice
     case textInput
+}
+
+enum TextInputType {
+    case digit
+    case text
 }
