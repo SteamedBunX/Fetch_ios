@@ -18,7 +18,6 @@ class MainCoordinator: NSObject {
 
     func start() {
         let rootViewController = LoginViewController()
-        GIDSignIn.sharedInstance().delegate = rootViewController
         rootViewController.coordinator = self
         currentViewController = rootViewController
         self.navigationController = UINavigationController(rootViewController: rootViewController)
@@ -28,7 +27,6 @@ class MainCoordinator: NSObject {
     func showLoginScreen(animated: Bool) {
         let loginViewController = LoginViewController()
         currentViewController = loginViewController
-        GIDSignIn.sharedInstance().delegate = loginViewController
         loginViewController.coordinator = self
         navigationController?.pushViewController(loginViewController, animated: animated)
     }
