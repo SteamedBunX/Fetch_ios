@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GoogleSignIn
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = scene as? UIWindowScene else { return }
         self.window = UIWindow(windowScene: scene)
         coordinator = MainCoordinator()
-        coordinator?.setupGoogleSignIn()
         coordinator?.start()
         window?.rootViewController = coordinator?.navigationController
         window?.makeKeyAndVisible()

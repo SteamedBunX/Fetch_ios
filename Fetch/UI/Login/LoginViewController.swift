@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
 
-    @IBAction func gIDSignInButtonTapped(_ sender: Any) {
+    @IBAction func googleSignInButtonTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
     }
 
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
                                 Email: \(user.profile.email ?? "Error")
                                 Name: \(user.profile.name ?? "Error")
                                 """,
-                preferredStyle: .alert)
+                              preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
         DispatchQueue.main.async {
             self.present(alertController,
