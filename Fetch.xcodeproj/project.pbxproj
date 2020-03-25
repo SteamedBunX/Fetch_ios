@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		17CD18CF236E1C93C6F962BB /* Pods_Fetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BAC4B5DA6D58C3EEF00DDD2 /* Pods_Fetch.framework */; };
+		8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB67242AE22F00F122C6 /* ProgressBarView.swift */; };
+		8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */; };
+		8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */; };
+		8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */; };
+		8618BB76242B1FAC00F122C6 /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB75242B1FAC00F122C6 /* ProgressModel.swift */; };
 		CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */; };
 		CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A52416C61600F5ECF6 /* SceneDelegate.swift */; };
 		CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5A92416C61600F5ECF6 /* Main.storyboard */; };
@@ -42,6 +47,11 @@
 		52508D806ACA13A50CFC3121 /* Pods-FetchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchTests.debug.xcconfig"; path = "Target Support Files/Pods-FetchTests/Pods-FetchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BAC4B5DA6D58C3EEF00DDD2 /* Pods_Fetch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fetch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6150110A3CEF14F4B8D6ED /* Pods-FetchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchTests.release.xcconfig"; path = "Target Support Files/Pods-FetchTests/Pods-FetchTests.release.xcconfig"; sourceTree = "<group>"; };
+		8618BB67242AE22F00F122C6 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSegmentView.swift; sourceTree = "<group>"; };
+		8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
+		8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		8618BB75242B1FAC00F122C6 /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
 		B49409A222B20645B01CD3EA /* Pods_FetchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FetchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20C5A02416C61600F5ECF6 /* Fetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fetch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +98,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8618BB66242AE15D00F122C6 /* Progress bar */ = {
+			isa = PBXGroup;
+			children = (
+				8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */,
+				8618BB67242AE22F00F122C6 /* ProgressBarView.swift */,
+				8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */,
+				8618BB75242B1FAC00F122C6 /* ProgressModel.swift */,
+			);
+			path = "Progress bar";
+			sourceTree = "<group>";
+		};
+		8618BB72242B049300F122C6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		873D5F582B3382870357EA38 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				CB20C5A22416C61600F5ECF6 /* Fetch */,
+				8618BB72242B049300F122C6 /* Extensions */,
 				CB20C5B92416C61700F5ECF6 /* FetchTests */,
 				CB20C5A12416C61600F5ECF6 /* Products */,
 				873D5F582B3382870357EA38 /* Pods */,
@@ -191,6 +221,7 @@
 		FADC5E1224227472006E8C23 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				8618BB66242AE15D00F122C6 /* Progress bar */,
 				FADC5E1324227472006E8C23 /* OnboardingViewController.xib */,
 				FADC5E1524227472006E8C23 /* OnboardingViewController.swift */,
 				FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */,
@@ -431,9 +462,14 @@
 				FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */,
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
+				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
 				CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */,
+				8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */,
+				8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */,
+				8618BB76242B1FAC00F122C6 /* ProgressModel.swift in Sources */,
 				FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */,
 				FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */,
+				8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */,
 				FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */,
 				CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */,
 			);
