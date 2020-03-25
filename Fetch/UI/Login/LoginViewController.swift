@@ -17,7 +17,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        // Automatically sign in the user.
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
 
