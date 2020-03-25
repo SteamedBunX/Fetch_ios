@@ -9,7 +9,7 @@
 import UIKit
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
     weak var coordinator: MainCoordinator?
 
