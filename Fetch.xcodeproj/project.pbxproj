@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17CD18CF236E1C93C6F962BB /* Pods_Fetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BAC4B5DA6D58C3EEF00DDD2 /* Pods_Fetch.framework */; };
 		86068658242BAB3A00328A20 /* ProgressModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86068657242BAB3A00328A20 /* ProgressModelTests.swift */; };
+		8606865C242BFE8E00328A20 /* ProgressBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8606865B242BFE8E00328A20 /* ProgressBarViewModelTests.swift */; };
 		8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB67242AE22F00F122C6 /* ProgressBarView.swift */; };
 		8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */; };
 		8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */; };
@@ -49,6 +50,7 @@
 		6BAC4B5DA6D58C3EEF00DDD2 /* Pods_Fetch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fetch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6150110A3CEF14F4B8D6ED /* Pods-FetchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchTests.release.xcconfig"; path = "Target Support Files/Pods-FetchTests/Pods-FetchTests.release.xcconfig"; sourceTree = "<group>"; };
 		86068657242BAB3A00328A20 /* ProgressModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModelTests.swift; sourceTree = "<group>"; };
+		8606865B242BFE8E00328A20 /* ProgressBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModelTests.swift; sourceTree = "<group>"; };
 		8618BB67242AE22F00F122C6 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSegmentView.swift; sourceTree = "<group>"; };
 		8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				FA95651B24241E7700380003 /* OnboardingQuestionTests.swift */,
 				86068657242BAB3A00328A20 /* ProgressModelTests.swift */,
 				CB20C5BC2416C61700F5ECF6 /* Info.plist */,
+				8606865B242BFE8E00328A20 /* ProgressBarViewModelTests.swift */,
 			);
 			path = FetchTests;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86068658242BAB3A00328A20 /* ProgressModelTests.swift in Sources */,
+				8606865C242BFE8E00328A20 /* ProgressBarViewModelTests.swift in Sources */,
 				FA95651C24241E7700380003 /* OnboardingQuestionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
