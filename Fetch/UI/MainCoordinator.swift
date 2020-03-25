@@ -18,6 +18,7 @@ class MainCoordinator: NSObject {
 
     func start() {
         let rootViewController = LoginViewController()
+        GIDSignIn.sharedInstance().delegate = rootViewController
         rootViewController.coordinator = self
         currentViewController = rootViewController
         self.navigationController = UINavigationController(rootViewController: rootViewController)
@@ -27,6 +28,7 @@ class MainCoordinator: NSObject {
     func showLoginScreen(animated: Bool) {
         let loginViewController = LoginViewController()
         currentViewController = loginViewController
+        GIDSignIn.sharedInstance().delegate = loginViewController
         loginViewController.coordinator = self
         navigationController?.pushViewController(loginViewController, animated: animated)
     }
@@ -42,32 +44,5 @@ class MainCoordinator: NSObject {
 
     func setupGoogleSignIn() {
         GIDSignIn.sharedInstance().clientID = googleSigninClientID
-        GIDSignIn.sharedInstance().delegate = self
-    }
-
-    private func userDidSignInWithGoogle(for user: GIDGoogleUser) {
-        // TODO: Send user to Onboarding/Pet page if they're logged in.
-        let alertController =
-            UIAlertController(title: "Login Successful",
-                              message: """
-                                User did sign in
-                                Email: \(user.profile.email ?? "Error")
-                                Name: \(user.profile.name ?? "Error")
-                                """,
-                preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-        DispatchQueue.main.async {
-            self.currentViewController?.present(alertController,
-                                                animated: true,
-                                                completion: nil)
-        }
-    }
-}
-
-extension MainCoordinator: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn?, didSignInFor user: GIDGoogleUser?, withError error: Error?) {
-        if let user = user {
-            self.userDidSignInWithGoogle(for: user)
-        }
     }
 }
