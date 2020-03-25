@@ -25,21 +25,11 @@ final class LoginViewController: UIViewController {
     }
 
     private func userDidSignInWithGoogle(for user: GIDGoogleUser) {
-        // TODO: Send user to Onboarding/Pet page if they're logged in.
-        let alertController =
-            UIAlertController(title: "Login Successful",
-                              message: """
-                                User did sign in
-                                Email: \(user.profile.email ?? "Error")
-                                Name: \(user.profile.name ?? "Error")
-                                """,
-                              preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-        DispatchQueue.main.async {
-            self.present(alertController,
-                         animated: true,
-                         completion: nil)
-        }
+        coordinator?.showOnboardingScreen(animated: true)
+    }
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        coordinator?.showOnboardingScreen(animated: true)
     }
 }
 
