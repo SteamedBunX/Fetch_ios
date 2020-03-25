@@ -12,12 +12,12 @@ final class OnboardingQuestion {
     let title: String
     let type: OnboardingAnswerType
     let hint: String?
-    // Choice Based Field
+    // Choice Based Fields
     let choices: [String]?
     private(set) var selectedIndexes = [Int]()
     // Text Based Fields
-    private(set) var inputText: String?
-    private(set) var placeHolderText: String?
+    private(set) var inputText: String = ""
+    private(set) var placeHolderText: String = ""
     private let minInputLength: Int
     let maxInputLength: Int
 
@@ -27,10 +27,11 @@ final class OnboardingQuestion {
              .singleChoice:
             return !selectedIndexes.isEmpty
         case .textInput:
-            return inputText?.count == 5
+            return inputText.count >= minInputLength && inputText.count <= maxInputLength
         }
     }
 
+    // Init for ChoiceQuestions
     init(title: String,
          questionType: OnboardingAnswerType,
          choices: [String] = [],
@@ -43,7 +44,8 @@ final class OnboardingQuestion {
         self.maxInputLength = 0
     }
 
-    init(title: String, minInputLength: Int, maxInputLength: Int, hint: String? = nil, placeHolderText: String? = nil) {
+    // Init for TextQuestions
+    init(title: String, minInputLength: Int, maxInputLength: Int, hint: String? = nil, placeHolderText: String = "") {
         self.type = .textInput
         self.title = title
         self.hint = hint
