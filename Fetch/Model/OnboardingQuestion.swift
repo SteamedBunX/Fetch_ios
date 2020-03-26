@@ -36,20 +36,20 @@ final class OnboardingQuestion {
     init(title: String,
          questionType: OnboardingAnswerType,
          choices: [String] = [],
-         hint: String? = nil) {
+         tip: String? = nil) {
         self.type = questionType
         self.title = title
-        self.tip = hint
+        self.tip = tip
         self.choices = choices
         self.minInputLength = 0
         self.maxInputLength = 0
     }
 
     // Init for TextQuestions
-    init(title: String, minInputLength: Int, maxInputLength: Int, hint: String? = nil, placeHolderText: String = "", inputKeyboardType: KeyboardType = .text) {
+    init(title: String, minInputLength: Int, maxInputLength: Int, tip: String? = nil, placeHolderText: String = "", inputKeyboardType: KeyboardType = .text) {
         self.type = .textInput
         self.title = title
-        self.tip = hint
+        self.tip = tip
         self.placeHolderText = placeHolderText
         self.minInputLength = minInputLength
         self.maxInputLength = maxInputLength
@@ -62,7 +62,7 @@ final class OnboardingQuestion {
         switch type {
         case .multipleChoice:
             if selectedIndexes.contains(index) {
-                selectedIndexes.removeFirst(index)
+                selectedIndexes.removeAll(where: {$0 == index})
             } else {
                 selectedIndexes.append(index)
             }

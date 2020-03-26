@@ -19,7 +19,7 @@ enum OnboardingQuestions {
                     questionType: .multipleChoice,
                     choices: ["Dog",
                               "Cat"],
-                    hint: "SELECT ALL THAT APPLY"),
+                    tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "My zip code is",
                     minInputLength: 5,
@@ -41,20 +41,20 @@ enum OnboardingQuestions {
                     choices: ["Small",
                               "Medium",
                               "Large"],
-                    hint: "SELECT ALL THAT APPLY"),
+                    tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "I’m looking for a pet that’s",
                     questionType: .multipleChoice,
                     choices: ["Male",
                               "Female"],
-                    hint: "SELECT ALL THAT APPLY"),
+                    tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "My pet must be good with",
                     questionType: .multipleChoice,
                     choices: ["Children",
                               "Dogs",
                               "Cats"],
-                    hint: "SELECT ALL THAT APPLY")])
+                    tip: "SELECT ALL THAT APPLY")])
         let section3 = OnboardingSection(
             title: "Describe Your Dream Pet",
             questions: [
@@ -64,28 +64,28 @@ enum OnboardingQuestions {
                     choices: ["A Couch Potato",
                               "Active",
                               "An Athlete"],
-                    hint: "SELECT ALL THAT APPLY"),
+                    tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "I’d like my pet to be",
                     questionType: .multipleChoice,
                     choices: ["A Wallflower",
                               "Social",
                               "The Life Of The Party"],
-                    hint: "SELECT ALL THAT APPLY"),
+                    tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "During training, I’d like my pet to be a",
                     questionType: .multipleChoice,
                     choices: ["Class Clown",
                               "Attentive Student",
                               "Teacher’s Pet"],
-                    hint: "SELECT ALL THAT APPLY"),
+                    tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "I want my pet by my side",
                     questionType: .multipleChoice,
                     choices: ["Sometimes",
                               "Often",
                               "Constantly"],
-                    hint: "SELECT ALL THAT APPLY")])
+                    tip: "SELECT ALL THAT APPLY")])
         let sequence = OnboardingSequence(
             sections: [section1, section2, section3])
         return sequence
