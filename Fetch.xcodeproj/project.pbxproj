@@ -18,6 +18,8 @@
 		CB20C5AD2416C61600F5ECF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5AC2416C61600F5ECF6 /* Assets.xcassets */; };
 		CB20C5B02416C61600F5ECF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5AE2416C61600F5ECF6 /* LaunchScreen.storyboard */; };
 		D02F2192FD103055E2F5F8B3 /* Pods_FetchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B49409A222B20645B01CD3EA /* Pods_FetchTests.framework */; };
+		FA12B4BF242CE7FE000731FE /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */; };
+		FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */; };
 		FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CBC2428FDF2008399AF /* MainCoordinator.swift */; };
 		FA350CC12428FE01008399AF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA350CBF2428FE01008399AF /* LoginViewController.xib */; };
 		FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CC02428FE01008399AF /* LoginViewController.swift */; };
@@ -62,6 +64,8 @@
 		CB20C5BC2416C61700F5ECF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E2634C5358BCECB78BE19B /* Pods-Fetch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fetch.debug.xcconfig"; path = "Target Support Files/Pods-Fetch/Pods-Fetch.debug.xcconfig"; sourceTree = "<group>"; };
 		EBF9323E7A17D9F79AAE1143 /* Pods-Fetch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fetch.release.xcconfig"; path = "Target Support Files/Pods-Fetch/Pods-Fetch.release.xcconfig"; sourceTree = "<group>"; };
+		FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PatuaOne-Regular.ttf"; sourceTree = "<group>"; };
 		FA26C3102429515700D0B5BA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FA350CBC2428FDF2008399AF /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FA350CBF2428FE01008399AF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 		FA26C3112429516100D0B5BA /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */,
+				FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */,
 				FA26C3102429515700D0B5BA /* Lato-Regular.ttf */,
 			);
 			path = Font;
@@ -332,9 +338,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA12B4BF242CE7FE000731FE /* Lato-Bold.ttf in Resources */,
 				CB20C5B02416C61600F5ECF6 /* LaunchScreen.storyboard in Resources */,
 				FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */,
 				CB20C5AD2416C61600F5ECF6 /* Assets.xcassets in Resources */,
+				FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */,
 				FA350CC12428FE01008399AF /* LoginViewController.xib in Resources */,
 				FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
