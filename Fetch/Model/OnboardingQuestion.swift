@@ -58,6 +58,7 @@ final class OnboardingQuestion {
     }
 
     func selectChoice(at index: Int) {
+        guard index < choices?.count ?? 0 else { return }
         switch type {
         case .multipleChoice:
             if selectedIndexes.contains(index) {
