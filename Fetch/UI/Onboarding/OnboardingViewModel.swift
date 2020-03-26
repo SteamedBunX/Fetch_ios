@@ -53,19 +53,39 @@ final class OnboardingViewModel {
         return flow.currentQuestion?.title ?? ""
     }
 
+    var currentQuestionTip: String? {
+        return flow.currentQuestion?.tip ?? ""
+    }
+
     var currentQuestionType: OnboardingAnswerType {
         return flow.currentQuestion?.type ?? .singleChoice
     }
+
+    private var currentQuestionAnswered: Bool? {
+        return flow.currentQuestion?.isAnswered
+    }
+
+    // MARK: - Choice Question Displayable
 
     var currentQuestionChoices: [String]? {
         return flow.currentQuestion?.choices
     }
 
-    var currentQuestionAnswered: Bool? {
-        return flow.currentQuestion?.isAnswered
+    var currentQuestionSelectedChoiceIndexes: [Int] {
+        return flow.currentQuestion?.selectedIndexes ?? []
     }
 
-    // MARK: - UserInputs
+    // MARK: - Text Input Question Displayable
+
+    var currentQuestionPlaceHolderText: String {
+        return flow.currentQuestion?.placeHolderText ?? ""
+    }
+
+    var currentQuestionMaxInputLength: Int {
+        return flow.currentQuestion?.maxInputLength ?? 0
+    }
+
+    // MARK: - User Actions
 
     func selectChoice(at index: Int) {
         flow.selectChoice(at: index)
@@ -75,6 +95,35 @@ final class OnboardingViewModel {
     func setInputText(newInputText: String) {
         flow.setInputText(newInputText: newInputText)
         delegate?.textInputDidChange()
+    }
+
+    // MARK: - Button State
+
+    var backButtonState: ButtonState {
+        if flow.isFirstQuestion {
+            return .hidden
+        }
+        return .touchable
+    }
+
+    var nextButtonState: ButtonState {
+        if flow.isLastQuestion {
+            return .hidden
+        }
+        if currentQuestionAnswered == true {
+            return .touchable
+        }
+        return .visible
+    }
+
+    var doneButtonState: ButtonState {
+        if !flow.isLastQuestion {
+            return .hidden
+        }
+        if currentQuestionAnswered == true {
+            return .touchable
+        }
+        return .visible
     }
 
     // MARK: - Moving to Different question
@@ -121,4 +170,8 @@ extension OnboardingViewModel {
         let flow = OnboardingSequence(sections: sections)
         self.init(flow: flow)
     }
+}
+
+enum ButtonState {
+    case hidden, visible, touchable
 }

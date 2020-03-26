@@ -11,7 +11,7 @@ import Foundation
 final class OnboardingQuestion {
     let title: String
     let type: OnboardingAnswerType
-    let hint: String?
+    let tip: String?
     // Choice Based Fields
     let choices: [String]?
     private(set) var selectedIndexes = [Int]()
@@ -38,7 +38,7 @@ final class OnboardingQuestion {
          hint: String? = nil) {
         self.type = questionType
         self.title = title
-        self.hint = hint
+        self.tip = hint
         self.choices = choices
         self.minInputLength = 0
         self.maxInputLength = 0
@@ -48,7 +48,7 @@ final class OnboardingQuestion {
     init(title: String, minInputLength: Int, maxInputLength: Int, hint: String? = nil, placeHolderText: String = "") {
         self.type = .textInput
         self.title = title
-        self.hint = hint
+        self.tip = hint
         self.placeHolderText = placeHolderText
         self.minInputLength = minInputLength
         self.maxInputLength = maxInputLength
