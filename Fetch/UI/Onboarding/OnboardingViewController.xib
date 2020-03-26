@@ -60,19 +60,20 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP LABLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otd-fe-P4R">
-                    <rect key="frame" x="183.66666666666666" y="386.66666666666669" width="47" height="12"/>
+                    <rect key="frame" x="184" y="386.66666666666669" width="46.333333333333343" height="12"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
                     <color key="textColor" white="0.36978650093078613" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zi0-Fi-IhM">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Place Holder Text" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="zi0-Fi-IhM">
                     <rect key="frame" x="61" y="429.66666666666669" width="292" height="53"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="53" id="HXu-jI-MB0"/>
                         <constraint firstAttribute="width" priority="900" constant="292" id="tu7-is-nYN"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="postal-code"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

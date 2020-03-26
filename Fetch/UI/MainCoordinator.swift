@@ -13,7 +13,8 @@ final class MainCoordinator: NSObject {
     private(set) var navigationController: UINavigationController?
 
     func start() {
-        let rootViewController = LoginViewController()
+        //let rootViewController = LoginViewController()
+        let rootViewController = OnboardingViewController()
         rootViewController.coordinator = self
         self.navigationController = UINavigationController(rootViewController: rootViewController)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
