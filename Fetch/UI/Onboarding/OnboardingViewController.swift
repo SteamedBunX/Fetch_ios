@@ -10,21 +10,17 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
 
-<<<<<<< HEAD
     @IBOutlet var progressBarView: ProgressBarView!
-=======
-    weak var coordinator: MainCoordinator?
-
->>>>>>> d0ba2b9... [FETCH-112] Add Actual data and mock data.
     @IBOutlet private var questionTitleLabel: UILabel!
     @IBOutlet private var questionTipLabel: UILabel!
-    @IBOutlet private var questionTextField: UITextField!
+    @IBOutlet private var questionInputTextField: UITextField!
     @IBOutlet private var backButton: UIButton!
     @IBOutlet private var nextButton: UIButton!
 
-<<<<<<< HEAD
+    let flow = OnboardingQuestions.load()
+    let mockFlow = OnboardingQuestions.load()
+    let viewModel = OnboardingViewModel(flow: OnboardingQuestions.loadOnlyZipCode())
     weak var coordinator: MainCoordinator?
-    private let viewModel: OnboardingViewModel
 
     init(viewModel: OnboardingViewModel) {
         self.viewModel = viewModel
@@ -34,15 +30,13 @@ final class OnboardingViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-=======
-    let flow = OnboardingQuestions.load()
-    let mockFlow = OnboardingQuestions.load()
 
     // MARK: - Initial Setup
->>>>>>> d0ba2b9... [FETCH-112] Add Actual data and mock data.
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.nextButtonTapped()
+        viewModel.delegate = self
         progressBarView.viewModel = viewModel
     }
 
@@ -53,20 +47,37 @@ final class OnboardingViewController: UIViewController {
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         viewModel.nextButtonTapped()
         setupView()
+        loadFirstQuestion()
     }
 
     func setupView() {
-        setupTextFieldDropShadow()
+        setupTextField()
         setupNavigationButton()
-        backButton.enable()
-        nextButton.disable()
+        backButton.changeStateAsNavigationButton(to: .enabled)
+        nextButton.changeStateAsNavigationButton(to: .disabled)
     }
 
-    func setupTextFieldDropShadow() {
-        questionTextField.layer.shadowColor = UIColor.black.cgColor
-        questionTextField.layer.shadowRadius = 9
-        questionTextField.layer.shadowOpacity = 0.31
-        questionTextField.layer.shadowOffset = CGSize(width: 0, height: 2)
+    func setupTextField() {
+        questionInputTextField.layer.shadowColor = UIColor.black.cgColor
+        questionInputTextField.layer.shadowRadius = 9
+        questionInputTextField.layer.shadowOpacity = 0.31
+        questionInputTextField.layer.shadowOffset = CGSize(width: 0, height: 2)
+        questionInputTextField.delegate = self
+        setupKeyboardToolBar()
+    }
+
+    func setupKeyboardToolBar() {
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        toolbar.barStyle = .default
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked))
+        toolbar.setItems([flexSpace, doneButton], animated: false)
+        questionInputTextField.inputAccessoryView = toolbar
+    }
+
+    @objc func doneClicked() {
+        view.endEditing(true)
+        self.viewModel.setInputText(newInputText: questionInputTextField.text ?? "")
     }
 
     func setupNavigationButton() {
@@ -74,7 +85,47 @@ final class OnboardingViewController: UIViewController {
         nextButton.setupForNavigation()
     }
 
-    // MARK: - Button Action
+    // MARK: - Loading Questions
+
+    func loadFirstQuestion() {
+        addNewQuestionToScreen(movedForward: true)
+    }
+
+    func addNewQuestionToScreen(movedForward: Bool) {
+        switch viewModel.currentQuestionType {
+        case .multipleChoice:
+            break
+        case .singleChoice:
+            break
+        case .textInput:
+            addTextInputQuestionToScreen()
+        }
+        updateButtonState()
+    }
+
+    func addTextInputQuestionToScreen() {
+        questionTitleLabel.text = viewModel.currentQuestionTitle
+        questionInputTextField.placeholder = viewModel.currentQuestionPlaceHolderText
+        questionTipLabel.text = viewModel.currentQuestionTip
+        questionInputTextField.isHidden = false
+        switch viewModel.currentQuestionKeyboardType {
+        case .digit:
+            questionInputTextField.keyboardType = .numberPad
+        case .phonePad:
+            questionInputTextField.keyboardType = .phonePad
+        case .text:
+            questionInputTextField.keyboardType = .default
+        }
+    }
+
+    // MARK: - State Updates
+
+    func updateButtonState() {
+        backButton.changeStateAsNavigationButton(to: viewModel.backButtonState)
+        nextButton.changeStateAsNavigationButton(to: viewModel.nextButtonState)
+    }
+
+    // MARK: - Actions
 
     @IBAction func backButtonTapped(_ sender: Any) {
 
@@ -83,6 +134,7 @@ final class OnboardingViewController: UIViewController {
     @IBAction func nextButtonTapped(_ sender: Any) {
 
     }
+
 }
 
 extension UIButton {
@@ -95,21 +147,70 @@ extension UIButton {
         self.setImage(highlightImage, for: .highlighted)
     }
 
-    func enable() {
+    func changeStateAsNavigationButton(to state: ButtonState) {
+        switch state {
+        case .enabled:
+            self.enable()
+        case .disabled:
+            self.disable()
+        case .hidden:
+            self.hide()
+        }
+    }
+
+    private func enable() {
         self.isHidden = false
         self.tintColor = UIColor.buttonEnabledColor
         self.isEnabled = true
     }
 
-    func disable() {
+    private func disable() {
         self.isHidden = false
         self.tintColor = UIColor.buttonDisabledColor
         self.isEnabled = false
     }
 
-    func hide() {
+    private func hide() {
         self.isHidden = true
     }
+}
+
+extension OnboardingViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.viewModel.setInputText(newInputText: textField.text ?? "")
+        return true
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = self.viewModel.currentQuestionMaxInputLength
+        let currentString: NSString = textField.text as NSString? ?? ""
+        let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
+    }
+}
+
+extension OnboardingViewController: OnboardingViewModelDelegate {
+    func questionDidChange(movedForward: Bool) {
+
+    }
+
+    func sectionDidChange(movedForward: Bool) {
+
+    }
+
+    func selectedIndexesDidChange() {
+
+    }
+
+    func textInputDidChange() {
+        self.updateButtonState()
+    }
+
+    func finishSequence() {
+
+    }
+
 }
 
 extension UIColor {

@@ -107,7 +107,7 @@ final class OnboardingViewModel {
         if flow.isFirstQuestion {
             return .hidden
         }
-        return .touchable
+        return .enabled
     }
 
     var nextButtonState: ButtonState {
@@ -115,9 +115,9 @@ final class OnboardingViewModel {
             return .hidden
         }
         if currentQuestionAnswered == true {
-            return .touchable
+            return .enabled
         }
-        return .visible
+        return .disabled
     }
 
     var doneButtonState: ButtonState {
@@ -125,9 +125,9 @@ final class OnboardingViewModel {
             return .hidden
         }
         if currentQuestionAnswered == true {
-            return .touchable
+            return .enabled
         }
-        return .visible
+        return .disabled
     }
 
     // MARK: - Moving to Different question
@@ -177,7 +177,7 @@ extension OnboardingViewModel {
 }
 
 enum ButtonState {
-    case hidden, visible, touchable
+    case hidden, disabled, enabled
 }
 
 enum KeyboardType {

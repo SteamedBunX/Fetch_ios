@@ -92,7 +92,7 @@ enum OnboardingQuestions {
     }
 
     static func loadOnlyZipCode() -> OnboardingSequence {
-        let section =
+        let section1 =
             OnboardingSection(
                 title: "MockSection",
                 questions: [
@@ -103,6 +103,28 @@ enum OnboardingQuestions {
                         placeHolderText: "Enter your zip code here",
                         inputKeyboardType: .digit)
         ])
-        return OnboardingSequence(sections: [section])
+        let section2 =
+            OnboardingSection(
+                title: "MockSection",
+                questions: [
+                    OnboardingQuestion(
+                        title: "My zip code is",
+                        minInputLength: 5,
+                        maxInputLength: 5,
+                        placeHolderText: "Enter your zip code here",
+                        inputKeyboardType: .digit)
+        ])
+        let section3 =
+            OnboardingSection(
+                title: "MockSection",
+                questions: [
+                    OnboardingQuestion(
+                        title: "My zip code is",
+                        minInputLength: 5,
+                        maxInputLength: 5,
+                        placeHolderText: "Enter your zip code here",
+                        inputKeyboardType: .digit)
+        ])
+        return OnboardingSequence(sections: [section1, section2, section3])
     }
 }
