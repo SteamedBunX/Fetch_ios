@@ -85,6 +85,10 @@ final class OnboardingViewModel {
         return flow.currentQuestion?.maxInputLength ?? 0
     }
 
+    var currentQuestionKeyboardType: KeyboardType{
+        return .digit
+    }
+
     // MARK: - User Actions
 
     func selectChoice(at index: Int) {
@@ -174,4 +178,8 @@ extension OnboardingViewModel {
 
 enum ButtonState {
     case hidden, visible, touchable
+}
+
+enum KeyboardType {
+    case digit, phonePad, text
 }

@@ -13,13 +13,14 @@ final class OnboardingQuestion {
     let type: OnboardingAnswerType
     let tip: String?
     // Choice Based Fields
-    let choices: [String]?
+    private(set) var choices: [String]? = []
     private(set) var selectedIndexes = [Int]()
     // Text Based Fields
     private(set) var inputText: String = ""
     private(set) var placeHolderText: String = ""
+    private(set) var inputKeyboardType: KeyboardType = .text
     private let minInputLength: Int
-    let maxInputLength: Int
+    private(set) var maxInputLength: Int
 
     var isAnswered: Bool {
         switch type {
@@ -45,7 +46,7 @@ final class OnboardingQuestion {
     }
 
     // Init for TextQuestions
-    init(title: String, minInputLength: Int, maxInputLength: Int, hint: String? = nil, placeHolderText: String = "") {
+    init(title: String, minInputLength: Int, maxInputLength: Int, hint: String? = nil, placeHolderText: String = "", inputKeyboardType: KeyboardType = .text) {
         self.type = .textInput
         self.title = title
         self.tip = hint
@@ -53,6 +54,7 @@ final class OnboardingQuestion {
         self.minInputLength = minInputLength
         self.maxInputLength = maxInputLength
         self.choices = []
+        self.inputKeyboardType = inputKeyboardType
     }
 
     func selectChoice(at index: Int) {
