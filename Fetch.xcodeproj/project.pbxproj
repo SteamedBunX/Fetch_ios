@@ -20,6 +20,7 @@
 		D02F2192FD103055E2F5F8B3 /* Pods_FetchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B49409A222B20645B01CD3EA /* Pods_FetchTests.framework */; };
 		FA12B4BF242CE7FE000731FE /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */; };
 		FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */; };
+		FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */; };
 		FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CBC2428FDF2008399AF /* MainCoordinator.swift */; };
 		FA350CC12428FE01008399AF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA350CBF2428FE01008399AF /* LoginViewController.xib */; };
 		FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CC02428FE01008399AF /* LoginViewController.swift */; };
@@ -66,6 +67,7 @@
 		EBF9323E7A17D9F79AAE1143 /* Pods-Fetch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fetch.release.xcconfig"; path = "Target Support Files/Pods-Fetch/Pods-Fetch.release.xcconfig"; sourceTree = "<group>"; };
 		FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PatuaOne-Regular.ttf"; sourceTree = "<group>"; };
+		FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestions.swift; sourceTree = "<group>"; };
 		FA26C3102429515700D0B5BA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FA350CBC2428FDF2008399AF /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FA350CBF2428FE01008399AF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		CB20C5A22416C61600F5ECF6 /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
+				FA12B4C2242CFF57000731FE /* LocalData */,
 				FA350CC3242910BF008399AF /* CustomView */,
 				FADC5E1D24227FAC006E8C23 /* Model */,
 				FADC5E1124227472006E8C23 /* UI */,
@@ -182,6 +185,14 @@
 				CB20C5AE2416C61600F5ECF6 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA12B4C2242CFF57000731FE /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */,
+			);
+			path = LocalData;
 			sourceTree = "<group>";
 		};
 		FA26C3112429516100D0B5BA /* Font */ = {
@@ -467,6 +478,7 @@
 				FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */,
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
+				FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */,
 				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
 				CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */,
 				8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */,

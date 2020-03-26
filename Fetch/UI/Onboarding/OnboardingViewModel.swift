@@ -85,7 +85,7 @@ final class OnboardingViewModel {
         return flow.currentQuestion?.maxInputLength ?? 0
     }
 
-    var currentQuestionKeyboardType: KeyboardType{
+    var currentQuestionKeyboardType: KeyboardType {
         return .digit
     }
 

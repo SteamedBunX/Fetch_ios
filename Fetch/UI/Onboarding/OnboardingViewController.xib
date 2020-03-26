@@ -68,6 +68,9 @@
                     <state key="normal" title="Next" image="arrow.left" catalog="system">
                         <color key="titleColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="otq-Tj-Lpe"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0W-hN-vKg">
                     <rect key="frame" x="41" y="836" width="80" height="20"/>
@@ -79,6 +82,9 @@
                     <state key="normal" title="Back" image="arrow.left" catalog="system">
                         <color key="titleColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="1bd-Mf-Xac"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -100,7 +106,7 @@
                 <constraint firstAttribute="bottom" secondItem="NbH-Zi-f46" secondAttribute="bottom" constant="40" id="yBk-pk-Hke"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="139" y="149"/>
+            <point key="canvasLocation" x="137.68115942028987" y="148.66071428571428"/>
         </view>
     </objects>
     <resources>
