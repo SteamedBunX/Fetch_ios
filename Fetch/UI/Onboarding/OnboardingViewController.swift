@@ -11,6 +11,11 @@ import UIKit
 final class OnboardingViewController: UIViewController {
 
     @IBOutlet var progressBarView: ProgressBarView!
+    @IBOutlet private var questionTitleLabel: UILabel!
+    @IBOutlet private var questionTipLabel: UILabel!
+    @IBOutlet private var questionTextField: UITextField!
+    @IBOutlet private var backButton: UIButton!
+    @IBOutlet private var nextButton: UIButton!
 
     weak var coordinator: MainCoordinator?
     private let viewModel: OnboardingViewModel
@@ -35,5 +40,13 @@ final class OnboardingViewController: UIViewController {
 
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         viewModel.nextButtonTapped()
+        setupView()
+    }
+
+    func setupView() {
+        questionTextField.layer.shadowColor = UIColor.black.cgColor
+        questionTextField.layer.shadowRadius = 9
+        questionTextField.layer.shadowOpacity = 0.31
+        questionTextField.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
 }
