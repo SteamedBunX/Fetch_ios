@@ -20,14 +20,14 @@ final class OnboardingQuestion {
     let type: OnboardingAnswerType
     let tip: String?
     // Choice Based Fields
-    private(set) var choices: [String]? = []
+    let choices: [String]?
     private(set) var selectedIndexes = [Int]()
     // Text Based Fields
     private(set) var inputText: String = ""
-    private(set) var placeHolderText: String = ""
-    private(set) var inputKeyboardType: KeyboardType = .text
+    let placeHolderText: String
+    let inputKeyboardType: KeyboardType
     private let minInputLength: Int
-    private(set) var maxInputLength: Int
+    let maxInputLength: Int
 
     var isAnswered: Bool {
         switch type {
@@ -48,6 +48,8 @@ final class OnboardingQuestion {
         self.title = title
         self.tip = tip
         self.choices = choices
+        self.placeHolderText = ""
+        self.inputKeyboardType = .text
         self.minInputLength = 0
         self.maxInputLength = 0
     }
