@@ -27,7 +27,6 @@
 		FA350CC12428FE01008399AF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA350CBF2428FE01008399AF /* LoginViewController.xib */; };
 		FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CC02428FE01008399AF /* LoginViewController.swift */; };
 		FA350CC5242910BF008399AF /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CC4242910BF008399AF /* CustomUIButton.swift */; };
-		FA45ADB4242E4D2000DB5195 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB3242E4D2000DB5195 /* UIButton+Extension.swift */; };
 		FA45ADB6242E4D5600DB5195 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */; };
 		FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */; };
 		FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA26C3102429515700D0B5BA /* Lato-Regular.ttf */; };
@@ -80,7 +79,6 @@
 		FA350CBF2428FE01008399AF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FA350CC02428FE01008399AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA350CC4242910BF008399AF /* CustomUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
-		FA45ADB3242E4D2000DB5195 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		FA9565192423F9CA00380003 /* OnboardingSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSequence.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 		FA45ADB2242E4C7300DB5195 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FA45ADB3242E4D2000DB5195 /* UIButton+Extension.swift */,
 				FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */,
 				FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */,
 			);
@@ -501,7 +498,6 @@
 				FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */,
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
-				FA45ADB4242E4D2000DB5195 /* UIButton+Extension.swift in Sources */,
 				FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */,
 				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
 				CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */,

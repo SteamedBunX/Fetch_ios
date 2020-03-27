@@ -63,8 +63,8 @@ final class OnboardingViewController: UIViewController {
     private func setupView() {
         setupTextField()
         setupNavigationButton()
-        backButton.changeStateAsOnboardingNav(to: .enabled)
-        nextButton.changeStateAsOnboardingNav(to: .disabled)
+        backButton.changeOnboardingNavigationState(to: .enabled)
+        nextButton.changeOnboardingNavigationState(to: .disabled)
     }
 
     private func setupTextField() {
@@ -123,8 +123,8 @@ final class OnboardingViewController: UIViewController {
     // MARK: - State Updates
 
     private func updateButtonState() {
-        backButton.changeStateAsOnboardingNav(to: viewModel.backButtonState)
-        nextButton.changeStateAsOnboardingNav(to: viewModel.nextButtonState)
+        backButton.changeOnboardingNavigationState(to: viewModel.backButtonState)
+        nextButton.changeOnboardingNavigationState(to: viewModel.nextButtonState)
     }
 
     // MARK: - Actions
@@ -178,5 +178,43 @@ extension OnboardingViewController: OnboardingViewModelDelegate {
 
     func finishSequence() {
 
+    }
+}
+
+private extension UIButton {
+
+    func setupForNavigation() {
+        self.setTitleColor(UIColor.buttonEnabledColor, for: .normal)
+        self.setTitleColor(UIColor.buttonDisabledColor, for: .disabled)
+        self.setTitleColor(UIColor.buttonEnabledColor, for: .highlighted)
+        let highlightImage = self.imageView?.image?.withTintColor(.buttonEnabledColor, renderingMode:.alwaysOriginal)
+        self.setImage(highlightImage, for: .highlighted)
+    }
+
+    func changeOnboardingNavigationState(to state: ButtonState) {
+        switch state {
+        case .enabled:
+            self.enable()
+        case .disabled:
+            self.disable()
+        case .hidden:
+            self.hide()
+        }
+    }
+
+    private func enable() {
+        self.isHidden = false
+        self.tintColor = UIColor.buttonEnabledColor
+        self.isEnabled = true
+    }
+
+    private func disable() {
+        self.isHidden = false
+        self.tintColor = UIColor.buttonDisabledColor
+        self.isEnabled = false
+    }
+
+    private func hide() {
+        self.isHidden = true
     }
 }
