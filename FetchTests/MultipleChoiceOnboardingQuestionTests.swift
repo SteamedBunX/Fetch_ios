@@ -14,7 +14,7 @@ class MultipleChoiceOnboardingQuestionTests: XCTestCase {
     func loadMultipleChoiceQuestion() -> OnboardingQuestion {
         return OnboardingQuestion(
             title: "I’m looking for a pet that’s",
-            questionType: .multipleChoice,
+            answerType: .multipleChoice,
             choices: ["Small",
                       "Medium",
                       "Large"],

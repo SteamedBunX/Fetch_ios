@@ -17,7 +17,7 @@ enum OnboardingAnswerType {
 final class OnboardingQuestion {
 
     let title: String
-    let type: OnboardingAnswerType
+    let answerType: OnboardingAnswerType
     let tip: String?
     // Choice Based Fields
     let choices: [String]?
@@ -30,7 +30,7 @@ final class OnboardingQuestion {
     let maxInputLength: Int
 
     var isAnswered: Bool {
-        switch type {
+        switch answerType {
         case .multipleChoice,
              .singleChoice:
             return !selectedIndexes.isEmpty
@@ -41,10 +41,10 @@ final class OnboardingQuestion {
 
     // Init for ChoiceQuestions
     init(title: String,
-         questionType: OnboardingAnswerType,
+         answerType: OnboardingAnswerType,
          choices: [String] = [],
          tip: String? = nil) {
-        self.type = questionType
+        self.answerType = answerType
         self.title = title
         self.tip = tip
         self.choices = choices
@@ -56,7 +56,7 @@ final class OnboardingQuestion {
 
     // Init for TextQuestions
     init(title: String, minInputLength: Int, maxInputLength: Int, tip: String? = nil, placeHolderText: String = "", inputKeyboardType: KeyboardType = .text) {
-        self.type = .textInput
+        self.answerType = .textInput
         self.title = title
         self.tip = tip
         self.placeHolderText = placeHolderText
@@ -68,7 +68,7 @@ final class OnboardingQuestion {
 
     func selectChoice(at index: Int) {
         guard index < choices?.count ?? 0 else { return }
-        switch type {
+        switch answerType {
         case .multipleChoice:
             if selectedIndexes.contains(index) {
                 selectedIndexes.removeAll(where: {$0 == index})

@@ -66,7 +66,7 @@ final class OnboardingViewModel {
     }
 
     var currentQuestionType: OnboardingAnswerType {
-        return flow.currentQuestion?.type ?? .singleChoice
+        return flow.currentQuestion?.answerType ?? .singleChoice
     }
 
     private var currentQuestionAnswered: Bool? {

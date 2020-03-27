@@ -17,7 +17,6 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
 
     @IBAction private func googleSignInButtonTapped(_ sender: Any) {
@@ -25,20 +24,9 @@ final class LoginViewController: UIViewController {
     }
 
     private func userDidSignInWithGoogle(for user: GIDGoogleUser) {
-        let alertController =
-            UIAlertController(title: "Login Successful",
-                              message: """
-                                       User did sign in
-                                       Email: \(user.profile.email ?? "Error")
-                                       Name: \(user.profile.name ?? "Error")
-                                       """,
-                              preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "To Onboarding", style: .default) { _ in self.goToOnboarding() })
-        DispatchQueue.main.async {
-            self.present(alertController,
-                         animated: true,
-                         completion: nil)
-        }
+        // TODO: Communicate with server for the actual tokan.
+        // TODO: Cache tokan locally and use it instead of the google auth when possible.
+        goToOnboarding()
     }
 
     private func goToOnboarding() {
