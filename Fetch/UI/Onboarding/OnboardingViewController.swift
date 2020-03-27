@@ -50,14 +50,14 @@ final class OnboardingViewController: UIViewController {
         loadFirstQuestion()
     }
 
-    func setupView() {
+    private func setupView() {
         setupTextField()
         setupNavigationButton()
         backButton.changeStateAsNavigationButton(to: .enabled)
         nextButton.changeStateAsNavigationButton(to: .disabled)
     }
 
-    func setupTextField() {
+    private func setupTextField() {
         questionInputTextField.layer.shadowColor = UIColor.black.cgColor
         questionInputTextField.layer.shadowRadius = 9
         questionInputTextField.layer.shadowOpacity = 0.31
@@ -66,7 +66,7 @@ final class OnboardingViewController: UIViewController {
         setupKeyboardToolBar()
     }
 
-    func setupKeyboardToolBar() {
+    private func setupKeyboardToolBar() {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         toolbar.barStyle = .default
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -75,23 +75,23 @@ final class OnboardingViewController: UIViewController {
         questionInputTextField.inputAccessoryView = toolbar
     }
 
-    @objc func doneClicked() {
+    @objc private func doneClicked() {
         view.endEditing(true)
         self.viewModel.setInputText(newInputText: questionInputTextField.text ?? "")
     }
 
-    func setupNavigationButton() {
+    private func setupNavigationButton() {
         backButton.setupForNavigation()
         nextButton.setupForNavigation()
     }
 
     // MARK: - Loading Questions
 
-    func loadFirstQuestion() {
+    private func loadFirstQuestion() {
         addNewQuestionToScreen(movedForward: true)
     }
 
-    func addNewQuestionToScreen(movedForward: Bool) {
+    private func addNewQuestionToScreen(movedForward: Bool) {
         switch viewModel.currentQuestionType {
         case .multipleChoice:
             break
@@ -103,7 +103,7 @@ final class OnboardingViewController: UIViewController {
         updateButtonState()
     }
 
-    func addTextInputQuestionToScreen() {
+    private func addTextInputQuestionToScreen() {
         questionTitleLabel.text = viewModel.currentQuestionTitle
         questionInputTextField.placeholder = viewModel.currentQuestionPlaceHolderText
         questionTipLabel.text = viewModel.currentQuestionTip
@@ -120,59 +120,21 @@ final class OnboardingViewController: UIViewController {
 
     // MARK: - State Updates
 
-    func updateButtonState() {
+    private func updateButtonState() {
         backButton.changeStateAsNavigationButton(to: viewModel.backButtonState)
         nextButton.changeStateAsNavigationButton(to: viewModel.nextButtonState)
     }
 
     // MARK: - Actions
 
-    @IBAction func backButtonTapped(_ sender: Any) {
+    @IBAction private func backButtonTapped(_ sender: Any) {
 
     }
 
-    @IBAction func nextButtonTapped(_ sender: Any) {
+    @IBAction private func nextButtonTapped(_ sender: Any) {
 
     }
 
-}
-
-extension UIButton {
-
-    func setupForNavigation() {
-        self.setTitleColor(UIColor.buttonEnabledColor, for: .normal)
-        self.setTitleColor(UIColor.buttonDisabledColor, for: .disabled)
-        self.setTitleColor(UIColor.buttonEnabledColor, for: .highlighted)
-        let highlightImage = self.imageView?.image?.withTintColor(.buttonEnabledColor, renderingMode:.alwaysOriginal)
-        self.setImage(highlightImage, for: .highlighted)
-    }
-
-    func changeStateAsNavigationButton(to state: ButtonState) {
-        switch state {
-        case .enabled:
-            self.enable()
-        case .disabled:
-            self.disable()
-        case .hidden:
-            self.hide()
-        }
-    }
-
-    private func enable() {
-        self.isHidden = false
-        self.tintColor = UIColor.buttonEnabledColor
-        self.isEnabled = true
-    }
-
-    private func disable() {
-        self.isHidden = false
-        self.tintColor = UIColor.buttonDisabledColor
-        self.isEnabled = false
-    }
-
-    private func hide() {
-        self.isHidden = true
-    }
 }
 
 extension OnboardingViewController: UITextFieldDelegate {
@@ -211,9 +173,4 @@ extension OnboardingViewController: OnboardingViewModelDelegate {
 
     }
 
-}
-
-extension UIColor {
-    static let buttonEnabledColor = UIColor(red: 227.0/255.0, green: 121.0/255.0, blue: 69.0/255.0, alpha: 1.0)
-    static let buttonDisabledColor = UIColor(red: 117.0/255.0, green: 115.0/255.0, blue: 112.0/255.0, alpha: 1.0)
 }

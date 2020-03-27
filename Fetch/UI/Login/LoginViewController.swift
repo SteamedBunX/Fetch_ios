@@ -20,7 +20,7 @@ final class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
 
-    @IBAction func googleSignInButtonTapped(_ sender: Any) {
+    @IBAction private func googleSignInButtonTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
     }
 
