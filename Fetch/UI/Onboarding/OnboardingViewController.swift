@@ -68,10 +68,7 @@ final class OnboardingViewController: UIViewController {
     }
 
     private func setupTextField() {
-        questionInputTextField.layer.shadowColor = UIColor.black.cgColor
-        questionInputTextField.layer.shadowRadius = 9
-        questionInputTextField.layer.shadowOpacity = 0.31
-        questionInputTextField.layer.shadowOffset = CGSize(width: 0, height: 2)
+        questionInputTextField.layer.applySketchShadow(alpha: 0.31, blur: 9)
         questionInputTextField.delegate = self
         setupKeyboardToolBar()
     }
