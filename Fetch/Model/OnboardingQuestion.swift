@@ -55,7 +55,12 @@ final class OnboardingQuestion {
     }
 
     // Init for TextQuestions
-    init(title: String, minInputLength: Int, maxInputLength: Int, tip: String? = nil, placeHolderText: String = "", inputKeyboardType: KeyboardType = .text) {
+    init(title: String,
+         minInputLength: Int,
+         maxInputLength: Int,
+         tip: String? = nil,
+         placeHolderText: String = "",
+         inputKeyboardType: KeyboardType = .text) {
         self.answerType = .textInput
         self.title = title
         self.tip = tip
