@@ -17,6 +17,14 @@ protocol OnboardingViewModelDelegate: AnyObject {
     func finishSequence()
 }
 
+enum ButtonState {
+    case hidden, disabled, enabled
+}
+
+enum KeyboardType {
+    case digit, phonePad, text
+}
+
 final class OnboardingViewModel {
     var updateProgressBar: (() -> ())?
 
@@ -174,12 +182,4 @@ extension OnboardingViewModel {
         let flow = OnboardingSequence(sections: sections)
         self.init(flow: flow)
     }
-}
-
-enum ButtonState {
-    case hidden, disabled, enabled
-}
-
-enum KeyboardType {
-    case digit, phonePad, text
 }

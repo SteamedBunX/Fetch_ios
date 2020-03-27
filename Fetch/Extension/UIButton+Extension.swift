@@ -12,37 +12,37 @@ import UIKit
 extension UIButton {
 
     func setupForNavigation() {
-        self.setTitleColor(UIColor.buttonEnabledColor, for: .normal)
-        self.setTitleColor(UIColor.buttonDisabledColor, for: .disabled)
-        self.setTitleColor(UIColor.buttonEnabledColor, for: .highlighted)
-        let highlightImage = self.imageView?.image?.withTintColor(.buttonEnabledColor, renderingMode:.alwaysOriginal)
-        self.setImage(highlightImage, for: .highlighted)
+        setTitleColor(UIColor.buttonEnabledColor, for: .normal)
+        setTitleColor(UIColor.buttonDisabledColor, for: .disabled)
+        setTitleColor(UIColor.buttonEnabledColor, for: .highlighted)
+        let highlightImage = imageView?.image?.withTintColor(.buttonEnabledColor, renderingMode:.alwaysOriginal)
+        setImage(highlightImage, for: .highlighted)
     }
 
     func changeStateAsNavigationButton(to state: ButtonState) {
         switch state {
         case .enabled:
-            self.enable()
+            enable()
         case .disabled:
-            self.disable()
+            disable()
         case .hidden:
-            self.hide()
+            hide()
         }
     }
 
     private func enable() {
-        self.isHidden = false
-        self.tintColor = UIColor.buttonEnabledColor
-        self.isEnabled = true
+        isHidden = false
+        tintColor = UIColor.buttonEnabledColor
+        isEnabled = true
     }
 
     private func disable() {
-        self.isHidden = false
-        self.tintColor = UIColor.buttonDisabledColor
-        self.isEnabled = false
+        isHidden = false
+        tintColor = UIColor.buttonDisabledColor
+        isEnabled = false
     }
 
     private func hide() {
-        self.isHidden = true
+        isHidden = true
     }
 }
