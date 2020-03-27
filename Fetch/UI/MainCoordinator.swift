@@ -10,12 +10,11 @@ import UIKit
 import Intrepid
 
 final class MainCoordinator: NSObject {
-    
+
     private(set) var navigationController: UINavigationController?
 
     func start() {
-        //let rootViewController = LoginViewController()
-        let rootViewController = OnboardingViewController()
+        let rootViewController = LoginViewController()
         rootViewController.coordinator = self
         self.navigationController = UINavigationController(rootViewController: rootViewController)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -28,7 +27,7 @@ final class MainCoordinator: NSObject {
     }
 
     func showOnboardingScreen(animated: Bool) {
-        let onboardingViewController = OnboardingViewController(viewModel: OnboardingViewModel())
+        let onboardingViewController = OnboardingViewController(viewModel: OnboardingViewModel(flow: OnboardingQuestions.loadOnlyZipCode()))
         onboardingViewController.coordinator = self
         navigationController?.pushViewController(onboardingViewController, animated: animated)
     }

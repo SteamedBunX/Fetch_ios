@@ -25,14 +25,23 @@ final class LoginViewController: UIViewController {
     }
 
     private func userDidSignInWithGoogle(for user: GIDGoogleUser) {
-        // TODO: The login isn't fully complete here.
-        // We still need to hit the Fetch backend with our google auth results and get a user JWT to store locally
-        // when they have that functionality finished.
-        coordinator?.showOnboardingScreen(animated: true)
+        let alertController =
+            UIAlertController(title: "Login Successful",
+                              message: """
+                                       User did sign in
+                                       Email: \(user.profile.email ?? "Error")
+                                       Name: \(user.profile.name ?? "Error")
+                                       """,
+                              preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "To Onboarding", style: .default) { _ in self.goToOnboarding() })
+        DispatchQueue.main.async {
+            self.present(alertController,
+                         animated: true,
+                         completion: nil)
+        }
     }
 
-    // Shake device to skip login for demo purposes. Removed before merge.
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+    private func goToOnboarding() {
         coordinator?.showOnboardingScreen(animated: true)
     }
 }

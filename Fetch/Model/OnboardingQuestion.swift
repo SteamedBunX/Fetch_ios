@@ -8,8 +8,14 @@
 
 import Foundation
 
+enum OnboardingAnswerType {
+    case singleChoice
+    case multipleChoice
+    case textInput
+}
+
 final class OnboardingQuestion {
-    
+
     let title: String
     let type: OnboardingAnswerType
     let tip: String?
@@ -81,15 +87,4 @@ final class OnboardingQuestion {
     func setInputText(_ inputText: String) {
         self.inputText = inputText
     }
-}
-
-enum OnboardingAnswerType {
-    case singleChoice
-    case multipleChoice
-    case textInput
-}
-
-enum TextInputType {
-    case digit
-    case text
 }
