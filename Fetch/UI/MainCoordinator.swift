@@ -10,6 +10,7 @@ import UIKit
 import Intrepid
 
 final class MainCoordinator: NSObject {
+    
     private(set) var navigationController: UINavigationController?
 
     func start() {

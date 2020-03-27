@@ -138,6 +138,7 @@ final class OnboardingViewController: UIViewController {
 }
 
 extension OnboardingViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         self.viewModel.setInputText(newInputText: textField.text ?? "")
@@ -153,6 +154,7 @@ extension OnboardingViewController: UITextFieldDelegate {
 }
 
 extension OnboardingViewController: OnboardingViewModelDelegate {
+
     func questionDidChange(movedForward: Bool) {
 
     }
@@ -172,5 +174,4 @@ extension OnboardingViewController: OnboardingViewModelDelegate {
     func finishSequence() {
 
     }
-
 }

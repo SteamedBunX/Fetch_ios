@@ -9,6 +9,7 @@
 import Foundation
 
 final class OnboardingQuestion {
+    
     let title: String
     let type: OnboardingAnswerType
     let tip: String?
