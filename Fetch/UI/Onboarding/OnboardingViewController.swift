@@ -53,8 +53,8 @@ final class OnboardingViewController: UIViewController {
     private func setupView() {
         setupTextField()
         setupNavigationButton()
-        backButton.changeStateAsNavigationButton(to: .enabled)
-        nextButton.changeStateAsNavigationButton(to: .disabled)
+        backButton.changeStateAsOnboardingNav(to: .enabled)
+        nextButton.changeStateAsOnboardingNav(to: .disabled)
     }
 
     private func setupTextField() {
@@ -121,8 +121,8 @@ final class OnboardingViewController: UIViewController {
     // MARK: - State Updates
 
     private func updateButtonState() {
-        backButton.changeStateAsNavigationButton(to: viewModel.backButtonState)
-        nextButton.changeStateAsNavigationButton(to: viewModel.nextButtonState)
+        backButton.changeStateAsOnboardingNav(to: viewModel.backButtonState)
+        nextButton.changeStateAsOnboardingNav(to: viewModel.nextButtonState)
     }
 
     // MARK: - Actions

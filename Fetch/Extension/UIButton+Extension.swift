@@ -12,37 +12,37 @@ import UIKit
 extension UIButton {
 
     func setupForNavigation() {
-        setTitleColor(UIColor.buttonEnabledColor, for: .normal)
-        setTitleColor(UIColor.buttonDisabledColor, for: .disabled)
-        setTitleColor(UIColor.buttonEnabledColor, for: .highlighted)
-        let highlightImage = imageView?.image?.withTintColor(.buttonEnabledColor, renderingMode:.alwaysOriginal)
-        setImage(highlightImage, for: .highlighted)
+        self.setTitleColor(UIColor.buttonEnabledColor, for: .normal)
+        self.setTitleColor(UIColor.buttonDisabledColor, for: .disabled)
+        self.setTitleColor(UIColor.buttonEnabledColor, for: .highlighted)
+        let highlightImage = self.imageView?.image?.withTintColor(.buttonEnabledColor, renderingMode:.alwaysOriginal)
+        self.setImage(highlightImage, for: .highlighted)
     }
 
-    func changeStateAsNavigationButton(to state: ButtonState) {
+    func changeStateAsOnboardingNav(to state: ButtonState) {
         switch state {
         case .enabled:
-            enable()
+            self.enableStateAsOnboardingNav()
         case .disabled:
-            disable()
+            self.disableStateAsOnboardingNav()
         case .hidden:
-            hide()
+            self.hideStateAsOnboardingNav()
         }
     }
 
-    private func enable() {
-        isHidden = false
-        tintColor = UIColor.buttonEnabledColor
-        isEnabled = true
+    private func enableStateAsOnboardingNav() {
+        self.isHidden = false
+        self.tintColor = UIColor.buttonEnabledColor
+        self.isEnabled = true
     }
 
-    private func disable() {
-        isHidden = false
-        tintColor = UIColor.buttonDisabledColor
-        isEnabled = false
+    private func disableStateAsOnboardingNav() {
+        self.isHidden = false
+        self.tintColor = UIColor.buttonDisabledColor
+        self.isEnabled = false
     }
 
-    private func hide() {
-        isHidden = true
+    private func hideStateAsOnboardingNav() {
+        self.isHidden = true
     }
 }
