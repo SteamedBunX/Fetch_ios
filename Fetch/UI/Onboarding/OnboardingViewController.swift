@@ -155,10 +155,9 @@ extension OnboardingViewController: UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLength = viewModel.currentQuestionMaxInputLength
         let currentString: NSString = textField.text as NSString? ?? ""
         let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
-        return newString.length <= maxLength
+        return viewModel.currentQuestionCanAccept(input: String(newString))
     }
 }
 

@@ -27,7 +27,7 @@ final class OnboardingQuestion {
     let placeHolderText: String
     let inputKeyboardType: KeyboardType
     private let minInputLength: Int
-    let maxInputLength: Int
+    private let maxInputLength: Int
 
     var isAnswered: Bool {
         switch answerType {
@@ -64,6 +64,10 @@ final class OnboardingQuestion {
         self.maxInputLength = maxInputLength
         self.choices = []
         self.inputKeyboardType = inputKeyboardType
+    }
+
+    func canAccept(input: String) -> Bool {
+        return input.count <= maxInputLength
     }
 
     func selectChoice(at index: Int) {

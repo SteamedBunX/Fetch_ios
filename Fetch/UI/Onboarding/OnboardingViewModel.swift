@@ -89,12 +89,12 @@ final class OnboardingViewModel {
         return flow.currentQuestion?.placeHolderText ?? ""
     }
 
-    var currentQuestionMaxInputLength: Int {
-        return flow.currentQuestion?.maxInputLength ?? 0
-    }
-
     var currentQuestionKeyboardType: KeyboardType {
         return .digit
+    }
+
+    func currentQuestionCanAccept(input: String) -> Bool {
+        return flow.currentQuestion?.canAccept(input: input) ?? false
     }
 
     // MARK: - User Actions
