@@ -22,6 +22,7 @@
             <connections>
                 <outlet property="backButton" destination="W0W-hN-vKg" id="COy-5a-0Y4"/>
                 <outlet property="nextButton" destination="NbH-Zi-f46" id="1RQ-F5-GAs"/>
+                <outlet property="progressBarView" destination="1Hs-jC-djv" id="5Gi-Dc-b9d"/>
                 <outlet property="questionInputTextField" destination="Gd2-1T-THc" id="m92-bI-HrN"/>
                 <outlet property="questionTipLabel" destination="otd-fe-P4R" id="MM5-8J-zdn"/>
                 <outlet property="questionTitleLabel" destination="sXR-Rt-zDR" id="fx4-r0-QiE"/>
@@ -86,14 +87,23 @@
                         <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="1bd-Mf-Xac"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hs-jC-djv" customClass="ProgressBarView" customModule="Fetch" customModuleProvider="target">
+                    <rect key="frame" x="62" y="63" width="290" height="5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="s2t-1C-dAl"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="sXR-Rt-zDR" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="0PI-i5-4K6"/>
                 <constraint firstItem="Gd2-1T-THc" firstAttribute="top" secondItem="sXR-Rt-zDR" secondAttribute="bottom" constant="51" id="C8D-n4-8b3"/>
                 <constraint firstItem="otd-fe-P4R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Eve-01-pcU"/>
+                <constraint firstItem="1Hs-jC-djv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="19" id="G79-Em-aRz"/>
                 <constraint firstItem="M5z-1U-26n" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KP1-6r-F8X"/>
                 <constraint firstAttribute="bottom" secondItem="W0W-hN-vKg" secondAttribute="bottom" constant="40" id="LX0-2S-hQH"/>
+                <constraint firstItem="1Hs-jC-djv" firstAttribute="centerX" secondItem="M5z-1U-26n" secondAttribute="centerX" id="PUV-7j-Jls"/>
                 <constraint firstItem="Gd2-1T-THc" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="QGd-I6-zth"/>
                 <constraint firstItem="sXR-Rt-zDR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Suf-gd-vjH"/>
                 <constraint firstItem="W0W-hN-vKg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="41" id="XGg-dy-Ow3"/>
@@ -102,6 +112,7 @@
                 <constraint firstItem="sXR-Rt-zDR" firstAttribute="baseline" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.83" id="bgi-qx-lu3"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M5z-1U-26n" secondAttribute="trailing" id="e4C-oZ-V0h"/>
                 <constraint firstAttribute="bottom" secondItem="M5z-1U-26n" secondAttribute="bottom" id="kSG-qU-wEL"/>
+                <constraint firstItem="1Hs-jC-djv" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.7" id="vcO-MI-PYh"/>
                 <constraint firstItem="otd-fe-P4R" firstAttribute="top" secondItem="sXR-Rt-zDR" secondAttribute="bottom" constant="7" id="xMi-W7-fdw"/>
                 <constraint firstAttribute="bottom" secondItem="NbH-Zi-f46" secondAttribute="bottom" constant="40" id="yBk-pk-Hke"/>
             </constraints>

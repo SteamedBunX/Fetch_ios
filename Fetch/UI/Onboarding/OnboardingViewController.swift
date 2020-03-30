@@ -17,8 +17,6 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet private var backButton: UIButton!
     @IBOutlet private var nextButton: UIButton!
 
-    let flow = OnboardingQuestions.load()
-    let mockFlow = OnboardingQuestions.load()
     let viewModel: OnboardingViewModel
     weak var coordinator: MainCoordinator?
 
@@ -27,7 +25,6 @@ final class OnboardingViewController: UIViewController {
     init(viewModel: OnboardingViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "OnboardingViewController", bundle: nil)
-        self.viewModel.delegate = self
     }
 
     required init?(coder: NSCoder) {
@@ -37,14 +34,14 @@ final class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
+        setupView()
         progressBarView.viewModel = viewModel
+        loadFirstQuestion()
     }
 
     private func setupView() {
         setupTextField()
         setupNavigationButton()
-        backButton.changeOnboardingNavigationState(to: .enabled)
-        nextButton.changeOnboardingNavigationState(to: .disabled)
     }
 
     private func setupTextField() {
