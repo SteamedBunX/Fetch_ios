@@ -36,12 +36,12 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your furrever best friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho2-T4-OFu">
-                    <rect key="frame" x="103.66666666666669" y="294" width="207" height="20"/>
+                    <rect key="frame" x="103.66666666666669" y="294" width="207" height="19"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sP6-8g-dS1" customClass="CustomUIButton" customModule="Fetch" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sP6-8g-dS1">
                     <rect key="frame" x="62" y="686.66666666666663" width="290" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -66,6 +66,10 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundAtSide" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="blur">
+                            <real key="value" value="2"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>

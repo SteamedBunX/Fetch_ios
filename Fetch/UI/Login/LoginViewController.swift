@@ -11,7 +11,7 @@ import GoogleSignIn
 
 final class LoginViewController: UIViewController {
 
-    @IBOutlet private var googleSignInButton: CustomUIButton!
+    @IBOutlet private var googleSignInButton: CustomRoundSidedUIButton!
     weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
