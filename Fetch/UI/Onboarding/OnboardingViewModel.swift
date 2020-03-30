@@ -17,6 +17,14 @@ protocol OnboardingViewModelDelegate: AnyObject {
     func finishSequence()
 }
 
+enum ButtonState {
+    case hidden, disabled, enabled
+}
+
+enum KeyboardType {
+    case digit, phonePad, text
+}
+
 final class OnboardingViewModel {
     var updateProgressBar: (() -> ())?
 
@@ -53,19 +61,43 @@ final class OnboardingViewModel {
         return flow.currentQuestion?.title ?? ""
     }
 
-    var currentQuestionType: OnboardingAnswerType {
-        return flow.currentQuestion?.type ?? .singleChoice
+    var currentQuestionTip: String? {
+        return flow.currentQuestion?.tip ?? ""
     }
+
+    var currentQuestionType: OnboardingAnswerType {
+        return flow.currentQuestion?.answerType ?? .singleChoice
+    }
+
+    private var currentQuestionAnswered: Bool? {
+        return flow.currentQuestion?.isAnswered
+    }
+
+    // MARK: - Choice Question Displayable
 
     var currentQuestionChoices: [String]? {
         return flow.currentQuestion?.choices
     }
 
-    var currentQuestionAnswered: Bool? {
-        return flow.currentQuestion?.isAnswered
+    var currentQuestionSelectedChoiceIndexes: [Int] {
+        return flow.currentQuestion?.selectedIndexes ?? []
     }
 
-    // MARK: - UserInputs
+    // MARK: - Text Input Question Displayable
+
+    var currentQuestionPlaceHolderText: String {
+        return flow.currentQuestion?.placeHolderText ?? ""
+    }
+
+    var currentQuestionKeyboardType: KeyboardType {
+        return .digit
+    }
+
+    func currentQuestionCanAccept(input: String) -> Bool {
+        return flow.currentQuestion?.canAccept(input: input) ?? false
+    }
+
+    // MARK: - User Actions
 
     func selectChoice(at index: Int) {
         flow.selectChoice(at: index)
@@ -75,6 +107,35 @@ final class OnboardingViewModel {
     func setInputText(newInputText: String) {
         flow.setInputText(newInputText: newInputText)
         delegate?.textInputDidChange()
+    }
+
+    // MARK: - Button State
+
+    var backButtonState: ButtonState {
+        if flow.isFirstQuestion {
+            return .hidden
+        }
+        return .enabled
+    }
+
+    var nextButtonState: ButtonState {
+        if flow.isLastQuestion {
+            return .hidden
+        }
+        if currentQuestionAnswered == true {
+            return .enabled
+        }
+        return .disabled
+    }
+
+    var doneButtonState: ButtonState {
+        if !flow.isLastQuestion {
+            return .hidden
+        }
+        if currentQuestionAnswered == true {
+            return .enabled
+        }
+        return .disabled
     }
 
     // MARK: - Moving to Different question

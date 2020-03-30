@@ -11,28 +11,27 @@ import GoogleSignIn
 
 final class LoginViewController: UIViewController {
 
+    @IBOutlet private var googleSignInButton: CustomUIButton!
     weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        googleSignInButton.layer.applyGoogleSignInButtonShadow()
     }
 
-    @IBAction func googleSignInButtonTapped(_ sender: Any) {
+    @IBAction private func googleSignInButtonTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
     }
 
     private func userDidSignInWithGoogle(for user: GIDGoogleUser) {
-        // TODO: The login isn't fully complete here.
-        // We still need to hit the Fetch backend with our google auth results and get a user JWT to store locally
-        // when they have that functionality finished.
-        coordinator?.showOnboardingScreen(animated: true)
+        // TODO: Communicate with server for the actual tokan.
+        // TODO: Cache tokan locally and use it instead of the google auth when possible.
+        goToOnboarding()
     }
 
-    // Shake device to skip login for demo purposes. Removed before merge.
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+    private func goToOnboarding() {
         coordinator?.showOnboardingScreen(animated: true)
     }
 }

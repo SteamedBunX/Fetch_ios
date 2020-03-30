@@ -18,13 +18,20 @@
 		CB20C5AD2416C61600F5ECF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5AC2416C61600F5ECF6 /* Assets.xcassets */; };
 		CB20C5B02416C61600F5ECF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5AE2416C61600F5ECF6 /* LaunchScreen.storyboard */; };
 		D02F2192FD103055E2F5F8B3 /* Pods_FetchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B49409A222B20645B01CD3EA /* Pods_FetchTests.framework */; };
+		FA12B4BF242CE7FE000731FE /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */; };
+		FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */; };
+		FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */; };
+		FA317583242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317582242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift */; };
+		FA317585242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317584242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift */; };
 		FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CBC2428FDF2008399AF /* MainCoordinator.swift */; };
 		FA350CC12428FE01008399AF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA350CBF2428FE01008399AF /* LoginViewController.xib */; };
 		FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CC02428FE01008399AF /* LoginViewController.swift */; };
 		FA350CC5242910BF008399AF /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CC4242910BF008399AF /* CustomUIButton.swift */; };
+		FA45ADB6242E4D5600DB5195 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */; };
+		FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */; };
 		FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA26C3102429515700D0B5BA /* Lato-Regular.ttf */; };
 		FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9565192423F9CA00380003 /* OnboardingSequence.swift */; };
-		FA95651C24241E7700380003 /* OnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95651B24241E7700380003 /* OnboardingQuestionTests.swift */; };
+		FA95651C24241E7700380003 /* TextInputOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */; };
 		FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC5E1324227472006E8C23 /* OnboardingViewController.xib */; };
 		FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */; };
 		FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1524227472006E8C23 /* OnboardingViewController.swift */; };
@@ -62,13 +69,20 @@
 		CB20C5BC2416C61700F5ECF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E2634C5358BCECB78BE19B /* Pods-Fetch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fetch.debug.xcconfig"; path = "Target Support Files/Pods-Fetch/Pods-Fetch.debug.xcconfig"; sourceTree = "<group>"; };
 		EBF9323E7A17D9F79AAE1143 /* Pods-Fetch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fetch.release.xcconfig"; path = "Target Support Files/Pods-Fetch/Pods-Fetch.release.xcconfig"; sourceTree = "<group>"; };
+		FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PatuaOne-Regular.ttf"; sourceTree = "<group>"; };
+		FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestions.swift; sourceTree = "<group>"; };
 		FA26C3102429515700D0B5BA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		FA317582242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceOnboardingQuestionTests.swift; sourceTree = "<group>"; };
+		FA317584242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceOnboardingQuestionTests.swift; sourceTree = "<group>"; };
 		FA350CBC2428FDF2008399AF /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FA350CBF2428FE01008399AF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FA350CC02428FE01008399AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA350CC4242910BF008399AF /* CustomUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
+		FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		FA9565192423F9CA00380003 /* OnboardingSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSequence.swift; sourceTree = "<group>"; };
-		FA95651B24241E7700380003 /* OnboardingQuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestionTests.swift; sourceTree = "<group>"; };
+		FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputOnboardingQuestionTests.swift; sourceTree = "<group>"; };
 		FADC5E1324227472006E8C23 /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestion.swift; sourceTree = "<group>"; };
 		FADC5E1524227472006E8C23 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +163,8 @@
 		CB20C5A22416C61600F5ECF6 /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
+				FA45ADB2242E4C7300DB5195 /* Extension */,
+				FA12B4C2242CFF57000731FE /* LocalData */,
 				FA350CC3242910BF008399AF /* CustomView */,
 				FADC5E1D24227FAC006E8C23 /* Model */,
 				FADC5E1124227472006E8C23 /* UI */,
@@ -165,7 +181,9 @@
 		CB20C5B92416C61700F5ECF6 /* FetchTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA95651B24241E7700380003 /* OnboardingQuestionTests.swift */,
+				FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */,
+				FA317582242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift */,
+				FA317584242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift */,
 				CB20C5BC2416C61700F5ECF6 /* Info.plist */,
 			);
 			path = FetchTests;
@@ -180,9 +198,19 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		FA12B4C2242CFF57000731FE /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */,
+			);
+			path = LocalData;
+			sourceTree = "<group>";
+		};
 		FA26C3112429516100D0B5BA /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */,
+				FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */,
 				FA26C3102429515700D0B5BA /* Lato-Regular.ttf */,
 			);
 			path = Font;
@@ -203,6 +231,15 @@
 				FA350CC4242910BF008399AF /* CustomUIButton.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		FA45ADB2242E4C7300DB5195 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */,
+				FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		FADC5E1124227472006E8C23 /* UI */ = {
@@ -332,9 +369,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA12B4BF242CE7FE000731FE /* Lato-Bold.ttf in Resources */,
 				CB20C5B02416C61600F5ECF6 /* LaunchScreen.storyboard in Resources */,
 				FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */,
 				CB20C5AD2416C61600F5ECF6 /* Assets.xcassets in Resources */,
+				FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */,
 				FA350CC12428FE01008399AF /* LoginViewController.xib in Resources */,
 				FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
@@ -459,11 +498,14 @@
 				FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */,
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
+				FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */,
 				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
 				CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */,
 				8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */,
 				8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */,
 				FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */,
+				FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */,
+				FA45ADB6242E4D5600DB5195 /* UIColor+Extension.swift in Sources */,
 				FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */,
 				8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */,
 				FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */,
@@ -475,7 +517,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA95651C24241E7700380003 /* OnboardingQuestionTests.swift in Sources */,
+				FA317583242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift in Sources */,
+				FA95651C24241E7700380003 /* TextInputOnboardingQuestionTests.swift in Sources */,
+				FA317585242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

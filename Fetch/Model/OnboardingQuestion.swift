@@ -8,34 +8,79 @@
 
 import Foundation
 
+enum OnboardingAnswerType {
+    case singleChoice
+    case multipleChoice
+    case textInput
+}
+
 final class OnboardingQuestion {
+
     let title: String
-    let type: OnboardingAnswerType
+    let answerType: OnboardingAnswerType
+    let tip: String?
+    // Choice Based Fields
     let choices: [String]?
     private(set) var selectedIndexes = [Int]()
-    private(set) var inputText: String?
+    // Text Based Fields
+    private(set) var inputText: String = ""
+    let placeHolderText: String
+    let inputKeyboardType: KeyboardType
+    private let minInputLength: Int
+    private let maxInputLength: Int
 
     var isAnswered: Bool {
-        switch type {
+        switch answerType {
         case .multipleChoice,
              .singleChoice:
             return !selectedIndexes.isEmpty
         case .textInput:
-            return inputText?.count == 5
+            return inputText.count >= minInputLength && inputText.count <= maxInputLength
         }
     }
 
-    init(title: String, questionType: OnboardingAnswerType, choices: [String] = []) {
+    // Init for ChoiceQuestions
+    init(title: String,
+         answerType: OnboardingAnswerType,
+         choices: [String] = [],
+         tip: String? = nil) {
+        self.answerType = answerType
         self.title = title
+        self.tip = tip
         self.choices = choices
-        self.type = questionType
+        self.placeHolderText = ""
+        self.inputKeyboardType = .text
+        self.minInputLength = 0
+        self.maxInputLength = 0
+    }
+
+    // Init for TextQuestions
+    init(title: String,
+         minInputLength: Int,
+         maxInputLength: Int,
+         tip: String? = nil,
+         placeHolderText: String = "",
+         inputKeyboardType: KeyboardType = .text) {
+        self.answerType = .textInput
+        self.title = title
+        self.tip = tip
+        self.placeHolderText = placeHolderText
+        self.minInputLength = minInputLength
+        self.maxInputLength = maxInputLength
+        self.choices = []
+        self.inputKeyboardType = inputKeyboardType
+    }
+
+    func canAccept(input: String) -> Bool {
+        return input.count <= maxInputLength
     }
 
     func selectChoice(at index: Int) {
-        switch type {
+        guard index < choices?.count ?? 0 else { return }
+        switch answerType {
         case .multipleChoice:
             if selectedIndexes.contains(index) {
-                selectedIndexes.removeFirst(index)
+                selectedIndexes.removeAll(where: {$0 == index})
             } else {
                 selectedIndexes.append(index)
             }
@@ -53,10 +98,4 @@ final class OnboardingQuestion {
     func setInputText(_ inputText: String) {
         self.inputText = inputText
     }
-}
-
-enum OnboardingAnswerType {
-    case singleChoice
-    case multipleChoice
-    case textInput
 }
