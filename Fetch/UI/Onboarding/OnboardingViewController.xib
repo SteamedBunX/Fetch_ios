@@ -37,13 +37,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXR-Rt-zDR">
-                    <rect key="frame" x="41.333333333333343" y="343.33333333333331" width="331.33333333333326" height="35"/>
+                    <rect key="frame" x="41.333333333333343" y="343" width="331.33333333333326" height="36.666666666666686"/>
                     <fontDescription key="fontDescription" name="PatuaOne-Regular" family="Patua One" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Place Holder Text" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gd2-1T-THc">
-                    <rect key="frame" x="61" y="429.33333333333331" width="292" height="53"/>
+                    <rect key="frame" x="61" y="430.66666666666669" width="292" height="53"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="53" id="qkk-hH-Wx0"/>
@@ -53,13 +53,13 @@
                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP LABLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otd-fe-P4R">
-                    <rect key="frame" x="182.66666666666666" y="385.33333333333331" width="48.666666666666657" height="12"/>
+                    <rect key="frame" x="184" y="386.66666666666669" width="46.333333333333343" height="12"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
                     <color key="textColor" white="0.36978650093078613" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbH-Zi-f46">
-                    <rect key="frame" x="301" y="837" width="80" height="19"/>
+                    <rect key="frame" x="301" y="836" width="80" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="8gR-ak-CNp"/>
                     </constraints>
@@ -73,7 +73,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0W-hN-vKg">
-                    <rect key="frame" x="41" y="837" width="80" height="19"/>
+                    <rect key="frame" x="41" y="836" width="80" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="iBK-DO-m7b"/>
                     </constraints>

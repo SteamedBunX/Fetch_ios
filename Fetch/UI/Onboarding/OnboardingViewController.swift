@@ -19,17 +19,8 @@ final class OnboardingViewController: UIViewController {
 
     let flow = OnboardingQuestions.load()
     let mockFlow = OnboardingQuestions.load()
-    let viewModel = OnboardingViewModel(flow: OnboardingQuestions.loadOnlyZipCode())
+    let viewModel: OnboardingViewModel
     weak var coordinator: MainCoordinator?
-
-    init(viewModel: OnboardingViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     // MARK: - Initial Setup
 
@@ -47,16 +38,6 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         progressBarView.viewModel = viewModel
-    }
-
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        viewModel.backButtonTapped()
-    }
-
-    @IBAction func nextButtonTapped(_ sender: UIButton) {
-        viewModel.nextButtonTapped()
-        setupView()
-        loadFirstQuestion()
     }
 
     private func setupView() {
