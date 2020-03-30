@@ -9,14 +9,47 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="Fetch" customModuleProvider="target">
             <connections>
+                <outlet property="progressBarView" destination="1Hs-jC-djv" id="xmO-Lw-HYO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kKd-n1-S9d"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" restorationIdentifier="OnboardingViewController" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hs-jC-djv" customClass="ProgressBarView" customModule="Fetch" customModuleProvider="target">
+                    <rect key="frame" x="20" y="44" width="374" height="5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="s2t-1C-dAl"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHo-rz-rKm">
+                    <rect key="frame" x="20" y="433" width="34" height="30"/>
+                    <state key="normal" title="Back"/>
+                    <connections>
+                        <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="5fI-1m-o7N"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epM-Z7-g5C">
+                    <rect key="frame" x="362" y="433" width="32" height="30"/>
+                    <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="07e-cW-8xN"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Hs-jC-djv" secondAttribute="trailing" constant="20" id="2di-JM-ty9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="epM-Z7-g5C" secondAttribute="trailing" constant="20" id="4l8-fi-bbA"/>
+                <constraint firstItem="AHo-rz-rKm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ck1-sv-bO8"/>
+                <constraint firstItem="1Hs-jC-djv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Jyq-sH-Oln"/>
+                <constraint firstItem="epM-Z7-g5C" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Q6b-IK-4zw"/>
+                <constraint firstItem="AHo-rz-rKm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="n7y-rQ-Gqa"/>
+                <constraint firstItem="1Hs-jC-djv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zuv-2D-yT2"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="149"/>
         </view>

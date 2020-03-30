@@ -18,6 +18,7 @@ protocol OnboardingViewModelDelegate: AnyObject {
 }
 
 final class OnboardingViewModel {
+    var updateProgressBar: (() -> ())?
 
     weak var delegate: OnboardingViewModelDelegate?
 
@@ -29,11 +30,11 @@ final class OnboardingViewModel {
 
     // MARK: - ProgressBar Related Displayable
 
-    var numberOfSections: Int {
+    private var numberOfSections: Int {
         return flow.sections.count
     }
 
-    var currentSectionIndex: Int {
+    private var currentSectionIndex: Int {
         return flow.currentSectionIndex
     }
 
@@ -83,6 +84,7 @@ final class OnboardingViewModel {
         delegate?.questionDidChange(movedForward: true)
         if flow.currentQuestionIndex == 0 {
             delegate?.sectionDidChange(movedForward: true)
+            updateProgressBar?()
         }
     }
 
@@ -91,11 +93,32 @@ final class OnboardingViewModel {
         delegate?.questionDidChange(movedForward: false)
         if flow.currentQuestionIndex == flow.currentSectionSize - 1 {
             delegate?.sectionDidChange(movedForward: false)
+            updateProgressBar?()
         }
     }
 
     func doneButtonTapped() {
         // TODO: register user with profile
         delegate?.finishSequence()
+    }
+}
+
+extension OnboardingViewModel: ProgressBarViewModel {
+    var numberOfSegments: Int {
+        return numberOfSections
+    }
+
+    var currentIndex: Int {
+        return currentSectionIndex
+    }
+}
+
+extension OnboardingViewModel {
+    convenience init() {
+        let sections = (0..<3).map { _ in
+            return OnboardingSection(title: "", questions: [])
+        }
+        let flow = OnboardingSequence(sections: sections)
+        self.init(flow: flow)
     }
 }

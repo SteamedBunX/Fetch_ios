@@ -6,8 +6,8 @@
 //  Copyright © 2020 Digital Products. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Intrepid
 
 final class MainCoordinator: NSObject {
     private(set) var navigationController: UINavigationController?
@@ -26,7 +26,7 @@ final class MainCoordinator: NSObject {
     }
 
     func showOnboardingScreen(animated: Bool) {
-        let onboardingViewController = OnboardingViewController()
+        let onboardingViewController = OnboardingViewController(viewModel: OnboardingViewModel())
         onboardingViewController.coordinator = self
         navigationController?.pushViewController(onboardingViewController, animated: animated)
     }
