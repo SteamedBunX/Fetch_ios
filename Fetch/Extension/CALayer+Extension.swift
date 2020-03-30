@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension CALayer {
-  func applySketchShadow(
+  func applyZeplinShadow(
     color: UIColor = .black,
     alpha: Float = 0.5,
     xOffset: CGFloat = 0,

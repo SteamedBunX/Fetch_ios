@@ -45,7 +45,6 @@ final class OnboardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.nextButtonTapped()
         viewModel.delegate = self
         progressBarView.viewModel = viewModel
     }
@@ -68,7 +67,7 @@ final class OnboardingViewController: UIViewController {
     }
 
     private func setupTextField() {
-        questionInputTextField.layer.applySketchShadow(alpha: 0.31, blur: 9)
+        questionInputTextField.layer.applyZeplinShadow(alpha: 0.31, blur: 9)
         questionInputTextField.delegate = self
         setupKeyboardToolBar()
     }
