@@ -11,6 +11,7 @@ import UIKit
 
 extension UIColor {
 
-    static let buttonEnabledColor = UIColor(red: 227.0/255.0, green: 121.0/255.0, blue: 69.0/255.0, alpha: 1.0)
-    static let buttonDisabledColor = UIColor(red: 117.0/255.0, green: 115.0/255.0, blue: 112.0/255.0, alpha: 1.0)
+    static let buttonEnabledColor = #colorLiteral(red: 0.8901960784, green: 0.4745098039, blue: 0.2705882353, alpha: 1)
+    static let buttonDisabledColor = #colorLiteral(red: 0.4588235294, green: 0.4509803922, blue: 0.4392156863, alpha: 1)
+    static let questionButtonSelectedColor = #colorLiteral(red: 0.8901960784, green: 0.4745098039, blue: 0.2705882353, alpha: 1)
 }

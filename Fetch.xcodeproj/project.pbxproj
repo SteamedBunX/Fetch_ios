@@ -30,6 +30,7 @@
 		FA45ADB6242E4D5600DB5195 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */; };
 		FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */; };
 		FA53956F24323ED5003C3B1F /* QuestionChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA53956E24323ED5003C3B1F /* QuestionChoiceCell.xib */; };
+		FA5395722432684D003C3B1F /* QuestionChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5395712432684D003C3B1F /* QuestionChoiceCell.swift */; };
 		FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA26C3102429515700D0B5BA /* Lato-Regular.ttf */; };
 		FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9565192423F9CA00380003 /* OnboardingSequence.swift */; };
 		FA95651C24241E7700380003 /* TextInputOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */; };
@@ -83,6 +84,7 @@
 		FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		FA53956E24323ED5003C3B1F /* QuestionChoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionChoiceCell.xib; sourceTree = "<group>"; };
+		FA5395712432684D003C3B1F /* QuestionChoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionChoiceCell.swift; sourceTree = "<group>"; };
 		FA9565192423F9CA00380003 /* OnboardingSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSequence.swift; sourceTree = "<group>"; };
 		FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputOnboardingQuestionTests.swift; sourceTree = "<group>"; };
 		FADC5E1324227472006E8C23 /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
@@ -112,14 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8618BB66242AE15D00F122C6 /* Progress bar */ = {
+		8618BB66242AE15D00F122C6 /* ProgressBar */ = {
 			isa = PBXGroup;
 			children = (
 				8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */,
 				8618BB67242AE22F00F122C6 /* ProgressBarView.swift */,
 				8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */,
 			);
-			path = "Progress bar";
+			path = ProgressBar;
 			sourceTree = "<group>";
 		};
 		8618BB72242B049300F122C6 /* Extensions */ = {
@@ -244,6 +246,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		FA5395702432682F003C3B1F /* QuestionChoiceCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA53956E24323ED5003C3B1F /* QuestionChoiceCell.xib */,
+				FA5395712432684D003C3B1F /* QuestionChoiceCell.swift */,
+			);
+			path = QuestionChoiceCell;
+			sourceTree = "<group>";
+		};
 		FADC5E1124227472006E8C23 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,11 +268,11 @@
 		FADC5E1224227472006E8C23 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				8618BB66242AE15D00F122C6 /* Progress bar */,
+				FA5395702432682F003C3B1F /* QuestionChoiceCell */,
+				8618BB66242AE15D00F122C6 /* ProgressBar */,
 				FADC5E1324227472006E8C23 /* OnboardingViewController.xib */,
 				FADC5E1524227472006E8C23 /* OnboardingViewController.swift */,
 				FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */,
-				FA53956E24323ED5003C3B1F /* QuestionChoiceCell.xib */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -501,6 +512,7 @@
 				FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */,
 				FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */,
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
+				FA5395722432684D003C3B1F /* QuestionChoiceCell.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
 				FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */,
 				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
