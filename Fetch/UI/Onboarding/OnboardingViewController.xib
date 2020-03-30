@@ -20,10 +20,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="Fetch" customModuleProvider="target">
             <connections>
+                <outlet property="answerChoiceTableView" destination="1sR-RM-rr2" id="HJj-Pt-688"/>
+                <outlet property="answerTextField" destination="Gd2-1T-THc" id="z2H-g4-lGt"/>
                 <outlet property="backButton" destination="W0W-hN-vKg" id="COy-5a-0Y4"/>
                 <outlet property="nextButton" destination="NbH-Zi-f46" id="1RQ-F5-GAs"/>
                 <outlet property="progressBarView" destination="1Hs-jC-djv" id="5Gi-Dc-b9d"/>
-                <outlet property="questionInputTextField" destination="Gd2-1T-THc" id="m92-bI-HrN"/>
                 <outlet property="questionTipLabel" destination="otd-fe-P4R" id="MM5-8J-zdn"/>
                 <outlet property="questionTitleLabel" destination="sXR-Rt-zDR" id="fx4-r0-QiE"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kKd-n1-S9d"/>
@@ -43,7 +44,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Place Holder Text" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gd2-1T-THc">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Place Holder Text" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gd2-1T-THc" userLabel="Answer Text Field">
                     <rect key="frame" x="61" y="430.66666666666669" width="292" height="53"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>

@@ -13,7 +13,8 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet var progressBarView: ProgressBarView!
     @IBOutlet private var questionTitleLabel: UILabel!
     @IBOutlet private var questionTipLabel: UILabel!
-    @IBOutlet private var questionInputTextField: UITextField!
+    @IBOutlet private var answerTextField: UITextField!
+    @IBOutlet private var answerChoiceTableView: UITableView!
     @IBOutlet private var backButton: UIButton!
     @IBOutlet private var nextButton: UIButton!
 
@@ -34,20 +35,26 @@ final class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        setupView()
+        setupViews()
         progressBarView.viewModel = viewModel
         loadFirstQuestion()
     }
 
-    private func setupView() {
+    private func setupViews() {
         setupTextField()
         setupNavigationButton()
+        setupTableView()
     }
 
     private func setupTextField() {
-        questionInputTextField.layer.applyQuestionTextFieldShadow()
-        questionInputTextField.delegate = self
+        answerTextField.layer.applyQuestionTextFieldShadow()
+        answerTextField.delegate = self
         setupKeyboardToolBar()
+    }
+
+    private func setupTableView() {
+        let nib = UINib(nibName: "AnswerChoiceCell", bundle: nil)
+        answerChoiceTableView.register(nib, forCellReuseIdentifier: "AnswerChoiceCell")
     }
 
     private func setupKeyboardToolBar() {
@@ -56,7 +63,7 @@ final class OnboardingViewController: UIViewController {
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(keyboardInputDidFinish))
         toolbar.setItems([flexSpace, doneButton], animated: false)
-        questionInputTextField.inputAccessoryView = toolbar
+        answerTextField.inputAccessoryView = toolbar
     }
 
     private func setupNavigationButton() {
@@ -84,16 +91,16 @@ final class OnboardingViewController: UIViewController {
 
     private func addTextInputQuestionToScreen() {
         questionTitleLabel.text = viewModel.currentQuestionTitle
-        questionInputTextField.placeholder = viewModel.currentQuestionPlaceHolderText
+        answerTextField.placeholder = viewModel.currentQuestionPlaceHolderText
         questionTipLabel.text = viewModel.currentQuestionTip
-        questionInputTextField.isHidden = false
+        answerTextField.isHidden = false
         switch viewModel.currentQuestionKeyboardType {
         case .digit:
-            questionInputTextField.keyboardType = .numberPad
+            answerTextField.keyboardType = .numberPad
         case .phonePad:
-            questionInputTextField.keyboardType = .phonePad
+            answerTextField.keyboardType = .phonePad
         case .text:
-            questionInputTextField.keyboardType = .default
+            answerTextField.keyboardType = .default
         }
     }
 
@@ -116,7 +123,7 @@ final class OnboardingViewController: UIViewController {
 
     @objc private func keyboardInputDidFinish() {
         view.endEditing(true)
-        self.viewModel.setInputText(newInputText: questionInputTextField.text ?? "")
+        self.viewModel.setInputText(newInputText: answerTextField.text ?? "")
     }
 }
 
@@ -155,6 +162,24 @@ extension OnboardingViewController: OnboardingViewModelDelegate {
 
     func finishSequence() {
 
+    }
+}
+
+extension OnboardingViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.currentQuestionChoices?.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerChoiceCell") as? AnswerChoiceCell else {
+            return UITableViewCell()
+        }
+        let index = indexPath.row
+        let answer = viewModel.currentQuestionChoices?[index] ?? ""
+        let selected = viewModel.currentQuestionSelectedChoiceIndexes.contains(index)
+        cell.setup(index: indexPath.row, answer: answer, selected: selected)
+        return cell
     }
 }
 
