@@ -114,7 +114,6 @@ opt_in_rules:
   - sorted_first_last
   - static_operator
   - strong_iboutlet
-  - unavailable_function
   - unused_import
   - unused_private_declaration
   - vertical_parameter_alignment_on_call

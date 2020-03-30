@@ -8,45 +8,15 @@
 
 import Foundation
 
-final class ProgressBarViewModel {
+protocol ProgressBarViewModel: AnyObject {
+    var updateProgressBar: (() -> ())? { get set }
+    var numberOfSegments: Int { get }
+    var currentIndex: Int { get }
+    var isProgressFilled: Bool { get }
+}
 
-    var update: (() -> ())?
-
-    var validIndexes: Range<Int> {
-        return progressModel.validIndexes
-    }
-
-    private var progressModel: ProgressModel
-
-    // swiftlint:disable force_try
-    init(progressModel: ProgressModel = try! ProgressModel()) {
-        self.progressModel = progressModel
-    }
-
-    func progress() {
-        do {
-            try progressModel.progress()
-            update?()
-        } catch {
-            print("Error: \(error) thrown. Doing nothing as default")
-        }
-    }
-
-    func `return`() {
-        do {
-            try progressModel.return()
-            update?()
-        } catch {
-            print("Error: \(error) thrown. Doing nothing as default")
-        }
-    }
-
-    func isEnabled(atIndex index: Int) -> Bool {
-        do {
-            return try progressModel.isWithinProgress(atIndex: index)
-        } catch {
-            print("Error: \(error) thrown. Returning false as default")
-            return false
-        }
+extension ProgressBarViewModel {
+    var isProgressFilled: Bool {
+        return true
     }
 }

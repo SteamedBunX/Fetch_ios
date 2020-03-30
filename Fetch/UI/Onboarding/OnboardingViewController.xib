@@ -9,12 +9,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="Fetch" customModuleProvider="target">
             <connections>
-                <outlet property="progressBarView" destination="1Hs-jC-djv" id="rgO-Vd-Tbu"/>
+                <outlet property="progressBarView" destination="1Hs-jC-djv" id="xmO-Lw-HYO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kKd-n1-S9d"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" restorationIdentifier="OnboardingViewController" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>

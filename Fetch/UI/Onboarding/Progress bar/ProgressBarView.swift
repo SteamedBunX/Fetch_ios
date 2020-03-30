@@ -14,10 +14,26 @@ final class ProgressBarView: UIStackView {
         static let spacing: CGFloat = 5.0
     }
 
-    var viewModel: ProgressBarViewModel = ProgressBarViewModel() {
+    var viewModel: ProgressBarViewModel? {
         didSet {
             bindToViewModel()
         }
+    }
+
+    private var isProgressFilled: Bool {
+        return viewModel?.isProgressFilled ?? false
+    }
+
+    private var currentIndex: Int {
+        return viewModel?.currentIndex ?? 0
+    }
+
+    private var numberOfSegments: Int {
+        return viewModel?.numberOfSegments ?? 0
+    }
+
+    private var validIndexes: Range<Int> {
+        return 0..<numberOfSegments
     }
 
     required init(coder: NSCoder) {
@@ -26,26 +42,29 @@ final class ProgressBarView: UIStackView {
         bindToViewModel()
     }
 
-    func progress() {
-        viewModel.progress()
-    }
-
-    func `return`() {
-        viewModel.return()
-    }
-
     private func setupStackView() {
         spacing = Constants.spacing
         distribution = .fillEqually
     }
 
     private func bindToViewModel() {
-        viewModel.update = updateSegments
+        viewModel?.updateProgressBar = updateSegments
+        reloadSegments()
+    }
+
+    private func reloadSegments() {
+        clearSegments()
         setupSegments()
     }
 
+    private func clearSegments() {
+        arrangedSubviews.forEach {
+            $0.removeFromSuperview()
+        }
+    }
+
     private func setupSegments() {
-        viewModel.validIndexes
+        validIndexes
             .map { _ in ProgressBarSegmentView() }
             .enumerated()
             .forEach { index, view in
@@ -64,6 +83,6 @@ final class ProgressBarView: UIStackView {
     }
 
     private func isEnabled(atIndex index: Int) -> Bool {
-        return viewModel.isEnabled(atIndex: index)
+        return isProgressFilled && index < currentIndex || index == currentIndex
     }
 }

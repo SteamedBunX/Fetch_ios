@@ -8,13 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		17CD18CF236E1C93C6F962BB /* Pods_Fetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BAC4B5DA6D58C3EEF00DDD2 /* Pods_Fetch.framework */; };
-		86068658242BAB3A00328A20 /* ProgressModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86068657242BAB3A00328A20 /* ProgressModelTests.swift */; };
-		8606865C242BFE8E00328A20 /* ProgressBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8606865B242BFE8E00328A20 /* ProgressBarViewModelTests.swift */; };
 		8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB67242AE22F00F122C6 /* ProgressBarView.swift */; };
 		8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */; };
 		8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */; };
 		8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */; };
-		8618BB76242B1FAC00F122C6 /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB75242B1FAC00F122C6 /* ProgressModel.swift */; };
 		CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */; };
 		CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A52416C61600F5ECF6 /* SceneDelegate.swift */; };
 		CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5A92416C61600F5ECF6 /* Main.storyboard */; };
@@ -49,13 +46,10 @@
 		52508D806ACA13A50CFC3121 /* Pods-FetchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchTests.debug.xcconfig"; path = "Target Support Files/Pods-FetchTests/Pods-FetchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BAC4B5DA6D58C3EEF00DDD2 /* Pods_Fetch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fetch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6150110A3CEF14F4B8D6ED /* Pods-FetchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchTests.release.xcconfig"; path = "Target Support Files/Pods-FetchTests/Pods-FetchTests.release.xcconfig"; sourceTree = "<group>"; };
-		86068657242BAB3A00328A20 /* ProgressModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModelTests.swift; sourceTree = "<group>"; };
-		8606865B242BFE8E00328A20 /* ProgressBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModelTests.swift; sourceTree = "<group>"; };
 		8618BB67242AE22F00F122C6 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSegmentView.swift; sourceTree = "<group>"; };
 		8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
 		8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		8618BB75242B1FAC00F122C6 /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
 		B49409A222B20645B01CD3EA /* Pods_FetchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FetchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20C5A02416C61600F5ECF6 /* Fetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fetch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +102,6 @@
 				8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */,
 				8618BB67242AE22F00F122C6 /* ProgressBarView.swift */,
 				8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */,
-				8618BB75242B1FAC00F122C6 /* ProgressModel.swift */,
 			);
 			path = "Progress bar";
 			sourceTree = "<group>";
@@ -173,9 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				FA95651B24241E7700380003 /* OnboardingQuestionTests.swift */,
-				86068657242BAB3A00328A20 /* ProgressModelTests.swift */,
 				CB20C5BC2416C61700F5ECF6 /* Info.plist */,
-				8606865B242BFE8E00328A20 /* ProgressBarViewModelTests.swift */,
 			);
 			path = FetchTests;
 			sourceTree = "<group>";
@@ -472,7 +463,6 @@
 				CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */,
 				8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */,
 				8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */,
-				8618BB76242B1FAC00F122C6 /* ProgressModel.swift in Sources */,
 				FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */,
 				FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */,
 				8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */,
@@ -485,8 +475,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86068658242BAB3A00328A20 /* ProgressModelTests.swift in Sources */,
-				8606865C242BFE8E00328A20 /* ProgressBarViewModelTests.swift in Sources */,
 				FA95651C24241E7700380003 /* OnboardingQuestionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

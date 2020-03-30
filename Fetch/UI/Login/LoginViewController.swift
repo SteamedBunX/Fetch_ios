@@ -25,9 +25,13 @@ final class LoginViewController: UIViewController {
     }
 
     private func userDidSignInWithGoogle(for user: GIDGoogleUser) {
+        // TODO: The login isn't fully complete here.
+        // We still need to hit the Fetch backend with our google auth results and get a user JWT to store locally
+        // when they have that functionality finished.
         coordinator?.showOnboardingScreen(animated: true)
     }
 
+    // Shake device to skip login for demo purposes. Removed before merge.
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         coordinator?.showOnboardingScreen(animated: true)
     }
