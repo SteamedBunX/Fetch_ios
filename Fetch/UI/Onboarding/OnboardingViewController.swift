@@ -10,15 +10,18 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
 
-    @IBOutlet var progressBarView: ProgressBarView!
+    @IBOutlet private var progressBarView: ProgressBarView!
+    @IBOutlet private var sectionTitleLabel: UILabel!
+    @IBOutlet private var sectionProgressTextLabel: UILabel!
     @IBOutlet private var questionTitleLabel: UILabel!
     @IBOutlet private var questionTipLabel: UILabel!
     @IBOutlet private var answerTextField: UITextField!
     @IBOutlet private var answerChoiceTableView: UITableView!
     @IBOutlet private var backButton: UIButton!
     @IBOutlet private var nextButton: UIButton!
+    @IBOutlet private var doneButton: UIButton!
 
-    let viewModel: OnboardingViewModel
+    private let viewModel: OnboardingViewModel
     weak var coordinator: MainCoordinator?
 
     // MARK: - Initial Setup
@@ -71,21 +74,29 @@ final class OnboardingViewController: UIViewController {
     private func setupNavigationButton() {
         backButton.setupForNavigation()
         nextButton.setupForNavigation()
+        doneButton.setupForNavigation()
     }
 
     // MARK: - Loading Questions
 
     private func loadFirstQuestion() {
         addNewQuestionToScreen(movedForward: true)
+        updateSection(movedForward: true)
+    }
+
+    private func updateSection(movedForward: Bool) {
+        sectionTitleLabel.text = viewModel.currentSectionTitle
     }
 
     private func addNewQuestionToScreen(movedForward: Bool) {
         // TODO: User SnapView to save the current question and Hide the actual views.
+        sectionProgressTextLabel.text = viewModel.sectionProgressText
+        questionTitleLabel.text = viewModel.currentQuestionTitle
+        questionTipLabel.text = viewModel.currentQuestionTip
         switch viewModel.currentQuestionType {
-        case .multipleChoice:
-            addMultipleChoiceQuestionToScreen()
-        case .singleChoice:
-            addSingleChoiceQuestionToScreen()
+        case .multipleChoice,
+             .singleChoice:
+            addChoiceQuestionToScreen()
         case .textInput:
             addTextInputQuestionToScreen()
         }
@@ -93,26 +104,14 @@ final class OnboardingViewController: UIViewController {
         // TODO: Animate the snapView and actual view to create a transition annimation
     }
 
-    private func addMultipleChoiceQuestionToScreen() {
-        questionTitleLabel.text = viewModel.currentQuestionTitle
-        questionTipLabel.text = viewModel.currentQuestionTip
-        answerChoiceTableView.isHidden = false
-        answerTextField.isHidden = true
-        answerChoiceTableView.reloadData()
-    }
-
-    private func addSingleChoiceQuestionToScreen() {
-        questionTitleLabel.text = viewModel.currentQuestionTitle
-        questionTipLabel.text = viewModel.currentQuestionTip
+    private func addChoiceQuestionToScreen() {
         answerChoiceTableView.isHidden = false
         answerTextField.isHidden = true
         answerChoiceTableView.reloadData()
     }
 
     private func addTextInputQuestionToScreen() {
-        questionTitleLabel.text = viewModel.currentQuestionTitle
         answerTextField.placeholder = viewModel.currentQuestionPlaceHolderText
-        questionTipLabel.text = viewModel.currentQuestionTip
         answerChoiceTableView.isHidden = true
         answerTextField.isHidden = false
         switch viewModel.currentQuestionKeyboardType {
@@ -130,18 +129,22 @@ final class OnboardingViewController: UIViewController {
     private func updateButtonState() {
         backButton.changeOnboardingNavigationState(to: viewModel.backButtonState)
         nextButton.changeOnboardingNavigationState(to: viewModel.nextButtonState)
+        doneButton.changeOnboardingNavigationState(to: viewModel.doneButtonState)
     }
 
     // MARK: - Actions
 
     @IBAction private func backButtonTapped(_ sender: Any) {
-
+        viewModel.backButtonTapped()
     }
 
     @IBAction private func nextButtonTapped(_ sender: Any) {
-
+        viewModel.nextButtonTapped()
     }
 
+    @IBAction private func doneButtonTapped(_ sender: Any) {
+
+    }
     @objc private func keyboardInputDidFinish() {
         view.endEditing(true)
         self.viewModel.setInputText(newInputText: answerTextField.text ?? "")
@@ -170,16 +173,16 @@ extension OnboardingViewController: OnboardingViewModelDelegate {
     }
 
     func sectionDidChange(movedForward: Bool) {
-
+        updateSection(movedForward: movedForward)
     }
 
     func selectedIndexesDidChange() {
         answerChoiceTableView.reloadData()
-         self.updateButtonState()
+        updateButtonState()
     }
 
     func textInputDidChange() {
-        self.updateButtonState()
+        updateButtonState()
     }
 
     func finishSequence() {
@@ -201,7 +204,7 @@ extension OnboardingViewController: UITableViewDelegate, UITableViewDataSource {
         let answer = viewModel.currentQuestionChoices?[index] ?? ""
         let selected = viewModel.currentQuestionSelectedChoiceIndexes.contains(index)
         cell.setup(index: indexPath.row, answer: answer, selected: selected)
-        cell.setdelegate(self)
+        cell.setDelegate(self)
         return cell
     }
 }

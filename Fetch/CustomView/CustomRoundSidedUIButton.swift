@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class CustomRoundSidedUIButton: UIButton {
+@IBDesignable final class CustomRoundSidedUIButton: UIButton {
 
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
@@ -21,7 +21,7 @@ import UIKit
         self.styleView()
     }
 
-    func styleView() {
+    private func styleView() {
         layer.cornerRadius = frame.size.height / 2
     }
 }

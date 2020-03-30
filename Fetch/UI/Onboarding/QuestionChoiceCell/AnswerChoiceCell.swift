@@ -13,7 +13,7 @@ protocol AnswerChoiceCellDelegate: AnyObject {
     func buttonTapped(at index: Int)
 }
 
-class AnswerChoiceCell: UITableViewCell {
+final class AnswerChoiceCell: UITableViewCell {
 
     @IBOutlet private var answerChoiceButton: CustomRoundSidedUIButton!
 
@@ -33,11 +33,11 @@ class AnswerChoiceCell: UITableViewCell {
         }
     }
 
-    func setdelegate(_ delegate: AnswerChoiceCellDelegate) {
+    func setDelegate(_ delegate: AnswerChoiceCellDelegate) {
         self.delegate = delegate
     }
 
-    @IBAction func buttonTapped(_ sender: Any) {
+    @IBAction private func buttonTapped(_ sender: Any) {
         delegate?.buttonTapped(at: answerIndex)
     }
 }
