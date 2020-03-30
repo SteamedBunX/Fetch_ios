@@ -11,11 +11,6 @@ import UIKit
 
 @IBDesignable class CustomUIButton: UIButton {
 
-    @IBInspectable var shadowColor: UIColor = UIColor.black
-    @IBInspectable var shadowOpacity: Float = 0
-    @IBInspectable var shadowRadius: CGFloat = 0
-    @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 0)
-
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         self.styleView()
@@ -27,9 +22,6 @@ import UIKit
     }
 
     func styleView() {
-        layer.shadowColor = shadowColor.cgColor
-        layer.shadowOpacity = shadowOpacity
-        layer.shadowRadius = shadowRadius
-        layer.shadowOffset = shadowOffset
+        
     }
 }

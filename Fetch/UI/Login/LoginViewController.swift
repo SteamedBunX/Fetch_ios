@@ -11,12 +11,14 @@ import GoogleSignIn
 
 final class LoginViewController: UIViewController {
 
+    @IBOutlet private var googleSignInButton: CustomUIButton!
     weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
+        googleSignInButton.layer.applyGoogleSignInButtonShadow()
     }
 
     @IBAction private func googleSignInButtonTapped(_ sender: Any) {
