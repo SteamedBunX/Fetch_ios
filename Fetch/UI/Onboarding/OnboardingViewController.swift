@@ -36,7 +36,6 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         setupViews()
-        progressBarView.viewModel = viewModel
         loadFirstQuestion()
     }
 
@@ -44,10 +43,11 @@ final class OnboardingViewController: UIViewController {
         setupTextField()
         setupNavigationButton()
         setupTableView()
+        progressBarView.viewModel = viewModel
     }
 
     private func setupTextField() {
-        answerTextField.layer.applyQuestionTextFieldShadow()
+        answerTextField.layer.applyAnswerTextFieldShadow()
         answerTextField.delegate = self
         setupKeyboardToolBar()
     }
@@ -55,6 +55,8 @@ final class OnboardingViewController: UIViewController {
     private func setupTableView() {
         let nib = UINib(nibName: "AnswerChoiceCell", bundle: nil)
         answerChoiceTableView.register(nib, forCellReuseIdentifier: "AnswerChoiceCell")
+        answerChoiceTableView.delegate = self
+        answerChoiceTableView.dataSource = self
     }
 
     private func setupKeyboardToolBar() {
@@ -78,21 +80,40 @@ final class OnboardingViewController: UIViewController {
     }
 
     private func addNewQuestionToScreen(movedForward: Bool) {
+        // TODO: User SnapView to save the current question and Hide the actual views.
         switch viewModel.currentQuestionType {
         case .multipleChoice:
-            break
+            addMultipleChoiceQuestionToScreen()
         case .singleChoice:
-            break
+            addSingleChoiceQuestionToScreen()
         case .textInput:
             addTextInputQuestionToScreen()
         }
         updateButtonState()
+        // TODO: Animate the snapView and actual view to create a transition annimation
+    }
+
+    private func addMultipleChoiceQuestionToScreen() {
+        questionTitleLabel.text = viewModel.currentQuestionTitle
+        questionTipLabel.text = viewModel.currentQuestionTip
+        answerChoiceTableView.isHidden = false
+        answerTextField.isHidden = true
+        answerChoiceTableView.reloadData()
+    }
+
+    private func addSingleChoiceQuestionToScreen() {
+        questionTitleLabel.text = viewModel.currentQuestionTitle
+        questionTipLabel.text = viewModel.currentQuestionTip
+        answerChoiceTableView.isHidden = false
+        answerTextField.isHidden = true
+        answerChoiceTableView.reloadData()
     }
 
     private func addTextInputQuestionToScreen() {
         questionTitleLabel.text = viewModel.currentQuestionTitle
         answerTextField.placeholder = viewModel.currentQuestionPlaceHolderText
         questionTipLabel.text = viewModel.currentQuestionTip
+        answerChoiceTableView.isHidden = true
         answerTextField.isHidden = false
         switch viewModel.currentQuestionKeyboardType {
         case .digit:
@@ -145,7 +166,7 @@ extension OnboardingViewController: UITextFieldDelegate {
 extension OnboardingViewController: OnboardingViewModelDelegate {
 
     func questionDidChange(movedForward: Bool) {
-
+        addNewQuestionToScreen(movedForward: movedForward)
     }
 
     func sectionDidChange(movedForward: Bool) {
@@ -153,7 +174,8 @@ extension OnboardingViewController: OnboardingViewModelDelegate {
     }
 
     func selectedIndexesDidChange() {
-
+        answerChoiceTableView.reloadData()
+         self.updateButtonState()
     }
 
     func textInputDidChange() {
@@ -179,7 +201,14 @@ extension OnboardingViewController: UITableViewDelegate, UITableViewDataSource {
         let answer = viewModel.currentQuestionChoices?[index] ?? ""
         let selected = viewModel.currentQuestionSelectedChoiceIndexes.contains(index)
         cell.setup(index: indexPath.row, answer: answer, selected: selected)
+        cell.setdelegate(self)
         return cell
+    }
+}
+
+extension OnboardingViewController: AnswerChoiceCellDelegate {
+    func buttonTapped(at index: Int) {
+        viewModel.selectChoice(at: index)
     }
 }
 

@@ -9,21 +9,35 @@
 import Foundation
 import UIKit
 
+protocol AnswerChoiceCellDelegate: AnyObject {
+    func buttonTapped(at index: Int)
+}
+
 class AnswerChoiceCell: UITableViewCell {
 
     @IBOutlet private var answerChoiceButton: CustomRoundSidedUIButton!
 
-    var answerIndex: Int = 0
+    private weak var delegate: AnswerChoiceCellDelegate?
+    private var answerIndex: Int = 0
 
     func setup(index: Int, answer: String, selected: Bool) {
         answerIndex = index
-        answerChoiceButton.layer.applyGoogleSignInButtonShadow()
+        answerChoiceButton.setTitle(answer, for: .normal)
+        answerChoiceButton.layer.applyAnswerChoiceButtonShadow()
         if selected {
             answerChoiceButton.backgroundColor = .answerChoiceButtonSelected
-            answerChoiceButton.titleLabel?.textColor = .white
+            answerChoiceButton.setTitleColor(.white, for: .normal)
         } else {
             answerChoiceButton.backgroundColor = .white
-            answerChoiceButton.titleLabel?.textColor = .darkText
+            answerChoiceButton.setTitleColor(.darkText, for: .normal)
         }
+    }
+
+    func setdelegate(_ delegate: AnswerChoiceCellDelegate) {
+        self.delegate = delegate
+    }
+
+    @IBAction func buttonTapped(_ sender: Any) {
+        delegate?.buttonTapped(at: answerIndex)
     }
 }
