@@ -86,6 +86,6 @@
     <resources>
         <image name="googleIcon" width="30" height="30"/>
         <image name="login_background" width="375" height="654"/>
-        <image name="login_titleLogo" width="106" height="108"/>
+        <image name="login_titleLogo" width="162" height="58"/>
     </resources>
 </document>

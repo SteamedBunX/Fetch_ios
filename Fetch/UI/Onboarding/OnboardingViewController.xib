@@ -60,7 +60,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                     <color key="tintColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Next" image="arrow.left" catalog="system">
+                    <state key="normal" title="Next" image="onboarding_navArrowRight">
                         <color key="titleColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -74,7 +74,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                     <color key="tintColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Back" image="arrow.left" catalog="system">
+                    <state key="normal" title="Back" image="onboarding_navArrowLeft">
                         <color key="titleColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -82,14 +82,13 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5B-9F-xkb" userLabel="Done Button">
-                    <rect key="frame" x="293" y="836" width="80" height="20"/>
+                    <rect key="frame" x="301" y="836" width="80" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="Egg-1T-QTj"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="e2c-zY-mGs"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                     <color key="tintColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Done" image="checkmark" catalog="system">
+                    <state key="normal" title="Done" image="onboarding_navArrowRight">
                         <color key="titleColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -160,7 +159,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NbH-Zi-f46" secondAttribute="trailingMargin" constant="41" id="be0-pw-36e"/>
                 <constraint firstItem="sXR-Rt-zDR" firstAttribute="baseline" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.83" id="bgi-qx-lu3"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M5z-1U-26n" secondAttribute="trailing" id="e4C-oZ-V0h"/>
-                <constraint firstAttribute="trailing" secondItem="x5B-9F-xkb" secondAttribute="trailing" constant="41" id="ebW-N2-nSM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="x5B-9F-xkb" secondAttribute="trailingMargin" constant="41" id="ebW-N2-nSM"/>
                 <constraint firstItem="1sR-RM-rr2" firstAttribute="centerX" secondItem="M5z-1U-26n" secondAttribute="centerX" id="hQQ-57-4kY"/>
                 <constraint firstItem="X5R-W3-Su4" firstAttribute="top" secondItem="1Hs-jC-djv" secondAttribute="bottom" constant="19" id="jqc-Ow-cwV"/>
                 <constraint firstAttribute="bottom" secondItem="M5z-1U-26n" secondAttribute="bottom" id="kSG-qU-wEL"/>
@@ -175,8 +174,8 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow.left" catalog="system" width="64" height="48"/>
-        <image name="checkmark" catalog="system" width="64" height="56"/>
         <image name="onboarding_background" width="375" height="812"/>
+        <image name="onboarding_navArrowLeft" width="16" height="16"/>
+        <image name="onboarding_navArrowRight" width="16" height="16"/>
     </resources>
 </document>
