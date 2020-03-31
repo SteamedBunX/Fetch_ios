@@ -246,13 +246,13 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		FA5395702432682F003C3B1F /* QuestionChoiceCell */ = {
+		FA5395702432682F003C3B1F /* AnswerChoiceCell */ = {
 			isa = PBXGroup;
 			children = (
 				FA53956E24323ED5003C3B1F /* AnswerChoiceCell.xib */,
 				FA5395712432684D003C3B1F /* AnswerChoiceCell.swift */,
 			);
-			path = QuestionChoiceCell;
+			path = AnswerChoiceCell;
 			sourceTree = "<group>";
 		};
 		FADC5E1124227472006E8C23 /* UI */ = {
@@ -268,7 +268,7 @@
 		FADC5E1224227472006E8C23 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				FA5395702432682F003C3B1F /* QuestionChoiceCell */,
+				FA5395702432682F003C3B1F /* AnswerChoiceCell */,
 				8618BB66242AE15D00F122C6 /* ProgressBar */,
 				FADC5E1324227472006E8C23 /* OnboardingViewController.xib */,
 				FADC5E1524227472006E8C23 /* OnboardingViewController.swift */,
