@@ -22,6 +22,20 @@
 		FA12B4BF242CE7FE000731FE /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */; };
 		FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */; };
 		FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */; };
+		FA2EFBAB2433CD7000BF65BA /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBAA2433CD7000BF65BA /* Pet.swift */; };
+		FA2EFBB02433DBE900BF65BA /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBAF2433DBE900BF65BA /* ProfileCard.swift */; };
+		FA2EFBB22433DDFC00BF65BA /* PetSelectionSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBB12433DDFC00BF65BA /* PetSelectionSequence.swift */; };
+		FA2EFBB42433E08E00BF65BA /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBB32433E08E00BF65BA /* Queue.swift */; };
+		FA2EFBB82434D34000BF65BA /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBB72434D34000BF65BA /* ActionType.swift */; };
+		FA2EFBBB2434D6AD00BF65BA /* PetTagType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBBA2434D6AD00BF65BA /* PetTagType.swift */; };
+		FA2EFBBD2434F8A400BF65BA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBBC2434F8A400BF65BA /* HomeViewModel.swift */; };
+		FA2EFBC02434FAAE00BF65BA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBBF2434FAAE00BF65BA /* NetworkManager.swift */; };
+		FA2EFBC22434FDA700BF65BA /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBC12434FDA700BF65BA /* MockNetworkManager.swift */; };
+		FA2EFBC42434FDFC00BF65BA /* Pets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBC32434FDFC00BF65BA /* Pets.swift */; };
+		FA2EFBC72434FF5200BF65BA /* PetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBC62434FF5200BF65BA /* PetBundle.swift */; };
+		FA2EFBC92435093200BF65BA /* ImageURLBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBC82435093200BF65BA /* ImageURLBundle.swift */; };
+		FA2EFBCB24350D7700BF65BA /* pets.json in Resources */ = {isa = PBXBuildFile; fileRef = FA2EFBCA24350D7700BF65BA /* pets.json */; };
+		FA2EFBCD2435A5ED00BF65BA /* JsonDecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBCC2435A5ED00BF65BA /* JsonDecodeTests.swift */; };
 		FA317583242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317582242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift */; };
 		FA317585242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317584242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift */; };
 		FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CBC2428FDF2008399AF /* MainCoordinator.swift */; };
@@ -78,6 +92,20 @@
 		FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PatuaOne-Regular.ttf"; sourceTree = "<group>"; };
 		FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestions.swift; sourceTree = "<group>"; };
 		FA26C3102429515700D0B5BA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		FA2EFBAA2433CD7000BF65BA /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		FA2EFBAF2433DBE900BF65BA /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
+		FA2EFBB12433DDFC00BF65BA /* PetSelectionSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSelectionSequence.swift; sourceTree = "<group>"; };
+		FA2EFBB32433E08E00BF65BA /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		FA2EFBB72434D34000BF65BA /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
+		FA2EFBBA2434D6AD00BF65BA /* PetTagType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTagType.swift; sourceTree = "<group>"; };
+		FA2EFBBC2434F8A400BF65BA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FA2EFBBF2434FAAE00BF65BA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FA2EFBC12434FDA700BF65BA /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		FA2EFBC32434FDFC00BF65BA /* Pets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pets.swift; sourceTree = "<group>"; };
+		FA2EFBC62434FF5200BF65BA /* PetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBundle.swift; sourceTree = "<group>"; };
+		FA2EFBC82435093200BF65BA /* ImageURLBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLBundle.swift; sourceTree = "<group>"; };
+		FA2EFBCA24350D7700BF65BA /* pets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pets.json; sourceTree = "<group>"; };
+		FA2EFBCC2435A5ED00BF65BA /* JsonDecodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecodeTests.swift; sourceTree = "<group>"; };
 		FA317582242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceOnboardingQuestionTests.swift; sourceTree = "<group>"; };
 		FA317584242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceOnboardingQuestionTests.swift; sourceTree = "<group>"; };
 		FA350CBC2428FDF2008399AF /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -172,6 +200,9 @@
 			children = (
 				86A7494E243BD21900DF8742 /* schema.json */,
 				86A7494F243BD4FD00DF8742 /* Some.graphql */,
+				FA2EFBCE24361EE700BF65BA /* Utility */,
+				FA2EFBC52434FF4000BF65BA /* Decoder */,
+				FA2EFBBE2434FA9400BF65BA /* Network */,
 				FA45ADB2242E4C7300DB5195 /* Extension */,
 				FA12B4C2242CFF57000731FE /* LocalData */,
 				FA350CC3242910BF008399AF /* CustomView */,
@@ -190,6 +221,7 @@
 		CB20C5B92416C61700F5ECF6 /* FetchTests */ = {
 			isa = PBXGroup;
 			children = (
+				FA2EFBCC2435A5ED00BF65BA /* JsonDecodeTests.swift */,
 				FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */,
 				FA317582242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift */,
 				FA317584242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift */,
@@ -211,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */,
+				FA2EFBC32434FDFC00BF65BA /* Pets.swift */,
+				FA2EFBCA24350D7700BF65BA /* pets.json */,
 			);
 			path = LocalData;
 			sourceTree = "<group>";
@@ -223,6 +257,77 @@
 				FA26C3102429515700D0B5BA /* Lato-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		FA2EFBA62433C5FE00BF65BA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FA2EFBBC2434F8A400BF65BA /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FA2EFBA72433CC2E00BF65BA /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FA9565192423F9CA00380003 /* OnboardingSequence.swift */,
+				FADC5E1624227472006E8C23 /* OnboardingSection.swift */,
+				FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		FA2EFBA82433CC8100BF65BA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FA2EFBA62433C5FE00BF65BA /* Home */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FA2EFBA92433CCBF00BF65BA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FA2EFBB12433DDFC00BF65BA /* PetSelectionSequence.swift */,
+				FA2EFBAA2433CD7000BF65BA /* Pet.swift */,
+				FA2EFBAF2433DBE900BF65BA /* ProfileCard.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FA2EFBB92434D35300BF65BA /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FA2EFBB72434D34000BF65BA /* ActionType.swift */,
+				FA2EFBBA2434D6AD00BF65BA /* PetTagType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		FA2EFBBE2434FA9400BF65BA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FA2EFBBF2434FAAE00BF65BA /* NetworkManager.swift */,
+				FA2EFBC12434FDA700BF65BA /* MockNetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FA2EFBC52434FF4000BF65BA /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				FA2EFBC62434FF5200BF65BA /* PetBundle.swift */,
+				FA2EFBC82435093200BF65BA /* ImageURLBundle.swift */,
+			);
+			path = Decoder;
+			sourceTree = "<group>";
+		};
+		FA2EFBCE24361EE700BF65BA /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FA2EFBB32433E08E00BF65BA /* Queue.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		FA350CBE2428FE01008399AF /* Login */ = {
@@ -266,6 +371,7 @@
 				FA350CBC2428FDF2008399AF /* MainCoordinator.swift */,
 				FA350CBE2428FE01008399AF /* Login */,
 				FADC5E1224227472006E8C23 /* Onboarding */,
+				FA2EFBA82433CC8100BF65BA /* Main */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -285,9 +391,9 @@
 		FADC5E1D24227FAC006E8C23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FADC5E1624227472006E8C23 /* OnboardingSection.swift */,
-				FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */,
-				FA9565192423F9CA00380003 /* OnboardingSequence.swift */,
+				FA2EFBB92434D35300BF65BA /* Enum */,
+				FA2EFBA72433CC2E00BF65BA /* Onboarding */,
+				FA2EFBA92433CCBF00BF65BA /* Home */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,6 +500,7 @@
 				FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */,
 				CB20C5AD2416C61600F5ECF6 /* Assets.xcassets in Resources */,
 				FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */,
+				FA2EFBCB24350D7700BF65BA /* pets.json in Resources */,
 				FA350CC12428FE01008399AF /* LoginViewController.xib in Resources */,
 				FA53956F24323ED5003C3B1F /* AnswerChoiceCell.xib in Resources */,
 				FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */,
@@ -535,22 +642,34 @@
 			files = (
 				FA350CC5242910BF008399AF /* RoundButton.swift in Sources */,
 				FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */,
+				FA2EFBC22434FDA700BF65BA /* MockNetworkManager.swift in Sources */,
+				FA2EFBB82434D34000BF65BA /* ActionType.swift in Sources */,
+				FA2EFBAB2433CD7000BF65BA /* Pet.swift in Sources */,
 				FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */,
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
 				FA5395722432684D003C3B1F /* AnswerChoiceCell.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
+				FA2EFBB22433DDFC00BF65BA /* PetSelectionSequence.swift in Sources */,
 				FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */,
 				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
 				CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */,
 				8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */,
 				8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */,
 				FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */,
+				FA2EFBBB2434D6AD00BF65BA /* PetTagType.swift in Sources */,
+				FA2EFBC02434FAAE00BF65BA /* NetworkManager.swift in Sources */,
+				FA2EFBB02433DBE900BF65BA /* ProfileCard.swift in Sources */,
+				FA2EFBC92435093200BF65BA /* ImageURLBundle.swift in Sources */,
 				FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */,
 				FA45ADB6242E4D5600DB5195 /* UIColor+Extension.swift in Sources */,
+				FA2EFBC42434FDFC00BF65BA /* Pets.swift in Sources */,
 				FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */,
+				FA2EFBC72434FF5200BF65BA /* PetBundle.swift in Sources */,
 				8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */,
+				FA2EFBBD2434F8A400BF65BA /* HomeViewModel.swift in Sources */,
 				FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */,
 				CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */,
+				FA2EFBB42433E08E00BF65BA /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA317583242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift in Sources */,
+				FA2EFBCD2435A5ED00BF65BA /* JsonDecodeTests.swift in Sources */,
 				FA95651C24241E7700380003 /* TextInputOnboardingQuestionTests.swift in Sources */,
 				FA317585242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift in Sources */,
 			);
