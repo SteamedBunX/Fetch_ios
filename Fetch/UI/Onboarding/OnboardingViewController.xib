@@ -67,13 +67,13 @@
                         <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="otq-Tj-Lpe"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0W-hN-vKg">
-                    <rect key="frame" x="41" y="836" width="80" height="20"/>
+                <button contentMode="scaleToFill" horizontalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0W-hN-vKg">
+                    <rect key="frame" x="33" y="836" width="80" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="iBK-DO-m7b"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
-                    <color key="tintColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="0.53333333333333333" green="0.52571028470993042" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal" title="Back" image="onboarding_navArrowLeft">
                         <color key="titleColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -154,7 +154,7 @@
                 <constraint firstItem="Gd2-1T-THc" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="QGd-I6-zth"/>
                 <constraint firstItem="sXR-Rt-zDR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Suf-gd-vjH"/>
                 <constraint firstItem="sBQ-XJ-dTy" firstAttribute="top" secondItem="X5R-W3-Su4" secondAttribute="bottom" id="Uhg-YC-3bN"/>
-                <constraint firstItem="W0W-hN-vKg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="41" id="XGg-dy-Ow3"/>
+                <constraint firstItem="W0W-hN-vKg" firstAttribute="leadingMargin" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="41" id="XGg-dy-Ow3"/>
                 <constraint firstItem="M5z-1U-26n" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aks-cN-wrV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NbH-Zi-f46" secondAttribute="trailingMargin" constant="41" id="be0-pw-36e"/>
                 <constraint firstItem="sXR-Rt-zDR" firstAttribute="baseline" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.83" id="bgi-qx-lu3"/>
