@@ -27,7 +27,7 @@ final class MainCoordinator: NSObject {
     }
 
     func showOnboardingScreen(animated: Bool) {
-        let viewModel = OnboardingViewModel(flow: OnboardingQuestions.loadOnlyZipCode())
+        let viewModel = OnboardingViewModel(flow: OnboardingQuestions.load())
         let onboardingViewController = OnboardingViewController(viewModel: viewModel)
         onboardingViewController.coordinator = self
         navigationController?.pushViewController(onboardingViewController, animated: animated)
