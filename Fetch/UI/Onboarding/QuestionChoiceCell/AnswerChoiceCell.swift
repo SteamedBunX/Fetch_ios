@@ -15,7 +15,9 @@ protocol AnswerChoiceCellDelegate: AnyObject {
 
 final class AnswerChoiceCell: UITableViewCell {
 
-    @IBOutlet private var answerChoiceButton: CustomRoundSidedUIButton!
+    static let cellIdentifier = "AnswerChoiceCell"
+
+    @IBOutlet private var answerChoiceButton: RoundButton!
 
     weak var delegate: AnswerChoiceCellDelegate?
     private var answerIndex: Int = 0
@@ -24,8 +26,8 @@ final class AnswerChoiceCell: UITableViewCell {
         answerIndex = index
         answerChoiceButton.setTitle(answer, for: .normal)
         answerChoiceButton.layer.applyAnswerChoiceButtonShadow()
-        answerChoiceButton.backgroundColor = selected ? .answerChoiceButtonSelected : .white
-        answerChoiceButton.setTitleColor(selected ? .white : .darkText, for: .normal)
+        answerChoiceButton.backgroundColor = selected ? .answerChoiceButtonSelected : .answerChoiceButtonUnSelected
+        answerChoiceButton.setTitleColor(selected ? .white : .black, for: .normal)
     }
 
     @IBAction private func buttonTapped(_ sender: Any) {

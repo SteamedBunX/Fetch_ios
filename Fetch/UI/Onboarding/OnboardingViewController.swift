@@ -56,8 +56,8 @@ final class OnboardingViewController: UIViewController {
     }
 
     private func setupTableView() {
-        let nib = UINib(nibName: "AnswerChoiceCell", bundle: nil)
-        answerChoiceTableView.register(nib, forCellReuseIdentifier: "AnswerChoiceCell")
+        let nib = UINib(nibName: AnswerChoiceCell.cellIdentifier, bundle: nil)
+        answerChoiceTableView.register(nib, forCellReuseIdentifier: AnswerChoiceCell.cellIdentifier)
         answerChoiceTableView.delegate = self
         answerChoiceTableView.dataSource = self
     }
@@ -94,8 +94,7 @@ final class OnboardingViewController: UIViewController {
         questionTitleLabel.text = viewModel.currentQuestionTitle
         questionTipLabel.text = viewModel.currentQuestionTip
         switch viewModel.currentQuestionType {
-        case .multipleChoice,
-             .singleChoice:
+        case .multipleChoice, .singleChoice:
             addChoiceQuestionToScreen()
         case .textInput:
             addTextInputQuestionToScreen()
@@ -145,7 +144,7 @@ final class OnboardingViewController: UIViewController {
     @IBAction private func doneButtonTapped(_ sender: Any) {
 
     }
-    
+
     @objc private func keyboardInputDidFinish() {
         view.endEditing(true)
         self.viewModel.setInputText(newInputText: answerTextField.text ?? "")
@@ -198,7 +197,7 @@ extension OnboardingViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerChoiceCell") as? AnswerChoiceCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AnswerChoiceCell.cellIdentifier) as? AnswerChoiceCell else {
             return UITableViewCell()
         }
         let index = indexPath.row

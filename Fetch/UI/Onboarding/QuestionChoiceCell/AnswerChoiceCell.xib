@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wn-Rw-8t7" customClass="CustomRoundSidedUIButton" customModule="Fetch" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wn-Rw-8t7" customClass="RoundButton" customModule="Fetch" customModuleProvider="target">
                         <rect key="frame" x="10" y="8" width="394" height="53"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
