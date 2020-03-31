@@ -26,6 +26,7 @@ enum KeyboardType {
 }
 
 final class OnboardingViewModel {
+    
     var updateProgressBar: (() -> ())?
 
     weak var delegate: OnboardingViewModelDelegate?
@@ -169,6 +170,7 @@ final class OnboardingViewModel {
 }
 
 extension OnboardingViewModel: ProgressBarViewModel {
+
     var numberOfSegments: Int {
         return numberOfSections
     }
@@ -179,6 +181,7 @@ extension OnboardingViewModel: ProgressBarViewModel {
 }
 
 extension OnboardingViewModel {
+
     convenience init() {
         let sections = (0..<3).map { _ in
             return OnboardingSection(title: "", questions: [])
