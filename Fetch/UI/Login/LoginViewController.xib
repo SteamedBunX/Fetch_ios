@@ -30,13 +30,13 @@
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_titleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="4Lo-7t-iAk">
-                    <rect key="frame" x="149" y="154" width="116" height="118"/>
+                    <rect key="frame" x="118" y="154" width="178" height="63.666666666666657"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="4Lo-7t-iAk" secondAttribute="height" multiplier="106:108" id="UMH-UD-qh4"/>
+                        <constraint firstAttribute="width" secondItem="4Lo-7t-iAk" secondAttribute="height" multiplier="162:58" id="UMH-UD-qh4"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your furrever best friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho2-T4-OFu">
-                    <rect key="frame" x="103.66666666666669" y="294" width="207" height="19"/>
+                    <rect key="frame" x="103.66666666666669" y="233.66666666666666" width="207" height="19"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -73,10 +73,10 @@
                 <constraint firstItem="sP6-8g-dS1" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.7" id="VHc-t0-qYn"/>
                 <constraint firstItem="sP6-8g-dS1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XTc-HT-UT4"/>
                 <constraint firstItem="Cjb-r9-9p2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="i6k-cq-EgA"/>
-                <constraint firstItem="4Lo-7t-iAk" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.28" id="jdN-IR-OJO"/>
+                <constraint firstItem="4Lo-7t-iAk" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.43" id="jdN-IR-OJO"/>
                 <constraint firstItem="ho2-T4-OFu" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="nvq-0W-60K"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="centerX" secondItem="Cjb-r9-9p2" secondAttribute="centerX" id="vJF-yo-CXr"/>
-                <constraint firstItem="ho2-T4-OFu" firstAttribute="top" secondItem="4Lo-7t-iAk" secondAttribute="bottom" constant="22" id="xKG-2d-979"/>
+                <constraint firstItem="ho2-T4-OFu" firstAttribute="top" secondItem="4Lo-7t-iAk" secondAttribute="bottom" constant="16" id="xKG-2d-979"/>
                 <constraint firstItem="Cjb-r9-9p2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.4" id="xm4-8l-Nf6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -86,6 +86,6 @@
     <resources>
         <image name="googleIcon" width="30" height="30"/>
         <image name="login_background" width="375" height="654"/>
-        <image name="login_titleLogo" width="106" height="108"/>
+        <image name="login_titleLogo" width="162" height="58"/>
     </resources>
 </document>

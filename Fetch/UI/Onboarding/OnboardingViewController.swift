@@ -222,7 +222,9 @@ private extension UIButton {
         self.setTitleColor(UIColor.buttonDisabledColor, for: .disabled)
         self.setTitleColor(UIColor.buttonEnabledColor, for: .highlighted)
         let highlightImage = self.imageView?.image?.withTintColor(.buttonEnabledColor, renderingMode:.alwaysOriginal)
+        let disabledImage = self.imageView?.image?.withTintColor(.buttonDisabledColor, renderingMode:.alwaysOriginal)
         self.setImage(highlightImage, for: .highlighted)
+        self.setImage(disabledImage, for: .disabled)
     }
 
     func changeOnboardingNavigationState(to state: ButtonState) {

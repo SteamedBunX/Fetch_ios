@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -21,10 +26,16 @@
                                     <constraint firstAttribute="width" secondItem="pKO-Ww-fo6" secondAttribute="height" multiplier="375:654" id="nje-Qj-Ymz"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your furrever best friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXV-yh-Ubu">
+                                <rect key="frame" x="56.5" y="294" width="207" height="19"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_titleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xVM-6v-ONS">
-                                <rect key="frame" x="115" y="229" width="90" height="91"/>
+                                <rect key="frame" x="91" y="229" width="138" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="xVM-6v-ONS" secondAttribute="height" multiplier="106:108" id="lEq-Ns-E5d"/>
+                                    <constraint firstAttribute="width" secondItem="xVM-6v-ONS" secondAttribute="height" multiplier="162:58" id="lEq-Ns-E5d"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jh-2A-14W">
@@ -35,15 +46,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xVM-6v-ONS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.34" id="FdH-lp-CAC"/>
+                            <constraint firstItem="hXV-yh-Ubu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Fe0-8C-AfT"/>
                             <constraint firstItem="pKO-Ww-fo6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LGZ-rd-Owa"/>
                             <constraint firstItem="4Jh-2A-14W" firstAttribute="top" secondItem="pKO-Ww-fo6" secondAttribute="bottom" id="SRr-rU-Li5"/>
                             <constraint firstItem="4Jh-2A-14W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SeN-Tg-7zy"/>
-                            <constraint firstItem="xVM-6v-ONS" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.28" id="Wu1-bO-0Wm"/>
+                            <constraint firstItem="xVM-6v-ONS" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.43" id="Wu1-bO-0Wm"/>
                             <constraint firstItem="xVM-6v-ONS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aS9-wP-QWM"/>
                             <constraint firstAttribute="bottom" secondItem="4Jh-2A-14W" secondAttribute="bottom" priority="900" id="i2Z-Go-i3x"/>
                             <constraint firstAttribute="trailing" secondItem="4Jh-2A-14W" secondAttribute="trailing" id="nFu-pa-X1O"/>
                             <constraint firstItem="pKO-Ww-fo6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.4" id="pmi-rI-8Zk"/>
                             <constraint firstItem="pKO-Ww-fo6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qVD-q4-twO"/>
+                            <constraint firstItem="hXV-yh-Ubu" firstAttribute="top" secondItem="xVM-6v-ONS" secondAttribute="bottom" constant="16" id="sOM-Qa-DnB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -55,6 +68,6 @@
     </scenes>
     <resources>
         <image name="login_background" width="375" height="654"/>
-        <image name="login_titleLogo" width="106" height="108"/>
+        <image name="login_titleLogo" width="162" height="58"/>
     </resources>
 </document>
