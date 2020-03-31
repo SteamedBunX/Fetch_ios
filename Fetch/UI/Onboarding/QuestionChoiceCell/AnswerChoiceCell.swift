@@ -17,24 +17,15 @@ final class AnswerChoiceCell: UITableViewCell {
 
     @IBOutlet private var answerChoiceButton: CustomRoundSidedUIButton!
 
-    private weak var delegate: AnswerChoiceCellDelegate?
+    weak var delegate: AnswerChoiceCellDelegate?
     private var answerIndex: Int = 0
 
     func setup(index: Int, answer: String, selected: Bool) {
         answerIndex = index
         answerChoiceButton.setTitle(answer, for: .normal)
         answerChoiceButton.layer.applyAnswerChoiceButtonShadow()
-        if selected {
-            answerChoiceButton.backgroundColor = .answerChoiceButtonSelected
-            answerChoiceButton.setTitleColor(.white, for: .normal)
-        } else {
-            answerChoiceButton.backgroundColor = .white
-            answerChoiceButton.setTitleColor(.darkText, for: .normal)
-        }
-    }
-
-    func setDelegate(_ delegate: AnswerChoiceCellDelegate) {
-        self.delegate = delegate
+        answerChoiceButton.backgroundColor = selected ? .answerChoiceButtonSelected : .white
+        answerChoiceButton.setTitleColor(selected ? .white : .darkText, for: .normal)
     }
 
     @IBAction private func buttonTapped(_ sender: Any) {

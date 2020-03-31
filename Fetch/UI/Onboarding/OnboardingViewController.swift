@@ -145,6 +145,7 @@ final class OnboardingViewController: UIViewController {
     @IBAction private func doneButtonTapped(_ sender: Any) {
 
     }
+    
     @objc private func keyboardInputDidFinish() {
         view.endEditing(true)
         self.viewModel.setInputText(newInputText: answerTextField.text ?? "")
@@ -204,7 +205,7 @@ extension OnboardingViewController: UITableViewDelegate, UITableViewDataSource {
         let answer = viewModel.currentQuestionChoices?[index] ?? ""
         let selected = viewModel.currentQuestionSelectedChoiceIndexes.contains(index)
         cell.setup(index: indexPath.row, answer: answer, selected: selected)
-        cell.setDelegate(self)
+        cell.delegate = self
         return cell
     }
 }

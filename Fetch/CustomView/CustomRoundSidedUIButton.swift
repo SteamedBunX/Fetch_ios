@@ -13,12 +13,12 @@ import UIKit
 
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        self.styleView()
+        styleView()
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.styleView()
+        styleView()
     }
 
     private func styleView() {
