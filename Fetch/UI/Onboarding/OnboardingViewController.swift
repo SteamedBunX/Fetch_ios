@@ -193,7 +193,7 @@ extension OnboardingViewController: OnboardingViewModelDelegate {
 extension OnboardingViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.currentQuestionChoices?.count ?? 0
+        return viewModel.currentQuestionChoiceCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -201,8 +201,8 @@ extension OnboardingViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let index = indexPath.row
-        let answer = viewModel.currentQuestionChoices?[index] ?? ""
-        let selected = viewModel.currentQuestionSelectedChoiceIndexes.contains(index)
+        let answer = viewModel.currentQuestionChoice(atIndex: index)
+        let selected = viewModel.currentQuestionChoiceSelected(atIndex: index)
         cell.setup(index: indexPath.row, answer: answer, selected: selected)
         cell.delegate = self
         return cell

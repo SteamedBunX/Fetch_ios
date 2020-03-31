@@ -61,7 +61,7 @@ final class OnboardingViewModel {
         return flow.currentQuestion?.title ?? ""
     }
 
-    var currentQuestionTip: String? {
+    var currentQuestionTip: String {
         return flow.currentQuestion?.tip ?? ""
     }
 
@@ -69,18 +69,22 @@ final class OnboardingViewModel {
         return flow.currentQuestion?.answerType ?? .singleChoice
     }
 
-    private var currentQuestionAnswered: Bool? {
-        return flow.currentQuestion?.isAnswered
+    private var currentQuestionAnswered: Bool {
+        return flow.currentQuestion?.isAnswered ?? false
     }
 
     // MARK: - Choice Question Displayable
 
-    var currentQuestionChoices: [String]? {
-        return flow.currentQuestion?.choices
+    func currentQuestionChoice(atIndex index: Int) -> String {
+        return flow.currentQuestion?.choices?[ip_safely: index] ?? ""
     }
 
-    var currentQuestionSelectedChoiceIndexes: [Int] {
-        return flow.currentQuestion?.selectedIndexes ?? []
+    var currentQuestionChoiceCount: Int {
+        return flow.currentQuestion?.choices?.count ?? 0
+    }
+
+    func currentQuestionChoiceSelected(atIndex index: Int) -> Bool {
+        return flow.currentQuestion?.selectedIndexes.contains(index) ?? false
     }
 
     // MARK: - Text Input Question Displayable
