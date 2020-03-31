@@ -26,7 +26,7 @@ enum KeyboardType {
 }
 
 final class OnboardingViewModel {
-    
+
     var updateProgressBar: (() -> ())?
 
     weak var delegate: OnboardingViewModelDelegate?
