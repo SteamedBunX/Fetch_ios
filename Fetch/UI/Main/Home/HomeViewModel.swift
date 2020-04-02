@@ -56,7 +56,6 @@ final class HomeViewModel {
 
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
-        loadFirstBatch()
     }
 
     // MARK: - Loading Pet
