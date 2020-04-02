@@ -11,7 +11,7 @@ import UIKit
 
 extension CALayer {
 
-    private func applyShadowWith(
+    func applyShadowWith(
         color: UIColor,
         alpha: Float,
         xOffset: CGFloat,

@@ -36,6 +36,10 @@
 		FA2EFBC92435093200BF65BA /* ImageURLBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBC82435093200BF65BA /* ImageURLBundle.swift */; };
 		FA2EFBCB24350D7700BF65BA /* pets.json in Resources */ = {isa = PBXBuildFile; fileRef = FA2EFBCA24350D7700BF65BA /* pets.json */; };
 		FA2EFBCD2435A5ED00BF65BA /* JsonDecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBCC2435A5ED00BF65BA /* JsonDecodeTests.swift */; };
+		FA2EFBD0243642C500BF65BA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2EFBCF243642C500BF65BA /* HomeViewController.xib */; };
+		FA2EFBD2243642D700BF65BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBD1243642D700BF65BA /* HomeViewController.swift */; };
+		FA2EFBD4243645A000BF65BA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBD3243645A000BF65BA /* CardView.swift */; };
+		FA2EFBD62436B97B00BF65BA /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBD52436B97B00BF65BA /* TagView.swift */; };
 		FA317583242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317582242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift */; };
 		FA317585242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317584242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift */; };
 		FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CBC2428FDF2008399AF /* MainCoordinator.swift */; };
@@ -106,6 +110,10 @@
 		FA2EFBC82435093200BF65BA /* ImageURLBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLBundle.swift; sourceTree = "<group>"; };
 		FA2EFBCA24350D7700BF65BA /* pets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pets.json; sourceTree = "<group>"; };
 		FA2EFBCC2435A5ED00BF65BA /* JsonDecodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecodeTests.swift; sourceTree = "<group>"; };
+		FA2EFBCF243642C500BF65BA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FA2EFBD1243642D700BF65BA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FA2EFBD3243645A000BF65BA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FA2EFBD52436B97B00BF65BA /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		FA317582242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceOnboardingQuestionTests.swift; sourceTree = "<group>"; };
 		FA317584242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceOnboardingQuestionTests.swift; sourceTree = "<group>"; };
 		FA350CBC2428FDF2008399AF /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -262,6 +270,8 @@
 		FA2EFBA62433C5FE00BF65BA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FA2EFBCF243642C500BF65BA /* HomeViewController.xib */,
+				FA2EFBD1243642D700BF65BA /* HomeViewController.swift */,
 				FA2EFBBC2434F8A400BF65BA /* HomeViewModel.swift */,
 			);
 			path = Home;
@@ -343,6 +353,8 @@
 			isa = PBXGroup;
 			children = (
 				FA350CC4242910BF008399AF /* RoundButton.swift */,
+				FA2EFBD3243645A000BF65BA /* CardView.swift */,
+				FA2EFBD52436B97B00BF65BA /* TagView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -506,6 +518,7 @@
 				FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
 				86A74950243BD4FD00DF8742 /* Some.graphql in Resources */,
+				FA2EFBD0243642C500BF65BA /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +655,7 @@
 			files = (
 				FA350CC5242910BF008399AF /* RoundButton.swift in Sources */,
 				FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */,
+				FA2EFBD2243642D700BF65BA /* HomeViewController.swift in Sources */,
 				FA2EFBC22434FDA700BF65BA /* MockNetworkManager.swift in Sources */,
 				FA2EFBB82434D34000BF65BA /* ActionType.swift in Sources */,
 				FA2EFBAB2433CD7000BF65BA /* Pet.swift in Sources */,
@@ -660,6 +674,7 @@
 				FA2EFBC02434FAAE00BF65BA /* NetworkManager.swift in Sources */,
 				FA2EFBB02433DBE900BF65BA /* ProfileCard.swift in Sources */,
 				FA2EFBC92435093200BF65BA /* ImageURLBundle.swift in Sources */,
+				FA2EFBD62436B97B00BF65BA /* TagView.swift in Sources */,
 				FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */,
 				FA45ADB6242E4D5600DB5195 /* UIColor+Extension.swift in Sources */,
 				FA2EFBC42434FDFC00BF65BA /* Pets.swift in Sources */,
@@ -669,6 +684,7 @@
 				FA2EFBBD2434F8A400BF65BA /* HomeViewModel.swift in Sources */,
 				FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */,
 				CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */,
+				FA2EFBD4243645A000BF65BA /* CardView.swift in Sources */,
 				FA2EFBB42433E08E00BF65BA /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

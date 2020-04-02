@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: scene)
         coordinator = MainCoordinator()
         coordinator?.start()
+        coordinator?.showHomeScreen(animated: false)
         window?.rootViewController = coordinator?.navigationController
         window?.makeKeyAndVisible()
     }

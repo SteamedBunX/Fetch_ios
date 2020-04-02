@@ -32,4 +32,11 @@ final class MainCoordinator: NSObject {
         onboardingViewController.coordinator = self
         navigationController?.pushViewController(onboardingViewController, animated: animated)
     }
+
+    func showHomeScreen(animated: Bool) {
+        let viewModel = HomeViewModel(networkManager: MockNetworkManager())
+        let homeViewController = HomeViewController(viewModel: viewModel)
+        homeViewController.coordinator = self
+        navigationController?.pushViewController(homeViewController, animated: animated)
+    }
 }
