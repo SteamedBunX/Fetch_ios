@@ -13,13 +13,13 @@ import Intrepid
 
 final class HomeViewController: UIViewController {
 
-    weak var coordinator: MainCoordinator?
-    private let viewModel: HomeViewModel
-
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var statusLabel: UILabel!
     @IBOutlet private var photoImageView: UIImageView!
     @IBOutlet var tagViews: [TagView]!
+
+    weak var coordinator: MainCoordinator?
+    private let viewModel: HomeViewModel
 
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -34,45 +34,47 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.loadFirstBatch()
-        if viewModel.currentPetIsAvaliable {
-            displayNewPet(liked: true)
+        if !displayNewPetIfAvaliable(liked: true) {
+            // TODO: show the empty state
         }
     }
 
-    private func displayNewPet(liked: Bool) {
-        if viewModel.currentPetIsAvaliable {
-            nameLabel.text = viewModel.currentPetName
-            statusLabel.text = viewModel.currentPetStatus
-            var currentTagIndex = 0
-            PetTagType.allCases.forEach { tag in
-                if let petTag = viewModel.currentPetTags[tag] {
-                    let currentTagView = tagViews[ip_safely: currentTagIndex]
-                    currentTagView?.isHidden = false
-                    currentTagView?.tagImage = tag.icon
-                    currentTagView?.tagColor = tag.color
-                    currentTagView?.tagContent = petTag
-                    currentTagIndex += 1
-                }
+    private func displayNewPetIfAvaliable(liked: Bool) -> Bool{
+        guard viewModel.currentPetIsAvaliable else {
+            return false
+        }
+        nameLabel.text = viewModel.currentPetName
+        statusLabel.text = viewModel.currentPetStatus
+        var currentTagIndex = 0
+        PetTagType.allCases.forEach { tag in
+            if let petTag = viewModel.currentPetTags[tag] {
+                let currentTagView = tagViews[ip_safely: currentTagIndex]
+                currentTagView?.isHidden = false
+                currentTagView?.tagImage = tag.icon
+                currentTagView?.tagColor = tag.color
+                currentTagView?.tagContent = petTag
+                currentTagIndex += 1
             }
-            while currentTagIndex < 4 {
-                tagViews[ip_safely: currentTagIndex]?.isHidden = true
-            }
-            guard let urlString = viewModel.currentPetPhotoURLs[ip_safely: 0] else {
-                photoImageView.image = viewModel.imagePlaceHolder
-                return
-            }
+        }
+        while currentTagIndex < 4 {
+            tagViews[ip_safely: currentTagIndex]?.isHidden = true
+        }
+        if let urlString = viewModel.currentPetPhotoURLs[ip_safely: 0] {
             let url = URL(string: urlString)
             photoImageView.kf.setImage(with: url, placeholder: viewModel.imagePlaceHolder)
+        } else {
+            photoImageView.image = viewModel.imagePlaceHolder
         }
+        return true
     }
 
     // MARK: - Button Actions
 
-    @IBAction func unlikeButtonTapped(_ sender: Any) {
+    @IBAction private func unlikeButtonTapped(_ sender: Any) {
         viewModel.unlikeButtonTapped()
     }
 
-    @IBAction func likeButtonTapped(_ sender: Any) {
+    @IBAction private func likeButtonTapped(_ sender: Any) {
         viewModel.likeButtonTapped()
     }
 }
@@ -80,14 +82,12 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewModelDelegate {
 
     func didLikePet(_ liked: Bool) {
-        if viewModel.currentPetIsAvaliable {
-            displayNewPet(liked: liked)
-        } else {
-
+        if !displayNewPetIfAvaliable(liked: liked) {
+            // TODO: Display empty state
         }
     }
 
-    func newImageNeedToCache(from url: String) {
+    func cacheImage(from url: String) {
         guard let url = URL(string: url) else {return}
         KingfisherManager.shared.retrieveImage(with: url) { _ in }
     }

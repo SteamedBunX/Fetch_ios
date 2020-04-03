@@ -13,21 +13,39 @@ import UIKit
     let icon = UIImageView()
     let content = UILabel()
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(content)
+        addSubview(icon)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        addSubview(content)
+        addSubview(icon)
+    }
+
+    private func sharedInit() {
+
+    }
     // MARK: - Shadow
     @IBInspectable var tagImage: UIImage? {
         didSet {
-            icon.image = tagImage
-        }}
-    @IBInspectable var tagContent: String? {
-        didSet {
-            content.text = tagContent?.capitalized
+            setupIcon(tagImage)
             layoutIfNeeded()
         }}
+
+    @IBInspectable var tagContent: String? {
+        didSet {
+            setupContent(tagContent)
+            layoutIfNeeded()
+        }}
+
     @IBInspectable var tagColor: UIColor = .black {
-    didSet {
-        content.textColor = tagColor
-        layer.borderColor = tagColor.cgColor
-    }}
+        didSet {
+            setupColor(tagColor)
+        }}
+
     var width: CGFloat = 0
     var height: CGFloat = 32
 
@@ -47,14 +65,18 @@ import UIKit
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = frame.size.height / 2
-        layer.borderColor = tagColor.cgColor
-        layer.borderWidth = 0.8
+        setupBorder()
     }
 
     func styleView() {
         width = 20
-        addSubview(icon)
+        setupIcon(tagImage)
+        setupContent(tagContent)
+        setupColor(tagColor)
+        invalidateIntrinsicContentSize()
+    }
+
+    private func setupIcon(_ tagImage: UIImage?) {
         if let tagImage = tagImage {
             icon.image = tagImage
             icon.heightAnchor.constraint(equalToConstant: 32).isActive = true
@@ -65,16 +87,26 @@ import UIKit
         icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4).isActive = true
         icon.translatesAutoresizingMaskIntoConstraints = false
         width += icon.frameX
-        addSubview(content)
+    }
+
+    private func setupContent(_ tagContent: String?) {
         content.text = tagContent?.capitalized
         content.font = UIFont(name: "Lato", size: 12)
-        content.textColor = tagColor
+
         content.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 3).isActive = true
         content.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         content.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         content.translatesAutoresizingMaskIntoConstraints = false
         width += content.frameX
-        invalidateIntrinsicContentSize()
     }
 
+    private func setupColor(_ tagColor: UIColor) {
+        content.textColor = tagColor
+        layer.borderColor = tagColor.cgColor
+    }
+
+    private func setupBorder() {
+        layer.cornerRadius = frame.size.height / 2
+        layer.borderWidth = 0.8
+    }
 }

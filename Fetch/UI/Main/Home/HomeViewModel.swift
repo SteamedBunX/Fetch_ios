@@ -11,7 +11,7 @@ import UIKit
 
 protocol HomeViewModelDelegate: AnyObject {
     func didLikePet(_ liked: Bool)
-    func newImageNeedToCache(from url: String)
+    func cacheImage(from url: String)
 }
 
 final class HomeViewModel {
@@ -70,7 +70,7 @@ final class HomeViewModel {
         if let nextPet = networkManager.getPet(withCurrentList: [], forUser: "") {
             flow.addToQueue(pet: nextPet)
             if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
-                delegate?.newImageNeedToCache(from: petsFirstImageURL)
+                delegate?.cacheImage(from: petsFirstImageURL)
             }
         }
     }

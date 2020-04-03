@@ -10,9 +10,6 @@ import UIKit
 
 @IBDesignable class CardView: UIView {
 
-    // MARK: - Clipping
-    @IBInspectable var shouldClip: Bool = false
-
     // MARK: - Shadow
     @IBInspectable var shadowColor: UIColor = UIColor.black
     @IBInspectable var shadowOpacity: Float = 0
@@ -32,14 +29,29 @@ import UIKit
         self.styleView()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        subviews.forEach { subview in
+            let maskLayer = CALayer()
+            maskLayer.cornerRadius = cornerRadius
+            maskLayer.frame.size = frame.size
+            maskLayer.frame.origin = convert(CGPoint(x: 0, y: 0), to: subview)
+            maskLayer.backgroundColor = UIColor.white.cgColor
+            subview.layer.mask = maskLayer
+        }
+    }
+
     func styleView() {
+        setupView()
+    }
+
+    func setupView() {
         layer.cornerRadius = cornerRadius
         layer.applyShadowWith(color: shadowColor, alpha: shadowOpacity, xOffset: shadowOffset.width, yOffset: shadowOffset.height, blur: shadowBlur)
         layer.shadowColor = shadowColor.cgColor
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = shadowBlur
         layer.shadowOffset = shadowOffset
-        clipsToBounds = shouldClip
+        //layer.masksToBounds = true
     }
-
 }
