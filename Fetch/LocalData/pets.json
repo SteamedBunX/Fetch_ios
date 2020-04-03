@@ -5,7 +5,12 @@
     "age": "Baby",
     "status": "adoptable",
     "description": "All interested people should submit an adoption application as their first step.\n\nAll pets adopted from GDHS are spayed or...",
-    "photos": [],
+    "photos": [{
+      "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/2/?bust=1585334217&width=100",
+      "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/2/?bust=1585334217&width=300",
+      "large": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/2/?bust=1585334217&width=600",
+      "full": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/2/?bust=1585334217"
+    }],
     "shelter": {
       "name": "Greater Derry Humane Society Inc.",
       "email": "contact@derryhumanesociety.com",
@@ -275,14 +280,7 @@
         "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/1/?bust=1585334130&width=300",
         "large": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/1/?bust=1585334130&width=600",
         "full": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/1/?bust=1585334130"
-      },
-      {
-        "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/2/?bust=1585334217&width=100",
-        "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/2/?bust=1585334217&width=300",
-        "large": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/2/?bust=1585334217&width=600",
-        "full": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47710979/2/?bust=1585334217"
-      }
-    ],
+      }],
     "shelter": {
       "name": "Hartman's Haven",
       "email": "Crystal@hartmanshaven.org",

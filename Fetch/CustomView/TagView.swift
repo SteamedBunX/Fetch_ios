@@ -10,10 +10,24 @@ import UIKit
 
 @IBDesignable class TagView: UIView {
 
+    let icon = UIImageView()
+    let content = UILabel()
+
     // MARK: - Shadow
-    @IBInspectable var tagImage: UIImage?
-    @IBInspectable var tagContent: String?
-    @IBInspectable var tagColor: UIColor = .black
+    @IBInspectable var tagImage: UIImage? {
+        didSet {
+            icon.image = tagImage
+        }}
+    @IBInspectable var tagContent: String? {
+        didSet {
+            content.text = tagContent?.capitalized
+            layoutIfNeeded()
+        }}
+    @IBInspectable var tagColor: UIColor = .black {
+    didSet {
+        content.textColor = tagColor
+        layer.borderColor = tagColor.cgColor
+    }}
     var width: CGFloat = 0
     var height: CGFloat = 32
 
@@ -31,9 +45,15 @@ import UIKit
         styleView()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = frame.size.height / 2
+        layer.borderColor = tagColor.cgColor
+        layer.borderWidth = 0.8
+    }
+
     func styleView() {
         width = 20
-        let icon = UIImageView()
         addSubview(icon)
         if let tagImage = tagImage {
             icon.image = tagImage
@@ -45,7 +65,6 @@ import UIKit
         icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4).isActive = true
         icon.translatesAutoresizingMaskIntoConstraints = false
         width += icon.frameX
-        let content = UILabel()
         addSubview(content)
         content.text = tagContent?.capitalized
         content.font = UIFont(name: "Lato", size: 12)
@@ -55,10 +74,6 @@ import UIKit
         content.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         content.translatesAutoresizingMaskIntoConstraints = false
         width += content.frameX
-
-        layer.cornerRadius = frame.size.height / 2
-        layer.borderColor = tagColor.cgColor
-        layer.borderWidth = 2
         invalidateIntrinsicContentSize()
     }
 

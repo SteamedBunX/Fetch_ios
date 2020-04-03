@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Kingfisher
+import Intrepid
 
 final class HomeViewController: UIViewController {
 
@@ -42,6 +43,20 @@ final class HomeViewController: UIViewController {
         if viewModel.currentPetIsAvaliable {
             nameLabel.text = viewModel.currentPetName
             statusLabel.text = viewModel.currentPetStatus
+            var currentTagIndex = 0
+            PetTagType.allCases.forEach { tag in
+                if let petTag = viewModel.currentPetTags[tag] {
+                    let currentTagView = tagViews[ip_safely: currentTagIndex]
+                    currentTagView?.isHidden = false
+                    currentTagView?.tagImage = tag.icon
+                    currentTagView?.tagColor = tag.color
+                    currentTagView?.tagContent = petTag
+                    currentTagIndex += 1
+                }
+            }
+            while currentTagIndex < 4 {
+                tagViews[ip_safely: currentTagIndex]?.isHidden = true
+            }
             guard let urlString = viewModel.currentPetPhotoURLs[ip_safely: 0] else {
                 photoImageView.image = viewModel.imagePlaceHolder
                 return

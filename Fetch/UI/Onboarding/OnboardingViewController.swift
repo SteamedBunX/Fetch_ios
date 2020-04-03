@@ -142,7 +142,7 @@ final class OnboardingViewController: UIViewController {
     }
 
     @IBAction private func doneButtonTapped(_ sender: Any) {
-
+        viewModel.doneButtonTapped()
     }
 
     @objc private func keyboardInputDidFinish() {
@@ -186,7 +186,7 @@ extension OnboardingViewController: OnboardingViewModelDelegate {
     }
 
     func finishSequence() {
-
+        coordinator?.showHomeScreen(animated: true)
     }
 }
 
