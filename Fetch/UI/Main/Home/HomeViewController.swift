@@ -39,7 +39,7 @@ final class HomeViewController: UIViewController {
         }
     }
 
-    private func displayNewPetIfAvaliable(liked: Bool) -> Bool{
+    private func displayNewPetIfAvaliable(liked: Bool) -> Bool {
         guard viewModel.currentPetIsAvaliable else {
             return false
         }

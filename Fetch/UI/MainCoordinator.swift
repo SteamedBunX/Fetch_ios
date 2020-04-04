@@ -34,7 +34,7 @@ final class MainCoordinator: NSObject {
     }
 
     func showHomeScreen(animated: Bool) {
-        let viewModel = HomeViewModel(networkManager: MockNetworkManager())
+        let viewModel = HomeViewModel(networkManager: MockNetworkManager(fileName: "pets"))
         let homeViewController = HomeViewController(viewModel: viewModel)
         homeViewController.coordinator = self
         navigationController?.pushViewController(homeViewController, animated: animated)

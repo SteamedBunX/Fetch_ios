@@ -10,10 +10,10 @@ import Foundation
 
 enum Pets {
 
-    static func load() -> [Pet] {
+    static func load(fileName: String) -> [Pet] {
         var pets = [Pet]()
         var resultBundles: [PetBundle]?
-        guard let path = Bundle.main.path(forResource: "pets", ofType: "json")
+        guard let path = Bundle.main.path(forResource: fileName, ofType: "json")
             else { return [] }
         do {
             let fileUrl = URL(fileURLWithPath: path)

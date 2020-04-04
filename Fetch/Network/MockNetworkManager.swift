@@ -11,7 +11,11 @@ import UIKit
 
 final class MockNetworkManager: NetworkManager {
 
-    var mockPets = Pets.load()
+    var mockPets: [Pet]
+
+    init(fileName: String) {
+        mockPets = Pets.load(fileName: fileName)
+    }
 
     var hasMoreAvaliable: Bool {
         return !mockPets.isEmpty

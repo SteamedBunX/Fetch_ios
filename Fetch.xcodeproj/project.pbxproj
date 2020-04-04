@@ -22,6 +22,7 @@
 		FA12B4BF242CE7FE000731FE /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */; };
 		FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */; };
 		FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */; };
+		FA180B64243B608B005956C0 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA180B63243B608B005956C0 /* HomeViewModelTests.swift */; };
 		FA2EFBAB2433CD7000BF65BA /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBAA2433CD7000BF65BA /* Pet.swift */; };
 		FA2EFBB02433DBE900BF65BA /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBAF2433DBE900BF65BA /* ProfileCard.swift */; };
 		FA2EFBB22433DDFC00BF65BA /* PetSelectionSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBB12433DDFC00BF65BA /* PetSelectionSequence.swift */; };
@@ -95,6 +96,7 @@
 		FA12B4BE242CE7FE000731FE /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PatuaOne-Regular.ttf"; sourceTree = "<group>"; };
 		FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestions.swift; sourceTree = "<group>"; };
+		FA180B63243B608B005956C0 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		FA26C3102429515700D0B5BA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FA2EFBAA2433CD7000BF65BA /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		FA2EFBAF2433DBE900BF65BA /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */,
 				FA317582242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift */,
 				FA317584242D301C001D5BEC /* MultipleChoiceOnboardingQuestionTests.swift */,
+				FA180B63243B608B005956C0 /* HomeViewModelTests.swift */,
 				CB20C5BC2416C61700F5ECF6 /* Info.plist */,
 			);
 			path = FetchTests;
@@ -693,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA180B64243B608B005956C0 /* HomeViewModelTests.swift in Sources */,
 				FA317583242D2B09001D5BEC /* SingleChoiceOnboardingQuestionTests.swift in Sources */,
 				FA2EFBCD2435A5ED00BF65BA /* JsonDecodeTests.swift in Sources */,
 				FA95651C24241E7700380003 /* TextInputOnboardingQuestionTests.swift in Sources */,

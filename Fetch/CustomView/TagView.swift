@@ -15,18 +15,17 @@ import UIKit
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(content)
-        addSubview(icon)
+        sharedInit()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        addSubview(content)
-        addSubview(icon)
+        sharedInit()
     }
 
     private func sharedInit() {
-
+        addSubview(content)
+        addSubview(icon)
     }
     // MARK: - Shadow
     @IBInspectable var tagImage: UIImage? {
@@ -68,7 +67,7 @@ import UIKit
         setupBorder()
     }
 
-    func styleView() {
+    private func styleView() {
         width = 20
         setupIcon(tagImage)
         setupContent(tagContent)

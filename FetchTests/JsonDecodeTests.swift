@@ -11,8 +11,10 @@ import XCTest
 
 class JsonDecodeTests: XCTestCase {
 
+    let dataFile = "pets"
+
     func testSecondPet() {
-        let sut = Pets.load()[1]
+        let sut = Pets.load(fileName: dataFile)[1]
         XCTAssertEqual(sut.id, "f21216ec-b0ab-4beb-8d38-1cded5b24a82")
         XCTAssertEqual(sut.card.name, "Quan")
         XCTAssertEqual(sut.card.photoURLs.count, 1)
@@ -21,7 +23,7 @@ class JsonDecodeTests: XCTestCase {
     }
 
     func testPetWithMultiplePhoto() {
-        let sut = Pets.load()[4]
+        let sut = Pets.load(fileName: dataFile)[4]
         XCTAssertEqual(sut.card.photoURLs.count, 2)
     }
 }
