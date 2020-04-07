@@ -58,9 +58,7 @@ final class HomeViewController: UIViewController {
             if let petTag = viewModel.currentPetTags[tag] {
                 let currentTagView = tagViews[ip_safely: currentTagIndex]
                 currentTagView?.isHidden = false
-                currentTagView?.tagImage = tag.icon
-                currentTagView?.tagColor = tag.color
-                currentTagView?.tagContent = petTag
+                currentTagView?.reloadTag(withIcon: tag.icon, tint: tag.color, content: petTag)
                 currentTagIndex += 1
             }
         }
