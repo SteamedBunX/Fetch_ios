@@ -299,6 +299,7 @@
 		FA2EFBA82433CC8100BF65BA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FA804209243CC989001E6A0A /* TabCell */,
 				FA1A990D243C309A0001FC73 /* MainTabBarViewController.xib */,
 				FA1A990B243C2F670001FC73 /* MainTabBarViewController.swift */,
 				FA1A9909243BA8280001FC73 /* MainTabBarViewModel.swift */,
@@ -387,6 +388,13 @@
 				FA5395712432684D003C3B1F /* AnswerChoiceCell.swift */,
 			);
 			path = AnswerChoiceCell;
+			sourceTree = "<group>";
+		};
+		FA804209243CC989001E6A0A /* TabCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabCell;
 			sourceTree = "<group>";
 		};
 		FADC5E1124227472006E8C23 /* UI */ = {

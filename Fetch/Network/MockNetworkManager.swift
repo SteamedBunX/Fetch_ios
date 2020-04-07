@@ -29,4 +29,8 @@ final class MockNetworkManager: NetworkManager {
             completion(Result.success(mockPets.removeFirst()))
         }
     }
+
+    func like(pet: Pet) {
+
+    }
 }

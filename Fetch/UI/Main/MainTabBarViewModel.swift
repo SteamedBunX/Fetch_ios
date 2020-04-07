@@ -8,10 +8,14 @@
 
 import Foundation
 
+protocol MainTabBarViewModelForChildDelegate: AnyObject {
+
+    func likedCountDidChange(to count: Int)
+}
+
 protocol MainTabBarViewModelDelegate: AnyObject {
 
     func selectionDidChange(to index: Int)
-    func likedCountDidChange(to count: Int)
 }
 
 final class MainTabBarViewModel {
@@ -33,17 +37,15 @@ final class MainTabBarViewModel {
     }
 
     func likedCountDidChange(to count: Int) {
-        delegate?.likedCountDidChange(to: count)
+
     }
 
     func likedCountDidIncrease() {
         currentLikedCount += 1
-        delegate?.likedCountDidChange(to: currentLikedCount)
     }
 
     func likedCountDidDecrease() {
         currentLikedCount -= 1
-        delegate?.likedCountDidChange(to: currentLikedCount)
     }
 
     func syncLikedCount() {
