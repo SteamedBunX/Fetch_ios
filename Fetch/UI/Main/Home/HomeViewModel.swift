@@ -19,7 +19,6 @@ final class HomeViewModel {
     weak var delegate: HomeViewModelDelegate?
     private let networkManager: NetworkManager
     private let flow = PetSelectionFlow()
-    private(set) var imagePlaceHolder = #imageLiteral(resourceName: "main_noPictureIcon")
 
     var currentPetIsAvaliable: Bool {
         return flow.currentPet != nil
@@ -68,12 +67,26 @@ final class HomeViewModel {
 
     private func addPetToQueue() {
         guard flow.needRefill, networkManager.hasMoreAvaliable else { return }
-        if let nextPet = networkManager.getPet(withCurrentList: [], forUser: "") {
-            flow.addToQueue(pet: nextPet)
-            if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
-                delegate?.cacheImage(from: petsFirstImageURL)
+        networkManager.getPet(withCurrentList: [], forUser: "") { result in
+            switch result {
+            case .success(let nextPet):
+                self.flow.addToQueue(pet: nextPet)
+                if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
+                    self.delegate?.cacheImage(from: petsFirstImageURL)
+                }
+            case .failure(let error):
+                switch error {
+                case .noMorePetAvailable:
+                    self.showEmptyState()
+                case .unknowError(let unknowError):
+                    print(unknowError.localizedDescription)
+                }
             }
         }
+    }
+
+    private func showEmptyState() {
+
     }
 
     // MARK: - Button Actions

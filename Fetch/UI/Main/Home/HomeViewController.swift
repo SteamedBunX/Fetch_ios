@@ -58,7 +58,7 @@ final class HomeViewController: UIViewController {
             if let petTag = viewModel.currentPetTags[tag] {
                 let currentTagView = tagViews[ip_safely: currentTagIndex]
                 currentTagView?.isHidden = false
-                currentTagView?.reloadTag(withIcon: tag.icon, tint: tag.color, content: petTag)
+                currentTagView?.reloadTag(withTag: tag, content: petTag)
                 currentTagIndex += 1
             }
         }
@@ -70,9 +70,9 @@ final class HomeViewController: UIViewController {
     func updatePetImage() {
         if let urlString = viewModel.currentPetPhotoURLs.first {
             let url = URL(string: urlString)
-            photoImageView.kf.setImage(with: url, placeholder: viewModel.imagePlaceHolder)
+            photoImageView.kf.setImage(with: url, placeholder:  #imageLiteral(resourceName: "main_noPictureIcon"))
         } else {
-            photoImageView.image = viewModel.imagePlaceHolder
+            photoImageView.image = #imageLiteral(resourceName: "main_noPictureIcon")
         }
     }
 

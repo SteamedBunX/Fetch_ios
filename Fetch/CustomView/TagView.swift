@@ -75,9 +75,9 @@ import UIKit
         invalidateIntrinsicContentSize()
     }
 
-    func reloadTag(withIcon icon: UIImage, tint color: UIColor, content: String) {
-        tagImage = icon
-        tagColor = color
+    func reloadTag(withTag tag: PetTagType, content: String) {
+        tagImage = tag.icon
+        tagColor = tag.color
         tagContent = content
     }
 

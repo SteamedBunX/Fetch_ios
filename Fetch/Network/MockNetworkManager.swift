@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+enum NetWorkError: Error {
+    case noMorePetAvailable
+    case unknowError(Error)
+}
+
 final class MockNetworkManager: NetworkManager {
 
     var mockPets: [Pet]
@@ -21,10 +26,10 @@ final class MockNetworkManager: NetworkManager {
         return !mockPets.isEmpty
     }
 
-    func getPet(withCurrentList: [String], forUser: String) -> Pet? {
+    func getPet(withCurrentList: [String], forUser: String, completion: @escaping (Result<Pet, NetWorkError>) -> Void) {
         if mockPets.isEmpty {
-            return nil
+            completion(Result.failure(NetWorkError.noMorePetAvailable))
         }
-        return mockPets.removeFirst()
+        completion(Result.success(mockPets.removeFirst()))
     }
 }
