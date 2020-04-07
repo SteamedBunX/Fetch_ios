@@ -66,7 +66,7 @@ final class HomeViewModel {
     }
 
     private func addPetToQueue() {
-        guard flow.needRefill, networkManager.hasMoreAvaliable else { return }
+        guard flow.needRefill else { return }
         networkManager.getPet(withCurrentList: [], forUser: "") { result in
             switch result {
             case .success(let nextPet):

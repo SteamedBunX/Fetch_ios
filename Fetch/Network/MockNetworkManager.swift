@@ -22,10 +22,6 @@ final class MockNetworkManager: NetworkManager {
         mockPets = Pets.load(fileName: fileName)
     }
 
-    var hasMoreAvaliable: Bool {
-        return !mockPets.isEmpty
-    }
-
     func getPet(withCurrentList: [String], forUser: String, completion: @escaping (Result<Pet, NetWorkError>) -> Void) {
         if mockPets.isEmpty {
             completion(Result.failure(NetWorkError.noMorePetAvailable))

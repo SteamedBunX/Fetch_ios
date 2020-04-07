@@ -12,5 +12,4 @@ import UIKit
 protocol NetworkManager: AnyObject {
 
     func getPet(withCurrentList: [String], forUser: String, completion: @escaping(Result<Pet, NetWorkError>) -> Void)
-    var hasMoreAvaliable: Bool { get }
 }
