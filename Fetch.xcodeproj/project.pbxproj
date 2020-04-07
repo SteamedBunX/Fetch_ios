@@ -23,6 +23,9 @@
 		FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */; };
 		FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */; };
 		FA180B64243B608B005956C0 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA180B63243B608B005956C0 /* HomeViewModelTests.swift */; };
+		FA1A990A243BA8280001FC73 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A9909243BA8280001FC73 /* MainTabBarViewModel.swift */; };
+		FA1A990C243C2F670001FC73 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A990B243C2F670001FC73 /* MainTabBarViewController.swift */; };
+		FA1A990E243C309A0001FC73 /* MainTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1A990D243C309A0001FC73 /* MainTabBarViewController.xib */; };
 		FA2EFBAB2433CD7000BF65BA /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBAA2433CD7000BF65BA /* Pet.swift */; };
 		FA2EFBB02433DBE900BF65BA /* PetProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBAF2433DBE900BF65BA /* PetProfileInfo.swift */; };
 		FA2EFBB22433DDFC00BF65BA /* PetSelectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBB12433DDFC00BF65BA /* PetSelectionFlow.swift */; };
@@ -97,6 +100,9 @@
 		FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PatuaOne-Regular.ttf"; sourceTree = "<group>"; };
 		FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestions.swift; sourceTree = "<group>"; };
 		FA180B63243B608B005956C0 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		FA1A9909243BA8280001FC73 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
+		FA1A990B243C2F670001FC73 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		FA1A990D243C309A0001FC73 /* MainTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarViewController.xib; sourceTree = "<group>"; };
 		FA26C3102429515700D0B5BA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FA2EFBAA2433CD7000BF65BA /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		FA2EFBAF2433DBE900BF65BA /* PetProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileInfo.swift; sourceTree = "<group>"; };
@@ -293,6 +299,9 @@
 		FA2EFBA82433CC8100BF65BA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FA1A990D243C309A0001FC73 /* MainTabBarViewController.xib */,
+				FA1A990B243C2F670001FC73 /* MainTabBarViewController.swift */,
+				FA1A9909243BA8280001FC73 /* MainTabBarViewModel.swift */,
 				FA2EFBA62433C5FE00BF65BA /* Home */,
 			);
 			path = Main;
@@ -519,6 +528,7 @@
 				FA350CC12428FE01008399AF /* LoginViewController.xib in Resources */,
 				FA53956F24323ED5003C3B1F /* AnswerChoiceCell.xib in Resources */,
 				FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */,
+				FA1A990E243C309A0001FC73 /* MainTabBarViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
 				86A74950243BD4FD00DF8742 /* Some.graphql in Resources */,
 				FA2EFBD0243642C500BF65BA /* HomeViewController.xib in Resources */,
@@ -666,6 +676,7 @@
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
 				FA5395722432684D003C3B1F /* AnswerChoiceCell.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
+				FA1A990C243C2F670001FC73 /* MainTabBarViewController.swift in Sources */,
 				FA2EFBB22433DDFC00BF65BA /* PetSelectionFlow.swift in Sources */,
 				FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */,
 				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
@@ -689,6 +700,7 @@
 				CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */,
 				FA2EFBD4243645A000BF65BA /* CardView.swift in Sources */,
 				FA2EFBB42433E08E00BF65BA /* Queue.swift in Sources */,
+				FA1A990A243BA8280001FC73 /* MainTabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

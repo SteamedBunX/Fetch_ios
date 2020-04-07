@@ -17,6 +17,7 @@ protocol HomeViewModelDelegate: AnyObject {
 final class HomeViewModel {
 
     weak var delegate: HomeViewModelDelegate?
+    weak var tabBarViewModel: MainTabBarViewModel?
     private let networkManager: NetworkManager
     private let flow = PetSelectionFlow()
     private var noPetsAvailable = false
@@ -99,6 +100,7 @@ final class HomeViewModel {
         addPetToQueue()
         flow.nextPet()
         delegate?.didLikePet()
+        tabBarViewModel?.likedCountDidIncrease()
     }
 
     func unlikeButtonTapped() {
