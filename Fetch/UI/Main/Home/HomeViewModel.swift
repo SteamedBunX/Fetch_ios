@@ -78,8 +78,8 @@ final class HomeViewModel {
                 switch error {
                 case .noMorePetAvailable:
                     self.showEmptyState()
-                case .unknowError(let unknowError):
-                    print(unknowError.localizedDescription)
+                case .unknownError(let unknownError):
+                    print(unknownError.localizedDescription)
                 }
             }
         }

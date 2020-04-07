@@ -52,7 +52,7 @@ final class HomeViewController: UIViewController {
         return true
     }
 
-    func updatePetTags() {
+    private func updatePetTags() {
         var currentTagIndex = 0
         PetTagType.allCases.forEach { tag in
             if let petTag = viewModel.currentPetTags[tag] {

@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-enum NetWorkError: Error {
+enum NetworkError: Error {
     case noMorePetAvailable
-    case unknowError(Error)
+    case unknownError(Error)
 }
 
 final class MockNetworkManager: NetworkManager {
@@ -22,9 +22,9 @@ final class MockNetworkManager: NetworkManager {
         mockPets = Pets.load(fileName: fileName)
     }
 
-    func getPet(withCurrentList: [String], forUser: String, completion: @escaping (Result<Pet, NetWorkError>) -> Void) {
+    func getPet(withCurrentList: [String], forUser: String, completion: @escaping (Result<Pet, NetworkError>) -> Void) {
         if mockPets.isEmpty {
-            completion(Result.failure(NetWorkError.noMorePetAvailable))
+            completion(Result.failure(NetworkError.noMorePetAvailable))
         }
         completion(Result.success(mockPets.removeFirst()))
     }
