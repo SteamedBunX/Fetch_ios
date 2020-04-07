@@ -16,10 +16,12 @@ final class HomeViewController: UIViewController {
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var statusLabel: UILabel!
     @IBOutlet private var photoImageView: UIImageView!
-    @IBOutlet var tagViews: [TagView]!
+    @IBOutlet private var tagViews: [TagView]!
 
     weak var coordinator: MainCoordinator?
     private let viewModel: HomeViewModel
+
+    private let totalTagViewAvailable = 4
 
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -34,17 +36,23 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.loadFirstBatch()
-        if !displayNewPetIfAvaliable(liked: true) {
+        if !shouldDisplayNewPet(liked: true) {
             // TODO: show the empty state
         }
     }
 
-    private func displayNewPetIfAvaliable(liked: Bool) -> Bool {
+    private func shouldDisplayNewPet(liked: Bool) -> Bool {
         guard viewModel.currentPetIsAvaliable else {
             return false
         }
         nameLabel.text = viewModel.currentPetName
         statusLabel.text = viewModel.currentPetStatus
+        updatePetTags()
+        updatePetImage()
+        return true
+    }
+
+    func updatePetTags() {
         var currentTagIndex = 0
         PetTagType.allCases.forEach { tag in
             if let petTag = viewModel.currentPetTags[tag] {
@@ -56,16 +64,18 @@ final class HomeViewController: UIViewController {
                 currentTagIndex += 1
             }
         }
-        while currentTagIndex < 4 {
+        while currentTagIndex < totalTagViewAvailable {
             tagViews[ip_safely: currentTagIndex]?.isHidden = true
         }
-        if let urlString = viewModel.currentPetPhotoURLs[ip_safely: 0] {
+    }
+
+    func updatePetImage() {
+        if let urlString = viewModel.currentPetPhotoURLs.first {
             let url = URL(string: urlString)
             photoImageView.kf.setImage(with: url, placeholder: viewModel.imagePlaceHolder)
         } else {
             photoImageView.image = viewModel.imagePlaceHolder
         }
-        return true
     }
 
     // MARK: - Button Actions
@@ -82,7 +92,7 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewModelDelegate {
 
     func didLikePet(_ liked: Bool) {
-        if !displayNewPetIfAvaliable(liked: liked) {
+        if !shouldDisplayNewPet(liked: liked) {
             // TODO: Display empty state
         }
     }

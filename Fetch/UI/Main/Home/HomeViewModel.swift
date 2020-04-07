@@ -18,8 +18,8 @@ final class HomeViewModel {
 
     weak var delegate: HomeViewModelDelegate?
     private let networkManager: NetworkManager
-    private let flow = PetSelectionSequences()
-    private(set) var imagePlaceHolder = UIImage(named: "main_noPictureIcon") ?? UIImage()
+    private let flow = PetSelectionFlow()
+    private(set) var imagePlaceHolder = #imageLiteral(resourceName: "main_noPictureIcon")
 
     var currentPetIsAvaliable: Bool {
         return flow.currentPet != nil
@@ -46,6 +46,7 @@ final class HomeViewModel {
     }
 
     private var currentPetDistance: String {
+        // Currently using placeholder value because the web server is not available yet. Once the backend is up Pet.card should provide distance.
         return "0.7 Miles"
     }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class PetSelectionSequences {
+final class PetSelectionFlow {
 
     private let minPetInQueue = 10
     private let maxPetInQueue = 20

@@ -25,7 +25,7 @@
 		FA180B64243B608B005956C0 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA180B63243B608B005956C0 /* HomeViewModelTests.swift */; };
 		FA2EFBAB2433CD7000BF65BA /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBAA2433CD7000BF65BA /* Pet.swift */; };
 		FA2EFBB02433DBE900BF65BA /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBAF2433DBE900BF65BA /* ProfileCard.swift */; };
-		FA2EFBB22433DDFC00BF65BA /* PetSelectionSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBB12433DDFC00BF65BA /* PetSelectionSequence.swift */; };
+		FA2EFBB22433DDFC00BF65BA /* PetSelectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBB12433DDFC00BF65BA /* PetSelectionFlow.swift */; };
 		FA2EFBB42433E08E00BF65BA /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBB32433E08E00BF65BA /* Queue.swift */; };
 		FA2EFBB82434D34000BF65BA /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBB72434D34000BF65BA /* ActionType.swift */; };
 		FA2EFBBB2434D6AD00BF65BA /* PetTagType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBBA2434D6AD00BF65BA /* PetTagType.swift */; };
@@ -100,7 +100,7 @@
 		FA26C3102429515700D0B5BA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FA2EFBAA2433CD7000BF65BA /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		FA2EFBAF2433DBE900BF65BA /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
-		FA2EFBB12433DDFC00BF65BA /* PetSelectionSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSelectionSequence.swift; sourceTree = "<group>"; };
+		FA2EFBB12433DDFC00BF65BA /* PetSelectionFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSelectionFlow.swift; sourceTree = "<group>"; };
 		FA2EFBB32433E08E00BF65BA /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		FA2EFBB72434D34000BF65BA /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
 		FA2EFBBA2434D6AD00BF65BA /* PetTagType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTagType.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 		FA2EFBA92433CCBF00BF65BA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				FA2EFBB12433DDFC00BF65BA /* PetSelectionSequence.swift */,
+				FA2EFBB12433DDFC00BF65BA /* PetSelectionFlow.swift */,
 				FA2EFBAA2433CD7000BF65BA /* Pet.swift */,
 				FA2EFBAF2433DBE900BF65BA /* ProfileCard.swift */,
 			);
@@ -666,7 +666,7 @@
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
 				FA5395722432684D003C3B1F /* AnswerChoiceCell.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
-				FA2EFBB22433DDFC00BF65BA /* PetSelectionSequence.swift in Sources */,
+				FA2EFBB22433DDFC00BF65BA /* PetSelectionFlow.swift in Sources */,
 				FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */,
 				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
 				CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */,
