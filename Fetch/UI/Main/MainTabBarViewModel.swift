@@ -10,12 +10,14 @@ import Foundation
 
 protocol MainTabBarViewModelForChildDelegate: AnyObject {
 
-    func likedCountDidChange(to count: Int)
+    func likedCountDidIncrease()
+    func likedCountDidDecrease()
 }
 
 protocol MainTabBarViewModelDelegate: AnyObject {
 
     func selectionDidChange(to index: Int)
+    func likedCountDidChange()
 }
 
 final class MainTabBarViewModel {
@@ -40,23 +42,54 @@ final class MainTabBarViewModel {
         tabItems.append(TabItem(icon: #imageLiteral(resourceName: "main_likedTabButton"), isSelected: false, currentNumber: 0))
     }
 
-    func tabTapped(at index: Int) {
-        delegate?.selectionDidChange(to: index)
-    }
-
-    func likedCountDidChange(to count: Int) {
-
-    }
-
-    func likedCountDidIncrease() {
-        currentLikedCount += 1
-    }
-
-    func likedCountDidDecrease() {
-        currentLikedCount -= 1
+    func tabTapped(at selectedIndex: Int) {
+        // Currently the first Tab aka setting is disabled.
+        guard selectedIndex != 0 else {return}
+        for index in 0..<tabItems.count {
+            if index == selectedIndex {
+                tabItems[index].select()
+            } else {
+                tabItems[index].unSelect()
+            }
+        }
+        delegate?.selectionDidChange(to: selectedIndex)
     }
 
     func syncLikedCount() {
+        networkManager.getLikedCount(forUser: "") { result in
+            switch result {
+            case .success(let count):
+                self.currentLikedCount = count
+            case .failure(_):
+                break
+            }
+        }
+    }
+}
 
+extension MainTabBarViewModel: MainTabBarViewModelForChildDelegate {
+
+    func likedCountDidIncrease() {
+        if likedCountChangesSinceSync < 20 {
+            currentLikedCount += 1
+            likedCountChangesSinceSync += 1
+        } else {
+            syncLikedCount()
+            likedCountChangesSinceSync = 0
+        }
+        tabItems[2].currentNumber = currentLikedCount
+        delegate?.likedCountDidChange()
+    }
+
+    func likedCountDidDecrease() {
+        if likedCountChangesSinceSync < 20 {
+            currentLikedCount = max(currentLikedCount - 1, 0)
+            likedCountChangesSinceSync += 1
+        } else {
+            syncLikedCount()
+            likedCountChangesSinceSync = 0
+        }
+        tabItems[2].currentNumber = currentLikedCount
+        delegate?.likedCountDidChange()
     }
 }

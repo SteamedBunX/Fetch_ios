@@ -17,7 +17,7 @@ protocol HomeViewModelDelegate: AnyObject {
 final class HomeViewModel {
 
     weak var delegate: HomeViewModelDelegate?
-    weak var tabBarViewModel: MainTabBarViewModel?
+    weak var tabBarDelegate: MainTabBarViewModelForChildDelegate?
     private let networkManager: NetworkManager
     private let flow = PetSelectionFlow()
     private var noPetsAvailable = false
@@ -70,7 +70,7 @@ final class HomeViewModel {
 
     private func addPetToQueue() {
         guard flow.needsRefill else { return }
-        networkManager.getPet(withCurrentList: [], forUser: "") { [weak self] result in
+        networkManager.getPet(withCurrentList: [], for: "") { [weak self] result in
             switch result {
             case .success(let nextPet):
                 self?.flow.addToQueue(pet: nextPet)
@@ -96,15 +96,15 @@ final class HomeViewModel {
     // MARK: - Button Actions
 
     func likeButtonTapped() {
-        // TODO: Make network call to like the pet
+        networkManager.like(for: "", petId: flow.currentPet?.id ?? "") { _ in}
         addPetToQueue()
         flow.nextPet()
         delegate?.didLikePet()
         tabBarViewModel?.likedCountDidIncrease()
     }
 
-    func unlikeButtonTapped() {
-        // TODO: Make network call to like the pet
+    func dislikeButtonTapped() {
+        networkManager.dislike(for: "", petId: flow.currentPet?.id ?? "") { _ in}
         addPetToQueue()
         flow.nextPet()
         delegate?.didLikePet()

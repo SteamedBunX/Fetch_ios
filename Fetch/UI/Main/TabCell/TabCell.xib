@@ -22,37 +22,39 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lbk-c0-yFv">
-                        <rect key="frame" x="9.5" y="9.5" width="57" height="56"/>
+                        <rect key="frame" x="10.5" y="17.5" width="55" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="lbk-c0-yFv" secondAttribute="height" multiplier="1:1" constant="1" id="Bbd-bV-cEt"/>
+                            <constraint firstAttribute="width" secondItem="lbk-c0-yFv" secondAttribute="height" multiplier="23:17" constant="1" id="Bbd-bV-cEt"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omJ-T2-RRf">
-                        <rect key="frame" x="31" y="30" width="14" height="15"/>
-                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PD2-O1-eHg">
-                        <rect key="frame" x="9.5" y="67.5" width="57" height="5.5"/>
+                        <rect key="frame" x="14.5" y="59.5" width="47" height="2"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="y5l-E3-gJJ"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="2"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omJ-T2-RRf">
+                        <rect key="frame" x="31" y="30" width="14" height="15"/>
+                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="PD2-O1-eHg" firstAttribute="centerX" secondItem="IrC-qd-2kC" secondAttribute="centerX" id="1m6-FE-Ot9"/>
-                    <constraint firstItem="lbk-c0-yFv" firstAttribute="height" secondItem="IrC-qd-2kC" secondAttribute="height" multiplier="0.75" id="9hB-4A-q7T"/>
+                    <constraint firstItem="lbk-c0-yFv" firstAttribute="height" secondItem="IrC-qd-2kC" secondAttribute="height" multiplier="0.53" id="9hB-4A-q7T"/>
                     <constraint firstItem="omJ-T2-RRf" firstAttribute="centerX" secondItem="IrC-qd-2kC" secondAttribute="centerX" id="Cmy-vD-pnH"/>
                     <constraint firstItem="lbk-c0-yFv" firstAttribute="centerY" secondItem="IrC-qd-2kC" secondAttribute="centerY" id="CyT-xT-laT"/>
                     <constraint firstItem="lbk-c0-yFv" firstAttribute="centerX" secondItem="IrC-qd-2kC" secondAttribute="centerX" id="Lwz-ST-vMM"/>
                     <constraint firstItem="omJ-T2-RRf" firstAttribute="centerY" secondItem="IrC-qd-2kC" secondAttribute="centerY" id="WP6-vV-vyH"/>
                     <constraint firstItem="PD2-O1-eHg" firstAttribute="top" secondItem="lbk-c0-yFv" secondAttribute="bottom" constant="2" id="gEk-ke-1da"/>
-                    <constraint firstItem="PD2-O1-eHg" firstAttribute="width" secondItem="lbk-c0-yFv" secondAttribute="width" id="jNC-zr-hlU"/>
-                    <constraint firstAttribute="bottom" secondItem="PD2-O1-eHg" secondAttribute="bottom" constant="2" id="yfI-Zl-Olx"/>
+                    <constraint firstItem="PD2-O1-eHg" firstAttribute="width" secondItem="lbk-c0-yFv" secondAttribute="width" multiplier="0.86" id="jNC-zr-hlU"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="76" height="75"/>

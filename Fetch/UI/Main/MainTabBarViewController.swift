@@ -31,6 +31,7 @@ class MainTabBarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         setupTabBar()
         setupViewControllers()
         moveTo(viewController: homeViewController)
@@ -39,6 +40,9 @@ class MainTabBarViewController: UIViewController {
     private func setupViewControllers() {
         if let homeViewController = homeViewController {
             addChild(homeViewController)
+        }
+        if let likedPetViewController = likedPetViewController {
+            addChild(likedPetViewController)
         }
     }
 
@@ -67,11 +71,19 @@ class MainTabBarViewController: UIViewController {
 
 extension MainTabBarViewController: MainTabBarViewModelDelegate {
     func selectionDidChange(to index: Int) {
-
+        tabBarCollectionView.reloadData()
+        switch index {
+        case 1:
+            moveTo(viewController: homeViewController)
+        case 2:
+            moveTo(viewController: likedPetViewController)
+        default:
+            break
+        }
     }
 
-    func likedCountDidChange(to count: Int) {
-
+    func likedCountDidChange() {
+        tabBarCollectionView.reloadData()
     }
 }
 
@@ -81,7 +93,7 @@ extension MainTabBarViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        viewModel.tabTapped(at: indexPath.row)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

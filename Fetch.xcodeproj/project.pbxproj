@@ -310,6 +310,7 @@
 				FA1A990B243C2F670001FC73 /* MainTabBarViewController.swift */,
 				FA1A9909243BA8280001FC73 /* MainTabBarViewModel.swift */,
 				FA2EFBA62433C5FE00BF65BA /* Home */,
+				FA44CF65243E085D000BAB72 /* LikedPet */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -376,6 +377,13 @@
 				FA2EFBD52436B97B00BF65BA /* TagView.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		FA44CF65243E085D000BAB72 /* LikedPet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LikedPet;
 			sourceTree = "<group>";
 		};
 		FA45ADB2242E4C7300DB5195 /* Extension */ = {

@@ -38,8 +38,13 @@ final class MainCoordinator: NSObject {
         let viewModel = MainTabBarViewModel(networkManager: networkManager)
         let tabBarViewController = MainTabBarViewController(viewModel: viewModel)
         let homeViewModel = HomeViewModel(networkManager: networkManager)
+        homeViewModel.tabBarDelegate = viewModel
         let homeViewController = HomeViewController(viewModel: homeViewModel)
+        // Temporary placeholder for likedPetViewController
+        let likedPetViewController = UIViewController()
+        likedPetViewController.view.backgroundColor = .blue
         tabBarViewController.homeViewController = homeViewController
+        tabBarViewController.likedPetViewController = likedPetViewController
         tabBarViewController.coordinator = self
         navigationController?.pushViewController(tabBarViewController, animated: animated)
     }

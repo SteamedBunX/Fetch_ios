@@ -12,4 +12,16 @@ struct TabItem {
     let icon: UIImage
     var isSelected: Bool
     var currentNumber: Int?
+
+    mutating func select() {
+        isSelected = true
+    }
+
+    mutating func unSelect() {
+        isSelected = false
+    }
+
+    mutating func updateNumber(to number: Int) {
+        currentNumber = number
+    }
 }
