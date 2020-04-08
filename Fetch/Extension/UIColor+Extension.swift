@@ -15,4 +15,8 @@ extension UIColor {
     static let buttonDisabledColor = #colorLiteral(red: 0.4588235294, green: 0.4509803922, blue: 0.4392156863, alpha: 1)
     static let answerChoiceButtonSelected = #colorLiteral(red: 0.8901960784, green: 0.4745098039, blue: 0.2705882353, alpha: 1)
     static let answerChoiceButtonUnSelected = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    static let tabSelected = #colorLiteral(red: 0.8823529412, green: 0.4549019608, blue: 0.3490196078, alpha: 1)
+    static let tabUnselected = #colorLiteral(red: 1, green: 0.8784313725, blue: 0.8235294118, alpha: 1)
+    static let tabTextSelected = UIColor.white
+    static let tabTextUnselected = #colorLiteral(red: 0.8823529412, green: 0.4549019608, blue: 0.3490196078, alpha: 1)
 }

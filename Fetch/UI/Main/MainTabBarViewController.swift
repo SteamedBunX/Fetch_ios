@@ -8,14 +8,18 @@
 
 import UIKit
 
-class MainTabBarViewController: UITabBarController {
+class MainTabBarViewController: UIViewController {
 
     weak var coordinator: MainCoordinator?
     private let viewModel: MainTabBarViewModel
+    private var currentViewController: UIViewController?
+    var homeViewController: HomeViewController?
+    var likedPetViewController: UIViewController?
 
     @IBOutlet private var frameView: UIView!
     @IBOutlet var tabBarCollectionView: UICollectionView!
-    
+    @IBOutlet var tabBarFrameView: UIView!
+
     init (viewModel: MainTabBarViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "MainTabBarViewController", bundle: nil)
@@ -27,13 +31,33 @@ class MainTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupTabBar()
+        setupViewControllers()
+        moveTo(viewController: homeViewController)
+    }
+
+    private func setupViewControllers() {
+        if let homeViewController = homeViewController {
+            addChild(homeViewController)
+        }
+    }
+
+    private func setupTabBar() {
+        tabBarFrameView.layer.applyTabBarShadow()
+        view.bringSubviewToFront(tabBarFrameView)
     }
 
     // MARK: - View Control
 
-    func moveTo(viewController: UIViewController) {
-        
+    func moveTo(viewController: UIViewController?) {
+        guard currentViewController !== viewController else {return}
+        if let viewController = viewController {
+            currentViewController?.view.removeFromSuperview()
+            viewController.view.frame = frameView.bounds
+            viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            frameView.addSubview(viewController.view)
+            currentViewController = viewController
+        }
     }
 }
 
@@ -47,9 +71,21 @@ extension MainTabBarViewController: MainTabBarViewModelDelegate {
     }
 }
 
-extension MainTabBarViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MainTabBarViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         3
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 4, height: collectionView.frame.height)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
