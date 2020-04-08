@@ -43,6 +43,10 @@ class MainTabBarViewController: UIViewController {
     }
 
     private func setupTabBar() {
+        tabBarCollectionView.delegate = self
+        tabBarCollectionView.dataSource = self
+        let nib = UINib(nibName: TabCell.cellIdentifier, bundle: nil)
+        tabBarCollectionView.register(nib, forCellWithReuseIdentifier: TabCell.cellIdentifier)
         tabBarFrameView.layer.applyTabBarShadow()
         view.bringSubviewToFront(tabBarFrameView)
     }
@@ -89,6 +93,13 @@ extension MainTabBarViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = tabBarCollectionView.dequeueReusableCell(withReuseIdentifier: TabCell.cellIdentifier, for: indexPath) as? TabCell else {
+            return UICollectionViewCell()
+        }
+        guard let cellInfo = viewModel.tabItems[ip_safely: indexPath.row] else {
+            return UICollectionViewCell()
+        }
+        cell.setup(icon: cellInfo.icon, currentNumber: cellInfo.currentNumber, selected: cellInfo.isSelected)
+        return cell
     }
 }

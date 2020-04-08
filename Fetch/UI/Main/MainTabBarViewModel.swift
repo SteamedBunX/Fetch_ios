@@ -25,11 +25,19 @@ final class MainTabBarViewModel {
     private let homeViewController: HomeViewController
     private var currentLikedCount: Int = 0
     private var likedCountChangesSinceSync: Int = 0
+    private(set) var tabItems = [TabItem]()
 
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
         let homeViewModel = HomeViewModel(networkManager: networkManager)
         homeViewController = HomeViewController(viewModel: homeViewModel)
+        setupTabItems()
+    }
+
+    func setupTabItems() {
+        tabItems.append(TabItem(icon: #imageLiteral(resourceName: "main_settingTabButton"), isSelected: false, currentNumber: nil))
+        tabItems.append(TabItem(icon: #imageLiteral(resourceName: "main_homeTabButton"), isSelected: true, currentNumber: nil))
+        tabItems.append(TabItem(icon: #imageLiteral(resourceName: "main_likedTabButton"), isSelected: false, currentNumber: 0))
     }
 
     func tabTapped(at index: Int) {

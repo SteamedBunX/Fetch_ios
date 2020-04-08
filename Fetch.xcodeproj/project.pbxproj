@@ -56,6 +56,7 @@
 		FA5395722432684D003C3B1F /* AnswerChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5395712432684D003C3B1F /* AnswerChoiceCell.swift */; };
 		FA80420B243D8032001E6A0A /* TabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80420A243D8032001E6A0A /* TabCell.swift */; };
 		FA80420D243D8045001E6A0A /* TabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA80420C243D8045001E6A0A /* TabCell.xib */; };
+		FA804210243D961B001E6A0A /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80420F243D961B001E6A0A /* TabItem.swift */; };
 		FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA26C3102429515700D0B5BA /* Lato-Regular.ttf */; };
 		FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9565192423F9CA00380003 /* OnboardingSequence.swift */; };
 		FA95651C24241E7700380003 /* TextInputOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */; };
@@ -136,6 +137,7 @@
 		FA5395712432684D003C3B1F /* AnswerChoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerChoiceCell.swift; sourceTree = "<group>"; };
 		FA80420A243D8032001E6A0A /* TabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCell.swift; sourceTree = "<group>"; };
 		FA80420C243D8045001E6A0A /* TabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabCell.xib; sourceTree = "<group>"; };
+		FA80420F243D961B001E6A0A /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		FA9565192423F9CA00380003 /* OnboardingSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSequence.swift; sourceTree = "<group>"; };
 		FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputOnboardingQuestionTests.swift; sourceTree = "<group>"; };
 		FADC5E1324227472006E8C23 /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
@@ -403,6 +405,14 @@
 			path = TabCell;
 			sourceTree = "<group>";
 		};
+		FA80420E243D960C001E6A0A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FA80420F243D961B001E6A0A /* TabItem.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		FADC5E1124227472006E8C23 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +439,7 @@
 		FADC5E1D24227FAC006E8C23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA80420E243D960C001E6A0A /* Main */,
 				FA2EFBB92434D35300BF65BA /* Enum */,
 				FA2EFBA72433CC2E00BF65BA /* Onboarding */,
 				FA2EFBA92433CCBF00BF65BA /* Home */,
@@ -692,6 +703,7 @@
 				FA5395722432684D003C3B1F /* AnswerChoiceCell.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
 				FA1A990C243C2F670001FC73 /* MainTabBarViewController.swift in Sources */,
+				FA804210243D961B001E6A0A /* TabItem.swift in Sources */,
 				FA2EFBB22433DDFC00BF65BA /* PetSelectionFlow.swift in Sources */,
 				FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */,
 				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
