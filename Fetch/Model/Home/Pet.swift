@@ -11,7 +11,7 @@ import UIKit
 
 struct Pet: Equatable {
     let id: String
-    let card: ProfileCard
+    let card: PetProfileInfo
 
     static func == (lhs: Pet, rhs: Pet) -> Bool {
         return rhs.id == lhs.id

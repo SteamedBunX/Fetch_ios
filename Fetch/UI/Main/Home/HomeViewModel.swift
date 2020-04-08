@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol HomeViewModelDelegate: AnyObject {
-    func didLikePet(_ liked: Bool)
+    func didLikePet()
     func cacheImage(from url: String)
 }
 
@@ -60,24 +60,26 @@ final class HomeViewModel {
     // MARK: - Loading Pet
 
     func loadFirstBatch() {
-        while flow.needRefill {
-            addPetToQueue()
+        for _ in 0..<10 {
+            if flow.needsRefill {
+                addPetToQueue()
+            }
         }
     }
 
     private func addPetToQueue() {
-        guard flow.needRefill else { return }
-        networkManager.getPet(withCurrentList: [], forUser: "") { result in
+        guard flow.needsRefill else { return }
+        networkManager.getPet(withCurrentList: [], forUser: "") { [weak self] result in
             switch result {
             case .success(let nextPet):
-                self.flow.addToQueue(pet: nextPet)
+                self?.flow.addToQueue(pet: nextPet)
                 if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
-                    self.delegate?.cacheImage(from: petsFirstImageURL)
+                    self?.delegate?.cacheImage(from: petsFirstImageURL)
                 }
             case .failure(let error):
                 switch error {
-                case .noMorePetAvailable:
-                    self.showEmptyState()
+                case .noPetsAvailable:
+                    self?.showEmptyState()
                 case .unknownError(let unknownError):
                     print(unknownError.localizedDescription)
                 }
@@ -95,13 +97,13 @@ final class HomeViewModel {
         // TODO: Make network call to like the pet
         addPetToQueue()
         flow.nextPet()
-        delegate?.didLikePet(true)
+        delegate?.didLikePet()
     }
 
     func unlikeButtonTapped() {
         // TODO: Make network call to like the pet
         addPetToQueue()
         flow.nextPet()
-        delegate?.didLikePet(false)
+        delegate?.didLikePet()
     }
 }

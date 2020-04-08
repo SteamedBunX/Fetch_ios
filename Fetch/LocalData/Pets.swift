@@ -29,11 +29,11 @@ enum Pets {
                 photoURLs.append(photoURL?.medium ?? "")
             }
 
-            let profileCard = ProfileCard(photoURLs: photoURLs,
-                                          name: bundle.name ?? "",
-                                          age: bundle.age ?? "",
-                                          size: bundle.size ?? "",
-                                          petTags: bundle.petTags)
+            let profileCard = PetProfileInfo(photoURLs: photoURLs,
+                                             name: bundle.name ?? "",
+                                             age: bundle.age ?? "",
+                                             size: bundle.size ?? "",
+                                             petTags: bundle.petTags)
             pets.append(Pet(id: bundle.id ?? "", card: profileCard))
         }
         return pets

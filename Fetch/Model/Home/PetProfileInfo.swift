@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ProfileCard {
+struct PetProfileInfo {
 
     let photoURLs: [String]
     let name: String

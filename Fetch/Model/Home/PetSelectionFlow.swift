@@ -22,7 +22,7 @@ final class PetSelectionFlow {
         return !pets.isEmpty
     }
 
-    var needRefill: Bool {
+    var needsRefill: Bool {
         return pets.count < minPetInQueue
     }
 

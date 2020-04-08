@@ -36,20 +36,17 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.loadFirstBatch()
-        if !shouldDisplayNewPet(liked: true) {
-            // TODO: show the empty state
-        }
+        displayNewPet()
     }
 
-    private func shouldDisplayNewPet(liked: Bool) -> Bool {
+    private func displayNewPet() {
         guard viewModel.currentPetIsAvaliable else {
-            return false
+            return
         }
         nameLabel.text = viewModel.currentPetName
         statusLabel.text = viewModel.currentPetStatus
         updatePetTags()
         updatePetImage()
-        return true
     }
 
     private func updatePetTags() {
@@ -64,6 +61,7 @@ final class HomeViewController: UIViewController {
         }
         while currentTagIndex < totalTagViewAvailable {
             tagViews[ip_safely: currentTagIndex]?.isHidden = true
+            currentTagIndex += 1
         }
     }
 
@@ -89,10 +87,8 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewModelDelegate {
 
-    func didLikePet(_ liked: Bool) {
-        if !shouldDisplayNewPet(liked: liked) {
-            // TODO: Display empty state
-        }
+    func didLikePet() {
+        displayNewPet()
     }
 
     func cacheImage(from url: String) {
