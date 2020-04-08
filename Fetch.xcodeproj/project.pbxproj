@@ -12,6 +12,7 @@
 		8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */; };
 		8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */; };
 		8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */; };
+		86A74950243BD4FD00DF8742 /* Some.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 86A7494F243BD4FD00DF8742 /* Some.graphql */; };
 		CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */; };
 		CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A52416C61600F5ECF6 /* SceneDelegate.swift */; };
 		CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5A92416C61600F5ECF6 /* Main.storyboard */; };
@@ -59,6 +60,8 @@
 		8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSegmentView.swift; sourceTree = "<group>"; };
 		8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
 		8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		86A7494E243BD21900DF8742 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		86A7494F243BD4FD00DF8742 /* Some.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Some.graphql; sourceTree = "<group>"; };
 		B49409A222B20645B01CD3EA /* Pods_FetchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FetchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20C5A02416C61600F5ECF6 /* Fetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fetch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 		CB20C5A22416C61600F5ECF6 /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
+				86A7494E243BD21900DF8742 /* schema.json */,
+				86A7494F243BD4FD00DF8742 /* Some.graphql */,
 				FA45ADB2242E4C7300DB5195 /* Extension */,
 				FA12B4C2242CFF57000731FE /* LocalData */,
 				FA350CC3242910BF008399AF /* CustomView */,
@@ -304,6 +309,7 @@
 			buildConfigurationList = CB20C5BF2416C61700F5ECF6 /* Build configuration list for PBXNativeTarget "Fetch" */;
 			buildPhases = (
 				36B33CE79128DDEB9FD7D257 /* [CP] Check Pods Manifest.lock */,
+				86A749432436D48700DF8742 /* Generate Apollo GraphQL API */,
 				CB20C59C2416C61600F5ECF6 /* Sources */,
 				CB20C59D2416C61600F5ECF6 /* Frameworks */,
 				CB20C59E2416C61600F5ECF6 /* Resources */,
@@ -392,6 +398,7 @@
 				FA53956F24323ED5003C3B1F /* AnswerChoiceCell.xib in Resources */,
 				FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
+				86A74950243BD4FD00DF8742 /* Some.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +467,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fetch/Pods-Fetch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		86A749432436D48700DF8742 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
 		};
 		993993356A2B41622A824E38 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
