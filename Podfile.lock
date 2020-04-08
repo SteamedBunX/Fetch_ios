@@ -24,15 +24,9 @@ PODS:
   - Intrepid/Core (0.15.0):
     - IP-UIKit-Wisdom (= 0.0.10)
   - IP-UIKit-Wisdom (0.0.10)
-<<<<<<< HEAD
   - Kingfisher (5.13.3):
     - Kingfisher/Core (= 5.13.3)
   - Kingfisher/Core (5.13.3)
-=======
-  - Kingfisher (5.13.2):
-    - Kingfisher/Core (= 5.13.2)
-  - Kingfisher/Core (5.13.2)
->>>>>>> 96039ad... [FETCH-162] Add new Assets. Add code to load pet info onto UI.
 
 DEPENDENCIES:
   - Apollo
@@ -59,14 +53,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   Intrepid: 9dc76098720d7567b21832f69061e3241661e8ce
   IP-UIKit-Wisdom: b395a065344071b33659e5f6b918043a97c48a44
-<<<<<<< HEAD
   Kingfisher: d2b3d6a7200c93b34de9afcdf25c8dd9282ec277
 
 PODFILE CHECKSUM: 30f0aa282c67604353748f17f5b370d340aaeebe
-=======
-  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
-
-PODFILE CHECKSUM: 8292d34d29b33ff39e75215e47bb4e2f663af737
->>>>>>> 96039ad... [FETCH-162] Add new Assets. Add code to load pet info onto UI.
 
 COCOAPODS: 1.9.0

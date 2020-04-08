@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: scene)
         coordinator = MainCoordinator()
         coordinator?.start()
+        coordinator?.showMainTabBarView(animated: true)
         window?.rootViewController = coordinator?.navigationController
         window?.makeKeyAndVisible()
     }

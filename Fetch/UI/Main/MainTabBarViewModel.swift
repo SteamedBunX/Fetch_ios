@@ -72,6 +72,7 @@ extension MainTabBarViewModel: MainTabBarViewModelForChildDelegate {
             currentLikedCount += 1
             likedCountChangesSinceSync += 1
         } else {
+            currentLikedCount += 1
             syncLikedCount()
             likedCountChangesSinceSync = 0
         }

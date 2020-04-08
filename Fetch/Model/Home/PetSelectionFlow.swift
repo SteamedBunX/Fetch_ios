@@ -18,6 +18,10 @@ final class PetSelectionFlow {
 
     // MARK: - Displayables
 
+    var currentPetAvailable: Bool {
+        return currentPet != nil
+    }
+
     var hasPetInQueue: Bool {
         return !pets.isEmpty
     }

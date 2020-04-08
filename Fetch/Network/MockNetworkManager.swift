@@ -9,37 +9,32 @@
 import Foundation
 import UIKit
 
-enum NetworkError: Error {
-    case noPetsAvailable
-    case unknownError(Error)
-}
-
 final class MockNetworkManager: NetworkManager {
 
-    var currentPet: Pet
-    var mockPets: [Pet]
+    let mockPets: [Pet]
+    var mockQueryData: [Pet]
     var likedPets: [Pet] = []
 
     init(fileName: String) {
         mockPets = Pets.load(fileName: fileName)
-        currentPet = mockPets[0]
+        mockQueryData = mockPets
     }
 
     func getPet(withCurrentList: [String], for user: String, completion: @escaping (Result<Pet, NetworkError>) -> Void) {
-        if mockPets.isEmpty {
+        if mockQueryData.isEmpty {
             completion(Result.failure(NetworkError.noPetsAvailable))
         } else {
-            completion(Result.success(mockPets.removeFirst()))
+            completion(Result.success(mockQueryData.removeFirst()))
         }
-<<<<<<< HEAD
-=======
-        currentPet = mockPets.removeFirst()
-        completion(Result.success(currentPet))
->>>>>>> 0fb008d... [FETCH-204] Renamed All Unlike to Dislike.
     }
 
     func like(for userID: String, petId: String, completion: @escaping(Result<Bool, NetworkError>) -> Void) {
-        likedPets.append(currentPet)
+        guard let pet = mockPets.first(where: {$0.id == petId}) else {
+            completion(Result.success(false))
+            return
+        }
+        likedPets.append(pet)
+        completion(Result.success(true))
     }
 
     func dislike(for userID: String, petId: String, completion: @escaping(Result<Bool, NetworkError>) -> Void) {

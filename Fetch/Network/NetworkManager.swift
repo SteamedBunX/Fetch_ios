@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+enum NetworkError: Error {
+    case noPetsAvailable
+    case unknownError(Error)
+}
+
 protocol NetworkManager: AnyObject {
 
     func getPet(withCurrentList: [String], for userID: String, completion: @escaping(Result<Pet, NetworkError>) -> Void)

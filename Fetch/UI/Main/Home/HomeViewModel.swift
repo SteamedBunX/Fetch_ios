@@ -96,17 +96,27 @@ final class HomeViewModel {
     // MARK: - Button Actions
 
     func likeButtonTapped() {
-        networkManager.like(for: "", petId: flow.currentPet?.id ?? "") { _ in}
-        addPetToQueue()
+        guard flow.currentPetAvailable else { return }
+        networkManager.like(for: "", petId: flow.currentPet?.id ?? "") { [weak self] result in
+            switch result {
+            case .success(let didLike):
+                if didLike {
+                    self?.tabBarDelegate?.likedCountDidIncrease()
+                }
+            default:
+                break
+            }
+        }
         flow.nextPet()
+        addPetToQueue()
         delegate?.didLikePet()
-        tabBarViewModel?.likedCountDidIncrease()
+
     }
 
     func dislikeButtonTapped() {
-        networkManager.dislike(for: "", petId: flow.currentPet?.id ?? "") { _ in}
-        addPetToQueue()
+        networkManager.dislike(for: "", petId: flow.currentPet?.id ?? "") { _ in }
         flow.nextPet()
+        addPetToQueue()
         delegate?.didLikePet()
     }
 }
