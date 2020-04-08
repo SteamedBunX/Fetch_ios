@@ -19,6 +19,7 @@ final class HomeViewModel {
     weak var delegate: HomeViewModelDelegate?
     private let networkManager: NetworkManager
     private let flow = PetSelectionFlow()
+    private var noPetsAvailable = false
 
     var currentPetIsAvaliable: Bool {
         return flow.currentPet != nil
@@ -60,10 +61,9 @@ final class HomeViewModel {
     // MARK: - Loading Pet
 
     func loadFirstBatch() {
-        for _ in 0..<10 {
-            if flow.needsRefill {
-                addPetToQueue()
-            }
+        noPetsAvailable = false
+        while flow.needsRefill, !noPetsAvailable {
+            addPetToQueue()
         }
     }
 
@@ -83,6 +83,7 @@ final class HomeViewModel {
                 case .unknownError(let unknownError):
                     print(unknownError.localizedDescription)
                 }
+                self?.noPetsAvailable = true
             }
         }
     }
