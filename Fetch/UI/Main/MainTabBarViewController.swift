@@ -17,8 +17,8 @@ class MainTabBarViewController: UIViewController {
     var likedPetViewController: UIViewController?
 
     @IBOutlet private var frameView: UIView!
-    @IBOutlet var tabBarCollectionView: UICollectionView!
-    @IBOutlet var tabBarFrameView: UIView!
+    @IBOutlet private var tabBarCollectionView: UICollectionView!
+    @IBOutlet private var tabBarFrameView: UIView!
 
     init (viewModel: MainTabBarViewModel) {
         self.viewModel = viewModel
@@ -57,7 +57,7 @@ class MainTabBarViewController: UIViewController {
 
     // MARK: - View Control
 
-    func moveTo(viewController: UIViewController?) {
+    private func moveTo(viewController: UIViewController?) {
         guard currentViewController !== viewController else {return}
         if let viewController = viewController {
             currentViewController?.view.removeFromSuperview()

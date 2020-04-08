@@ -65,7 +65,7 @@ final class HomeViewController: UIViewController {
         }
     }
 
-    func updatePetImage() {
+    private func updatePetImage() {
         if let urlString = viewModel.currentPetPhotoURLs.first {
             let url = URL(string: urlString)
             photoImageView.kf.setImage(with: url, placeholder:  #imageLiteral(resourceName: "main_noPictureIcon"))

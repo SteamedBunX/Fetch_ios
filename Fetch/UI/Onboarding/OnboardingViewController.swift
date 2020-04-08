@@ -186,7 +186,7 @@ extension OnboardingViewController: OnboardingViewModelDelegate {
     }
 
     func finishSequence() {
-        coordinator?.showHomeScreen(animated: true)
+        coordinator?.showMainTabBarView(animated: true)
     }
 }
 

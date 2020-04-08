@@ -48,11 +48,4 @@ final class MainCoordinator: NSObject {
         tabBarViewController.coordinator = self
         navigationController?.pushViewController(tabBarViewController, animated: animated)
     }
-
-    func showHomeScreen(animated: Bool) {
-        let viewModel = HomeViewModel(networkManager: networkManager)
-        let homeViewController = HomeViewController(viewModel: viewModel)
-        homeViewController.coordinator = self
-        navigationController?.pushViewController(homeViewController, animated: animated)
-    }
 }

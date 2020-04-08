@@ -24,19 +24,16 @@ final class MainTabBarViewModel {
 
     weak var delegate: MainTabBarViewModelDelegate?
     private let networkManager: NetworkManager
-    private let homeViewController: HomeViewController
     private var currentLikedCount: Int = 0
     private var likedCountChangesSinceSync: Int = 0
     private(set) var tabItems = [TabItem]()
 
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
-        let homeViewModel = HomeViewModel(networkManager: networkManager)
-        homeViewController = HomeViewController(viewModel: homeViewModel)
         setupTabItems()
     }
 
-    func setupTabItems() {
+    private func setupTabItems() {
         tabItems.append(TabItem(icon: #imageLiteral(resourceName: "main_settingTabButton"), isSelected: false, currentNumber: nil))
         tabItems.append(TabItem(icon: #imageLiteral(resourceName: "main_homeTabButton"), isSelected: true, currentNumber: nil))
         tabItems.append(TabItem(icon: #imageLiteral(resourceName: "main_likedTabButton"), isSelected: false, currentNumber: 0))
@@ -47,15 +44,15 @@ final class MainTabBarViewModel {
         guard selectedIndex != 0 else {return}
         for index in 0..<tabItems.count {
             if index == selectedIndex {
-                tabItems[index].select()
+                tabItems[index].isSelected = true
             } else {
-                tabItems[index].unSelect()
+                tabItems[index].isSelected = false
             }
         }
         delegate?.selectionDidChange(to: selectedIndex)
     }
 
-    func syncLikedCount() {
+    private func syncLikedCount() {
         networkManager.getLikedCount(forUser: "") { result in
             switch result {
             case .success(let count):
