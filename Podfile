@@ -9,6 +9,7 @@ target 'Fetch' do
   pod 'Intrepid'
   pod 'GoogleSignIn'
   pod 'Apollo'
+  pod 'Kingfisher', '~> 5.0'
 
   target 'FetchTests' do
     inherit! :search_paths

@@ -12,6 +12,7 @@ import Intrepid
 final class MainCoordinator: NSObject {
 
     private(set) var navigationController: UINavigationController?
+    private let networkManager: NetworkManager = MockNetworkManager(fileName: "pets")
 
     func start() {
         let rootViewController = LoginViewController()
@@ -31,5 +32,12 @@ final class MainCoordinator: NSObject {
         let onboardingViewController = OnboardingViewController(viewModel: viewModel)
         onboardingViewController.coordinator = self
         navigationController?.pushViewController(onboardingViewController, animated: animated)
+    }
+
+    func showHomeScreen(animated: Bool) {
+        let viewModel = HomeViewModel(networkManager: networkManager)
+        let homeViewController = HomeViewController(viewModel: viewModel)
+        homeViewController.coordinator = self
+        navigationController?.pushViewController(homeViewController, animated: animated)
     }
 }

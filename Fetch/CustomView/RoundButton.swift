@@ -11,8 +11,14 @@ import UIKit
 
 @IBDesignable final class RoundButton: UIButton {
 
+    @IBInspectable var enableBorder: Bool = false
+    @IBInspectable var borderColor: UIColor = UIColor.white
+    @IBInspectable var borderWidth: CGFloat = 0
+
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = frame.size.height / 2
+        layer.borderColor = borderColor.cgColor
+        layer.borderWidth = borderWidth
     }
 }
