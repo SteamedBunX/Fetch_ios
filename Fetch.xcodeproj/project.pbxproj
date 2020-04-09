@@ -19,8 +19,6 @@
 		86BE98A5244003C000374194 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE98A4244003C000374194 /* CircleView.swift */; };
 		86F3D9BD243C41040034F589 /* LikedPetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F3D9BB243C41040034F589 /* LikedPetsCollectionViewController.swift */; };
 		86F3D9BE243C41040034F589 /* LikedPetsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F3D9BC243C41040034F589 /* LikedPetsCollectionViewController.xib */; };
-		8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */; };
-		86A74950243BD4FD00DF8742 /* query.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 86A7494F243BD4FD00DF8742 /* query.graphql */; };
 		CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */; };
 		CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A52416C61600F5ECF6 /* SceneDelegate.swift */; };
 		CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5A92416C61600F5ECF6 /* Main.storyboard */; };
@@ -68,14 +66,16 @@
 		FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA26C3102429515700D0B5BA /* Lato-Regular.ttf */; };
 		FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9565192423F9CA00380003 /* OnboardingSequence.swift */; };
 		FA95651C24241E7700380003 /* TextInputOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */; };
+		FAC26C1A2446251F00948648 /* GraphQLNetworkManager.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAC26C192446251F00948648 /* GraphQLNetworkManager.graphql */; };
 		FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC5E1324227472006E8C23 /* OnboardingViewController.xib */; };
 		FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */; };
 		FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1524227472006E8C23 /* OnboardingViewController.swift */; };
 		FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1624227472006E8C23 /* OnboardingSection.swift */; };
 		FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */; };
-		FAFC8657243FAF6E00C36152 /* TabBarItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */; };
 		FAFC8651243F619E00C36152 /* GraphQLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8650243F619E00C36152 /* GraphQLNetworkManager.swift */; };
 		FAFC8653243F62DF00C36152 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FAFC8652243F62DF00C36152 /* schema.json */; };
+		FAFC8655243F698100C36152 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8654243F698100C36152 /* API.swift */; };
+		FAFC8657243FAF6E00C36152 /* TabBarItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,10 +95,6 @@
 		8618BB67242AE22F00F122C6 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSegmentView.swift; sourceTree = "<group>"; };
 		8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
-		8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		86A7494F243BD4FD00DF8742 /* query.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = query.graphql; sourceTree = "<group>"; };
-		86A7494E243BD21900DF8742 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		86A7494F243BD4FD00DF8742 /* Some.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Some.graphql; sourceTree = "<group>"; };
 		86B011F32441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		86B011F524417872004C56B4 /* LikedPetsCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewModel.swift; sourceTree = "<group>"; };
 		86BE989E243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -160,14 +156,16 @@
 		FA80420F243D961B001E6A0A /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		FA9565192423F9CA00380003 /* OnboardingSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSequence.swift; sourceTree = "<group>"; };
 		FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputOnboardingQuestionTests.swift; sourceTree = "<group>"; };
+		FAC26C192446251F00948648 /* GraphQLNetworkManager.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GraphQLNetworkManager.graphql; sourceTree = "<group>"; };
 		FADC5E1324227472006E8C23 /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestion.swift; sourceTree = "<group>"; };
 		FADC5E1524227472006E8C23 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FADC5E1624227472006E8C23 /* OnboardingSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSection.swift; sourceTree = "<group>"; };
 		FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemOption.swift; sourceTree = "<group>"; };
 		FAFC8650243F619E00C36152 /* GraphQLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLNetworkManager.swift; sourceTree = "<group>"; };
 		FAFC8652243F62DF00C36152 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		FAFC8654243F698100C36152 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,7 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				FAFC8652243F62DF00C36152 /* schema.json */,
-				86A7494F243BD4FD00DF8742 /* query.graphql */,
+				FAC26C192446251F00948648 /* GraphQLNetworkManager.graphql */,
+				FAFC8654243F698100C36152 /* API.swift */,
 				FA2EFBCE24361EE700BF65BA /* Utility */,
 				FA2EFBC52434FF4000BF65BA /* Decoder */,
 				FA2EFBBE2434FA9400BF65BA /* Network */,
@@ -596,9 +595,9 @@
 				FA53956F24323ED5003C3B1F /* AnswerChoiceCell.xib in Resources */,
 				FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */,
 				FA1A990E243C309A0001FC73 /* MainTabBarViewController.xib in Resources */,
+				FAC26C1A2446251F00948648 /* GraphQLNetworkManager.graphql in Resources */,
 				86F3D9BE243C41040034F589 /* LikedPetsCollectionViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
-				86A74950243BD4FD00DF8742 /* query.graphql in Resources */,
 				FA2EFBD0243642C500BF65BA /* HomeViewController.xib in Resources */,
 				86BE98A3243FF76500374194 /* LikedPetsCollectionViewCell.xib in Resources */,
 			);
@@ -774,6 +773,7 @@
 				FA2EFBBD2434F8A400BF65BA /* HomeViewModel.swift in Sources */,
 				FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */,
 				FA80420B243D8032001E6A0A /* TabBarCell.swift in Sources */,
+				FAFC8655243F698100C36152 /* API.swift in Sources */,
 				CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */,
 				86B011F624417872004C56B4 /* LikedPetsCollectionViewModel.swift in Sources */,
 				FA2EFBD4243645A000BF65BA /* CardView.swift in Sources */,

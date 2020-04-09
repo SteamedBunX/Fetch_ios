@@ -1,0 +1,11 @@
+mutation Login($auth: AuthInput!, $userOnboardingData:  UserCreateInput!) {
+    createUser(auth: $auth, user: $userOnboardingData) {
+        token
+    }
+}
+
+query UserIsOnboarded {
+    currentUser {
+        pet_size_preference
+    }
+}

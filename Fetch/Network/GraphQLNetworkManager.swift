@@ -10,5 +10,5 @@ import Foundation
 import Apollo
 
 final class GraphQLNetworkManager {
-    
+
 }
