@@ -26,7 +26,7 @@ final class MainTabBarViewModel {
     private let networkManager: NetworkManager
     private var currentLikedCount: Int = 0
     private var likedCountChangesSinceSync: Int = 0
-    private(set) var tabItems = [TabItem]()
+    private(set) var tabItems = [TabBarItem]()
 
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
@@ -34,15 +34,15 @@ final class MainTabBarViewModel {
     }
 
     private func setupTabItems() {
-        tabItems.append(TabItem(icon: #imageLiteral(resourceName: "main_settingTabButton"), isSelected: false, currentNumber: nil))
-        tabItems.append(TabItem(icon: #imageLiteral(resourceName: "main_homeTabButton"), isSelected: true, currentNumber: nil))
-        tabItems.append(TabItem(icon: #imageLiteral(resourceName: "main_likedTabButton"), isSelected: false, currentNumber: 0))
+        tabItems.append(TabBarItem(icon: #imageLiteral(resourceName: "main_settingTabButton"), isSelected: false, currentNumber: nil))
+        tabItems.append(TabBarItem(icon: #imageLiteral(resourceName: "main_homeTabButton"), isSelected: true, currentNumber: nil))
+        tabItems.append(TabBarItem(icon: #imageLiteral(resourceName: "main_likedTabButton"), isSelected: false, currentNumber: 0))
         syncLikedCount()
     }
 
     func tabTapped(at selectedIndex: Int) {
         // Currently the first Tab aka setting is disabled.
-        guard selectedIndex != 0 else {return}
+        guard selectedIndex != 0 else { return }
         for index in 0..<tabItems.count {
             if index == selectedIndex {
                 tabItems[index].isSelected = true
@@ -54,7 +54,7 @@ final class MainTabBarViewModel {
     }
 
     private func syncLikedCount() {
-        networkManager.getLikedCount(forUser: "") { result in
+        networkManager.getLikedCount { result in
             switch result {
             case .success(let count):
                 self.currentLikedCount = count

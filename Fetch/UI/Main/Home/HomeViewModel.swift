@@ -70,7 +70,7 @@ final class HomeViewModel {
 
     private func addPetToQueue() {
         guard flow.needsRefill else { return }
-        networkManager.getPet(withCurrentList: [], for: "") { [weak self] result in
+        networkManager.getPet(withCurrentList: []) { [weak self] result in
             switch result {
             case .success(let nextPet):
                 self?.flow.addToQueue(pet: nextPet)
@@ -83,6 +83,8 @@ final class HomeViewModel {
                     self?.showEmptyState()
                 case .unknownError(let unknownError):
                     print(unknownError.localizedDescription)
+                default:
+                    print(error.localizedDescription)
                 }
                 self?.noPetsAvailable = true
             }
@@ -96,17 +98,13 @@ final class HomeViewModel {
     // MARK: - Button Actions
 
     func likeButtonTapped() {
-        guard flow.currentPetAvailable else { return }
-        networkManager.like(for: "", petId: flow.currentPet?.id ?? "") { [weak self] result in
-            switch result {
-            case .success(let didLike):
-                if didLike {
-                    self?.tabBarDelegate?.likedCountDidIncrease()
-                }
-            default:
-                break
+        guard let petID = flow.currentPet?.id else { return }
+        networkManager.like(petId: petID) { result in
+            if case .failure(let error) = result {
+                print(error.localizedDescription)
             }
         }
+        self.tabBarDelegate?.likedCountDidIncrease()
         flow.nextPet()
         addPetToQueue()
         delegate?.didLikePet()
@@ -114,7 +112,8 @@ final class HomeViewModel {
     }
 
     func dislikeButtonTapped() {
-        networkManager.dislike(for: "", petId: flow.currentPet?.id ?? "") { _ in }
+        guard let petID = flow.currentPet?.id else { return }
+        networkManager.dislike(petId: petID) { _ in }
         flow.nextPet()
         addPetToQueue()
         delegate?.didLikePet()

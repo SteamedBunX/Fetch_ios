@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct TabItem {
+struct TabBarItem {
     let icon: UIImage
     var isSelected: Bool
     var currentNumber: Int?
