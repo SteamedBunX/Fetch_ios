@@ -19,6 +19,8 @@
 		86BE98A5244003C000374194 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE98A4244003C000374194 /* CircleView.swift */; };
 		86F3D9BD243C41040034F589 /* LikedPetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F3D9BB243C41040034F589 /* LikedPetsCollectionViewController.swift */; };
 		86F3D9BE243C41040034F589 /* LikedPetsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F3D9BC243C41040034F589 /* LikedPetsCollectionViewController.xib */; };
+		8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */; };
+		86A74950243BD4FD00DF8742 /* query.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 86A7494F243BD4FD00DF8742 /* query.graphql */; };
 		CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */; };
 		CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A52416C61600F5ECF6 /* SceneDelegate.swift */; };
 		CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5A92416C61600F5ECF6 /* Main.storyboard */; };
@@ -73,6 +75,7 @@
 		FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */; };
 		FAFC8657243FAF6E00C36152 /* TabBarItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */; };
 		FAFC8651243F619E00C36152 /* GraphQLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8650243F619E00C36152 /* GraphQLNetworkManager.swift */; };
+		FAFC8653243F62DF00C36152 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FAFC8652243F62DF00C36152 /* schema.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,8 @@
 		8618BB67242AE22F00F122C6 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSegmentView.swift; sourceTree = "<group>"; };
 		8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
+		8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		86A7494F243BD4FD00DF8742 /* query.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = query.graphql; sourceTree = "<group>"; };
 		86A7494E243BD21900DF8742 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		86A7494F243BD4FD00DF8742 /* Some.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Some.graphql; sourceTree = "<group>"; };
 		86B011F32441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +167,7 @@
 		FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemOption.swift; sourceTree = "<group>"; };
 		FAFC8650243F619E00C36152 /* GraphQLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLNetworkManager.swift; sourceTree = "<group>"; };
+		FAFC8652243F62DF00C36152 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,8 +249,8 @@
 		CB20C5A22416C61600F5ECF6 /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
-				86A7494E243BD21900DF8742 /* schema.json */,
-				86A7494F243BD4FD00DF8742 /* Some.graphql */,
+				FAFC8652243F62DF00C36152 /* schema.json */,
+				86A7494F243BD4FD00DF8742 /* query.graphql */,
 				FA2EFBCE24361EE700BF65BA /* Utility */,
 				FA2EFBC52434FF4000BF65BA /* Decoder */,
 				FA2EFBBE2434FA9400BF65BA /* Network */,
@@ -579,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA12B4BF242CE7FE000731FE /* Lato-Bold.ttf in Resources */,
+				FAFC8653243F62DF00C36152 /* schema.json in Resources */,
 				CB20C5B02416C61600F5ECF6 /* LaunchScreen.storyboard in Resources */,
 				FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */,
 				CB20C5AD2416C61600F5ECF6 /* Assets.xcassets in Resources */,
@@ -591,6 +598,7 @@
 				FA1A990E243C309A0001FC73 /* MainTabBarViewController.xib in Resources */,
 				86F3D9BE243C41040034F589 /* LikedPetsCollectionViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
+				86A74950243BD4FD00DF8742 /* query.graphql in Resources */,
 				FA2EFBD0243642C500BF65BA /* HomeViewController.xib in Resources */,
 				86BE98A3243FF76500374194 /* LikedPetsCollectionViewCell.xib in Resources */,
 			);
