@@ -113,7 +113,11 @@ final class HomeViewModel {
 
     func dislikeButtonTapped() {
         guard let petID = flow.currentPet?.id else { return }
-        networkManager.dislike(petId: petID) { _ in }
+        networkManager.dislike(petId: petID) { result in
+            if case .failure(let error) = result {
+                print(error.localizedDescription)
+            }
+        }
         flow.nextPet()
         addPetToQueue()
         delegate?.didLikePet()

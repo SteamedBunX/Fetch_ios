@@ -19,4 +19,10 @@ extension UIColor {
     static let tabUnselected = #colorLiteral(red: 1, green: 0.8784313725, blue: 0.8235294118, alpha: 1)
     static let tabTextSelected = UIColor.white
     static let tabTextUnselected = #colorLiteral(red: 0.8823529412, green: 0.4549019608, blue: 0.3490196078, alpha: 1)
+
+    static func rgba(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1.0) -> UIColor {
+        return UIColor(red: red / 255.0, green: green / 255.0, blue: blue / 255.0, alpha: alpha)
+    }
+    static var progressBarSegmentEnabled: UIColor { return .rgba(red: 227, green: 121, blue: 69) }
+    static var progressBarSegmentDisabled: UIColor { return .rgba(red: 59, green: 81, blue: 98) }
 }
