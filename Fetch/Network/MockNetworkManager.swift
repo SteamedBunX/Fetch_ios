@@ -20,27 +20,27 @@ final class MockNetworkManager: NetworkManager {
         mockQueryData = mockPets
     }
 
-    func getPet(withCurrentList: [String], completion: @escaping (Result<Pet, NetworkError>) -> Void = {_ in}) {
+    func getPet(withCurrentList: [String], completion: ( (Result<Pet, NetworkError>) -> Void)?) {
         if mockQueryData.isEmpty {
-            completion(Result.failure(NetworkError.noPetsAvailable))
+            completion?(Result.failure(NetworkError.noPetsAvailable))
         } else {
-            completion(Result.success(mockQueryData.removeFirst()))
+            completion?(Result.success(mockQueryData.removeFirst()))
         }
     }
 
-    func like(petId: String, completion: @escaping(Result<Void, NetworkError>) -> Void = {_ in}) {
+    func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
         guard let pet = mockPets.first(where: {$0.id == petId}) else {
-            completion(Result.failure(.invalidPetID))
+            completion?(Result.failure(.invalidPetID))
             return
         }
-        completion(Result.success(()))
+        completion?(Result.success(()))
         likedPets.append(pet)
     }
 
-    func dislike(petId: String, completion: @escaping(Result<Void, NetworkError>) -> Void = {_ in}) {
+    func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
     }
 
-    func getLikedCount(completion: @escaping(Result<Int, NetworkError>) -> Void = {_ in}) {
-        completion(Result.success(likedPets.count))
+    func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)?) {
+        completion?(Result.success(likedPets.count))
     }
 }
