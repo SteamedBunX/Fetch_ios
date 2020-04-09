@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainTabBarViewController: UIViewController {
+final class MainTabBarViewController: UIViewController {
 
     weak var coordinator: MainCoordinator?
     private let viewModel: MainTabBarViewModel
