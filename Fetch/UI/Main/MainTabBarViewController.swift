@@ -10,7 +10,6 @@ import UIKit
 
 final class MainTabBarViewController: UIViewController {
 
-    weak var coordinator: MainCoordinator?
     private let viewModel: MainTabBarViewModel
     private var currentViewController: UIViewController?
     private let homeViewController: HomeViewController
