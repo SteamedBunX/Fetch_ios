@@ -30,21 +30,15 @@ final class MainCoordinator: NSObject {
     func showOnboardingScreen(animated: Bool) {
         let viewModel = OnboardingViewModel(flow: OnboardingQuestions.load())
         let onboardingViewController = OnboardingViewController(viewModel: viewModel)
-        onboardingViewController.coordinator = self
+        onboardingViewController.didFinishSequence = { [weak self] in
+            self?.showMainTabBarView(animated: true)
+        }
         navigationController?.pushViewController(onboardingViewController, animated: animated)
     }
 
     func showMainTabBarView(animated: Bool) {
         let viewModel = MainTabBarViewModel(networkManager: networkManager)
         let tabBarViewController = MainTabBarViewController(viewModel: viewModel)
-        let homeViewModel = HomeViewModel(networkManager: networkManager)
-        homeViewModel.tabBarDelegate = viewModel
-        let homeViewController = HomeViewController(viewModel: homeViewModel)
-        // Temporary placeholder for likedPetViewController
-        let likedPetViewController = UIViewController()
-        likedPetViewController.view.backgroundColor = .blue
-        tabBarViewController.homeViewController = homeViewController
-        tabBarViewController.likedPetViewController = likedPetViewController
         tabBarViewController.coordinator = self
         navigationController?.pushViewController(tabBarViewController, animated: animated)
     }

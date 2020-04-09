@@ -9,7 +9,9 @@
 import UIKit
 
 struct TabBarItem {
+
     let icon: UIImage
     var isSelected: Bool
     var currentNumber: Int?
+    let option: TabBarItemOption
 }

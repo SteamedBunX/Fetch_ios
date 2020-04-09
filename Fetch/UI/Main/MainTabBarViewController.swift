@@ -13,8 +13,8 @@ final class MainTabBarViewController: UIViewController {
     weak var coordinator: MainCoordinator?
     private let viewModel: MainTabBarViewModel
     private var currentViewController: UIViewController?
-    var homeViewController: HomeViewController?
-    var likedPetViewController: UIViewController?
+    private let homeViewController: HomeViewController
+    private let likedPetViewController: UIViewController
 
     @IBOutlet private var frameView: UIView!
     @IBOutlet private var tabBarCollectionView: UICollectionView!
@@ -22,6 +22,11 @@ final class MainTabBarViewController: UIViewController {
 
     init (viewModel: MainTabBarViewModel) {
         self.viewModel = viewModel
+        let homeViewModel = viewModel.homeViewModel
+        homeViewModel.tabBarDelegate = viewModel
+        homeViewController = HomeViewController(viewModel: homeViewModel)
+        likedPetViewController = UIViewController()
+        likedPetViewController.view.backgroundColor = .blue
         super.init(nibName: "MainTabBarViewController", bundle: nil)
     }
 
@@ -38,12 +43,8 @@ final class MainTabBarViewController: UIViewController {
     }
 
     private func setupViewControllers() {
-        if let homeViewController = homeViewController {
-            addChild(homeViewController)
-        }
-        if let likedPetViewController = likedPetViewController {
-            addChild(likedPetViewController)
-        }
+        addChild(homeViewController)
+        addChild(likedPetViewController)
     }
 
     private func setupTabBar() {
@@ -58,24 +59,25 @@ final class MainTabBarViewController: UIViewController {
     // MARK: - View Control
 
     private func moveTo(viewController: UIViewController?) {
-        guard currentViewController !== viewController else {return}
-        if let viewController = viewController {
-            currentViewController?.view.removeFromSuperview()
-            viewController.view.frame = frameView.bounds
-            viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            frameView.addSubview(viewController.view)
-            currentViewController = viewController
-        }
+        guard currentViewController !== viewController,
+              let viewController = viewController
+              else { return }
+        currentViewController?.view.removeFromSuperview()
+        viewController.view.frame = frameView.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        frameView.addSubview(viewController.view)
+        currentViewController = viewController
+
     }
 }
 
 extension MainTabBarViewController: MainTabBarViewModelDelegate {
-    func selectionDidChange(to index: Int) {
+    func tabSelectionDidChange(to index: Int) {
         tabBarCollectionView.reloadData()
-        switch index {
-        case 1:
+        switch viewModel.tabBarItems[index].option {
+        case TabBarItemOption.home:
             moveTo(viewController: homeViewController)
-        case 2:
+        case TabBarItemOption.liked:
             moveTo(viewController: likedPetViewController)
         default:
             break
@@ -89,7 +91,7 @@ extension MainTabBarViewController: MainTabBarViewModelDelegate {
 
 extension MainTabBarViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        return viewModel.tabBarItems.count
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -105,12 +107,9 @@ extension MainTabBarViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = tabBarCollectionView.dequeueReusableCell(withReuseIdentifier: TabBarCell.cellIdentifier, for: indexPath) as? TabBarCell else {
-            return UICollectionViewCell()
-        }
-        guard let cellInfo = viewModel.tabItems[ip_safely: indexPath.row] else {
-            return UICollectionViewCell()
-        }
+        guard let cell = tabBarCollectionView.dequeueReusableCell(withReuseIdentifier: TabBarCell.cellIdentifier, for: indexPath) as? TabBarCell,
+              let cellInfo = viewModel.getTabBarItem(at: indexPath.row)
+              else { return UICollectionViewCell() }
         cell.setup(item: cellInfo)
         return cell
     }
