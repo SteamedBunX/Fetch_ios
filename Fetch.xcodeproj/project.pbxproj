@@ -72,6 +72,7 @@
 		FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1624227472006E8C23 /* OnboardingSection.swift */; };
 		FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */; };
 		FAFC8657243FAF6E00C36152 /* TabBarItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */; };
+		FAFC8651243F619E00C36152 /* GraphQLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8650243F619E00C36152 /* GraphQLNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		FADC5E1624227472006E8C23 /* OnboardingSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSection.swift; sourceTree = "<group>"; };
 		FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemOption.swift; sourceTree = "<group>"; };
+		FAFC8650243F619E00C36152 /* GraphQLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +362,7 @@
 			children = (
 				FA2EFBBF2434FAAE00BF65BA /* NetworkManager.swift */,
 				FA2EFBC12434FDA700BF65BA /* MockNetworkManager.swift */,
+				FAFC8650243F619E00C36152 /* GraphQLNetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
 				86BE989F243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift in Sources */,
 				86F3D9BD243C41040034F589 /* LikedPetsCollectionViewController.swift in Sources */,
+				FAFC8651243F619E00C36152 /* GraphQLNetworkManager.swift in Sources */,
 				FA5395722432684D003C3B1F /* AnswerChoiceCell.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
 				FA1A990C243C2F670001FC73 /* MainTabBarViewController.swift in Sources */,
