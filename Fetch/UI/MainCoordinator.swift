@@ -48,6 +48,8 @@ final class MainCoordinator: NSObject {
     private func showMainTabBarView(animated: Bool) {
         let viewModel = MainTabBarViewModel(networkManager: networkManager)
         let tabBarViewController = MainTabBarViewController(viewModel: viewModel)
-        navigationController?.pushViewController(tabBarViewController, animated: animated)
+        tabBarViewController.modalTransitionStyle = .crossDissolve
+        tabBarViewController.modalPresentationStyle = .fullScreen
+        navigationController?.present(tabBarViewController, animated: animated)
     }
 }
