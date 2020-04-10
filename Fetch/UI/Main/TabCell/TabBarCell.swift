@@ -19,7 +19,7 @@ final class TabBarCell: UICollectionViewCell {
 
     func setup(item: TabBarItem) {
         iconImageView.image = item.icon
-        barView.backgroundColor = UIColor.tabSelected
+        barView.backgroundColor = .tabSelected
         setSelected(item.isSelected)
         if let currentNumber = item.currentNumber {
             numberLabel.text = String(currentNumber)
@@ -30,8 +30,8 @@ final class TabBarCell: UICollectionViewCell {
     }
 
     private func setSelected(_ selected: Bool) {
-        iconImageView.tintColor = selected ? UIColor.tabSelected : UIColor.tabUnselected
+        iconImageView.tintColor = selected ? .tabSelected : .tabUnselected
         barView.isHidden = !selected
-        numberLabel.textColor = selected ? UIColor.tabTextSelected : UIColor.tabTextUnselected
+        numberLabel.textColor = selected ? .tabTextSelected : .tabTextUnselected
     }
 }

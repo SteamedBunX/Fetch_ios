@@ -19,7 +19,7 @@ final class MainTabBarViewController: UIViewController {
     @IBOutlet private var tabBarCollectionView: UICollectionView!
     @IBOutlet private var tabBarFrameView: UIView!
 
-    init (viewModel: MainTabBarViewModel) {
+    init(viewModel: MainTabBarViewModel) {
         self.viewModel = viewModel
         let homeViewModel = viewModel.homeViewModel
         homeViewModel.tabBarDelegate = viewModel
@@ -66,7 +66,6 @@ final class MainTabBarViewController: UIViewController {
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         frameView.addSubview(viewController.view)
         currentViewController = viewController
-
     }
 }
 
@@ -84,7 +83,7 @@ extension MainTabBarViewController: MainTabBarViewModelDelegate {
     }
 
     func likedCountDidChange() {
-        tabBarCollectionView.reloadData()
+        tabBarCollectionView.reloadItems(at: [IndexPath(row: TabBarItemOption.liked.rawValue, section: 0)])
     }
 }
 

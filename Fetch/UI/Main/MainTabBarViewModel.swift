@@ -74,8 +74,8 @@ final class MainTabBarViewModel {
             switch result {
             case .success(let count):
                 self?.currentLikedCount = count
-            case .failure(_):
-                break
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
