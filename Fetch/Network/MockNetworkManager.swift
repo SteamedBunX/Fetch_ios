@@ -20,11 +20,11 @@ final class MockNetworkManager: NetworkManager {
         mockQueryData = mockPets
     }
 
-    func getPet(withCurrentList: [String], completion: ( (Result<Pet, NetworkError>) -> Void)?) {
+    func getPet(withCurrentList: [String], completion: ( (Result<Pet, NetworkError>) -> Void)) {
         if mockQueryData.isEmpty {
-            completion?(Result.failure(NetworkError.noPetsAvailable))
+            completion(Result.failure(NetworkError.noPetsAvailable))
         } else {
-            completion?(Result.success(mockQueryData.removeFirst()))
+            completion(Result.success(mockQueryData.removeFirst()))
         }
     }
 
@@ -40,7 +40,7 @@ final class MockNetworkManager: NetworkManager {
     func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
     }
 
-    func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)?) {
-        completion?(Result.success(likedPets.count))
+    func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)) {
+        completion(Result.success(likedPets.count))
     }
 }

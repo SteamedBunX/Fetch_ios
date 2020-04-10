@@ -17,8 +17,8 @@ enum NetworkError: Error {
 
 protocol NetworkManager: AnyObject {
 
-    func getPet(withCurrentList: [String], completion: ((Result<Pet, NetworkError>) -> Void)?)
-    func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)?)
+    func getPet(withCurrentList: [String], completion: ((Result<Pet, NetworkError>) -> Void))
+    func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void))
     func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?)
     func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?)
 }
