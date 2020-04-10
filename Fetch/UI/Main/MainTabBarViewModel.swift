@@ -17,7 +17,7 @@ protocol MainTabBarViewModelForChildDelegate: AnyObject {
 
 protocol MainTabBarViewModelDelegate: AnyObject {
 
-    func tabSelectionDidChange(to index: Int)
+    func tabSelectionDidChange(to option: TabBarItemOption)
     func likedCountDidChange()
 }
 
@@ -66,7 +66,7 @@ final class MainTabBarViewModel {
                 tabBarItems[index].isSelected = false
             }
         }
-        delegate?.tabSelectionDidChange(to: selectedIndex)
+        delegate?.tabSelectionDidChange(to: tabBarItems[selectedIndex].option)
     }
 
     private func syncLikedCount() {

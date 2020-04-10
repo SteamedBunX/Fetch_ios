@@ -78,14 +78,7 @@ final class HomeViewModel {
                     self?.delegate?.cacheImage(from: petsFirstImageURL)
                 }
             case .failure(let error):
-                switch error {
-                case .noPetsAvailable:
-                    self?.showEmptyState()
-                case .unknownError(let unknownError):
-                    print(unknownError.localizedDescription)
-                default:
-                    print(error.localizedDescription)
-                }
+                print(error.localizedDescription)
                 self?.noPetsAvailable = true
             }
         }
@@ -104,7 +97,7 @@ final class HomeViewModel {
                 print(error.localizedDescription)
             }
         }
-        self.tabBarDelegate?.likedCountDidIncrease()
+        tabBarDelegate?.likedCountDidIncrease()
         flow.nextPet()
         addPetToQueue()
         delegate?.didLikePet()

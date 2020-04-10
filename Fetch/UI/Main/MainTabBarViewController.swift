@@ -57,10 +57,8 @@ final class MainTabBarViewController: UIViewController {
 
     // MARK: - View Control
 
-    private func moveTo(viewController: UIViewController?) {
-        guard currentViewController !== viewController,
-              let viewController = viewController
-              else { return }
+    private func moveTo(viewController: UIViewController) {
+        guard currentViewController !== viewController else { return }
         currentViewController?.view.removeFromSuperview()
         viewController.view.frame = frameView.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -70,9 +68,9 @@ final class MainTabBarViewController: UIViewController {
 }
 
 extension MainTabBarViewController: MainTabBarViewModelDelegate {
-    func tabSelectionDidChange(to index: Int) {
+    func tabSelectionDidChange(to option: TabBarItemOption) {
         tabBarCollectionView.reloadData()
-        switch viewModel.tabBarItems[index].option {
+        switch option {
         case TabBarItemOption.home:
             moveTo(viewController: homeViewController)
         case TabBarItemOption.liked:
