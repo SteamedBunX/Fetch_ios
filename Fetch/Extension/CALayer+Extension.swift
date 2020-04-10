@@ -42,4 +42,8 @@ extension CALayer {
     func applyAnswerChoiceButtonShadow() {
         applyShadowWith(color: .black, alpha: 0.31, xOffset: 0, yOffset: 2, blur: 9)
     }
+
+    func applyTabBarShadow() {
+        applyShadowWith(color: #colorLiteral(red: 0.4862745098, green: 0.4705882353, blue: 0.4705882353, alpha: 1), alpha: 0.5, xOffset: 0, yOffset: 1, blur: 4)
+    }
 }

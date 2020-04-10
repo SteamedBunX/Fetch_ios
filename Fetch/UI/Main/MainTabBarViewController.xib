@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainTabBarViewController" customModule="Fetch" customModuleProvider="target">
+            <connections>
+                <outlet property="frameView" destination="2xl-ux-rzO" id="JtG-TZ-SFc"/>
+                <outlet property="tabBarCollectionView" destination="8la-sI-tse" id="eQO-fL-dhx"/>
+                <outlet property="tabBarFrameView" destination="Mxx-fl-Hgt" id="dfi-k9-CYA"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Eo6-dN-Svr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-fl-Hgt">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8la-sI-tse">
+                            <rect key="frame" x="0.0" y="44" width="414" height="71"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.89920407530000002" green="0.5652699471" blue="0.21163734789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="8la-sI-tse" secondAttribute="height" multiplier="187:32" id="Awt-Ga-e0A"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d4O-OR-6ne">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="8la-sI-tse" firstAttribute="leading" secondItem="Mxx-fl-Hgt" secondAttribute="leading" id="2Dr-O9-aU1"/>
+                        <constraint firstAttribute="trailing" secondItem="8la-sI-tse" secondAttribute="trailing" id="faf-cc-blc"/>
+                        <constraint firstItem="8la-sI-tse" firstAttribute="top" secondItem="GeS-gb-0OX" secondAttribute="top" id="mJR-pI-kwD"/>
+                        <constraint firstAttribute="bottom" secondItem="8la-sI-tse" secondAttribute="bottom" id="o7Y-sA-VQT"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="GeS-gb-0OX"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xl-ux-rzO">
+                    <rect key="frame" x="0.0" y="115" width="414" height="781"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Mxx-fl-Hgt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4iX-Kq-r2U"/>
+                <constraint firstItem="Mxx-fl-Hgt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KS6-Ca-54N"/>
+                <constraint firstAttribute="bottom" secondItem="2xl-ux-rzO" secondAttribute="bottom" id="KeT-f6-Nue"/>
+                <constraint firstItem="2xl-ux-rzO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="UvU-2x-z9d"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2xl-ux-rzO" secondAttribute="trailing" id="gwb-Vy-6BO"/>
+                <constraint firstItem="2xl-ux-rzO" firstAttribute="top" secondItem="Mxx-fl-Hgt" secondAttribute="bottom" id="qhl-bh-N9e"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Mxx-fl-Hgt" secondAttribute="trailing" id="vI8-3U-uRa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="129"/>
+        </view>
+    </objects>
+</document>

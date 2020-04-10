@@ -17,6 +17,7 @@ protocol HomeViewModelDelegate: AnyObject {
 final class HomeViewModel {
 
     weak var delegate: HomeViewModelDelegate?
+    weak var tabBarDelegate: MainTabBarViewModelForChildDelegate?
     private let networkManager: NetworkManager
     private let flow = PetSelectionFlow()
     private var noPetsAvailable = false
@@ -69,7 +70,7 @@ final class HomeViewModel {
 
     private func addPetToQueue() {
         guard flow.needsRefill else { return }
-        networkManager.getPet(withCurrentList: [], forUser: "") { [weak self] result in
+        networkManager.getPet(withCurrentList: []) { [weak self] result in
             switch result {
             case .success(let nextPet):
                 self?.flow.addToQueue(pet: nextPet)
@@ -77,12 +78,7 @@ final class HomeViewModel {
                     self?.delegate?.cacheImage(from: petsFirstImageURL)
                 }
             case .failure(let error):
-                switch error {
-                case .noPetsAvailable:
-                    self?.showEmptyState()
-                case .unknownError(let unknownError):
-                    print(unknownError.localizedDescription)
-                }
+                print(error.localizedDescription)
                 self?.noPetsAvailable = true
             }
         }
@@ -95,16 +91,28 @@ final class HomeViewModel {
     // MARK: - Button Actions
 
     func likeButtonTapped() {
-        // TODO: Make network call to like the pet
-        addPetToQueue()
+        guard let petID = flow.currentPet?.id else { return }
+        networkManager.like(petId: petID) { result in
+            if case .failure(let error) = result {
+                print(error.localizedDescription)
+            }
+        }
+        tabBarDelegate?.likedCountDidIncrease()
         flow.nextPet()
+        addPetToQueue()
         delegate?.didLikePet()
+
     }
 
-    func unlikeButtonTapped() {
-        // TODO: Make network call to like the pet
-        addPetToQueue()
+    func dislikeButtonTapped() {
+        guard let petID = flow.currentPet?.id else { return }
+        networkManager.dislike(petId: petID) { result in
+            if case .failure(let error) = result {
+                print(error.localizedDescription)
+            }
+        }
         flow.nextPet()
+        addPetToQueue()
         delegate?.didLikePet()
     }
 }

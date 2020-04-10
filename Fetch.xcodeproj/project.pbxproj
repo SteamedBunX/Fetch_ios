@@ -11,7 +11,6 @@
 		8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB67242AE22F00F122C6 /* ProgressBarView.swift */; };
 		8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */; };
 		8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */; };
-		8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */; };
 		86A74950243BD4FD00DF8742 /* Some.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 86A7494F243BD4FD00DF8742 /* Some.graphql */; };
 		CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */; };
 		CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A52416C61600F5ECF6 /* SceneDelegate.swift */; };
@@ -23,6 +22,9 @@
 		FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */; };
 		FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */; };
 		FA180B64243B608B005956C0 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA180B63243B608B005956C0 /* HomeViewModelTests.swift */; };
+		FA1A990A243BA8280001FC73 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A9909243BA8280001FC73 /* MainTabBarViewModel.swift */; };
+		FA1A990C243C2F670001FC73 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A990B243C2F670001FC73 /* MainTabBarViewController.swift */; };
+		FA1A990E243C309A0001FC73 /* MainTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1A990D243C309A0001FC73 /* MainTabBarViewController.xib */; };
 		FA2EFBAB2433CD7000BF65BA /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBAA2433CD7000BF65BA /* Pet.swift */; };
 		FA2EFBB02433DBE900BF65BA /* PetProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBAF2433DBE900BF65BA /* PetProfileInfo.swift */; };
 		FA2EFBB22433DDFC00BF65BA /* PetSelectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2EFBB12433DDFC00BF65BA /* PetSelectionFlow.swift */; };
@@ -51,6 +53,9 @@
 		FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */; };
 		FA53956F24323ED5003C3B1F /* AnswerChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA53956E24323ED5003C3B1F /* AnswerChoiceCell.xib */; };
 		FA5395722432684D003C3B1F /* AnswerChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5395712432684D003C3B1F /* AnswerChoiceCell.swift */; };
+		FA80420B243D8032001E6A0A /* TabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80420A243D8032001E6A0A /* TabBarCell.swift */; };
+		FA80420D243D8045001E6A0A /* TabBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA80420C243D8045001E6A0A /* TabBarCell.xib */; };
+		FA804210243D961B001E6A0A /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80420F243D961B001E6A0A /* TabBarItem.swift */; };
 		FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA26C3102429515700D0B5BA /* Lato-Regular.ttf */; };
 		FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9565192423F9CA00380003 /* OnboardingSequence.swift */; };
 		FA95651C24241E7700380003 /* TextInputOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */; };
@@ -59,6 +64,7 @@
 		FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1524227472006E8C23 /* OnboardingViewController.swift */; };
 		FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1624227472006E8C23 /* OnboardingSection.swift */; };
 		FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */; };
+		FAFC8657243FAF6E00C36152 /* TabBarItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +84,6 @@
 		8618BB67242AE22F00F122C6 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSegmentView.swift; sourceTree = "<group>"; };
 		8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
-		8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		86A7494E243BD21900DF8742 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		86A7494F243BD4FD00DF8742 /* Some.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Some.graphql; sourceTree = "<group>"; };
 		B49409A222B20645B01CD3EA /* Pods_FetchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FetchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +102,9 @@
 		FA12B4C0242CEA8D000731FE /* PatuaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PatuaOne-Regular.ttf"; sourceTree = "<group>"; };
 		FA12B4C3242CFF57000731FE /* OnboardingQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestions.swift; sourceTree = "<group>"; };
 		FA180B63243B608B005956C0 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		FA1A9909243BA8280001FC73 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
+		FA1A990B243C2F670001FC73 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		FA1A990D243C309A0001FC73 /* MainTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarViewController.xib; sourceTree = "<group>"; };
 		FA26C3102429515700D0B5BA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FA2EFBAA2433CD7000BF65BA /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		FA2EFBAF2433DBE900BF65BA /* PetProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileInfo.swift; sourceTree = "<group>"; };
@@ -126,6 +134,9 @@
 		FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		FA53956E24323ED5003C3B1F /* AnswerChoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerChoiceCell.xib; sourceTree = "<group>"; };
 		FA5395712432684D003C3B1F /* AnswerChoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerChoiceCell.swift; sourceTree = "<group>"; };
+		FA80420A243D8032001E6A0A /* TabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCell.swift; sourceTree = "<group>"; };
+		FA80420C243D8045001E6A0A /* TabBarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarCell.xib; sourceTree = "<group>"; };
+		FA80420F243D961B001E6A0A /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		FA9565192423F9CA00380003 /* OnboardingSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSequence.swift; sourceTree = "<group>"; };
 		FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputOnboardingQuestionTests.swift; sourceTree = "<group>"; };
 		FADC5E1324227472006E8C23 /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
@@ -133,6 +144,7 @@
 		FADC5E1524227472006E8C23 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FADC5E1624227472006E8C23 /* OnboardingSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSection.swift; sourceTree = "<group>"; };
 		FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,14 +177,6 @@
 			path = ProgressBar;
 			sourceTree = "<group>";
 		};
-		8618BB72242B049300F122C6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8618BB73242B075D00F122C6 /* UIColor+Extensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		873D5F582B3382870357EA38 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				CB20C5A22416C61600F5ECF6 /* Fetch */,
-				8618BB72242B049300F122C6 /* Extensions */,
+				CB20C5AC2416C61600F5ECF6 /* Assets.xcassets */,
 				CB20C5B92416C61700F5ECF6 /* FetchTests */,
 				CB20C5A12416C61600F5ECF6 /* Products */,
 				873D5F582B3382870357EA38 /* Pods */,
@@ -218,7 +222,6 @@
 				FA350CC3242910BF008399AF /* CustomView */,
 				FADC5E1D24227FAC006E8C23 /* Model */,
 				FADC5E1124227472006E8C23 /* UI */,
-				CB20C5AC2416C61600F5ECF6 /* Assets.xcassets */,
 				CB20C5B12416C61600F5ECF6 /* Info.plist */,
 				FA26C3112429516100D0B5BA /* Font */,
 				CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */,
@@ -293,7 +296,12 @@
 		FA2EFBA82433CC8100BF65BA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FA804209243CC989001E6A0A /* TabCell */,
+				FA1A990D243C309A0001FC73 /* MainTabBarViewController.xib */,
+				FA1A990B243C2F670001FC73 /* MainTabBarViewController.swift */,
+				FA1A9909243BA8280001FC73 /* MainTabBarViewModel.swift */,
 				FA2EFBA62433C5FE00BF65BA /* Home */,
+				FA44CF65243E085D000BAB72 /* LikedPet */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -313,6 +321,7 @@
 			children = (
 				FA2EFBB72434D34000BF65BA /* ActionType.swift */,
 				FA2EFBBA2434D6AD00BF65BA /* PetTagType.swift */,
+				FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -362,6 +371,13 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		FA44CF65243E085D000BAB72 /* LikedPet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LikedPet;
+			sourceTree = "<group>";
+		};
 		FA45ADB2242E4C7300DB5195 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +394,23 @@
 				FA5395712432684D003C3B1F /* AnswerChoiceCell.swift */,
 			);
 			path = AnswerChoiceCell;
+			sourceTree = "<group>";
+		};
+		FA804209243CC989001E6A0A /* TabCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA80420C243D8045001E6A0A /* TabBarCell.xib */,
+				FA80420A243D8032001E6A0A /* TabBarCell.swift */,
+			);
+			path = TabCell;
+			sourceTree = "<group>";
+		};
+		FA80420E243D960C001E6A0A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FA80420F243D961B001E6A0A /* TabBarItem.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		FADC5E1124227472006E8C23 /* UI */ = {
@@ -406,6 +439,7 @@
 		FADC5E1D24227FAC006E8C23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA80420E243D960C001E6A0A /* Main */,
 				FA2EFBB92434D35300BF65BA /* Enum */,
 				FA2EFBA72433CC2E00BF65BA /* Onboarding */,
 				FA2EFBA92433CCBF00BF65BA /* Home */,
@@ -517,8 +551,10 @@
 				FA12B4C1242CEAA7000731FE /* PatuaOne-Regular.ttf in Resources */,
 				FA2EFBCB24350D7700BF65BA /* pets.json in Resources */,
 				FA350CC12428FE01008399AF /* LoginViewController.xib in Resources */,
+				FA80420D243D8045001E6A0A /* TabBarCell.xib in Resources */,
 				FA53956F24323ED5003C3B1F /* AnswerChoiceCell.xib in Resources */,
 				FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */,
+				FA1A990E243C309A0001FC73 /* MainTabBarViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
 				86A74950243BD4FD00DF8742 /* Some.graphql in Resources */,
 				FA2EFBD0243642C500BF65BA /* HomeViewController.xib in Resources */,
@@ -666,6 +702,8 @@
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
 				FA5395722432684D003C3B1F /* AnswerChoiceCell.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
+				FA1A990C243C2F670001FC73 /* MainTabBarViewController.swift in Sources */,
+				FA804210243D961B001E6A0A /* TabBarItem.swift in Sources */,
 				FA2EFBB22433DDFC00BF65BA /* PetSelectionFlow.swift in Sources */,
 				FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */,
 				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
@@ -673,6 +711,7 @@
 				8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */,
 				8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */,
 				FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */,
+				FAFC8657243FAF6E00C36152 /* TabBarItemOption.swift in Sources */,
 				FA2EFBBB2434D6AD00BF65BA /* PetTagType.swift in Sources */,
 				FA2EFBC02434FAAE00BF65BA /* NetworkManager.swift in Sources */,
 				FA2EFBB02433DBE900BF65BA /* PetProfileInfo.swift in Sources */,
@@ -683,12 +722,13 @@
 				FA2EFBC42434FDFC00BF65BA /* Pets.swift in Sources */,
 				FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */,
 				FA2EFBC72434FF5200BF65BA /* PetBundle.swift in Sources */,
-				8618BB74242B075D00F122C6 /* UIColor+Extensions.swift in Sources */,
 				FA2EFBBD2434F8A400BF65BA /* HomeViewModel.swift in Sources */,
 				FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */,
+				FA80420B243D8032001E6A0A /* TabBarCell.swift in Sources */,
 				CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */,
 				FA2EFBD4243645A000BF65BA /* CardView.swift in Sources */,
 				FA2EFBB42433E08E00BF65BA /* Queue.swift in Sources */,
+				FA1A990A243BA8280001FC73 /* MainTabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

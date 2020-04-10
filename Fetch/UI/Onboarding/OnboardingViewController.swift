@@ -22,7 +22,8 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet private var doneButton: UIButton!
 
     private let viewModel: OnboardingViewModel
-    weak var coordinator: MainCoordinator?
+
+    var didFinishSequence: (() -> Void)?
 
     // MARK: - Initial Setup
 
@@ -186,7 +187,7 @@ extension OnboardingViewController: OnboardingViewModelDelegate {
     }
 
     func finishSequence() {
-        coordinator?.showHomeScreen(animated: true)
+        didFinishSequence?()
     }
 }
 

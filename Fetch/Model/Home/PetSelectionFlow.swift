@@ -1,5 +1,5 @@
 //
-//  PetSelectionSequence.swift
+//  PetSelectionFlow.swift
 //  Fetch
 //
 //  Created by yi.hao on 3/31/20.
@@ -17,6 +17,10 @@ final class PetSelectionFlow {
     private(set) var currentPet: Pet?
 
     // MARK: - Displayables
+
+    var currentPetAvailable: Bool {
+        return currentPet != nil
+    }
 
     var hasPetInQueue: Bool {
         return !pets.isEmpty

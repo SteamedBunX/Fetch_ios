@@ -12,7 +12,9 @@ import GoogleSignIn
 final class LoginViewController: UIViewController {
 
     @IBOutlet private var googleSignInButton: RoundButton!
-    weak var coordinator: MainCoordinator?
+
+    var newUserDidLogin: (() -> Void)?
+    var oldUserDidLogin: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +30,7 @@ final class LoginViewController: UIViewController {
     private func userDidSignInWithGoogle(for user: GIDGoogleUser) {
         // TODO: Communicate with server for the actual tokan.
         // TODO: Cache tokan locally and use it instead of the google auth when possible.
-        goToOnboarding()
-    }
-
-    private func goToOnboarding() {
-        coordinator?.showOnboardingScreen(animated: true)
+        newUserDidLogin?()
     }
 }
 

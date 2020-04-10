@@ -14,30 +14,40 @@ final class MainCoordinator: NSObject {
     private(set) var navigationController: UINavigationController?
     private let networkManager: NetworkManager = MockNetworkManager(fileName: "pets")
 
+    private var newLoginViewController: LoginViewController {
+        let loginViewController = LoginViewController()
+        loginViewController.newUserDidLogin = { [weak self] in
+            self?.showOnboardingScreen(animated: true)
+        }
+        loginViewController.oldUserDidLogin = { [weak self] in
+            self?.showMainTabBarView(animated: true)
+        }
+        return loginViewController
+    }
+
     func start() {
-        let rootViewController = LoginViewController()
-        rootViewController.coordinator = self
+        let rootViewController = newLoginViewController
         self.navigationController = UINavigationController(rootViewController: rootViewController)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
-    func showLoginScreen(animated: Bool) {
-        let loginViewController = LoginViewController()
-        loginViewController.coordinator = self
+    private func showLoginScreen(animated: Bool) {
+        let loginViewController = newLoginViewController
         navigationController?.pushViewController(loginViewController, animated: animated)
     }
 
-    func showOnboardingScreen(animated: Bool) {
+    private func showOnboardingScreen(animated: Bool) {
         let viewModel = OnboardingViewModel(flow: OnboardingQuestions.load())
         let onboardingViewController = OnboardingViewController(viewModel: viewModel)
-        onboardingViewController.coordinator = self
+        onboardingViewController.didFinishSequence = { [weak self] in
+            self?.showMainTabBarView(animated: true)
+        }
         navigationController?.pushViewController(onboardingViewController, animated: animated)
     }
 
-    func showHomeScreen(animated: Bool) {
-        let viewModel = HomeViewModel(networkManager: networkManager)
-        let homeViewController = HomeViewController(viewModel: viewModel)
-        homeViewController.coordinator = self
-        navigationController?.pushViewController(homeViewController, animated: animated)
+    private func showMainTabBarView(animated: Bool) {
+        let viewModel = MainTabBarViewModel(networkManager: networkManager)
+        let tabBarViewController = MainTabBarViewController(viewModel: viewModel)
+        navigationController?.pushViewController(tabBarViewController, animated: animated)
     }
 }

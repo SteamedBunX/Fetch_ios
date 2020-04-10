@@ -65,7 +65,7 @@ final class HomeViewController: UIViewController {
         }
     }
 
-    func updatePetImage() {
+    private func updatePetImage() {
         if let urlString = viewModel.currentPetPhotoURLs.first {
             let url = URL(string: urlString)
             photoImageView.kf.setImage(with: url, placeholder:  #imageLiteral(resourceName: "main_noPictureIcon"))
@@ -76,8 +76,8 @@ final class HomeViewController: UIViewController {
 
     // MARK: - Button Actions
 
-    @IBAction private func unlikeButtonTapped(_ sender: Any) {
-        viewModel.unlikeButtonTapped()
+    @IBAction private func dislikeButtonTapped(_ sender: Any) {
+        viewModel.dislikeButtonTapped()
     }
 
     @IBAction private func likeButtonTapped(_ sender: Any) {
