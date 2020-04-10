@@ -46,9 +46,9 @@ final class MainTabBarViewModel {
     }
 
     private func setupTabItems() {
-        tabBarItems.append(TabBarItem(icon: #imageLiteral(resourceName: "main_settingTabButton"), isSelected: false, currentNumber: nil, option: .setting))
-        tabBarItems.append(TabBarItem(icon: #imageLiteral(resourceName: "main_homeTabButton"), isSelected: true, currentNumber: nil, option: .home))
-        tabBarItems.append(TabBarItem(icon: #imageLiteral(resourceName: "main_likedTabButton"), isSelected: false, currentNumber: 0, option: .liked))
+        tabBarItems.append(TabBarItem(icon: TabBarItemOption.setting.icon, isSelected: false, currentNumber: nil, option: .setting))
+        tabBarItems.append(TabBarItem(icon: TabBarItemOption.home.icon, isSelected: true, currentNumber: nil, option: .home))
+        tabBarItems.append(TabBarItem(icon: TabBarItemOption.liked.icon, isSelected: false, currentNumber: 0, option: .liked))
         syncLikedCount()
     }
 
