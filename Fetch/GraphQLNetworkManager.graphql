@@ -1,5 +1,7 @@
-mutation Login($auth: AuthInput!, $userOnboardingData:  UserCreateInput!) {
-    createUser(auth: $auth, user: $userOnboardingData) {
+mutation Login($auth: AuthInput!) {
+    createUser(auth: $auth,   user:{
+          zipcode: "99999"
+    }) {
         token
     }
 }
