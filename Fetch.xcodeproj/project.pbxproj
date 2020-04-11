@@ -11,7 +11,14 @@
 		8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB67242AE22F00F122C6 /* ProgressBarView.swift */; };
 		8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */; };
 		8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */; };
-		86A74950243BD4FD00DF8742 /* Some.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 86A7494F243BD4FD00DF8742 /* Some.graphql */; };
+		86B011F42441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B011F32441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift */; };
+		86B011F624417872004C56B4 /* LikedPetsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B011F524417872004C56B4 /* LikedPetsCollectionViewModel.swift */; };
+		86BE989F243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE989E243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift */; };
+		86BE98A2243FF75D00374194 /* LikedPetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE98A0243FF75D00374194 /* LikedPetsCollectionViewCell.swift */; };
+		86BE98A3243FF76500374194 /* LikedPetsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86BE98A1243FF75D00374194 /* LikedPetsCollectionViewCell.xib */; };
+		86BE98A5244003C000374194 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE98A4244003C000374194 /* CircleView.swift */; };
+		86F3D9BD243C41040034F589 /* LikedPetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F3D9BB243C41040034F589 /* LikedPetsCollectionViewController.swift */; };
+		86F3D9BE243C41040034F589 /* LikedPetsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F3D9BC243C41040034F589 /* LikedPetsCollectionViewController.xib */; };
 		CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */; };
 		CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A52416C61600F5ECF6 /* SceneDelegate.swift */; };
 		CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5A92416C61600F5ECF6 /* Main.storyboard */; };
@@ -86,6 +93,14 @@
 		8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
 		86A7494E243BD21900DF8742 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		86A7494F243BD4FD00DF8742 /* Some.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Some.graphql; sourceTree = "<group>"; };
+		86B011F32441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		86B011F524417872004C56B4 /* LikedPetsCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewModel.swift; sourceTree = "<group>"; };
+		86BE989E243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		86BE98A0243FF75D00374194 /* LikedPetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewCell.swift; sourceTree = "<group>"; };
+		86BE98A1243FF75D00374194 /* LikedPetsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikedPetsCollectionViewCell.xib; sourceTree = "<group>"; };
+		86BE98A4244003C000374194 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		86F3D9BB243C41040034F589 /* LikedPetsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewController.swift; sourceTree = "<group>"; };
+		86F3D9BC243C41040034F589 /* LikedPetsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikedPetsCollectionViewController.xib; sourceTree = "<group>"; };
 		B49409A222B20645B01CD3EA /* Pods_FetchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FetchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20C5A02416C61600F5ECF6 /* Fetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fetch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +190,20 @@
 				8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */,
 			);
 			path = ProgressBar;
+			sourceTree = "<group>";
+		};
+		86F3D9BA243C407F0034F589 /* Liked Pets */ = {
+			isa = PBXGroup;
+			children = (
+				86B011F524417872004C56B4 /* LikedPetsCollectionViewModel.swift */,
+				86F3D9BB243C41040034F589 /* LikedPetsCollectionViewController.swift */,
+				86F3D9BC243C41040034F589 /* LikedPetsCollectionViewController.xib */,
+				86BE989E243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift */,
+				86B011F32441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift */,
+				86BE98A0243FF75D00374194 /* LikedPetsCollectionViewCell.swift */,
+				86BE98A1243FF75D00374194 /* LikedPetsCollectionViewCell.xib */,
+			);
+			path = "Liked Pets";
 			sourceTree = "<group>";
 		};
 		873D5F582B3382870357EA38 /* Pods */ = {
@@ -367,6 +396,7 @@
 				FA350CC4242910BF008399AF /* RoundButton.swift */,
 				FA2EFBD3243645A000BF65BA /* CardView.swift */,
 				FA2EFBD52436B97B00BF65BA /* TagView.swift */,
+				86BE98A4244003C000374194 /* CircleView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -416,6 +446,7 @@
 		FADC5E1124227472006E8C23 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				86F3D9BA243C407F0034F589 /* Liked Pets */,
 				FA350CBC2428FDF2008399AF /* MainCoordinator.swift */,
 				FA350CBE2428FE01008399AF /* Login */,
 				FADC5E1224227472006E8C23 /* Onboarding */,
@@ -555,9 +586,10 @@
 				FA53956F24323ED5003C3B1F /* AnswerChoiceCell.xib in Resources */,
 				FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */,
 				FA1A990E243C309A0001FC73 /* MainTabBarViewController.xib in Resources */,
+				86F3D9BE243C41040034F589 /* LikedPetsCollectionViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
-				86A74950243BD4FD00DF8742 /* Some.graphql in Resources */,
 				FA2EFBD0243642C500BF65BA /* HomeViewController.xib in Resources */,
+				86BE98A3243FF76500374194 /* LikedPetsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,17 +727,22 @@
 				FA350CC5242910BF008399AF /* RoundButton.swift in Sources */,
 				FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */,
 				FA2EFBD2243642D700BF65BA /* HomeViewController.swift in Sources */,
+				86B011F42441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift in Sources */,
+				86BE98A5244003C000374194 /* CircleView.swift in Sources */,
 				FA2EFBC22434FDA700BF65BA /* MockNetworkManager.swift in Sources */,
 				FA2EFBB82434D34000BF65BA /* ActionType.swift in Sources */,
 				FA2EFBAB2433CD7000BF65BA /* Pet.swift in Sources */,
 				FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */,
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
+				86BE989F243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift in Sources */,
+				86F3D9BD243C41040034F589 /* LikedPetsCollectionViewController.swift in Sources */,
 				FA5395722432684D003C3B1F /* AnswerChoiceCell.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
 				FA1A990C243C2F670001FC73 /* MainTabBarViewController.swift in Sources */,
 				FA804210243D961B001E6A0A /* TabBarItem.swift in Sources */,
 				FA2EFBB22433DDFC00BF65BA /* PetSelectionFlow.swift in Sources */,
 				FA12B4C4242CFF57000731FE /* OnboardingQuestions.swift in Sources */,
+				86BE98A2243FF75D00374194 /* LikedPetsCollectionViewCell.swift in Sources */,
 				8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */,
 				CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */,
 				8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */,
@@ -726,6 +763,7 @@
 				FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */,
 				FA80420B243D8032001E6A0A /* TabBarCell.swift in Sources */,
 				CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */,
+				86B011F624417872004C56B4 /* LikedPetsCollectionViewModel.swift in Sources */,
 				FA2EFBD4243645A000BF65BA /* CardView.swift in Sources */,
 				FA2EFBB42433E08E00BF65BA /* Queue.swift in Sources */,
 				FA1A990A243BA8280001FC73 /* MainTabBarViewModel.swift in Sources */,

@@ -6,8 +6,7 @@
 //  Copyright © 2020 Digital Products. All rights reserved.
 //
 
-import Foundation
-import UIKit
+import Intrepid
 
 final class MockNetworkManager: NetworkManager {
 
@@ -15,7 +14,7 @@ final class MockNetworkManager: NetworkManager {
     var mockQueryData: [Pet]
     var likedPets: [Pet] = []
 
-    init(fileName: String) {
+    init(fileName: String = "pets") {
         mockPets = Pets.load(fileName: fileName)
         mockQueryData = mockPets
     }
@@ -42,5 +41,11 @@ final class MockNetworkManager: NetworkManager {
 
     func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)) {
         completion(Result.success(likedPets.count))
+    }
+
+    func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void) {
+        After(2.0) { [likedPets] in
+            completion(.success(likedPets))
+        }
     }
 }

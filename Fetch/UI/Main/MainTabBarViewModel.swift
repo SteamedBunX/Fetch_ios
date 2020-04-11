@@ -40,6 +40,10 @@ final class MainTabBarViewModel {
         return HomeViewModel(networkManager: networkManager)
     }()
 
+    lazy var likedPetsViewModel: LikedPetsCollectionViewModel = {
+        return LikedPetsCollectionViewModel(networkManager: networkManager)
+    }()
+
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
         setupTabItems()

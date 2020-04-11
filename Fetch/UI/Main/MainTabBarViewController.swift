@@ -24,8 +24,8 @@ final class MainTabBarViewController: UIViewController {
         let homeViewModel = viewModel.homeViewModel
         homeViewModel.tabBarDelegate = viewModel
         homeViewController = HomeViewController(viewModel: homeViewModel)
-        likedPetViewController = UIViewController()
-        likedPetViewController.view.backgroundColor = .blue
+        likedPetViewController = LikedPetsCollectionViewController(viewModel: viewModel.likedPetsViewModel)
+
         super.init(nibName: "MainTabBarViewController", bundle: nil)
     }
 
