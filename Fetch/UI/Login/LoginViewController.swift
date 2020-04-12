@@ -13,11 +13,26 @@ final class LoginViewController: UIViewController {
 
     @IBOutlet private var googleSignInButton: RoundButton!
 
+    let networkManager = GraphQLNetworkManager.shared
+    let userDefaults = UserDefaults.standard
+    let userDefaultsTokan = "userTokan"
+
     var newUserDidLogin: (() -> Void)?
     var oldUserDidLogin: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let userTokan = checkForUserTokan() {
+            googleSignInButton.isHidden = true
+            networkManager.userTokan = userTokan
+            networkManager.checkUserOnboardingStatus { [weak self] finishedOnboarding in
+                if finishedOnboarding {
+                    self?.oldUserDidLogin?()
+                } else {
+                    self?.googleSignInButton.isHidden = false
+                }
+            }
+        }
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
         googleSignInButton.layer.applyGoogleSignInButtonShadow()
@@ -28,9 +43,25 @@ final class LoginViewController: UIViewController {
     }
 
     private func userDidSignInWithGoogle(for user: GIDGoogleUser) {
-        // TODO: Communicate with server for the actual tokan.
-        // TODO: Cache tokan locally and use it instead of the google auth when possible.
-        newUserDidLogin?()
+        let authenticationInfo = AuthInput(clientId: user.authentication.clientID, idToken: user.authentication.idToken)
+        networkManager.login(authenticationInfo: authenticationInfo) { [weak self] result in
+            self?.storeUserTokan(userTokan: result)
+        }
+        networkManager.checkUserOnboardingStatus { [weak self] finishedOnboarding in
+            if finishedOnboarding {
+                self?.oldUserDidLogin?()
+            } else {
+                self?.newUserDidLogin?()
+            }
+        }
+    }
+
+    private func storeUserTokan(userTokan: String) {
+        userDefaults.setValue(userTokan, forKey: userDefaultsTokan)
+    }
+
+    private func checkForUserTokan() -> String? {
+        return userDefaults.string(forKey: userDefaultsTokan)
     }
 }
 

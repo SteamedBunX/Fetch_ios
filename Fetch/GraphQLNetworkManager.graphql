@@ -1,5 +1,5 @@
 mutation Login($auth: AuthInput!) {
-    createUser(auth: $auth,   user:{
+    createUser(auth: $auth, user:{
           zipcode: "99999"
     }) {
         token

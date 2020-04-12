@@ -13,6 +13,7 @@ final class MainCoordinator: NSObject {
 
     private(set) var navigationController: UINavigationController?
     private let networkManager: NetworkManager = MockNetworkManager(fileName: "pets")
+    var isNewUser = true
 
     private var newLoginViewController: LoginViewController {
         let loginViewController = LoginViewController()
@@ -27,8 +28,14 @@ final class MainCoordinator: NSObject {
     }
 
     func start() {
-        let rootViewController = newLoginViewController
-        self.navigationController = UINavigationController(rootViewController: rootViewController)
+        if isNewUser {
+            let rootViewController = newLoginViewController
+            navigationController = UINavigationController(rootViewController: rootViewController)
+        } else {
+            let viewModel = MainTabBarViewModel(networkManager: networkManager)
+            let rootViewController = MainTabBarViewController(viewModel: viewModel)
+            navigationController = UINavigationController(rootViewController: rootViewController)
+        }
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 

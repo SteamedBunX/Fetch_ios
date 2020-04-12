@@ -33,7 +33,7 @@ public struct AuthInput: GraphQLMapConvertible {
   }
 }
 
-public enum SIZE: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+public enum Size: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
   case small
   case medium
@@ -59,7 +59,7 @@ public enum SIZE: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JS
     }
   }
 
-  public static func == (lhs: SIZE, rhs: SIZE) -> Bool {
+  public static func == (lhs: Size, rhs: Size) -> Bool {
     switch (lhs, rhs) {
       case (.small, .small): return true
       case (.medium, .medium): return true
@@ -69,7 +69,7 @@ public enum SIZE: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JS
     }
   }
 
-  public static var allCases: [SIZE] {
+  public static var allCases: [Size] {
     return [
       .small,
       .medium,
@@ -215,7 +215,7 @@ public final class UserIsOnboardedQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("pet_size_preference", type: .scalar(SIZE.self)),
+        GraphQLField("pet_size_preference", type: .scalar(Size.self)),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -224,7 +224,7 @@ public final class UserIsOnboardedQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(petSizePreference: SIZE? = nil) {
+      public init(petSizePreference: Size? = nil) {
         self.init(unsafeResultMap: ["__typename": "User", "pet_size_preference": petSizePreference])
       }
 
@@ -237,9 +237,9 @@ public final class UserIsOnboardedQuery: GraphQLQuery {
         }
       }
 
-      public var petSizePreference: SIZE? {
+      public var petSizePreference: Size? {
         get {
-          return resultMap["pet_size_preference"] as? SIZE
+          return resultMap["pet_size_preference"] as? Size
         }
         set {
           resultMap.updateValue(newValue, forKey: "pet_size_preference")
