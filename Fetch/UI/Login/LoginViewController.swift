@@ -34,7 +34,7 @@ final class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         googleSignInButton.layer.applyGoogleSignInButtonShadow()
         googleSignInButton.isHidden = true
-        viewModel.checkUserOnboardingStatus()
+        viewModel.checkCachedUserOnboardingStatus()
     }
 
     @IBAction private func googleSignInButtonTapped(_ sender: Any) {

@@ -167,11 +167,11 @@ public final class LoginMutation: GraphQLMutation {
   }
 }
 
-public final class UserIsOnboardedQuery: GraphQLQuery {
+public final class IsUserOnboardedQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query UserIsOnboarded {
+    query IsUserOnboarded {
       currentUser {
         __typename
         pet_size_preference
@@ -179,7 +179,7 @@ public final class UserIsOnboardedQuery: GraphQLQuery {
     }
     """
 
-  public let operationName: String = "UserIsOnboarded"
+  public let operationName: String = "IsUserOnboarded"
 
   public init() {
   }

@@ -12,6 +12,7 @@ import UIKit
 enum NetworkError: Error {
     case noPetsAvailable
     case invalidPetID
+    case failToAuthenticate
     case unknownError(Error)
 }
 

@@ -19,6 +19,9 @@ final class MockNetworkManager: NetworkManager {
         mockQueryData = mockPets
     }
 
+    func loadUserTokenFromCache() {
+    }
+
     func login(authenticationInfo: AuthInput, completion: @escaping (String) -> Void) {
         completion("")
     }

@@ -19,28 +19,32 @@ protocol LoginViewModelDelegate: AnyObject {
 final class LoginViewModel: NSObject {
     private let networkManager: GraphQLNetworkManager
     private let userDefaults = UserDefaults.standard
-    private let userDefaultsUserTokenKey = "userToken"
     weak var delegate: LoginViewModelDelegate?
 
-    private var cachedUserToken: String? {
-        return userDefaults.string(forKey: userDefaultsUserTokenKey)
+    private var hasCacheToken: Bool {
+        return userDefaults.string(forKey: UserDefaultsKeys.userToken) != nil
     }
 
     init(networkManager: GraphQLNetworkManager) {
+        // TODO: Confirm GraphQLNetworkManager to NetworkManager and switch to the protocol instead.
         self.networkManager = networkManager
     }
 
-    func checkUserOnboardingStatus() {
-        guard let userToken = cachedUserToken else {
+    func checkCachedUserOnboardingStatus() {
+        guard hasCacheToken else {
             delegate?.storeTokenCheckComplete()
             return
         }
-        networkManager.userToken = userToken
-        networkManager.checkUserOnboardingStatus { [weak self] finishedOnboarding in
-            if finishedOnboarding {
-                self?.delegate?.oldUserDidLogin?()
-            } else {
-                self?.delegate?.storeTokenCheckComplete()
+        networkManager.checkUserOnboardingStatus { [weak self] result in
+            switch result {
+            case .success(let finishedOnboarding):
+                if finishedOnboarding {
+                    self?.delegate?.oldUserDidLogin?()
+                } else {
+                    self?.delegate?.storeTokenCheckComplete()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
@@ -48,26 +52,35 @@ final class LoginViewModel: NSObject {
     private func userDidSignInWithGoogle(for user: GIDGoogleUser) {
         let authenticationInfo = AuthInput(clientId: user.authentication.clientID, idToken: user.authentication.idToken)
         networkManager.login(authenticationInfo: authenticationInfo) { [weak self] result in
-            self?.storeUserToken(userToken: result)
-            self?.networkManager.checkUserOnboardingStatus { [weak self] finishedOnboarding in
+            switch result {
+            case .success:
+                self?.handleSuccessfulLogin()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    private func handleSuccessfulLogin() {
+        networkManager.checkUserOnboardingStatus {  [weak self] result in
+            switch result {
+            case .success(let finishedOnboarding):
                 if finishedOnboarding {
                     self?.delegate?.oldUserDidLogin?()
                 } else {
                     self?.delegate?.newUserDidLogin?()
                 }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
-    }
-
-    private func storeUserToken(userToken: String) {
-        userDefaults.setValue(userToken, forKey: userDefaultsUserTokenKey)
     }
 }
 
 extension LoginViewModel: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn?, didSignInFor user: GIDGoogleUser?, withError error: Error?) {
         if let user = user {
-            self.userDidSignInWithGoogle(for: user)
+            userDidSignInWithGoogle(for: user)
         }
     }
 }

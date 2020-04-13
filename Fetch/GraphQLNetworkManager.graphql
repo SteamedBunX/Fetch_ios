@@ -6,7 +6,7 @@ mutation Login($auth: AuthInput!) {
     }
 }
 
-query UserIsOnboarded {
+query IsUserOnboarded {
     currentUser {
         pet_size_preference
     }
