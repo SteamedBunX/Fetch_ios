@@ -13,10 +13,10 @@ final class MainCoordinator: NSObject {
 
     private(set) var navigationController: UINavigationController?
     private let networkManager: NetworkManager = MockNetworkManager(fileName: "pets")
-    var isNewUser = true
 
     private var newLoginViewController: LoginViewController {
-        let loginViewController = LoginViewController()
+        let viewModel = LoginViewModel(networkManager: GraphQLNetworkManager.shared)
+        let loginViewController = LoginViewController(viewModel: viewModel)
         loginViewController.newUserDidLogin = { [weak self] in
             self?.showOnboardingScreen(animated: true)
         }
@@ -28,14 +28,8 @@ final class MainCoordinator: NSObject {
     }
 
     func start() {
-        if isNewUser {
-            let rootViewController = newLoginViewController
-            navigationController = UINavigationController(rootViewController: rootViewController)
-        } else {
-            let viewModel = MainTabBarViewModel(networkManager: networkManager)
-            let rootViewController = MainTabBarViewController(viewModel: viewModel)
-            navigationController = UINavigationController(rootViewController: rootViewController)
-        }
+        let rootViewController = newLoginViewController
+        navigationController = UINavigationController(rootViewController: rootViewController)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 

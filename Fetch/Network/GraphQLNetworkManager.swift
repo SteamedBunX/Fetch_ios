@@ -13,7 +13,7 @@ final class GraphQLNetworkManager {
 
     static let shared = GraphQLNetworkManager()
     private(set) lazy var apollo = ApolloClient(url: URL(string: "https://fetch-server-staging.herokuapp.com/")!)
-    var userTokan = ""
+    var userToken = ""
 
     private init() {}
 
@@ -21,8 +21,12 @@ final class GraphQLNetworkManager {
         apollo.perform(mutation: LoginMutation(auth: authenticationInfo)) { [weak self] result in
             switch result {
             case .success(let resultData):
-                self?.userTokan = resultData.data?.createUser?.token ?? ""
-                completion(self?.userTokan ?? "")
+                guard let resultToken = resultData.data?.createUser?.token else {
+                    print("Failed To Login")
+                    return
+                }
+                self?.userToken = resultToken
+                completion(resultToken)
             case .failure(let error):
                 print(error.localizedDescription)
             }
