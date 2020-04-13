@@ -12,7 +12,8 @@ import Intrepid
 final class MainCoordinator: NSObject {
 
     private(set) var navigationController: UINavigationController?
-    private let networkManager: NetworkManager = MockNetworkManager(fileName: "pets")
+    private let networkManager: NetworkManager = GraphQLNetworkManager.shared
+    var isNewUser = true
 
     private var newLoginViewController: LoginViewController {
         let viewModel = LoginViewModel(networkManager: GraphQLNetworkManager.shared)

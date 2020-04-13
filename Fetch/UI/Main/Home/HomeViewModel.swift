@@ -21,6 +21,7 @@ final class HomeViewModel {
     private let networkManager: NetworkManager
     private let flow = PetSelectionFlow()
     private var noPetsAvailable = false
+    private let maxAttempt = 10
 
     var currentPetIsAvaliable: Bool {
         return flow.currentPet != nil
@@ -63,16 +64,19 @@ final class HomeViewModel {
 
     func loadFirstBatch() {
         noPetsAvailable = false
-        while flow.needsRefill, !noPetsAvailable {
+        var attempts = 0
+        while flow.needsRefill, !noPetsAvailable, attempts < maxAttempt {
+            attempts += 1
             addPetToQueue()
         }
     }
 
     private func addPetToQueue() {
-        guard flow.needsRefill else { return }
+        guard flow.needsRefill && !noPetsAvailable else { return }
         networkManager.getRandomPet(withCurrentList: []) { [weak self] result in
             switch result {
             case .success(let nextPet):
+                print(nextPet.card.name)
                 self?.flow.addToQueue(pet: nextPet)
                 if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
                     self?.delegate?.cacheImage(from: petsFirstImageURL)
