@@ -17,7 +17,7 @@ final class LikedPetsCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var ageLabel: UILabel!
     @IBOutlet private var sizeLabel: UILabel!
 
-    var viewModel: LikedPetsCollectionViewCellViewModel = PlaceHolderLikedPetsCollectionViewCellViewModel() {
+    var viewModel: LikedPetsCollectionViewCellViewModel = LikedPetsCollectionViewCellViewModel() {
         didSet {
             bindToViewModel()
         }

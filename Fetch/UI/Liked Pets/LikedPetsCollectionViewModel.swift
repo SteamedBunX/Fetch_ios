@@ -35,7 +35,7 @@ final class LikedPetsCollectionViewModel {
             return 0
         }
 
-        return likedPetViewModels.isEmpty ? 10 : likedPetViewModels.count
+        return likedPetViewModels.count
     }
 
     func viewModel(forCellAt indexPath: IndexPath) -> LikedPetsCollectionViewCellViewModel {
@@ -68,13 +68,13 @@ final class LikedPetsCollectionViewModel {
 
 struct LikedPetsCollectionViewCellViewModelFactory {
     var defaultViewModel: LikedPetsCollectionViewCellViewModel {
-        return PlaceHolderLikedPetsCollectionViewCellViewModel()
+        return LikedPetsCollectionViewCellViewModel()
     }
 
     func viewModel(forPet pet: Pet) -> LikedPetsCollectionViewCellViewModel {
         let profile = pet.card
-        return MockLikedPetsCollectionViewCellViewModel(
-            imageUrl: profile.photoURLs.first ?? "",
+        return LikedPetsCollectionViewCellViewModel(
+            imageURLString: profile.photoURLs.first ?? "",
             placeHolderImage: #imageLiteral(resourceName: "main_noPictureIcon"),
             name: profile.name,
             distance: "10 mi away",

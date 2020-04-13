@@ -15,7 +15,6 @@ final class LoginViewController: UIViewController {
 
     var newUserDidLogin: (() -> Void)?
     var oldUserDidLogin: (() -> Void)?
-    var skipLogin: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +31,6 @@ final class LoginViewController: UIViewController {
         // TODO: Communicate with server for the actual tokan.
         // TODO: Cache tokan locally and use it instead of the google auth when possible.
         newUserDidLogin?()
-    }
-
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        super.motionEnded(motion, with: event)
-        skipLogin?()
     }
 }
 

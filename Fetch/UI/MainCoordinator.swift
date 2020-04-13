@@ -23,9 +23,6 @@ final class MainCoordinator: NSObject {
             self?.showMainTabBarView(animated: true)
         }
 
-        loginViewController.skipLogin = { [weak self] in
-            self?.showMainTabBarView(animated: true)
-        }
         return loginViewController
     }
 
