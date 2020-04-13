@@ -11,3 +11,17 @@ query IsUserOnboarded {
         pet_size_preference
     }
 }
+
+query GetRandomPet($queuedPets: [ID]){
+  randomPet(queuedPets: $queuedPets) {
+    photos
+    id
+    name
+    age
+    size
+    pet_activity_value
+      pet_dependency_value
+      pet_social_value
+      pet_trainability_value
+  }
+}
