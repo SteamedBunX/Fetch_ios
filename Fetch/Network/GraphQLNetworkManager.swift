@@ -69,7 +69,6 @@ final class GraphQLNetworkManager: NetworkManager {
                                           size: self?.getPetSizeString(from: petDecodable) ?? "",
                                           petTags: self?.getPetTags(from: petDecodable) ?? [:])
                 let resultPet = Pet(id: petDecodable.id, card: card)
-                print("Fetch New Pet: \(card.name)")
                 completion(.success(resultPet))
             case .failure(let error):
                 print(error.localizedDescription)
@@ -177,7 +176,7 @@ extension GraphQLNetworkManager: HTTPNetworkTransportPreflightDelegate {
       var headers = request.allHTTPHeaderFields ?? [String: String]()
 
       // Add any new headers you need
-      headers["Authorization"] = userTokan
+      headers["Authorization"] = userToken
 
       // Re-assign the updated headers to the request.
       request.allHTTPHeaderFields = headers

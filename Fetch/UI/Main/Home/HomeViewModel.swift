@@ -57,7 +57,9 @@ final class HomeViewModel {
     }
 
     private var currentQueuedPets: [String] {
-        flow.currentQueuedPetIDs
+        var currentQueuedPets = flow.currentQueuedPetIDs
+        currentQueuedPets.append(flow.currentPet?.id ?? "")
+        return currentQueuedPets
     }
 
     init(networkManager: NetworkManager) {
@@ -67,7 +69,7 @@ final class HomeViewModel {
     // MARK: - Loading Pet
 
     func loadFirstBatch() {
-        loadFirstPet{
+        loadFirstPet {
             self.noPetsAvailable = false
             self.addPetToQueue(for: self.maxAttempt)
         }
@@ -77,7 +79,6 @@ final class HomeViewModel {
         networkManager.getRandomPet(withCurrentList: []) { [weak self] result in
             switch result {
             case .success(let nextPet):
-                print(nextPet.card.name)
                 self?.flow.addToQueue(pet: nextPet)
                 if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
                     self?.delegate?.cacheImage(from: petsFirstImageURL)
@@ -93,7 +94,7 @@ final class HomeViewModel {
 
     private func addPetToQueue(for times: Int) {
         guard flow.needsRefill && !noPetsAvailable else { return }
-        networkManager.getRandomPet(withCurrentList: []) { [weak self] result in
+        networkManager.getRandomPet(withCurrentList: currentQueuedPets) { [weak self] result in
             switch result {
             case .success(let nextPet):
                 self?.flow.addToQueue(pet: nextPet)

@@ -13,10 +13,9 @@ final class MainCoordinator: NSObject {
 
     private(set) var navigationController: UINavigationController?
     private let networkManager: NetworkManager = GraphQLNetworkManager.shared
-    var isNewUser = true
 
     private var newLoginViewController: LoginViewController {
-        let viewModel = LoginViewModel(networkManager: GraphQLNetworkManager.shared)
+        let viewModel = LoginViewModel(networkManager: networkManager)
         let loginViewController = LoginViewController(viewModel: viewModel)
         loginViewController.newUserDidLogin = { [weak self] in
             self?.showMainTabBarView(animated: true)

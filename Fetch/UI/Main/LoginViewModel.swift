@@ -17,7 +17,7 @@ protocol LoginViewModelDelegate: AnyObject {
 }
 
 final class LoginViewModel: NSObject {
-    private let networkManager: GraphQLNetworkManager
+    private let networkManager: NetworkManager
     private let userDefaults = UserDefaults.standard
     weak var delegate: LoginViewModelDelegate?
 
@@ -25,8 +25,7 @@ final class LoginViewModel: NSObject {
         return userDefaults.string(forKey: UserDefaultsKeys.userToken) != nil
     }
 
-    init(networkManager: GraphQLNetworkManager) {
-        // TODO: Confirm GraphQLNetworkManager to NetworkManager and switch to the protocol instead.
+    init(networkManager: NetworkManager) {
         self.networkManager = networkManager
     }
 
