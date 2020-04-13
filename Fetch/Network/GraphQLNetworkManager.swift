@@ -9,7 +9,7 @@
 import Foundation
 import Apollo
 
-final class GraphQLNetworkManager {
+final class GraphQLNetworkManager: NetworkManager {
 
     static let shared = GraphQLNetworkManager()
     private let endPoint = "https://fetch-server-staging.herokuapp.com/"
@@ -46,6 +46,22 @@ final class GraphQLNetworkManager {
                 completion(.failure(.unknownError(error)))
             }
         }
+    }
+
+    func getRandomPet(withCurrentList: [String], completion: ((Result<Pet, NetworkError>) -> Void)) {
+
+    }
+
+    func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)) {
+
+    }
+
+    func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
+
+    }
+
+    func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
+
     }
 
     private func storeUserToken(userToken: String) {

@@ -70,7 +70,7 @@ final class HomeViewModel {
 
     private func addPetToQueue() {
         guard flow.needsRefill else { return }
-        networkManager.getPet(withCurrentList: []) { [weak self] result in
+        networkManager.getRandomPet(withCurrentList: []) { [weak self] result in
             switch result {
             case .success(let nextPet):
                 self?.flow.addToQueue(pet: nextPet)

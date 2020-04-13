@@ -21,6 +21,7 @@ protocol NetworkManager: AnyObject {
     func login(authenticationInfo: AuthInput, completion: @escaping (String) -> Void)
     func checkUserOnboardingStatus(completion: @escaping (Bool) -> Void)
     func getPet(withCurrentList: [String], completion: ((Result<Pet, NetworkError>) -> Void))
+    func getRandomPet(withCurrentList: [String], completion: ((Result<Pet, NetworkError>) -> Void))
     func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void))
     func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?)
     func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?)
