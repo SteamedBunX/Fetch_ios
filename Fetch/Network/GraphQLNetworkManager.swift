@@ -57,7 +57,6 @@ final class GraphQLNetworkManager: NetworkManager {
         let queuedPets = withCurrentList.map { (id) -> GraphQLID in
             GraphQLID(id)
         }
-
         apollo.fetch(query: GetRandomPetQuery(queuedPets: queuedPets)) { [weak self] result in
             switch result {
             case .success(let data):
@@ -70,6 +69,7 @@ final class GraphQLNetworkManager: NetworkManager {
                                           size: self?.getPetSizeString(from: petDecodable) ?? "",
                                           petTags: self?.getPetTags(from: petDecodable) ?? [:])
                 let resultPet = Pet(id: petDecodable.id, card: card)
+                print("Fetch New Pet: \(card.name)")
                 completion(.success(resultPet))
             case .failure(let error):
                 print(error.localizedDescription)

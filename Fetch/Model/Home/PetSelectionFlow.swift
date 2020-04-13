@@ -18,6 +18,10 @@ final class PetSelectionFlow {
 
     // MARK: - Displayables
 
+    var currentQueuedPetIDs: [String] {
+        return pets.map { $0.id }
+    }
+
     var currentPetAvailable: Bool {
         return currentPet != nil
     }

@@ -9,7 +9,7 @@
 import Foundation
 import Intrepid
 
-struct Queue<T> {
+struct Queue<T>: Sequence {
 
     private var items = [T]()
 
@@ -47,5 +47,9 @@ struct Queue<T> {
 
     func peek() -> T? {
         return items[ip_safely: 0]
+    }
+
+    func makeIterator() -> Array<T>.Iterator {
+        return items.makeIterator()
     }
 }

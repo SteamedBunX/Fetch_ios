@@ -56,6 +56,10 @@ final class HomeViewModel {
         return flow.currentPet?.card.petTags ?? [:]
     }
 
+    private var currentQueuedPets: [String] {
+        flow.currentQueuedPetIDs
+    }
+
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
     }
@@ -63,16 +67,13 @@ final class HomeViewModel {
     // MARK: - Loading Pet
 
     func loadFirstBatch() {
-        noPetsAvailable = false
-        var attempts = 0
-        while flow.needsRefill, !noPetsAvailable, attempts < maxAttempt {
-            attempts += 1
-            addPetToQueue()
+        loadFirstPet{
+            self.noPetsAvailable = false
+            self.addPetToQueue(for: self.maxAttempt)
         }
     }
 
-    private func addPetToQueue() {
-        guard flow.needsRefill && !noPetsAvailable else { return }
+    private func loadFirstPet(completion: @escaping () -> Void) {
         networkManager.getRandomPet(withCurrentList: []) { [weak self] result in
             switch result {
             case .success(let nextPet):
@@ -80,6 +81,27 @@ final class HomeViewModel {
                 self?.flow.addToQueue(pet: nextPet)
                 if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
                     self?.delegate?.cacheImage(from: petsFirstImageURL)
+                }
+                self?.delegate?.didLikePet()
+                completion()
+            case .failure(let error):
+                print(error.localizedDescription)
+                self?.noPetsAvailable = true
+            }
+        }
+    }
+
+    private func addPetToQueue(for times: Int) {
+        guard flow.needsRefill && !noPetsAvailable else { return }
+        networkManager.getRandomPet(withCurrentList: []) { [weak self] result in
+            switch result {
+            case .success(let nextPet):
+                self?.flow.addToQueue(pet: nextPet)
+                if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
+                    self?.delegate?.cacheImage(from: petsFirstImageURL)
+                }
+                if times > 1 {
+                    self?.addPetToQueue(for: times - 1)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -103,7 +125,7 @@ final class HomeViewModel {
         }
         tabBarDelegate?.likedCountDidIncrease()
         flow.nextPet()
-        addPetToQueue()
+        addPetToQueue(for: 1)
         delegate?.didLikePet()
 
     }
@@ -116,7 +138,7 @@ final class HomeViewModel {
             }
         }
         flow.nextPet()
-        addPetToQueue()
+        addPetToQueue(for: 1)
         delegate?.didLikePet()
     }
 }
