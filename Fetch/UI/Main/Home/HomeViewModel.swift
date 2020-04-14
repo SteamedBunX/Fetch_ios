@@ -67,14 +67,6 @@ final class HomeViewModel {
     // MARK: - Loading Pet
 
     func loadFirstBatch() {
-        loadFirstPet { [weak self] in
-            guard let self = self else { return }
-            self.noPetsAvailable = false
-            self.addPetToQueue(for: self.maxAttempt)
-        }
-    }
-
-    private func loadFirstPet(completion: @escaping () -> Void) {
         networkManager.getRandomPet(withCurrentList: []) { [weak self] result in
             switch result {
             case .success(let nextPet):
@@ -83,7 +75,9 @@ final class HomeViewModel {
                     self?.delegate?.cacheImage(from: petsFirstImageURL)
                 }
                 self?.delegate?.didLikePet()
-                completion()
+                guard let self = self else { return }
+                self.noPetsAvailable = false
+                self.addPetsToQueue(numberOfPets: self.maxAttempt)
             case .failure(let error):
                 print(error.localizedDescription)
                 self?.noPetsAvailable = true
@@ -91,7 +85,7 @@ final class HomeViewModel {
         }
     }
 
-    private func addPetToQueue(for times: Int) {
+    private func addPetsToQueue(numberOfPets: Int) {
         guard flow.needsRefill && !noPetsAvailable else { return }
         networkManager.getRandomPet(withCurrentList: currentQueuedPetsIDs) { [weak self] result in
             switch result {
@@ -100,8 +94,8 @@ final class HomeViewModel {
                 if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
                     self?.delegate?.cacheImage(from: petsFirstImageURL)
                 }
-                if times > 1 {
-                    self?.addPetToQueue(for: times - 1)
+                if numberOfPets > 1 {
+                    self?.addPetsToQueue(numberOfPets: numberOfPets - 1)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -125,9 +119,8 @@ final class HomeViewModel {
         }
         tabBarDelegate?.likedCountDidIncrease()
         flow.nextPet()
-        addPetToQueue(for: 1)
+        addPetsToQueue(numberOfPets: 1)
         delegate?.didLikePet()
-
     }
 
     func dislikeButtonTapped() {
@@ -138,7 +131,7 @@ final class HomeViewModel {
             }
         }
         flow.nextPet()
-        addPetToQueue(for: 1)
+        addPetsToQueue(numberOfPets: 1)
         delegate?.didLikePet()
     }
 }

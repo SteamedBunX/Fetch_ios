@@ -18,7 +18,7 @@ final class GraphQLNetworkManager: NetworkManager {
       transport.delegate = self
       return transport
     }()
-    private(set) lazy var apollo = ApolloClient(networkTransport: self.networkTransport)
+    private lazy var apollo = ApolloClient(networkTransport: self.networkTransport)
     private let userDefaults = UserDefaults.standard
     private var userToken: String {
         return userDefaults.string(forKey: UserDefaultsKeys.userToken) ?? ""
@@ -29,8 +29,8 @@ final class GraphQLNetworkManager: NetworkManager {
     func login(authenticationInfo: AuthInput, completion: @escaping (Result<Void, NetworkError>) -> Void) {
         apollo.perform(mutation: LoginMutation(auth: authenticationInfo)) {[weak self] result in
             switch result {
-            case .success(let resultData):
-                guard let resultToken = resultData.data?.createUser?.token else {
+            case .success(let response):
+                guard let resultToken = response.data?.createUser?.token else {
                     completion(.failure(.failToAuthenticate))
                     return
                 }
@@ -42,31 +42,32 @@ final class GraphQLNetworkManager: NetworkManager {
         }
     }
 
-    func checkUserOnboardingStatus(completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+    func getUserOnboardingStatus(completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         apollo.fetch(query: IsUserOnboardedQuery()) { result in
             switch result {
-            case .success(let resultData):
-                completion(.success(resultData.data?.currentUser.petSizePreference != nil))
+            case .success(let response):
+                completion(.success(response.data?.currentUser.petSizePreference != nil))
             case .failure(let error):
                 completion(.failure(.unknownError(error)))
             }
         }
     }
 
-    func getRandomPet(withCurrentList: [String], completion: @escaping ((Result<Pet, NetworkError>) -> Void)) {
-        let queuedPets = withCurrentList.map { (id) -> GraphQLID in
+    func getRandomPet(withCurrentList list: [String], completion: @escaping ((Result<Pet, NetworkError>) -> Void)) {
+        let queuedPets = list.map { (id) -> GraphQLID in
             GraphQLID(id)
         }
         apollo.fetch(query: GetRandomPetQuery(queuedPets: queuedPets)) { result in
             switch result {
-            case .success(let data):
-                guard let petDecodable = data.data?.randomPet else { print("failed to decode pet")
+            case .success(let response):
+                guard let petDecodable = response.data?.randomPet else {
+                    completion(.failure(.failToDecodeData))
                     return
                 }
                 let resultPet = GraphQLCoder.getPet(from: petDecodable)
                 completion(.success(resultPet))
             case .failure(let error):
-                print(error.localizedDescription)
+                completion(.failure(.unknownError(error)))
             }
         }
     }
@@ -93,8 +94,9 @@ final class GraphQLNetworkManager: NetworkManager {
 }
 
 extension GraphQLNetworkManager: HTTPNetworkTransportPreflightDelegate {
+
     func networkTransport(_ networkTransport: HTTPNetworkTransport, shouldSend request: URLRequest) -> Bool {
-        return true
+        return request.url?.absoluteString == endPoint
     }
 
     func networkTransport(_ networkTransport: HTTPNetworkTransport,

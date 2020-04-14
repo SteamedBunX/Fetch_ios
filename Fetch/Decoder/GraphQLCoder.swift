@@ -69,7 +69,7 @@ enum GraphQLCoder {
         }
         switch petDecodable.petSocialValue {
         case .aWallFlower:
-            result[PetTagType.socialValue] = "A WallFlower"
+            result[PetTagType.socialValue] = "A Wallflower"
         case .social:
             result[PetTagType.socialValue] = "Social"
         case .lifeOfTheParty:

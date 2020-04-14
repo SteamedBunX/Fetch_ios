@@ -27,7 +27,7 @@ final class MockNetworkManager: NetworkManager {
         completion(.success(()))
     }
 
-    func checkUserOnboardingStatus(completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+    func getUserOnboardingStatus(completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         completion(.success(false))
     }
 

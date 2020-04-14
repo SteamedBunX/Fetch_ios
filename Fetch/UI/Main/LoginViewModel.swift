@@ -34,7 +34,7 @@ final class LoginViewModel: NSObject {
             delegate?.storeTokenCheckComplete()
             return
         }
-        networkManager.checkUserOnboardingStatus { [weak self] result in
+        networkManager.getUserOnboardingStatus { [weak self] result in
             switch result {
             case .success(let finishedOnboarding):
                 if finishedOnboarding {
@@ -61,7 +61,7 @@ final class LoginViewModel: NSObject {
     }
 
     private func handleSuccessfulLogin() {
-        networkManager.checkUserOnboardingStatus {  [weak self] result in
+        networkManager.getUserOnboardingStatus {  [weak self] result in
             switch result {
             case .success(let finishedOnboarding):
                 if finishedOnboarding {
