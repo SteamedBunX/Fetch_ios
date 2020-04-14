@@ -41,7 +41,7 @@ final class GraphQLNetworkManager {
         apollo.fetch(query: IsUserOnboardedQuery()) { result in
             switch result {
             case .success(let resultData):
-                completion(.success(!(resultData.data?.currentUser.petSizePreference == nil)))
+                completion(.success(resultData.data?.currentUser.petSizePreference != nil))
             case .failure(let error):
                 completion(.failure(.unknownError(error)))
             }
