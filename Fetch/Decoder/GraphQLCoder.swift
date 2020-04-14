@@ -13,14 +13,14 @@ enum GraphQLCoder {
     static func getPet(from randomPet: GetRandomPetQuery.Data.RandomPet) -> Pet {
         let card = PetProfileInfo(photoURLs: randomPet.photos?.compactMap {$0} ?? [],
                                   name: randomPet.name ?? "",
-                                  age: getPetAgeString(from: randomPet),
-                                  size: getPetSizeString(from: randomPet),
-                                  petTags: getPetTags(from: randomPet))
+                                  age: getPetAgeString(fromRandomPet: randomPet),
+                                  size: getPetSizeString(fromRandomPet: randomPet),
+                                  petTags: getPetTags(fromRandomPet: randomPet))
         return Pet(id: randomPet.id, card: card)
     }
 
-    private static func getPetAgeString(from petDecodable: GetRandomPetQuery.Data.RandomPet) -> String {
-        switch petDecodable.age {
+    private static func getPetAgeString(fromRandomPet randomPet: GetRandomPetQuery.Data.RandomPet) -> String {
+        switch randomPet.age {
         case .adult:
             return "Adult"
         case .senior:
@@ -32,8 +32,8 @@ enum GraphQLCoder {
         }
     }
 
-    private static func getPetSizeString(from petDecodable: GetRandomPetQuery.Data.RandomPet) -> String {
-        switch petDecodable.size {
+    private static func getPetSizeString(fromRandomPet randomPet: GetRandomPetQuery.Data.RandomPet) -> String {
+        switch randomPet.size {
         case .large:
             return "Large"
         case .medium:
@@ -45,9 +45,9 @@ enum GraphQLCoder {
         }
     }
 
-    private static func getPetTags(from petDecodable: GetRandomPetQuery.Data.RandomPet) -> [PetTagType: String] {
+    private static func getPetTags(fromRandomPet randomPet: GetRandomPetQuery.Data.RandomPet) -> [PetTagType: String] {
         var result = [PetTagType: String]()
-        switch petDecodable.petDependencyValue {
+        switch randomPet.petDependencyValue {
         case .independent:
             result[PetTagType.dependencyValue] = "Independent"
         case .somewhatDependent:
@@ -57,7 +57,7 @@ enum GraphQLCoder {
         default:
             break
         }
-        switch petDecodable.petActivityValue {
+        switch randomPet.petActivityValue {
         case .aCouchPotato:
             result[PetTagType.activityValue] = "Couch Potato"
         case .active:
@@ -67,7 +67,7 @@ enum GraphQLCoder {
         default:
             break
         }
-        switch petDecodable.petSocialValue {
+        switch randomPet.petSocialValue {
         case .aWallFlower:
             result[PetTagType.socialValue] = "A Wallflower"
         case .social:
@@ -77,7 +77,7 @@ enum GraphQLCoder {
         default:
             break
         }
-        switch petDecodable.petTrainabilityValue {
+        switch randomPet.petTrainabilityValue {
         case .classClown:
             result[PetTagType.trainabilityValue] = "Class Clown"
         case .attentiveStudent:

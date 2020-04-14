@@ -25,3 +25,15 @@ query GetRandomPet($queuedPets: [ID]){
       pet_trainability_value
   }
 }
+
+mutation LikePet($petId: ID!) {
+    likePet(petId: $petId, isLiked: true) {
+    liked_at
+  }
+}
+
+mutation DisLikePet($petId: ID!) {
+    likePet(petId: $petId, isLiked: false) {
+    liked_at
+  }
+}
