@@ -51,9 +51,9 @@ enum OnboardingQuestions {
                 OnboardingQuestion(
                     title: "My pet must be good with",
                     answerType: .multipleChoice,
-                    choices: ["Children",
-                              "Dogs",
-                              "Cats"],
+                    choices: ["Dogs",
+                              "Cats",
+                              "Children"],
                     tip: "SELECT ALL THAT APPLY")])
         let section3 = OnboardingSection(
             title: "Describe Your Dream Pet",
