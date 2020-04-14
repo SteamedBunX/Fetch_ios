@@ -21,4 +21,5 @@ protocol NetworkManager: AnyObject {
     func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void))
     func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?)
     func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?)
+    func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void)
 }

@@ -52,5 +52,6 @@ import UIKit
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = shadowBlur
         layer.shadowOffset = shadowOffset
+        layer.masksToBounds = false
     }
 }

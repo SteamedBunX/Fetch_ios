@@ -11,6 +11,9 @@
 		8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB67242AE22F00F122C6 /* ProgressBarView.swift */; };
 		8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */; };
 		8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */; };
+<<<<<<< HEAD
+		86A74950243BD4FD00DF8742 /* GraphQLNetworkManager.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 86A7494F243BD4FD00DF8742 /* GraphQLNetworkManager.graphql */; };
+=======
 		86B011F42441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B011F32441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift */; };
 		86B011F624417872004C56B4 /* LikedPetsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B011F524417872004C56B4 /* LikedPetsCollectionViewModel.swift */; };
 		86BE989F243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE989E243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift */; };
@@ -19,6 +22,7 @@
 		86BE98A5244003C000374194 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE98A4244003C000374194 /* CircleView.swift */; };
 		86F3D9BD243C41040034F589 /* LikedPetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F3D9BB243C41040034F589 /* LikedPetsCollectionViewController.swift */; };
 		86F3D9BE243C41040034F589 /* LikedPetsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F3D9BC243C41040034F589 /* LikedPetsCollectionViewController.xib */; };
+>>>>>>> 29e3a23... Added LikePets Screen to tab bar controller.
 		CB20C5A42416C61600F5ECF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */; };
 		CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20C5A52416C61600F5ECF6 /* SceneDelegate.swift */; };
 		CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20C5A92416C61600F5ECF6 /* Main.storyboard */; };
@@ -56,6 +60,7 @@
 		FA350CC12428FE01008399AF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA350CBF2428FE01008399AF /* LoginViewController.xib */; };
 		FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CC02428FE01008399AF /* LoginViewController.swift */; };
 		FA350CC5242910BF008399AF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CC4242910BF008399AF /* RoundButton.swift */; };
+		FA3F6B802442AB1E00C86778 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3F6B7F2442AB1E00C86778 /* schema.json */; };
 		FA45ADB6242E4D5600DB5195 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */; };
 		FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */; };
 		FA53956F24323ED5003C3B1F /* AnswerChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA53956E24323ED5003C3B1F /* AnswerChoiceCell.xib */; };
@@ -71,6 +76,8 @@
 		FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1524227472006E8C23 /* OnboardingViewController.swift */; };
 		FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1624227472006E8C23 /* OnboardingSection.swift */; };
 		FADC5E1C24227472006E8C23 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */; };
+		FAFC8651243F619E00C36152 /* GraphQLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8650243F619E00C36152 /* GraphQLNetworkManager.swift */; };
+		FAFC8655243F698100C36152 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8654243F698100C36152 /* API.swift */; };
 		FAFC8657243FAF6E00C36152 /* TabBarItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +98,9 @@
 		8618BB67242AE22F00F122C6 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSegmentView.swift; sourceTree = "<group>"; };
 		8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		86A7494F243BD4FD00DF8742 /* GraphQLNetworkManager.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GraphQLNetworkManager.graphql; sourceTree = "<group>"; };
+=======
 		86A7494E243BD21900DF8742 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		86A7494F243BD4FD00DF8742 /* Some.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Some.graphql; sourceTree = "<group>"; };
 		86B011F32441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -101,6 +111,7 @@
 		86BE98A4244003C000374194 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		86F3D9BB243C41040034F589 /* LikedPetsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewController.swift; sourceTree = "<group>"; };
 		86F3D9BC243C41040034F589 /* LikedPetsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikedPetsCollectionViewController.xib; sourceTree = "<group>"; };
+>>>>>>> 29e3a23... Added LikePets Screen to tab bar controller.
 		B49409A222B20645B01CD3EA /* Pods_FetchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FetchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20C5A02416C61600F5ECF6 /* Fetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fetch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20C5A32416C61600F5ECF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +156,7 @@
 		FA350CBF2428FE01008399AF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FA350CC02428FE01008399AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA350CC4242910BF008399AF /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		FA3F6B7F2442AB1E00C86778 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		FA53956E24323ED5003C3B1F /* AnswerChoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerChoiceCell.xib; sourceTree = "<group>"; };
@@ -159,6 +171,8 @@
 		FADC5E1524227472006E8C23 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FADC5E1624227472006E8C23 /* OnboardingSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSection.swift; sourceTree = "<group>"; };
 		FADC5E1724227472006E8C23 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		FAFC8650243F619E00C36152 /* GraphQLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLNetworkManager.swift; sourceTree = "<group>"; };
+		FAFC8654243F698100C36152 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,14 +255,16 @@
 		CB20C5A22416C61600F5ECF6 /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
-				86A7494E243BD21900DF8742 /* schema.json */,
-				86A7494F243BD4FD00DF8742 /* Some.graphql */,
+				FA3F6B7F2442AB1E00C86778 /* schema.json */,
+				86A7494F243BD4FD00DF8742 /* GraphQLNetworkManager.graphql */,
+				FAFC8654243F698100C36152 /* API.swift */,
 				FA2EFBCE24361EE700BF65BA /* Utility */,
 				FA2EFBC52434FF4000BF65BA /* Decoder */,
 				FA2EFBBE2434FA9400BF65BA /* Network */,
 				FA45ADB2242E4C7300DB5195 /* Extension */,
 				FA12B4C2242CFF57000731FE /* LocalData */,
 				FA350CC3242910BF008399AF /* CustomView */,
+				FA2EFBB92434D35300BF65BA /* Enum */,
 				FADC5E1D24227FAC006E8C23 /* Model */,
 				FADC5E1124227472006E8C23 /* UI */,
 				CB20C5B12416C61600F5ECF6 /* Info.plist */,
@@ -360,6 +376,7 @@
 			children = (
 				FA2EFBBF2434FAAE00BF65BA /* NetworkManager.swift */,
 				FA2EFBC12434FDA700BF65BA /* MockNetworkManager.swift */,
+				FAFC8650243F619E00C36152 /* GraphQLNetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -471,7 +488,6 @@
 			isa = PBXGroup;
 			children = (
 				FA80420E243D960C001E6A0A /* Main */,
-				FA2EFBB92434D35300BF65BA /* Enum */,
 				FA2EFBA72433CC2E00BF65BA /* Onboarding */,
 				FA2EFBA92433CCBF00BF65BA /* Home */,
 			);
@@ -576,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA12B4BF242CE7FE000731FE /* Lato-Bold.ttf in Resources */,
+				FA3F6B802442AB1E00C86778 /* schema.json in Resources */,
 				CB20C5B02416C61600F5ECF6 /* LaunchScreen.storyboard in Resources */,
 				FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */,
 				CB20C5AD2416C61600F5ECF6 /* Assets.xcassets in Resources */,
@@ -588,6 +605,10 @@
 				FA1A990E243C309A0001FC73 /* MainTabBarViewController.xib in Resources */,
 				86F3D9BE243C41040034F589 /* LikedPetsCollectionViewController.xib in Resources */,
 				CB20C5AB2416C61600F5ECF6 /* Main.storyboard in Resources */,
+<<<<<<< HEAD
+				86A74950243BD4FD00DF8742 /* GraphQLNetworkManager.graphql in Resources */,
+=======
+>>>>>>> 29e3a23... Added LikePets Screen to tab bar controller.
 				FA2EFBD0243642C500BF65BA /* HomeViewController.xib in Resources */,
 				86BE98A3243FF76500374194 /* LikedPetsCollectionViewCell.xib in Resources */,
 			);
@@ -734,8 +755,12 @@
 				FA2EFBAB2433CD7000BF65BA /* Pet.swift in Sources */,
 				FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */,
 				FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */,
+<<<<<<< HEAD
+				FAFC8651243F619E00C36152 /* GraphQLNetworkManager.swift in Sources */,
+=======
 				86BE989F243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift in Sources */,
 				86F3D9BD243C41040034F589 /* LikedPetsCollectionViewController.swift in Sources */,
+>>>>>>> 29e3a23... Added LikePets Screen to tab bar controller.
 				FA5395722432684D003C3B1F /* AnswerChoiceCell.swift in Sources */,
 				FADC5E1B24227472006E8C23 /* OnboardingSection.swift in Sources */,
 				FA1A990C243C2F670001FC73 /* MainTabBarViewController.swift in Sources */,
@@ -762,6 +787,7 @@
 				FA2EFBBD2434F8A400BF65BA /* HomeViewModel.swift in Sources */,
 				FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */,
 				FA80420B243D8032001E6A0A /* TabBarCell.swift in Sources */,
+				FAFC8655243F698100C36152 /* API.swift in Sources */,
 				CB20C5A62416C61600F5ECF6 /* SceneDelegate.swift in Sources */,
 				86B011F624417872004C56B4 /* LikedPetsCollectionViewModel.swift in Sources */,
 				FA2EFBD4243645A000BF65BA /* CardView.swift in Sources */,
