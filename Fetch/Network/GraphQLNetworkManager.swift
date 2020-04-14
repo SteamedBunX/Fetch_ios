@@ -105,6 +105,10 @@ final class GraphQLNetworkManager: NetworkManager {
     private func storeUserToken(userToken: String) {
         userDefaults.setValue(userToken, forKey: UserDefaultsKeys.userToken)
     }
+
+    func onBoard(_ sequence: OnboardingSequence, completion: ((Result<Void, NetworkError>) -> Void)?) {
+
+    }
 }
 
 extension GraphQLNetworkManager: HTTPNetworkTransportPreflightDelegate {

@@ -19,6 +19,10 @@ enum GraphQLCoder {
         return Pet(id: randomPet.id, card: card)
     }
 
+    private static func getUserPreferences(fromOnboardingSequence sequence: OnboardingSequence) {
+        
+    }
+
     private static func getPetAgeString(fromRandomPet randomPet: GetRandomPetQuery.Data.RandomPet) -> String {
         switch randomPet.age {
         case .adult:

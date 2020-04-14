@@ -33,15 +33,15 @@ final class MockNetworkManager: NetworkManager {
 
     func getRandomPet(withCurrentList: [String], completion: ( (Result<Pet, NetworkError>) -> Void)) {
         if mockQueryData.isEmpty {
-            completion(Result.failure(NetworkError.noPetsAvailable))
+            completion(.failure(NetworkError.noPetsAvailable))
         } else {
-            completion(Result.success(mockQueryData.removeFirst()))
+            completion(.success(mockQueryData.removeFirst()))
         }
     }
 
     func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
         guard let pet = mockPets.first(where: {$0.id == petId}) else {
-            completion?(Result.failure(.invalidPetID))
+            completion?(.failure(.invalidPetID))
             return
         }
         completion?(.success(()))
@@ -53,7 +53,11 @@ final class MockNetworkManager: NetworkManager {
     }
 
     func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)) {
-        completion(Result.success(likedPets.count))
+        completion(.success(likedPets.count))
+    }
+
+    func sendUserPreferences(_ sequence: OnboardingSequence, completion: ((Result<Void, NetworkError>) -> Void)?) {
+        completion?(.success(()))
     }
 
     func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void) {

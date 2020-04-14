@@ -440,7 +440,7 @@ public final class IsUserOnboardedQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("pet_size_preference", type: .scalar(Size.self)),
+        GraphQLField("pet_size_preference", type: .list(.scalar(Size.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -449,7 +449,7 @@ public final class IsUserOnboardedQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(petSizePreference: Size? = nil) {
+      public init(petSizePreference: [Size?]? = nil) {
         self.init(unsafeResultMap: ["__typename": "User", "pet_size_preference": petSizePreference])
       }
 
@@ -462,9 +462,9 @@ public final class IsUserOnboardedQuery: GraphQLQuery {
         }
       }
 
-      public var petSizePreference: Size? {
+      public var petSizePreference: [Size?]? {
         get {
-          return resultMap["pet_size_preference"] as? Size
+          return resultMap["pet_size_preference"] as? [Size?]
         }
         set {
           resultMap.updateValue(newValue, forKey: "pet_size_preference")

@@ -37,3 +37,9 @@ mutation DislikePet($petId: ID!) {
     liked_at
   }
 }
+
+mutation OnBoard($userOnboardingData: UserUpdateInput) {
+    updateUser(user: $userOnboardingData) {
+            zipcode
+  }
+}
