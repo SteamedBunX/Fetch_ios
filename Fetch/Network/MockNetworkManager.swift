@@ -19,6 +19,17 @@ final class MockNetworkManager: NetworkManager {
         mockQueryData = mockPets
     }
 
+    func loadUserTokenFromCache() {
+    }
+
+    func login(authenticationInfo: AuthInput, completion: @escaping (String) -> Void) {
+        completion("")
+    }
+
+    func checkUserOnboardingStatus(completion: @escaping (Bool) -> Void) {
+        completion(false)
+    }
+
     func getPet(withCurrentList: [String], completion: ( (Result<Pet, NetworkError>) -> Void)) {
         if mockQueryData.isEmpty {
             completion(Result.failure(NetworkError.noPetsAvailable))

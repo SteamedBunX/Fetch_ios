@@ -1,0 +1,13 @@
+mutation Login($auth: AuthInput!) {
+    createUser(auth: $auth, user:{
+          zipcode: "99999"
+    }) {
+        token
+    }
+}
+
+query IsUserOnboarded {
+    currentUser {
+        pet_size_preference
+    }
+}

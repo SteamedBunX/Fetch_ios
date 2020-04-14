@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Apollo
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

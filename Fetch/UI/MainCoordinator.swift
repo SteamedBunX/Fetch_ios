@@ -15,7 +15,8 @@ final class MainCoordinator: NSObject {
     private let networkManager: NetworkManager = MockNetworkManager(fileName: "pets")
 
     private var newLoginViewController: LoginViewController {
-        let loginViewController = LoginViewController()
+        let viewModel = LoginViewModel(networkManager: GraphQLNetworkManager.shared)
+        let loginViewController = LoginViewController(viewModel: viewModel)
         loginViewController.newUserDidLogin = { [weak self] in
             self?.showOnboardingScreen(animated: true)
         }
@@ -28,7 +29,7 @@ final class MainCoordinator: NSObject {
 
     func start() {
         let rootViewController = newLoginViewController
-        self.navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController = UINavigationController(rootViewController: rootViewController)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 

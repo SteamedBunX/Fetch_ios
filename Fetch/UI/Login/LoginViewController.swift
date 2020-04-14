@@ -13,31 +13,37 @@ final class LoginViewController: UIViewController {
 
     @IBOutlet private var googleSignInButton: RoundButton!
 
+    private let viewModel: LoginViewModel
+
     var newUserDidLogin: (() -> Void)?
     var oldUserDidLogin: (() -> Void)?
 
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: "LoginViewController", bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().delegate = viewModel
+        viewModel.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
         googleSignInButton.layer.applyGoogleSignInButtonShadow()
+        googleSignInButton.isHidden = true
+        viewModel.checkCachedUserOnboardingStatus()
     }
 
     @IBAction private func googleSignInButtonTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
     }
-
-    private func userDidSignInWithGoogle(for user: GIDGoogleUser) {
-        // TODO: Communicate with server for the actual tokan.
-        // TODO: Cache tokan locally and use it instead of the google auth when possible.
-        newUserDidLogin?()
-    }
 }
 
-extension LoginViewController: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn?, didSignInFor user: GIDGoogleUser?, withError error: Error?) {
-        if let user = user {
-            self.userDidSignInWithGoogle(for: user)
-        }
+extension LoginViewController: LoginViewModelDelegate {
+    func storeTokenCheckComplete() {
+        googleSignInButton.isHidden = false
     }
 }
