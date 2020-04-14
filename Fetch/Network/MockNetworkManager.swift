@@ -44,11 +44,12 @@ final class MockNetworkManager: NetworkManager {
             completion?(Result.failure(.invalidPetID))
             return
         }
-        completion?(Result.success(()))
+        completion?(.success(()))
         likedPets.append(pet)
     }
 
     func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
+        completion?(.success(()))
     }
 
     func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)) {

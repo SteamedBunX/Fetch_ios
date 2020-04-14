@@ -77,11 +77,25 @@ final class GraphQLNetworkManager: NetworkManager {
     }
 
     func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
-
+        apollo.perform(mutation: LikePetMutation(petId: petId)) { result in
+            switch result {
+            case .success(_):
+                completion?(.success(()))
+            case .failure(let error):
+                completion?(.failure(.unknownError(error)))
+            }
+        }
     }
 
     func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
-
+        apollo.perform(mutation: DislikePetMutation(petId: petId)) { result in
+            switch result {
+            case .success(_):
+                completion?(.success(()))
+            case .failure(let error):
+                completion?(.failure(.unknownError(error)))
+            }
+        }
     }
 
     func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void) {

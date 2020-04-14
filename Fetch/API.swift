@@ -740,11 +740,11 @@ public final class LikePetMutation: GraphQLMutation {
   }
 }
 
-public final class DisLikePetMutation: GraphQLMutation {
+public final class DislikePetMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    mutation DisLikePet($petId: ID!) {
+    mutation DislikePet($petId: ID!) {
       likePet(petId: $petId, isLiked: false) {
         __typename
         liked_at
@@ -752,7 +752,7 @@ public final class DisLikePetMutation: GraphQLMutation {
     }
     """
 
-  public let operationName: String = "DisLikePet"
+  public let operationName: String = "DislikePet"
 
   public var petId: GraphQLID
 

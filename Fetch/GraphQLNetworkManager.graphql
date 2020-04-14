@@ -32,7 +32,7 @@ mutation LikePet($petId: ID!) {
   }
 }
 
-mutation DisLikePet($petId: ID!) {
+mutation DislikePet($petId: ID!) {
     likePet(petId: $petId, isLiked: false) {
     liked_at
   }
