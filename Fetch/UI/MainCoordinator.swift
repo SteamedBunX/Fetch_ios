@@ -18,7 +18,7 @@ final class MainCoordinator: NSObject {
         let viewModel = LoginViewModel(networkManager: networkManager)
         let loginViewController = LoginViewController(viewModel: viewModel)
         loginViewController.newUserDidLogin = { [weak self] in
-            self?.showMainTabBarView(animated: true)
+            self?.showOnboardingScreen(animated: true)
         }
         loginViewController.oldUserDidLogin = { [weak self] in
             self?.showMainTabBarView(animated: true)

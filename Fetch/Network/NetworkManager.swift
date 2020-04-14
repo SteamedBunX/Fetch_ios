@@ -18,8 +18,7 @@ enum NetworkError: Error {
 
 protocol NetworkManager: AnyObject {
 
-    var userToken: String { get set }
-    func login(authenticationInfo: AuthInput, completion: @escaping (Result<String, NetworkError>) -> Void)
+    func login(authenticationInfo: AuthInput, completion: @escaping (Result<Void, NetworkError>) -> Void)
     func checkUserOnboardingStatus(completion: @escaping (Result<Bool, NetworkError>) -> Void)
     func getRandomPet(withCurrentList: [String], completion: @escaping ((Result<Pet, NetworkError>) -> Void))
     func getLikedCount(completion: @escaping ((Result<Int, NetworkError>) -> Void))

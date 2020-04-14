@@ -19,7 +19,9 @@ final class PetSelectionFlow {
     // MARK: - Displayables
 
     var currentQueuedPetIDs: [String] {
-        return pets.map { $0.id }
+        var currentQueuedPetIDs = pets.map { $0.id }
+        currentQueuedPetIDs.append(currentPet?.id ?? "")
+        return currentQueuedPetIDs
     }
 
     var currentPetAvailable: Bool {

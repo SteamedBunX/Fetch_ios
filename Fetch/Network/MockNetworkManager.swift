@@ -23,8 +23,8 @@ final class MockNetworkManager: NetworkManager {
     func loadUserTokenFromCache() {
     }
 
-    func login(authenticationInfo: AuthInput, completion: @escaping (Result<String, NetworkError>) -> Void) {
-        completion(.success(""))
+    func login(authenticationInfo: AuthInput, completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        completion(.success(()))
     }
 
     func checkUserOnboardingStatus(completion: @escaping (Result<Bool, NetworkError>) -> Void) {
