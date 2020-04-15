@@ -32,9 +32,11 @@ final class OnboardingViewModel {
     weak var delegate: OnboardingViewModelDelegate?
 
     private let flow: OnboardingSequence
+    private let networkManager: NetworkManager
 
-    init(flow: OnboardingSequence) {
+    init(flow: OnboardingSequence, networkManager: NetworkManager) {
         self.flow = flow
+        self.networkManager = networkManager
     }
 
     // MARK: - ProgressBar Related Displayable
@@ -164,7 +166,7 @@ final class OnboardingViewModel {
     }
 
     func doneButtonTapped() {
-        // TODO: register user with profile
+        networkManager.onboard(withResult: flow.result, completion: nil)
         delegate?.finishSequence()
     }
 }
@@ -177,16 +179,5 @@ extension OnboardingViewModel: ProgressBarViewModel {
 
     var currentIndex: Int {
         return currentSectionIndex
-    }
-}
-
-extension OnboardingViewModel {
-
-    convenience init() {
-        let sections = (0..<3).map { _ in
-            return OnboardingSection(title: "", questions: [])
-        }
-        let flow = OnboardingSequence(sections: sections)
-        self.init(flow: flow)
     }
 }

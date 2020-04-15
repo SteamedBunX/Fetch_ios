@@ -60,10 +60,6 @@ final class MockNetworkManager: NetworkManager {
         completion(.success(likedPets.count))
     }
 
-    func sendUserPreferences(_ sequence: OnboardingSequence, completion: ((Result<Void, NetworkError>) -> Void)?) {
-        completion?(.success(()))
-    }
-
     func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void) {
         After(2.0) { [likedPets] in
             completion(.success(likedPets))
