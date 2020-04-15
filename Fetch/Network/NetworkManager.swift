@@ -26,5 +26,5 @@ protocol NetworkManager: AnyObject {
     func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?)
     func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?)
     func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void)
-    func Onboard(_ sequence: OnboardingSequence, completion: ((Result<Void, NetworkError>) -> Void)?)
+    func onboard(withResult sequenceResult: [OnboardingSection], completion: ((Result<Void, NetworkError>) -> Void)?)
 }

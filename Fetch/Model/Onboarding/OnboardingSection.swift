@@ -12,7 +12,7 @@ import Intrepid
 final class OnboardingSection {
 
     let title: String
-    private let questions: [OnboardingQuestion]
+    let questions: [OnboardingQuestion]
     private(set) var currentQuestionIndex: Int = 0
 
     var numberOfQuestions: Int {

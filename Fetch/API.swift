@@ -303,6 +303,315 @@ public enum Trainability: RawRepresentable, Equatable, Hashable, CaseIterable, A
   }
 }
 
+public struct UserUpdateInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - email
+  ///   - firstName
+  ///   - lastName
+  ///   - petActivityPreference
+  ///   - petAgePreference
+  ///   - petDependencyPreference
+  ///   - petDistancePreference
+  ///   - petExperienceLevel
+  ///   - petGoodWithChildrenPreference
+  ///   - petGoodWithDogsPreference
+  ///   - petGoodWithCatsPreference
+  ///   - petSizePreference
+  ///   - petSexPreference
+  ///   - petSocialPreference
+  ///   - petTrainabilityPreference
+  ///   - petTypePreference
+  ///   - zipcode
+  public init(email: Swift.Optional<String?> = nil, firstName: Swift.Optional<String?> = nil, lastName: Swift.Optional<String?> = nil, petActivityPreference: Swift.Optional<[Activity?]?> = nil, petAgePreference: Swift.Optional<[Age?]?> = nil, petDependencyPreference: Swift.Optional<[Dependency?]?> = nil, petDistancePreference: Swift.Optional<Int?> = nil, petExperienceLevel: Swift.Optional<Experience?> = nil, petGoodWithChildrenPreference: Swift.Optional<Bool?> = nil, petGoodWithDogsPreference: Swift.Optional<Bool?> = nil, petGoodWithCatsPreference: Swift.Optional<Bool?> = nil, petSizePreference: Swift.Optional<[Size?]?> = nil, petSexPreference: Swift.Optional<[Sex?]?> = nil, petSocialPreference: Swift.Optional<[Social?]?> = nil, petTrainabilityPreference: Swift.Optional<[Trainability?]?> = nil, petTypePreference: Swift.Optional<[`Type`?]?> = nil, zipcode: Swift.Optional<String?> = nil) {
+    graphQLMap = ["email": email, "first_name": firstName, "last_name": lastName, "pet_activity_preference": petActivityPreference, "pet_age_preference": petAgePreference, "pet_dependency_preference": petDependencyPreference, "pet_distance_preference": petDistancePreference, "pet_experience_level": petExperienceLevel, "pet_good_with_children_preference": petGoodWithChildrenPreference, "pet_good_with_dogs_preference": petGoodWithDogsPreference, "pet_good_with_cats_preference": petGoodWithCatsPreference, "pet_size_preference": petSizePreference, "pet_sex_preference": petSexPreference, "pet_social_preference": petSocialPreference, "pet_trainability_preference": petTrainabilityPreference, "pet_type_preference": petTypePreference, "zipcode": zipcode]
+  }
+
+  public var email: Swift.Optional<String?> {
+    get {
+      return graphQLMap["email"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "email")
+    }
+  }
+
+  public var firstName: Swift.Optional<String?> {
+    get {
+      return graphQLMap["first_name"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "first_name")
+    }
+  }
+
+  public var lastName: Swift.Optional<String?> {
+    get {
+      return graphQLMap["last_name"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "last_name")
+    }
+  }
+
+  public var petActivityPreference: Swift.Optional<[Activity?]?> {
+    get {
+      return graphQLMap["pet_activity_preference"] as? Swift.Optional<[Activity?]?> ?? Swift.Optional<[Activity?]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_activity_preference")
+    }
+  }
+
+  public var petAgePreference: Swift.Optional<[Age?]?> {
+    get {
+      return graphQLMap["pet_age_preference"] as? Swift.Optional<[Age?]?> ?? Swift.Optional<[Age?]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_age_preference")
+    }
+  }
+
+  public var petDependencyPreference: Swift.Optional<[Dependency?]?> {
+    get {
+      return graphQLMap["pet_dependency_preference"] as? Swift.Optional<[Dependency?]?> ?? Swift.Optional<[Dependency?]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_dependency_preference")
+    }
+  }
+
+  public var petDistancePreference: Swift.Optional<Int?> {
+    get {
+      return graphQLMap["pet_distance_preference"] as? Swift.Optional<Int?> ?? Swift.Optional<Int?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_distance_preference")
+    }
+  }
+
+  public var petExperienceLevel: Swift.Optional<Experience?> {
+    get {
+      return graphQLMap["pet_experience_level"] as? Swift.Optional<Experience?> ?? Swift.Optional<Experience?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_experience_level")
+    }
+  }
+
+  public var petGoodWithChildrenPreference: Swift.Optional<Bool?> {
+    get {
+      return graphQLMap["pet_good_with_children_preference"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_good_with_children_preference")
+    }
+  }
+
+  public var petGoodWithDogsPreference: Swift.Optional<Bool?> {
+    get {
+      return graphQLMap["pet_good_with_dogs_preference"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_good_with_dogs_preference")
+    }
+  }
+
+  public var petGoodWithCatsPreference: Swift.Optional<Bool?> {
+    get {
+      return graphQLMap["pet_good_with_cats_preference"] as? Swift.Optional<Bool?> ?? Swift.Optional<Bool?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_good_with_cats_preference")
+    }
+  }
+
+  public var petSizePreference: Swift.Optional<[Size?]?> {
+    get {
+      return graphQLMap["pet_size_preference"] as? Swift.Optional<[Size?]?> ?? Swift.Optional<[Size?]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_size_preference")
+    }
+  }
+
+  public var petSexPreference: Swift.Optional<[Sex?]?> {
+    get {
+      return graphQLMap["pet_sex_preference"] as? Swift.Optional<[Sex?]?> ?? Swift.Optional<[Sex?]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_sex_preference")
+    }
+  }
+
+  public var petSocialPreference: Swift.Optional<[Social?]?> {
+    get {
+      return graphQLMap["pet_social_preference"] as? Swift.Optional<[Social?]?> ?? Swift.Optional<[Social?]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_social_preference")
+    }
+  }
+
+  public var petTrainabilityPreference: Swift.Optional<[Trainability?]?> {
+    get {
+      return graphQLMap["pet_trainability_preference"] as? Swift.Optional<[Trainability?]?> ?? Swift.Optional<[Trainability?]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_trainability_preference")
+    }
+  }
+
+  public var petTypePreference: Swift.Optional<[`Type`?]?> {
+    get {
+      return graphQLMap["pet_type_preference"] as? Swift.Optional<[`Type`?]?> ?? Swift.Optional<[`Type`?]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "pet_type_preference")
+    }
+  }
+
+  public var zipcode: Swift.Optional<String?> {
+    get {
+      return graphQLMap["zipcode"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "zipcode")
+    }
+  }
+}
+
+public enum Experience: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case anExpert
+  case experienced
+  case aNovice
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "AN_EXPERT": self = .anExpert
+      case "EXPERIENCED": self = .experienced
+      case "A_NOVICE": self = .aNovice
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .anExpert: return "AN_EXPERT"
+      case .experienced: return "EXPERIENCED"
+      case .aNovice: return "A_NOVICE"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: Experience, rhs: Experience) -> Bool {
+    switch (lhs, rhs) {
+      case (.anExpert, .anExpert): return true
+      case (.experienced, .experienced): return true
+      case (.aNovice, .aNovice): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [Experience] {
+    return [
+      .anExpert,
+      .experienced,
+      .aNovice,
+    ]
+  }
+}
+
+public enum Sex: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case male
+  case female
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "MALE": self = .male
+      case "FEMALE": self = .female
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .male: return "MALE"
+      case .female: return "FEMALE"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: Sex, rhs: Sex) -> Bool {
+    switch (lhs, rhs) {
+      case (.male, .male): return true
+      case (.female, .female): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [Sex] {
+    return [
+      .male,
+      .female,
+    ]
+  }
+}
+
+public enum `Type`: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case dog
+  case cat
+  case noPreference
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "DOG": self = .dog
+      case "CAT": self = .cat
+      case "NO_PREFERENCE": self = .noPreference
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .dog: return "DOG"
+      case .cat: return "CAT"
+      case .noPreference: return "NO_PREFERENCE"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: `Type`, rhs: `Type`) -> Bool {
+    switch (lhs, rhs) {
+      case (.dog, .dog): return true
+      case (.cat, .cat): return true
+      case (.noPreference, .noPreference): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [`Type`] {
+    return [
+      .dog,
+      .cat,
+      .noPreference,
+    ]
+  }
+}
+
 public final class LoginMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -823,6 +1132,95 @@ public final class DislikePetMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "liked_at")
+        }
+      }
+    }
+  }
+}
+
+public final class OnBoardMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation OnBoard($userOnboardingData: UserUpdateInput) {
+      updateUser(user: $userOnboardingData) {
+        __typename
+        zipcode
+      }
+    }
+    """
+
+  public let operationName: String = "OnBoard"
+
+  public var userOnboardingData: UserUpdateInput?
+
+  public init(userOnboardingData: UserUpdateInput? = nil) {
+    self.userOnboardingData = userOnboardingData
+  }
+
+  public var variables: GraphQLMap? {
+    return ["userOnboardingData": userOnboardingData]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("updateUser", arguments: ["user": GraphQLVariable("userOnboardingData")], type: .object(UpdateUser.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(updateUser: UpdateUser? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "updateUser": updateUser.flatMap { (value: UpdateUser) -> ResultMap in value.resultMap }])
+    }
+
+    public var updateUser: UpdateUser? {
+      get {
+        return (resultMap["updateUser"] as? ResultMap).flatMap { UpdateUser(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "updateUser")
+      }
+    }
+
+    public struct UpdateUser: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["User"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("zipcode", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(zipcode: String) {
+        self.init(unsafeResultMap: ["__typename": "User", "zipcode": zipcode])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var zipcode: String {
+        get {
+          return resultMap["zipcode"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "zipcode")
         }
       }
     }

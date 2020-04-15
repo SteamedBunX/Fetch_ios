@@ -31,6 +31,10 @@ final class MockNetworkManager: NetworkManager {
         completion(.success(false))
     }
 
+    func onboard(withResult sequenceResult: [OnboardingSection], completion: ((Result<Void, NetworkError>) -> Void)?) {
+        completion?(.success(()))
+    }
+
     func getRandomPet(withCurrentList: [String], completion: ( (Result<Pet, NetworkError>) -> Void)) {
         if mockQueryData.isEmpty {
             completion(.failure(NetworkError.noPetsAvailable))

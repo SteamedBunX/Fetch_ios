@@ -17,6 +17,7 @@ enum OnboardingAnswerType {
 final class OnboardingQuestion {
 
     let title: String
+    let reference: OnboardingQuestionReference
     let answerType: OnboardingAnswerType
     let tip: String?
     // Choice Based Fields
@@ -41,11 +42,13 @@ final class OnboardingQuestion {
 
     // Init for ChoiceQuestions
     init(title: String,
+         reference: OnboardingQuestionReference,
          answerType: OnboardingAnswerType,
          choices: [String] = [],
          tip: String? = nil) {
         self.answerType = answerType
         self.title = title
+        self.reference = reference
         self.tip = tip
         self.choices = choices
         self.placeHolderText = ""
@@ -56,6 +59,7 @@ final class OnboardingQuestion {
 
     // Init for TextQuestions
     init(title: String,
+         reference: OnboardingQuestionReference,
          minInputLength: Int,
          maxInputLength: Int,
          tip: String? = nil,
@@ -63,6 +67,7 @@ final class OnboardingQuestion {
          inputKeyboardType: KeyboardType = .text) {
         self.answerType = .textInput
         self.title = title
+        self.reference = reference
         self.tip = tip
         self.placeHolderText = placeHolderText
         self.minInputLength = minInputLength

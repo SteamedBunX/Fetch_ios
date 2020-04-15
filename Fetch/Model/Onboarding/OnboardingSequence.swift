@@ -36,6 +36,10 @@ final class OnboardingSequence {
         return currentSectionIndex == sections.count - 1 && currentQuestionIndex == currentSectionSize - 1
     }
 
+    var result: [OnboardingSection] {
+        return sections
+    }
+
     // MARK: - Initializer
 
     init(sections: [OnboardingSection]) {

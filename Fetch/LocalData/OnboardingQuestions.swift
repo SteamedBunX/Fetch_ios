@@ -16,12 +16,14 @@ enum OnboardingQuestions {
             questions: [
                 OnboardingQuestion(
                     title: "I'm looking for a",
+                    reference: .type,
                     answerType: .multipleChoice,
                     choices: ["Dog",
                               "Cat"],
                     tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "My zip code is",
+                    reference: .zipCode,
                     minInputLength: 5,
                     maxInputLength: 5,
                     placeHolderText: "Enter your zip code here",
@@ -31,12 +33,14 @@ enum OnboardingQuestions {
             questions: [
                 OnboardingQuestion(
                     title: "When it comes to taking care of pets, I’m",
+                    reference: .experienceLevel,
                     answerType: .singleChoice,
                     choices: ["An Expert",
                               "Experienced",
                               "A Novice"]),
                 OnboardingQuestion(
                     title: "I’m looking for a pet that’s",
+                    reference: .size,
                     answerType: .multipleChoice,
                     choices: ["Small",
                               "Medium",
@@ -44,12 +48,14 @@ enum OnboardingQuestions {
                     tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "I’m looking for a pet that’s",
+                    reference: .sex,
                     answerType: .multipleChoice,
                     choices: ["Male",
                               "Female"],
                     tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "My pet must be good with",
+                    reference: .affinity,
                     answerType: .multipleChoice,
                     choices: ["Dogs",
                               "Cats",
@@ -60,6 +66,7 @@ enum OnboardingQuestions {
             questions: [
                 OnboardingQuestion(
                     title: "I want a pet who is",
+                    reference: .activityValue,
                     answerType: .multipleChoice,
                     choices: ["A Couch Potato",
                               "Active",
@@ -67,6 +74,7 @@ enum OnboardingQuestions {
                     tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "I’d like my pet to be",
+                    reference: .socialValue,
                     answerType: .multipleChoice,
                     choices: ["A Wallflower",
                               "Social",
@@ -74,6 +82,7 @@ enum OnboardingQuestions {
                     tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "During training, I’d like my pet to be a",
+                    reference: .trainabilityValue,
                     answerType: .multipleChoice,
                     choices: ["Class Clown",
                               "Attentive Student",
@@ -81,6 +90,7 @@ enum OnboardingQuestions {
                     tip: "SELECT ALL THAT APPLY"),
                 OnboardingQuestion(
                     title: "I want my pet by my side",
+                    reference: .dependencyLevel,
                     answerType: .multipleChoice,
                     choices: ["Sometimes",
                               "Often",
