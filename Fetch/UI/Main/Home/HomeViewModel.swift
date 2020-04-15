@@ -36,7 +36,7 @@ final class HomeViewModel {
     }
 
     var currentPetStatus: String {
-        return currentPetAge + " • " + currentPetSize + " • " + currentPetDistance
+        return currentPetAge + " • " + currentPetSize + " • " + currentPetDistanceText
     }
 
     private var currentPetAge: String {
@@ -47,9 +47,8 @@ final class HomeViewModel {
         return flow.currentPet?.card.size ?? ""
     }
 
-    private var currentPetDistance: String {
-        // Currently using placeholder value because the web server is not available yet. Once the backend is up Pet.card should provide distance.
-        return "0.7 Miles"
+    private var currentPetDistanceText: String {
+        return "\(flow.currentPet?.card.distance ?? 0.0) Miles"
     }
 
     var currentPetTags: [PetTagType: String] {

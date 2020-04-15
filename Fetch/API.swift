@@ -799,6 +799,7 @@ public final class GetRandomPetQuery: GraphQLQuery {
         pet_dependency_value
         pet_social_value
         pet_trainability_value
+        distance_to_user
       }
     }
     """
@@ -855,6 +856,7 @@ public final class GetRandomPetQuery: GraphQLQuery {
         GraphQLField("pet_dependency_value", type: .scalar(Dependency.self)),
         GraphQLField("pet_social_value", type: .scalar(Social.self)),
         GraphQLField("pet_trainability_value", type: .scalar(Trainability.self)),
+        GraphQLField("distance_to_user", type: .scalar(Double.self)),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -863,8 +865,8 @@ public final class GetRandomPetQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(photos: [String?]? = nil, id: GraphQLID, name: String? = nil, age: Age, size: Size, petActivityValue: Activity? = nil, petDependencyValue: Dependency? = nil, petSocialValue: Social? = nil, petTrainabilityValue: Trainability? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Pet", "photos": photos, "id": id, "name": name, "age": age, "size": size, "pet_activity_value": petActivityValue, "pet_dependency_value": petDependencyValue, "pet_social_value": petSocialValue, "pet_trainability_value": petTrainabilityValue])
+      public init(photos: [String?]? = nil, id: GraphQLID, name: String? = nil, age: Age, size: Size, petActivityValue: Activity? = nil, petDependencyValue: Dependency? = nil, petSocialValue: Social? = nil, petTrainabilityValue: Trainability? = nil, distanceToUser: Double? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Pet", "photos": photos, "id": id, "name": name, "age": age, "size": size, "pet_activity_value": petActivityValue, "pet_dependency_value": petDependencyValue, "pet_social_value": petSocialValue, "pet_trainability_value": petTrainabilityValue, "distance_to_user": distanceToUser])
       }
 
       public var __typename: String {
@@ -954,6 +956,15 @@ public final class GetRandomPetQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "pet_trainability_value")
+        }
+      }
+
+      public var distanceToUser: Double? {
+        get {
+          return resultMap["distance_to_user"] as? Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "distance_to_user")
         }
       }
     }

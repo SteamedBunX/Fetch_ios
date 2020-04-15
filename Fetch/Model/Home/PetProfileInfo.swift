@@ -15,4 +15,5 @@ struct PetProfileInfo {
     let age: String
     let size: String
     let petTags: [PetTagType: String]
+    let distance: Double
 }

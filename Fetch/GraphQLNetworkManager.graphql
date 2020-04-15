@@ -20,9 +20,10 @@ query GetRandomPet($queuedPets: [ID]){
     age
     size
     pet_activity_value
-      pet_dependency_value
-      pet_social_value
-      pet_trainability_value
+    pet_dependency_value
+    pet_social_value
+    pet_trainability_value
+    distance_to_user
   }
 }
 

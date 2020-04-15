@@ -15,8 +15,13 @@ enum GraphQLCoder {
                                   name: randomPet.name ?? "",
                                   age: getPetAgeString(fromRandomPet: randomPet),
                                   size: getPetSizeString(fromRandomPet: randomPet),
-                                  petTags: getPetTags(fromRandomPet: randomPet))
+                                  petTags: getPetTags(fromRandomPet: randomPet),
+                                  distance: getPetDistance(fromRandomPet: randomPet))
         return Pet(id: randomPet.id, card: card)
+    }
+
+    private static func getPetDistance(fromRandomPet randomPet: GetRandomPetQuery.Data.RandomPet) -> Double {
+        return randomPet.distanceToUser ?? 0.0
     }
 
     private static func getPetType(fromQuestion question: OnboardingQuestion) -> [`Type`] {

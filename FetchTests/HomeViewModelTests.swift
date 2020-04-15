@@ -25,7 +25,7 @@ class HomeViewModelTests: XCTestCase {
         let sut = HomeViewModel(networkManager: MockNetworkManager(fileName: "pets"))
         sut.loadFirstBatch()
         XCTAssertTrue(sut.currentPetIsAvaliable)
-        XCTAssertEqual(sut.currentPetStatus, "Baby • Large • 0.7 Miles")
+        XCTAssertEqual(sut.currentPetStatus, "Baby • Large • 7.0 Miles")
     }
 
     func testMovingFoward() {
@@ -34,22 +34,22 @@ class HomeViewModelTests: XCTestCase {
         XCTAssertTrue(sut.currentPetIsAvaliable)
         XCTAssertEqual(sut.currentPetName, "Blossom")
         XCTAssertEqual(sut.currentPetPhotoURLs.count, 1)
-        XCTAssertEqual(sut.currentPetStatus, "Baby • Large • 0.7 Miles")
+        XCTAssertEqual(sut.currentPetStatus, "Baby • Large • 7.0 Miles")
         sut.likeButtonTapped()
         XCTAssertTrue(sut.currentPetIsAvaliable)
         XCTAssertEqual(sut.currentPetName, "Quan")
         XCTAssertEqual(sut.currentPetPhotoURLs.count, 1)
-        XCTAssertEqual(sut.currentPetStatus, "Baby • Medium • 0.7 Miles")
+        XCTAssertEqual(sut.currentPetStatus, "Baby • Medium • 7.0 Miles")
         sut.dislikeButtonTapped()
         XCTAssertTrue(sut.currentPetIsAvaliable)
         XCTAssertEqual(sut.currentPetName, "Quest")
         XCTAssertEqual(sut.currentPetPhotoURLs.count, 1)
-        XCTAssertEqual(sut.currentPetStatus, "Baby • Medium • 0.7 Miles")
+        XCTAssertEqual(sut.currentPetStatus, "Baby • Medium • 7.0 Miles")
         sut.likeButtonTapped()
         sut.dislikeButtonTapped()
         XCTAssertTrue(sut.currentPetIsAvaliable)
         XCTAssertEqual(sut.currentPetName, "Willow")
         XCTAssertEqual(sut.currentPetPhotoURLs.count, 2)
-        XCTAssertEqual(sut.currentPetStatus, "Young • Medium • 0.7 Miles")
+        XCTAssertEqual(sut.currentPetStatus, "Young • Medium • 7.0 Miles")
     }
 }
