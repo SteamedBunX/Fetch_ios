@@ -59,6 +59,7 @@
 		FA3F6B802442AB1E00C86778 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3F6B7F2442AB1E00C86778 /* schema.json */; };
 		FA3F6B822444EAA100C86778 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F6B812444EAA100C86778 /* LoginViewModel.swift */; };
 		FA3F6B892446103900C86778 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F6B882446103900C86778 /* UserDefaultsKeys.swift */; };
+		FA3F6B842445597300C86778 /* GraphQLCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F6B832445597300C86778 /* GraphQLCoder.swift */; };
 		FA45ADB6242E4D5600DB5195 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */; };
 		FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */; };
 		FA53956F24323ED5003C3B1F /* AnswerChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA53956E24323ED5003C3B1F /* AnswerChoiceCell.xib */; };
@@ -152,6 +153,7 @@
 		FA3F6B7F2442AB1E00C86778 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		FA3F6B812444EAA100C86778 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Fetch/UI/Main/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
 		FA3F6B882446103900C86778 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		FA3F6B832445597300C86778 /* GraphQLCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLCoder.swift; sourceTree = "<group>"; };
 		FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		FA53956E24323ED5003C3B1F /* AnswerChoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerChoiceCell.xib; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 			children = (
 				FA2EFBC62434FF5200BF65BA /* PetBundle.swift */,
 				FA2EFBC82435093200BF65BA /* ImageURLBundle.swift */,
+				FA3F6B832445597300C86778 /* GraphQLCoder.swift */,
 			);
 			path = Decoder;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				FA3F6B892446103900C86778 /* UserDefaultsKeys.swift in Sources */,
 				FA2EFBC72434FF5200BF65BA /* PetBundle.swift in Sources */,
 				FA2EFBBD2434F8A400BF65BA /* HomeViewModel.swift in Sources */,
+				FA3F6B842445597300C86778 /* GraphQLCoder.swift in Sources */,
 				FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */,
 				FA80420B243D8032001E6A0A /* TabBarCell.swift in Sources */,
 				FAFC8655243F698100C36152 /* API.swift in Sources */,

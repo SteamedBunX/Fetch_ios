@@ -9,11 +9,16 @@
 import Foundation
 import Apollo
 
-final class GraphQLNetworkManager {
+final class GraphQLNetworkManager: NetworkManager {
 
     static let shared = GraphQLNetworkManager()
     private let endPoint = "https://fetch-server-staging.herokuapp.com/"
-    private(set) lazy var apollo = ApolloClient(url: URL(string: endPoint)!)
+    private lazy var networkTransport: HTTPNetworkTransport = {
+      let transport = HTTPNetworkTransport(url: URL(string: endPoint)!)
+      transport.delegate = self
+      return transport
+    }()
+    private lazy var apollo = ApolloClient(networkTransport: self.networkTransport)
     private let userDefaults = UserDefaults.standard
     private var userToken: String {
         return userDefaults.string(forKey: UserDefaultsKeys.userToken) ?? ""
@@ -24,8 +29,8 @@ final class GraphQLNetworkManager {
     func login(authenticationInfo: AuthInput, completion: @escaping (Result<Void, NetworkError>) -> Void) {
         apollo.perform(mutation: LoginMutation(auth: authenticationInfo)) {[weak self] result in
             switch result {
-            case .success(let resultData):
-                guard let resultToken = resultData.data?.createUser?.token else {
+            case .success(let response):
+                guard let resultToken = response.data?.createUser?.token else {
                     completion(.failure(.failToAuthenticate))
                     return
                 }
@@ -37,18 +42,67 @@ final class GraphQLNetworkManager {
         }
     }
 
-    func checkUserOnboardingStatus(completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+    func getUserOnboardingStatus(completion: @escaping (Result<Bool, NetworkError>) -> Void) {
         apollo.fetch(query: IsUserOnboardedQuery()) { result in
             switch result {
-            case .success(let resultData):
-                completion(.success(resultData.data?.currentUser.petSizePreference != nil))
+            case .success(let response):
+                completion(.success(response.data?.currentUser.petSizePreference != nil))
             case .failure(let error):
                 completion(.failure(.unknownError(error)))
             }
         }
     }
 
+    func getRandomPet(withCurrentList list: [String], completion: @escaping ((Result<Pet, NetworkError>) -> Void)) {
+        let queuedPets = list.map { (id) -> GraphQLID in
+            GraphQLID(id)
+        }
+        apollo.fetch(query: GetRandomPetQuery(queuedPets: queuedPets)) { result in
+            switch result {
+            case .success(let response):
+                guard let petDecodable = response.data?.randomPet else {
+                    completion(.failure(.failToDecodeData))
+                    return
+                }
+                let resultPet = GraphQLCoder.getPet(from: petDecodable)
+                completion(.success(resultPet))
+            case .failure(let error):
+                completion(.failure(.unknownError(error)))
+            }
+        }
+    }
+
+    func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)) {
+
+    }
+
+    func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
+
+    }
+
+    func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
+
+    }
+
+    func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void) {
+
+    }
+
     private func storeUserToken(userToken: String) {
         userDefaults.setValue(userToken, forKey: UserDefaultsKeys.userToken)
+    }
+}
+
+extension GraphQLNetworkManager: HTTPNetworkTransportPreflightDelegate {
+
+    func networkTransport(_ networkTransport: HTTPNetworkTransport, shouldSend request: URLRequest) -> Bool {
+        return request.url?.absoluteString == endPoint
+    }
+
+    func networkTransport(_ networkTransport: HTTPNetworkTransport,
+                          willSend request: inout URLRequest) {
+      var headers = request.allHTTPHeaderFields ?? [String: String]()
+      headers["Authorization"] = userToken
+      request.allHTTPHeaderFields = headers
     }
 }

@@ -17,7 +17,7 @@ protocol LoginViewModelDelegate: AnyObject {
 }
 
 final class LoginViewModel: NSObject {
-    private let networkManager: GraphQLNetworkManager
+    private let networkManager: NetworkManager
     private let userDefaults = UserDefaults.standard
     weak var delegate: LoginViewModelDelegate?
 
@@ -25,8 +25,7 @@ final class LoginViewModel: NSObject {
         return userDefaults.string(forKey: UserDefaultsKeys.userToken) != nil
     }
 
-    init(networkManager: GraphQLNetworkManager) {
-        // TODO: Confirm GraphQLNetworkManager to NetworkManager and switch to the protocol instead.
+    init(networkManager: NetworkManager) {
         self.networkManager = networkManager
     }
 
@@ -35,7 +34,7 @@ final class LoginViewModel: NSObject {
             delegate?.storeTokenCheckComplete()
             return
         }
-        networkManager.checkUserOnboardingStatus { [weak self] result in
+        networkManager.getUserOnboardingStatus { [weak self] result in
             switch result {
             case .success(let finishedOnboarding):
                 if finishedOnboarding {
@@ -62,7 +61,7 @@ final class LoginViewModel: NSObject {
     }
 
     private func handleSuccessfulLogin() {
-        networkManager.checkUserOnboardingStatus {  [weak self] result in
+        networkManager.getUserOnboardingStatus {  [weak self] result in
             switch result {
             case .success(let finishedOnboarding):
                 if finishedOnboarding {

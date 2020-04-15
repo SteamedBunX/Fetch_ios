@@ -21,6 +21,7 @@ final class HomeViewModel {
     private let networkManager: NetworkManager
     private let flow = PetSelectionFlow()
     private var noPetsAvailable = false
+    private let maxAttempt = 10
 
     var currentPetIsAvaliable: Bool {
         return flow.currentPet != nil
@@ -55,6 +56,10 @@ final class HomeViewModel {
         return flow.currentPet?.card.petTags ?? [:]
     }
 
+    private var currentQueuedPetsIDs: [String] {
+        return flow.currentQueuedPetIDs
+    }
+
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
     }
@@ -62,20 +67,35 @@ final class HomeViewModel {
     // MARK: - Loading Pet
 
     func loadFirstBatch() {
-        noPetsAvailable = false
-        while flow.needsRefill, !noPetsAvailable {
-            addPetToQueue()
-        }
-    }
-
-    private func addPetToQueue() {
-        guard flow.needsRefill else { return }
-        networkManager.getPet(withCurrentList: []) { [weak self] result in
+        networkManager.getRandomPet(withCurrentList: []) { [weak self] result in
             switch result {
             case .success(let nextPet):
                 self?.flow.addToQueue(pet: nextPet)
                 if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
                     self?.delegate?.cacheImage(from: petsFirstImageURL)
+                }
+                self?.delegate?.didLikePet()
+                guard let self = self else { return }
+                self.noPetsAvailable = false
+                self.addPetsToQueue(numberOfPets: self.maxAttempt)
+            case .failure(let error):
+                print(error.localizedDescription)
+                self?.noPetsAvailable = true
+            }
+        }
+    }
+
+    private func addPetsToQueue(numberOfPets: Int) {
+        guard flow.needsRefill && !noPetsAvailable else { return }
+        networkManager.getRandomPet(withCurrentList: currentQueuedPetsIDs) { [weak self] result in
+            switch result {
+            case .success(let nextPet):
+                self?.flow.addToQueue(pet: nextPet)
+                if let petsFirstImageURL = nextPet.card.photoURLs[ip_safely: 0] {
+                    self?.delegate?.cacheImage(from: petsFirstImageURL)
+                }
+                if numberOfPets > 1 {
+                    self?.addPetsToQueue(numberOfPets: numberOfPets - 1)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -99,9 +119,8 @@ final class HomeViewModel {
         }
         tabBarDelegate?.likedCountDidIncrease()
         flow.nextPet()
-        addPetToQueue()
+        addPetsToQueue(numberOfPets: 1)
         delegate?.didLikePet()
-
     }
 
     func dislikeButtonTapped() {
@@ -112,7 +131,7 @@ final class HomeViewModel {
             }
         }
         flow.nextPet()
-        addPetToQueue()
+        addPetsToQueue(numberOfPets: 1)
         delegate?.didLikePet()
     }
 }

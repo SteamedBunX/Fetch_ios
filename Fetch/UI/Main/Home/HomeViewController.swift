@@ -88,7 +88,9 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewModelDelegate {
 
     func didLikePet() {
-        displayNewPet()
+        DispatchQueue.main.async { [weak self] in
+            self?.displayNewPet()
+        }
     }
 
     func cacheImage(from url: String) {

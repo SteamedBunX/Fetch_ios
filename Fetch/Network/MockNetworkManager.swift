@@ -13,6 +13,7 @@ final class MockNetworkManager: NetworkManager {
     let mockPets: [Pet]
     var mockQueryData: [Pet]
     var likedPets: [Pet] = []
+    var userToken: String = ""
 
     init(fileName: String = "pets") {
         mockPets = Pets.load(fileName: fileName)
@@ -22,15 +23,15 @@ final class MockNetworkManager: NetworkManager {
     func loadUserTokenFromCache() {
     }
 
-    func login(authenticationInfo: AuthInput, completion: @escaping (String) -> Void) {
-        completion("")
+    func login(authenticationInfo: AuthInput, completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        completion(.success(()))
     }
 
-    func checkUserOnboardingStatus(completion: @escaping (Bool) -> Void) {
-        completion(false)
+    func getUserOnboardingStatus(completion: @escaping (Result<Bool, NetworkError>) -> Void) {
+        completion(.success(false))
     }
 
-    func getPet(withCurrentList: [String], completion: ( (Result<Pet, NetworkError>) -> Void)) {
+    func getRandomPet(withCurrentList: [String], completion: ( (Result<Pet, NetworkError>) -> Void)) {
         if mockQueryData.isEmpty {
             completion(Result.failure(NetworkError.noPetsAvailable))
         } else {

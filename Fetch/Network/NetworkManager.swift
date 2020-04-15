@@ -12,16 +12,17 @@ import UIKit
 enum NetworkError: Error {
     case noPetsAvailable
     case invalidPetID
+    case failToDecodeData
     case failToAuthenticate
     case unknownError(Error)
 }
 
 protocol NetworkManager: AnyObject {
 
-    func login(authenticationInfo: AuthInput, completion: @escaping (String) -> Void)
-    func checkUserOnboardingStatus(completion: @escaping (Bool) -> Void)
-    func getPet(withCurrentList: [String], completion: ((Result<Pet, NetworkError>) -> Void))
-    func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void))
+    func login(authenticationInfo: AuthInput, completion: @escaping (Result<Void, NetworkError>) -> Void)
+    func getUserOnboardingStatus(completion: @escaping (Result<Bool, NetworkError>) -> Void)
+    func getRandomPet(withCurrentList: [String], completion: @escaping ((Result<Pet, NetworkError>) -> Void))
+    func getLikedCount(completion: @escaping ((Result<Int, NetworkError>) -> Void))
     func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?)
     func dislike(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?)
     func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void)
