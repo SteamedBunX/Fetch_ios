@@ -38,7 +38,7 @@ final class MainCoordinator: NSObject {
     }
 
     private func showOnboardingScreen(animated: Bool) {
-        let viewModel = OnboardingViewModel(flow: OnboardingQuestions.load())
+        let viewModel = OnboardingViewModel(flow: OnboardingQuestions.load(), networkManager: networkManager)
         let onboardingViewController = OnboardingViewController(viewModel: viewModel)
         onboardingViewController.didFinishSequence = { [weak self] in
             self?.showMainTabBarView(animated: true)

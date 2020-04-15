@@ -14,6 +14,7 @@ class SingleChoiceOnboardingQuestionTests: XCTestCase {
     func loadSingleChoiceQuestion() -> OnboardingQuestion {
         return OnboardingQuestion(
             title: "When it comes to taking care of pets, I’m",
+            reference: .experienceLevel,
             answerType: .singleChoice,
             choices: ["An Expert",
                       "Experienced",

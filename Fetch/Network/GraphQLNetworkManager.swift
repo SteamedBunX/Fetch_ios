@@ -98,6 +98,11 @@ final class GraphQLNetworkManager: NetworkManager {
         }
     }
 
+    func onboard(withResult sequenceResult: [OnboardingSection], completion: ((Result<Void, NetworkError>) -> Void)?) {
+        let userOnboardingData = GraphQLCoder.getUserPreferences(fromSequenceResult: sequenceResult)
+        apollo.perform(mutation: OnBoardMutation(userOnboardingData: userOnboardingData)) { _ in }
+    }
+
     func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void) {
 
     }

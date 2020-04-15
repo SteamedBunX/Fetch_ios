@@ -14,6 +14,7 @@ class TextInputOnboardingQuestionTests: XCTestCase {
     func loadTextInputQuestion() -> OnboardingQuestion {
         return OnboardingQuestion(
             title: "My zip code is",
+            reference: .zipCode,
             minInputLength: 5,
             maxInputLength: 10,
             placeHolderText: "Enter your zip code here",

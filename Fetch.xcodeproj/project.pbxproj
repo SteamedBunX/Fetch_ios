@@ -58,8 +58,8 @@
 		FA350CC5242910BF008399AF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA350CC4242910BF008399AF /* RoundButton.swift */; };
 		FA3F6B802442AB1E00C86778 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FA3F6B7F2442AB1E00C86778 /* schema.json */; };
 		FA3F6B822444EAA100C86778 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F6B812444EAA100C86778 /* LoginViewModel.swift */; };
-		FA3F6B892446103900C86778 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F6B882446103900C86778 /* UserDefaultsKeys.swift */; };
 		FA3F6B842445597300C86778 /* GraphQLCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F6B832445597300C86778 /* GraphQLCoder.swift */; };
+		FA3F6B892446103900C86778 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F6B882446103900C86778 /* UserDefaultsKeys.swift */; };
 		FA45ADB6242E4D5600DB5195 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */; };
 		FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */; };
 		FA53956F24323ED5003C3B1F /* AnswerChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA53956E24323ED5003C3B1F /* AnswerChoiceCell.xib */; };
@@ -70,6 +70,7 @@
 		FA9041DB242A6433004D373D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA26C3102429515700D0B5BA /* Lato-Regular.ttf */; };
 		FA95651A2423F9CA00380003 /* OnboardingSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9565192423F9CA00380003 /* OnboardingSequence.swift */; };
 		FA95651C24241E7700380003 /* TextInputOnboardingQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */; };
+		FAAB59B624473E84000527BE /* OnboardingQuestionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB59B524473E84000527BE /* OnboardingQuestionTitle.swift */; };
 		FADC5E1824227472006E8C23 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC5E1324227472006E8C23 /* OnboardingViewController.xib */; };
 		FADC5E1924227472006E8C23 /* OnboardingQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */; };
 		FADC5E1A24227472006E8C23 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC5E1524227472006E8C23 /* OnboardingViewController.swift */; };
@@ -152,8 +153,8 @@
 		FA350CC4242910BF008399AF /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		FA3F6B7F2442AB1E00C86778 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		FA3F6B812444EAA100C86778 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Fetch/UI/Main/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
-		FA3F6B882446103900C86778 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		FA3F6B832445597300C86778 /* GraphQLCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLCoder.swift; sourceTree = "<group>"; };
+		FA3F6B882446103900C86778 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		FA45ADB5242E4D5600DB5195 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FA45ADB7242E740E00DB5195 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		FA53956E24323ED5003C3B1F /* AnswerChoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerChoiceCell.xib; sourceTree = "<group>"; };
@@ -163,6 +164,7 @@
 		FA80420F243D961B001E6A0A /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		FA9565192423F9CA00380003 /* OnboardingSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSequence.swift; sourceTree = "<group>"; };
 		FA95651B24241E7700380003 /* TextInputOnboardingQuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputOnboardingQuestionTests.swift; sourceTree = "<group>"; };
+		FAAB59B524473E84000527BE /* OnboardingQuestionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuestionTitle.swift; sourceTree = "<group>"; };
 		FADC5E1324227472006E8C23 /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		FADC5E1424227472006E8C23 /* OnboardingQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuestion.swift; sourceTree = "<group>"; };
 		FADC5E1524227472006E8C23 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				FA2EFBB72434D34000BF65BA /* ActionType.swift */,
 				FA2EFBBA2434D6AD00BF65BA /* PetTagType.swift */,
 				FAFC8656243FAF6E00C36152 /* TabBarItemOption.swift */,
+				FAAB59B524473E84000527BE /* OnboardingQuestionTitle.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 				FA2EFBC72434FF5200BF65BA /* PetBundle.swift in Sources */,
 				FA2EFBBD2434F8A400BF65BA /* HomeViewModel.swift in Sources */,
 				FA3F6B842445597300C86778 /* GraphQLCoder.swift in Sources */,
+				FAAB59B624473E84000527BE /* OnboardingQuestionTitle.swift in Sources */,
 				FA350CC22428FE01008399AF /* LoginViewController.swift in Sources */,
 				FA80420B243D8032001E6A0A /* TabBarCell.swift in Sources */,
 				FAFC8655243F698100C36152 /* API.swift in Sources */,
