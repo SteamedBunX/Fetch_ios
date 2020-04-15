@@ -49,7 +49,7 @@ final class HomeViewModel {
 
     private var currentPetDistance: String {
         // Currently using placeholder value because the web server is not available yet. Once the backend is up Pet.card should provide distance.
-        return "0.7 Miles"
+        return "\(flow.currentPet?.card.distance ?? 0.0) Miles"
     }
 
     var currentPetTags: [PetTagType: String] {

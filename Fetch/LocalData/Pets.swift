@@ -33,7 +33,8 @@ enum Pets {
                                              name: bundle.name ?? "",
                                              age: bundle.age ?? "",
                                              size: bundle.size ?? "",
-                                             petTags: bundle.petTags)
+                                             petTags: bundle.petTags,
+                                             distance: 7.0)
             pets.append(Pet(id: bundle.id ?? "", card: profileCard))
         }
         return pets
