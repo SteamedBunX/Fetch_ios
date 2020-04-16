@@ -169,7 +169,6 @@ final class OnboardingViewModel {
       networkManager.onboard(withResult: flow.result) { [weak self] result in
         switch result {
         case .success(_):
-            print("success")
             self?.delegate?.finishSequence()
         case .failure(let error):
           print(error.localizedDescription)
