@@ -53,11 +53,11 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VI8-V7-RbE">
-                                    <rect key="frame" x="16" y="117" width="358" height="32"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VI8-V7-RbE">
+                                    <rect key="frame" x="16" y="117" width="358" height="50"/>
                                     <subviews>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="YXt-KJ-ipt" customClass="TagView" customModule="Fetch" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="258.5" height="32"/>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YXt-KJ-ipt" customClass="TagView" customModule="Fetch" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="258.5" height="50"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="tagImage" value="main_socialbilityTag"/>
@@ -67,8 +67,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="rbJ-uO-QxZ" customClass="TagView" customModule="Fetch" customModuleProvider="target">
-                                            <rect key="frame" x="266.5" y="0.0" width="91.5" height="32"/>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbJ-uO-QxZ" customClass="TagView" customModule="Fetch" customModuleProvider="target">
+                                            <rect key="frame" x="266.5" y="0.0" width="91.5" height="50"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="tagImage" value="main_socialbilityTag"/>
@@ -80,11 +80,11 @@
                                         </view>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gQu-6m-QUn">
-                                    <rect key="frame" x="16" y="157" width="358" height="32"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gQu-6m-QUn">
+                                    <rect key="frame" x="16" y="157" width="358" height="50"/>
                                     <subviews>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="BzL-I3-Pbe" customClass="TagView" customModule="Fetch" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="258.5" height="32"/>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BzL-I3-Pbe" customClass="TagView" customModule="Fetch" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="258.5" height="50"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="tagImage" value="main_socialbilityTag"/>
@@ -94,8 +94,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="Ohx-cM-0sa" customClass="TagView" customModule="Fetch" customModuleProvider="target">
-                                            <rect key="frame" x="266.5" y="0.0" width="91.5" height="32"/>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ohx-cM-0sa" customClass="TagView" customModule="Fetch" customModuleProvider="target">
+                                            <rect key="frame" x="266.5" y="0.0" width="91.5" height="50"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="tagImage" value="main_socialbilityTag"/>
