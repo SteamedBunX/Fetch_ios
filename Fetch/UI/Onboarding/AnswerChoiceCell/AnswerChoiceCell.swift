@@ -28,6 +28,7 @@ final class AnswerChoiceCell: UITableViewCell {
         answerChoiceButton.layer.applyAnswerChoiceButtonShadow()
         answerChoiceButton.backgroundColor = selected ? .answerChoiceButtonSelected : .answerChoiceButtonUnSelected
         answerChoiceButton.setTitleColor(selected ? .white : .black, for: .normal)
+        answerChoiceButton.titleLabel?.font = selected ? UIFont(name: "Lato-Bold", size: 16.0) : UIFont(name: "Lato-Regular", size: 16.0)
     }
 
     @IBAction private func buttonTapped(_ sender: Any) {
