@@ -23,6 +23,10 @@ final class HomeViewModel {
     private var noPetsAvailable = false
     private let maxAttempt = 10
 
+    var currentPet: Pet? {
+        return flow.currentPet
+    }
+
     var currentPetIsAvaliable: Bool {
         return flow.currentPet != nil
     }
@@ -110,25 +114,26 @@ final class HomeViewModel {
     // MARK: - Button Actions
 
     func likeButtonTapped() {
-        guard let petID = flow.currentPet?.id else { return }
-        networkManager.like(petId: petID) { result in
+        guard let pet = currentPet else { return }
+        networkManager.like(petId: pet.id) { result in
             if case .failure(let error) = result {
                 print(error.localizedDescription)
             }
         }
-        tabBarDelegate?.likedCountDidIncrease()
+        tabBarDelegate?.didLike(pet: pet)
         flow.nextPet()
         addPetsToQueue(numberOfPets: 1)
         delegate?.didLikePet()
     }
 
     func dislikeButtonTapped() {
-        guard let petID = flow.currentPet?.id else { return }
-        networkManager.dislike(petId: petID) { result in
+        guard let pet = currentPet else { return }
+        networkManager.dislike(petId: pet.id) { result in
             if case .failure(let error) = result {
                 print(error.localizedDescription)
             }
         }
+        tabBarDelegate?.didDislike(pet: pet)
         flow.nextPet()
         addPetsToQueue(numberOfPets: 1)
         delegate?.didLikePet()

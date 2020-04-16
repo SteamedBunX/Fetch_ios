@@ -56,11 +56,7 @@ final class MockNetworkManager: NetworkManager {
         completion?(.success(()))
     }
 
-    func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)) {
-        completion(.success(likedPets.count))
-    }
-
-    func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void) {
+    func getLikedPets(completion: @escaping (Result<[LikedPet], NetworkError>) -> Void) {
         After(2.0) { [likedPets] in
             completion(.success(likedPets))
         }

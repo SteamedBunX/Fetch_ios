@@ -29,11 +29,6 @@ final class LikedPetsCollectionViewController: UICollectionViewController, UICol
         bindToViewModel()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel.fetchLikedPets()
-    }
-
     private func bindToViewModel() {
         viewModel.updateUI = { [weak self] in
             Main {

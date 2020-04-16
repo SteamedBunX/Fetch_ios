@@ -72,10 +72,6 @@ final class GraphQLNetworkManager: NetworkManager {
         }
     }
 
-    func getLikedCount(completion: ((Result<Int, NetworkError>) -> Void)) {
-
-    }
-
     func like(petId: String, completion: ((Result<Void, NetworkError>) -> Void)?) {
         apollo.perform(mutation: LikePetMutation(petId: petId)) { result in
             switch result {
@@ -103,12 +99,31 @@ final class GraphQLNetworkManager: NetworkManager {
         apollo.perform(mutation: OnBoardMutation(userOnboardingData: userOnboardingData)) { _ in }
     }
 
-    func getLikedPets(completion: @escaping (Result<[Pet], NetworkError>) -> Void) {
-
+    func getLikedPets(completion: @escaping (Result<[LikedPet], NetworkError>) -> Void) {
+        apollo.fetch(query: GetAllLikedPetsQuery()) { [weak self] result in
+            guard let strongSelf = self else { return }
+            completion(strongSelf.getLikedPets(fromQueryResult: result))
+        }
     }
 
     private func storeUserToken(userToken: String) {
         userDefaults.setValue(userToken, forKey: UserDefaultsKeys.userToken)
+    }
+
+    private func getLikedPets(fromQueryResult result:  Result<GraphQLResult<GetAllLikedPetsQuery.Data>, Error>) -> Result<[LikedPet], NetworkError> {
+        return result
+            .mapError { NetworkError.unknownError($0) }
+            .flatMap {
+                guard let likedPetsResponse = $0.data?.likedPets else {
+                    return .failure(.failToDecodeData)
+                }
+
+                return .success(getLikedPet(fromResponse: likedPetsResponse))
+        }
+    }
+
+    private func getLikedPet(fromResponse response: [GetAllLikedPetsQuery.Data.LikedPet?]) -> [LikedPet] {
+        return response.compactMap { $0?.pet }
     }
 }
 

@@ -27,6 +27,19 @@ query GetRandomPet($queuedPets: [ID]){
   }
 }
 
+query GetAllLikedPets {
+  likedPets {
+    pet {
+      photos
+      id
+      name
+      age
+      size
+      distance_to_user
+    }
+  }
+}
+
 mutation LikePet($petId: ID!) {
     likePet(petId: $petId, isLiked: true) {
     liked_at

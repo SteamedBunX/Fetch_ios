@@ -27,7 +27,7 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90V-TO-THk" customClass="CardView" customModule="Fetch" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="227" height="296"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_noPictureIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uT1-o3-Vvh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_noPictureIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uT1-o3-Vvh">
                                 <rect key="frame" x="0.0" y="0.0" width="227" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="171" id="erw-Hp-Lpv"/>
