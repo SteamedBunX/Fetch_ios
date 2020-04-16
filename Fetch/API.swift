@@ -971,6 +971,183 @@ public final class GetRandomPetQuery: GraphQLQuery {
   }
 }
 
+public final class GetAllLikedPetsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query GetAllLikedPets {
+      likedPets {
+        __typename
+        pet {
+          __typename
+          photos
+          id
+          name
+          age
+          size
+          distance_to_user
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "GetAllLikedPets"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("likedPets", type: .nonNull(.list(.object(LikedPet.selections)))),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(likedPets: [LikedPet?]) {
+      self.init(unsafeResultMap: ["__typename": "Query", "likedPets": likedPets.map { (value: LikedPet?) -> ResultMap? in value.flatMap { (value: LikedPet) -> ResultMap in value.resultMap } }])
+    }
+
+    public var likedPets: [LikedPet?] {
+      get {
+        return (resultMap["likedPets"] as! [ResultMap?]).map { (value: ResultMap?) -> LikedPet? in value.flatMap { (value: ResultMap) -> LikedPet in LikedPet(unsafeResultMap: value) } }
+      }
+      set {
+        resultMap.updateValue(newValue.map { (value: LikedPet?) -> ResultMap? in value.flatMap { (value: LikedPet) -> ResultMap in value.resultMap } }, forKey: "likedPets")
+      }
+    }
+
+    public struct LikedPet: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["LikedPet"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("pet", type: .nonNull(.object(Pet.selections))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(pet: Pet) {
+        self.init(unsafeResultMap: ["__typename": "LikedPet", "pet": pet.resultMap])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var pet: Pet {
+        get {
+          return Pet(unsafeResultMap: resultMap["pet"]! as! ResultMap)
+        }
+        set {
+          resultMap.updateValue(newValue.resultMap, forKey: "pet")
+        }
+      }
+
+      public struct Pet: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Pet"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("photos", type: .list(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("age", type: .nonNull(.scalar(Age.self))),
+          GraphQLField("size", type: .nonNull(.scalar(Size.self))),
+          GraphQLField("distance_to_user", type: .scalar(Double.self)),
+        ]
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(photos: [String?]? = nil, id: GraphQLID, name: String? = nil, age: Age, size: Size, distanceToUser: Double? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Pet", "photos": photos, "id": id, "name": name, "age": age, "size": size, "distance_to_user": distanceToUser])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var photos: [String?]? {
+          get {
+            return resultMap["photos"] as? [String?]
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "photos")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return resultMap["name"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var age: Age {
+          get {
+            return resultMap["age"]! as! Age
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "age")
+          }
+        }
+
+        public var size: Size {
+          get {
+            return resultMap["size"]! as! Size
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "size")
+          }
+        }
+
+        public var distanceToUser: Double? {
+          get {
+            return resultMap["distance_to_user"] as? Double
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "distance_to_user")
+          }
+        }
+      }
+    }
+  }
+}
+
 public final class LikePetMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

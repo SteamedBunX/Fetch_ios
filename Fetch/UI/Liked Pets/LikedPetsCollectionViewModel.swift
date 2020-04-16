@@ -19,14 +19,11 @@ final class LikedPetsCollectionViewModel {
         }
     }
 
-    private let networkManager: NetworkManager
     private let factory: LikedPetsCollectionViewCellViewModelFactory
 
     init(
-        networkManager: NetworkManager = MockNetworkManager(),
         factory: LikedPetsCollectionViewCellViewModelFactory = LikedPetsCollectionViewCellViewModelFactory()
     ) {
-        self.networkManager = networkManager
         self.factory = factory
     }
 
@@ -46,22 +43,11 @@ final class LikedPetsCollectionViewModel {
         return likedPetViewModels[ip_safely: indexPath.item] ?? factory.defaultViewModel
     }
 
-    func fetchLikedPets() {
-        networkManager.getLikedPets { [weak self] result in
-            guard let strongSelf = self else {
-                return
-            }
-
-            switch result {
-            case .success(let pets):
-                strongSelf.setViewModels(fromPets: pets)
-            case .failure(let error):
-                print("Error fetching liked pets: \(error)")
-            }
-        }
+    func set(likedPets: [LikedPet]) {
+        setViewModels(fromPets: likedPets)
     }
 
-    private func setViewModels(fromPets pets: [Pet]) {
+    private func setViewModels(fromPets pets: [LikedPet]) {
         likedPetViewModels = pets.map(factory.viewModel(forPet:))
     }
 }
@@ -71,15 +57,14 @@ struct LikedPetsCollectionViewCellViewModelFactory {
         return LikedPetsCollectionViewCellViewModel()
     }
 
-    func viewModel(forPet pet: Pet) -> LikedPetsCollectionViewCellViewModel {
-        let profile = pet.card
+    func viewModel(forPet pet: LikedPet) -> LikedPetsCollectionViewCellViewModel {
         return LikedPetsCollectionViewCellViewModel(
-            imageURLString: profile.photoURLs.first ?? "",
+            imageURLString: pet.photoURLs.first ?? "",
             placeHolderImage: #imageLiteral(resourceName: "main_noPictureIcon"),
-            name: profile.name,
-            distance: "10 mi away",
-            age: profile.age,
-            size: profile.size
+            name: pet.petName,
+            distance: "\(pet.distance) mi away",
+            age: pet.petAge,
+            size: pet.petSize
         )
     }
 }

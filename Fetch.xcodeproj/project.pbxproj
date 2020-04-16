@@ -11,6 +11,7 @@
 		8618BB68242AE22F00F122C6 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB67242AE22F00F122C6 /* ProgressBarView.swift */; };
 		8618BB6E242AE9E200F122C6 /* ProgressBarSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */; };
 		8618BB70242AEBE300F122C6 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */; };
+		86492CBF2447D3E800D680E0 /* LikedPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86492CBE2447D3E800D680E0 /* LikedPet.swift */; };
 		86B011F42441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B011F32441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift */; };
 		86B011F624417872004C56B4 /* LikedPetsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B011F524417872004C56B4 /* LikedPetsCollectionViewModel.swift */; };
 		86BE989F243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE989E243D34C600374194 /* LikedPetsCollectionViewFlowLayout.swift */; };
@@ -98,6 +99,7 @@
 		8618BB67242AE22F00F122C6 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		8618BB6D242AE9E200F122C6 /* ProgressBarSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSegmentView.swift; sourceTree = "<group>"; };
 		8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
+		86492CBE2447D3E800D680E0 /* LikedPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPet.swift; sourceTree = "<group>"; };
 		86A7494F243BD4FD00DF8742 /* GraphQLNetworkManager.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GraphQLNetworkManager.graphql; sourceTree = "<group>"; };
 		86B011F32441768F004C56B4 /* LikedPetsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		86B011F524417872004C56B4 /* LikedPetsCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPetsCollectionViewModel.swift; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 				8618BB6F242AEBE300F122C6 /* ProgressBarViewModel.swift */,
 			);
 			path = ProgressBar;
+			sourceTree = "<group>";
+		};
+		86492CBD2447D3C600D680E0 /* Liked Pets */ = {
+			isa = PBXGroup;
+			children = (
+				86492CBE2447D3E800D680E0 /* LikedPet.swift */,
+			);
+			path = "Liked Pets";
 			sourceTree = "<group>";
 		};
 		86F3D9BA243C407F0034F589 /* Liked Pets */ = {
@@ -490,6 +500,7 @@
 		FADC5E1D24227FAC006E8C23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				86492CBD2447D3C600D680E0 /* Liked Pets */,
 				FA80420E243D960C001E6A0A /* Main */,
 				FA2EFBA72433CC2E00BF65BA /* Onboarding */,
 				FA2EFBA92433CCBF00BF65BA /* Home */,
@@ -777,6 +788,7 @@
 				FA2EFBD62436B97B00BF65BA /* TagView.swift in Sources */,
 				FA45ADB8242E740E00DB5195 /* CALayer+Extension.swift in Sources */,
 				FA45ADB6242E4D5600DB5195 /* UIColor+Extension.swift in Sources */,
+				86492CBF2447D3E800D680E0 /* LikedPet.swift in Sources */,
 				FA3F6B822444EAA100C86778 /* LoginViewModel.swift in Sources */,
 				FA2EFBC42434FDFC00BF65BA /* Pets.swift in Sources */,
 				FA350CBD2428FDF2008399AF /* MainCoordinator.swift in Sources */,
