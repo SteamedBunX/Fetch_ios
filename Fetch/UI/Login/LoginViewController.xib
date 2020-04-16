@@ -35,14 +35,14 @@
                         <constraint firstAttribute="width" secondItem="4Lo-7t-iAk" secondAttribute="height" multiplier="162:58" id="UMH-UD-qh4"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your furrever best friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho2-T4-OFu">
-                    <rect key="frame" x="103.66666666666669" y="233.66666666666666" width="207" height="19"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your furrever best friend!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho2-T4-OFu">
+                    <rect key="frame" x="101.66666666666669" y="233.66666666666666" width="211" height="20"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sP6-8g-dS1">
-                    <rect key="frame" x="62" y="686.66666666666663" width="290" height="40"/>
+                    <rect key="frame" x="62" y="714" width="290" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="gKO-qf-Hf0"/>
@@ -66,7 +66,7 @@
                 <constraint firstItem="mmU-jr-vtA" firstAttribute="top" secondItem="Cjb-r9-9p2" secondAttribute="bottom" id="By2-Xb-MIL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mmU-jr-vtA" secondAttribute="trailing" id="EUn-pH-e6o"/>
                 <constraint firstItem="4Lo-7t-iAk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.34" id="Eme-IU-PXz"/>
-                <constraint firstItem="sP6-8g-dS1" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="1.56" id="GR9-BS-TOr"/>
+                <constraint firstItem="sP6-8g-dS1" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="1.62" id="GR9-BS-TOr"/>
                 <constraint firstItem="mmU-jr-vtA" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" priority="900" id="Hi3-IW-x5Z"/>
                 <constraint firstItem="mmU-jr-vtA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LPq-wj-lf7"/>
                 <constraint firstItem="4Lo-7t-iAk" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="U67-i0-bSZ"/>
